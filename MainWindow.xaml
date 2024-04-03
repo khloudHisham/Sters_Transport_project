@@ -1,0 +1,742 @@
+﻿<Window x:Class="StersTransport.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StersTransport"
+         xmlns:UI="clr-namespace:StersTransport.UI"
+         xmlns:customeadorner="clr-namespace:StersTransport.CustomeControls.CustomeAdorner"
+        mc:Ignorable="d"
+        Title="" Height="768" Width="1366"
+        Loaded="Window_Loaded"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        Closing="Window_Closing"
+        MinHeight="480"
+        MinWidth="500"
+        
+        >
+
+
+    <Window.Resources>
+        <Storyboard x:Key="displayAnimation">
+            <DoubleAnimation Storyboard.TargetName="notificationmessage2" 
+                             Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)" Duration="0:0:1" From="-400"/>
+        </Storyboard>
+        <Storyboard x:Key="hideAnimation" >
+            <DoubleAnimation  Storyboard.TargetName="notificationmessage2" 
+                             Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)" Duration="0:0:1" To="-400"/>
+
+        </Storyboard>
+    </Window.Resources>
+
+
+    <Grid>
+
+        <Grid Panel.ZIndex="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2.5*"></RowDefinition>
+                <RowDefinition Height="20*"></RowDefinition>
+                <RowDefinition Height="1.5*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+          
+      
+            </Grid.ColumnDefinitions>
+            <UI:NotificationMessage
+                Grid.Column="1"
+                Margin="10,0,10,0"
+      VerticalAlignment="Stretch"
+            RenderTransformOrigin="0.5, 0.5"
+            x:Name="notificationmessage2"
+           HorizontalAlignment="Stretch"
+
+             Visibility="Collapsed"
+            OnClose="notificationmessage2_OnClose_1"
+            
+            >
+                <UI:NotificationMessage.RenderTransform>
+                    <TranslateTransform></TranslateTransform>
+                </UI:NotificationMessage.RenderTransform>
+            </UI:NotificationMessage>
+        </Grid>
+        <Grid>
+
+
+
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="8.5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2.5*"></RowDefinition>
+                <RowDefinition Height="20*"></RowDefinition>
+                <RowDefinition Height="1.5*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+          
+            <!--outer borders-->
+            <Border Grid.ColumnSpan="2" BorderThickness="1" BorderBrush="{DynamicResource ResourceKey=MainWindowBorderbrush}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width=".75*"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width=".75*"></ColumnDefinition>
+                        <ColumnDefinition Width=".75*"></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+
+                    <Image Margin="15" Source="pack://application:,,,/Resources/sters.png"></Image>
+                    <Border 
+                Margin="15,15,15,15" Grid.Column="1" CornerRadius="5"
+                Background="#236BC9">
+
+                    </Border>
+                    <TextBlock VerticalAlignment="Center" 
+                       HorizontalAlignment="Center"
+                       Foreground="White"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Grid.Column="1">EUKnet</TextBlock>
+                    <TextBlock VerticalAlignment="Center" 
+                       HorizontalAlignment="Center"
+                       Foreground="Black"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Grid.Column="2">Transport Company</TextBlock>
+                    <!--Template="{DynamicResource NormalToggleButtonTemplate}" -->
+                    <ToggleButton
+                    Margin="5"
+                    Checked="tgl_darkmode_Checked" Unchecked="tgl_darkmode_Unchecked" x:Name="tgl_darkmode" 
+                              Template="{DynamicResource NormalToggleButtonTemplate}"
+                              
+                              Grid.Column="6" >
+
+                        <Grid x:Name="grd_darkMode">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                <ColumnDefinition Width=".1*"> </ColumnDefinition>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Viewbox   Grid.Column="2">
+                                <Grid>
+                                    <Path   x:Name="path" RenderTransformOrigin="0.5,0.5"  >
+                                        <Path.RenderTransform>
+                                            <ScaleTransform ScaleX=".6" ScaleY=".6"></ScaleTransform>
+                                        </Path.RenderTransform>
+                                        <Path.Style>
+                                            <Style TargetType="{x:Type Path}">
+                                                <Setter Property="Data" Value=""/>
+                                                <Style.Triggers>
+                                                    <DataTrigger
+                                                    Binding="{Binding ElementName=tgl_darkmode ,Path=IsChecked}"
+                                                    Value="True"
+                                                    >
+                                                        <Setter Property="Data" Value="M26.438,40.313A13.875,13.875,0,1,1,40.313,26.438,13.875,13.875,0,0,1,26.438,40.313Zm0-4.625a9.25,9.25,0,1,0-9.25-9.25A9.25,9.25,0,0,0,26.438,35.688ZM24.125,1H28.75V7.938H24.125Zm0,43.938H28.75v6.938H24.125ZM6.816,10.086l3.27-3.27,4.9,4.9-3.27,3.27-4.9-4.9ZM37.884,41.154l3.27-3.27,4.9,4.9-3.27,3.27Zm4.9-34.341,3.27,3.272-4.9,4.9-3.27-3.27,4.9-4.9ZM11.721,37.884l3.27,3.27-4.9,4.9-3.27-3.27,4.9-4.9ZM51.875,24.125V28.75H44.938V24.125Zm-43.937,0V28.75H1V24.125Z"></Setter>
+                                                        <Setter Property="Fill" Value="#236BC9"></Setter>
+                                                    </DataTrigger>
+
+
+                                                    <DataTrigger
+                                                    Binding="{Binding ElementName=tgl_darkmode ,Path=IsChecked}"
+                                                    Value="False"
+                                                    >
+                                                        <Setter Property="Data" Value="M20.083,13.3A15.823,15.823,0,0,0,47.208,24.378V24.6A22.6,22.6,0,1,1,24.6,2h.226A15.775,15.775,0,0,0,20.083,13.3ZM6.521,24.6a18.083,18.083,0,0,0,34.046,8.5A20.344,20.344,0,0,1,16.1,8.641,18.081,18.081,0,0,0,6.521,24.6Z"></Setter>
+                                                        <Setter Property="Fill" Value="#404040"></Setter>
+                                                    </DataTrigger>
+
+
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Path.Style>
+                                    </Path>
+                                </Grid>
+                            </Viewbox>
+                            <Label   FontWeight="Bold"  Foreground="#404040" VerticalAlignment="Center"  Grid.Column="0">
+                                <Label.Style>
+                                    <Style TargetType="Label">
+                                        <Style.Triggers>
+                                            <DataTrigger
+                                            Binding="{Binding ElementName=tgl_darkmode ,Path=IsChecked}"
+                                                    Value="True"
+                                            >
+                                                <Setter Property="Content" Value="Light Mode"></Setter>
+                                            </DataTrigger>
+                                            <DataTrigger
+                                            Binding="{Binding ElementName=tgl_darkmode ,Path=IsChecked}"
+                                                    Value="False"
+                                            >
+                                                <Setter Property="Content" Value="Dark Mode"></Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Label.Style>
+                            </Label>
+                            <TextBlock Visibility="Hidden" Grid.Column="1">mazin</TextBlock>
+                        </Grid>
+
+                        <ToggleButton.Triggers>
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                Storyboard.TargetName="path"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
+                To="0.82" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                        <DoubleAnimation
+                Storyboard.TargetName="path"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
+                To="0.82" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                Storyboard.TargetName="path"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
+                To="0.7" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                        <DoubleAnimation
+                Storyboard.TargetName="path"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
+                To="0.7" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ToggleButton.Triggers>
+                    </ToggleButton>
+
+                    <Button ToolTip="Log out" Grid.Column="7"   Template="{DynamicResource ResourceKey=emptybutton}" 
+                          Click="Button_Click_7"
+                            >
+                        <Viewbox >
+                            <Grid>
+                                <Path x:Name="logoutpath" RenderTransformOrigin="0.5,0.5" 
+                              Fill="#404040"
+Data="M9.116,45.283h5.41v5.41H46.988V7.41H14.526v5.41H9.116V4.705A2.705,2.705,0,0,1,11.821,2H49.693A2.705,2.705,0,0,1,52.4,4.705V53.4A2.705,2.705,0,0,1,49.693,56.1H11.821A2.705,2.705,0,0,1,9.116,53.4Zm5.41-18.936H33.462v5.41H14.526v8.116L1,29.052,14.526,18.231Z"                                  
+                                  >
+
+
+                                    <Path.RenderTransform>
+                                        <ScaleTransform>
+                                            <ScaleTransform.ScaleX>.35</ScaleTransform.ScaleX>
+                                            <ScaleTransform.ScaleY>.35</ScaleTransform.ScaleY>
+                                        </ScaleTransform>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Grid>
+                        </Viewbox>
+                        <Button.Triggers>
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                Storyboard.TargetName="logoutpath"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
+                To="0.43" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                        <DoubleAnimation
+                Storyboard.TargetName="logoutpath"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
+                To="0.43" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                Storyboard.TargetName="logoutpath"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
+                To="0.35" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                        <DoubleAnimation
+                Storyboard.TargetName="logoutpath"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
+                To="0.35" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Button.Triggers>
+
+                    </Button>
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="1" BorderThickness="1" BorderBrush="{DynamicResource ResourceKey=MainWindowBorderbrush}">
+                <!--side menu-->
+                <Grid Background="{DynamicResource ResourceKey=SidemenuBackground}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <ToggleButton x:Name="btnHome" 
+                                  Checked="btnHome_Checked"
+                    Grid.Row="1"
+                    Template="{DynamicResource ResourceKey=ActionToggleButtonTemplate}"
+                    Click="Button_Click_1"
+                     >
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".8*"></ColumnDefinition>
+                                <ColumnDefinition Width=".3*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+
+                            </Grid.ColumnDefinitions>
+                            <Viewbox  >
+                                <Grid  >
+
+                                    <Path RenderTransformOrigin="0,0.5" Fill="{DynamicResource ResourceKey=SidemenuItemForecolor}"  StrokeThickness="3"
+                                          Data="M13.94,2.5a11.44,11.44,0,0,1,11.44,11.44v11.44H13.94a11.44,11.44,0,1,1,0-22.879ZM20,20V13.94A6.056,6.056,0,1,0,13.94,20ZM13.94,30.763h11.44V42.2a11.44,11.44,0,1,1-11.44-11.44Zm0,5.383A6.056,6.056,0,1,0,20,42.2V36.146ZM42.2,2.5a11.44,11.44,0,1,1,0,22.879H30.763V13.94A11.44,11.44,0,0,1,42.2,2.5Zm0,17.5a6.056,6.056,0,1,0-6.056-6.056V20ZM30.763,30.763H42.2A11.44,11.44,0,1,1,30.763,42.2Zm5.383,5.383V42.2A6.056,6.056,0,1,0,42.2,36.146Z">
+                                        <Path.RenderTransform>
+                                            <ScaleTransform>
+                                                <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                                <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                            </ScaleTransform>
+                                        </Path.RenderTransform>
+                                    </Path>
+                                </Grid>
+                            </Viewbox>
+                            <TextBlock Visibility="Hidden"  HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="{DynamicResource ResourceKey=SidemenuItemForecolor}" Grid.Column="1">placeholder</TextBlock>
+                            <TextBlock FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="{DynamicResource ResourceKey=SidemenuItemForecolor}" Grid.Column="2">Home</TextBlock>
+                        </Grid>
+                    </ToggleButton>
+
+                    <ToggleButton x:Name="btnSend" 
+                                  Checked="btnSend_Checked"
+                    Grid.Row="2"
+                    Template="{DynamicResource ResourceKey=ActionToggleButtonTemplate}"
+                    Click="Button_Click_10"
+                     >
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".8*"></ColumnDefinition>
+                                <ColumnDefinition Width=".3*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+
+                            </Grid.ColumnDefinitions>
+                            <Viewbox  >
+                                <Grid  >
+
+                                    <Path RenderTransformOrigin="0,0.5" Fill="{DynamicResource ResourceKey=SidemenuItemForecolor}"  StrokeThickness="3"
+Data="M367.851,6.944A7.491,7.491,0,0,0,367.6,5.7a8.3,8.3,0,0,0-.528-1.3c-.112-.232-.152-.48-.288-.7a4.915,4.915,0,0,0-.336-.376,8.3,8.3,0,0,0-.9-1.016,7.817,7.817,0,0,0-1.032-.9c-.136-.1-.224-.232-.36-.312-.224-.136-.472-.168-.7-.28A8.32,8.32,0,0,0,362.115.28a8.419,8.419,0,0,0-1.176-.208,8.207,8.207,0,0,0-1.4-.064,7.187,7.187,0,0,0-1.3.216,7.369,7.369,0,0,0-.824.136l-352,120a7.993,7.993,0,0,0-.28,15.032L169.6,198.584,240.659,363.1A8.011,8.011,0,0,0,248,367.92c.136,0,.264,0,.4-.008a8,8,0,0,0,7.224-5.56l112-352a5.991,5.991,0,0,0,.1-.76,7.559,7.559,0,0,0,.184-1.336A7.969,7.969,0,0,0,367.851,6.944ZM31.475,128.368,330.011,26.592,173.619,182.984ZM246.859,337.112,185.1,194.136,342.4,36.824Z"                                          
+                                          >
+                                        
+                                        <Path.RenderTransform>
+                                            <ScaleTransform>
+                                                <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                                <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                            </ScaleTransform>
+                                        </Path.RenderTransform>
+                                    </Path>
+
+                                    <Path RenderTransformOrigin="0,0.5" Fill="{DynamicResource ResourceKey=SidemenuItemForecolor}"  StrokeThickness="3"
+                                          
+                                          Data="M125.659,242.264a7.991,7.991,0,0,0-11.312,0l-112,112a8,8,0,1,0,11.312,11.312l112-112A7.991,7.991,0,0,0,125.659,242.264Z"
+                                          
+                                          >
+
+                                        <Path.RenderTransform>
+                                            <ScaleTransform>
+                                                <ScaleTransform.ScaleX>.6</ScaleTransform.ScaleX>
+                                                <ScaleTransform.ScaleY>.6</ScaleTransform.ScaleY>
+                                            </ScaleTransform>
+                                        </Path.RenderTransform>
+                                    </Path>
+
+
+                                    <Path RenderTransformOrigin="0,0.5" Fill="{DynamicResource ResourceKey=SidemenuItemForecolor}"  StrokeThickness="3"
+                                         Data="M146.347,298.264l-56,56a8,8,0,1,0,11.312,11.312l56-56a8,8,0,0,0-11.312-11.312Z"
+                                          
+                                          >
+
+                                        <Path.RenderTransform>
+                                            <ScaleTransform>
+                                                <ScaleTransform.ScaleX>.6</ScaleTransform.ScaleX>
+                                                <ScaleTransform.ScaleY>.6</ScaleTransform.ScaleY>
+                                            </ScaleTransform>
+                                        </Path.RenderTransform>
+                                    </Path>
+
+
+                                    <Path RenderTransformOrigin="0,0.5" Fill="{DynamicResource ResourceKey=SidemenuItemForecolor}"  StrokeThickness="3"
+                                      Data="M8,279.92a7.978,7.978,0,0,0,5.656-2.344l56-56a8,8,0,0,0-11.312-11.312l-56,56A8,8,0,0,0,8,279.92Z"
+                                          
+                                          >
+
+                                        <Path.RenderTransform>
+                                            <ScaleTransform>
+                                                <ScaleTransform.ScaleX>.6</ScaleTransform.ScaleX>
+                                                <ScaleTransform.ScaleY>.6</ScaleTransform.ScaleY>
+                                            </ScaleTransform>
+                                        </Path.RenderTransform>
+                                    </Path>
+
+
+                                </Grid>
+                            </Viewbox>
+                            <TextBlock Visibility="Hidden"  HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="{DynamicResource ResourceKey=SidemenuItemForecolor}" Grid.Column="1">placeholder</TextBlock>
+                            <TextBlock FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="{DynamicResource ResourceKey=SidemenuItemForecolor}" Grid.Column="2">Send</TextBlock>
+                        </Grid>
+                    </ToggleButton>
+                    <ToggleButton Checked="btnInvoice_Checked" x:Name="btnInvoice"  Grid.Row="3"
+                        Click="Button_Click_4"
+                         Template="{DynamicResource ResourceKey=ActionToggleButtonTemplate}"
+                        >
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".8*"></ColumnDefinition>
+                                <ColumnDefinition Width=".3*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+
+                            </Grid.ColumnDefinitions>
+                            <Viewbox  >
+                                <Grid  >
+
+                                    <Path RenderTransformOrigin="0.5,0.5" Fill="{DynamicResource ResourceKey=SidemenuItemForecolor}"  StrokeThickness="3" Data="M47.758,55.833H10.075A8.075,8.075,0,0,1,2,47.758V4.692A2.692,2.692,0,0,1,4.692,2H42.375a2.692,2.692,0,0,1,2.692,2.692v32.3H55.833V47.758A8.075,8.075,0,0,1,47.758,55.833ZM45.067,42.375v5.383a2.692,2.692,0,1,0,5.383,0V42.375ZM39.683,50.45V7.383H7.383V47.758a2.692,2.692,0,0,0,2.692,2.692ZM12.767,15.458H34.3v5.383H12.767Zm0,10.767H34.3v5.383H12.767Zm0,10.767H26.225v5.383H12.767Z">
+                                        <Path.RenderTransform>
+                                            <ScaleTransform>
+                                                <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                                <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                            </ScaleTransform>
+                                        </Path.RenderTransform>
+                                    </Path>
+                                </Grid>
+                            </Viewbox>
+                            <TextBlock Visibility="Hidden"  HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="{DynamicResource ResourceKey=SidemenuItemForecolor}" Grid.Column="1">placeholder</TextBlock>
+                            <TextBlock FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="{DynamicResource ResourceKey=SidemenuItemForecolor}" Grid.Column="2">Invoice</TextBlock>
+                        </Grid>
+                    </ToggleButton>
+                    <ToggleButton Checked="btnLabel_Checked" x:Name="btnLabel"  Grid.Row="4" Template="{DynamicResource ResourceKey=ActionToggleButtonTemplate}"
+                        Click="Button_Click_3"
+                        >
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".8*"></ColumnDefinition>
+                                <ColumnDefinition Width=".3*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+
+                            </Grid.ColumnDefinitions>
+                            <Viewbox  >
+                                <Grid  >
+
+                                    <Path  RenderTransformOrigin="0,0.5" Fill="{DynamicResource ResourceKey=SidemenuItemForecolor}"  StrokeThickness="3" Data="M26.947,2.1,53.592,5.909,57.4,32.556,32.656,57.3a2.692,2.692,0,0,1-3.806,0L2.2,30.651a2.692,2.692,0,0,1,0-3.806Zm1.9,5.712L7.911,28.748,30.753,51.586,51.689,30.651,48.835,10.665,28.85,7.812Zm5.706,17.13a5.385,5.385,0,1,1,7.616,0A5.385,5.385,0,0,1,34.556,24.941Z">
+                                        <Path.RenderTransform>
+                                            <ScaleTransform>
+                                                <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                                <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                            </ScaleTransform>
+                                        </Path.RenderTransform>
+                                    </Path>
+                                </Grid>
+                            </Viewbox>
+                            <TextBlock Visibility="Hidden"  HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="{DynamicResource ResourceKey=SidemenuItemForecolor}" Grid.Column="1">placeholder</TextBlock>
+                            <TextBlock FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="{DynamicResource ResourceKey=SidemenuItemForecolor}" Grid.Column="2">Label</TextBlock>
+                        </Grid>
+                    </ToggleButton>
+                    <ToggleButton Checked="btnReports_Checked" x:Name="btnReports"  Click="Button_Click_6" Grid.Row="5"
+                                  Template="{DynamicResource ResourceKey=ActionToggleButtonTemplate}">
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".8*"></ColumnDefinition>
+                                <ColumnDefinition Width=".3*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+
+                            </Grid.ColumnDefinitions>
+                            <Viewbox  >
+                                <Grid  >
+
+                                    <Path RenderTransformOrigin="0.5,0.5" Fill="{DynamicResource ResourceKey=SidemenuItemForecolor}"  StrokeThickness="3" Data="M19.9,47.067H5.817V24.533H19.9Zm-5.633-5.633V30.167H11.45V41.433Zm16.9,0V18.9H28.35V41.433ZM36.8,47.067H22.717v-33.8H36.8Zm11.267-5.633V7.633H45.25v33.8ZM53.7,47.067H39.617V2H53.7Zm2.817,11.267H3V52.7H56.517Z">
+                                        <Path.RenderTransform>
+                                            <ScaleTransform>
+                                                <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                                <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                            </ScaleTransform>
+                                        </Path.RenderTransform>
+                                    </Path>
+                                </Grid>
+                            </Viewbox>
+                            <TextBlock Visibility="Hidden"  HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="{DynamicResource ResourceKey=SidemenuItemForecolor}" Grid.Column="1">placeholder</TextBlock>
+                            <TextBlock FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="{DynamicResource ResourceKey=SidemenuItemForecolor}" Grid.Column="2">Reports</TextBlock>
+                        </Grid>
+                    </ToggleButton>
+                    <ToggleButton Checked="btnAdmin_Checked" x:Name="btnAdmin"  Click="Button_Click_5" Grid.Row="6"
+                                  Template="{DynamicResource ResourceKey=ActionToggleButtonTemplate}">
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".8*"></ColumnDefinition>
+                                <ColumnDefinition Width=".3*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+
+                            </Grid.ColumnDefinitions>
+                            <Viewbox  >
+                                <Grid  >
+
+                                    <Path RenderTransformOrigin="0.5,0.5" Fill="{DynamicResource ResourceKey=SidemenuItemForecolor}"  StrokeThickness="3" Data="M25.533,35.992v5.383a16.15,16.15,0,0,0-16.15,16.15H4A21.533,21.533,0,0,1,25.533,35.992Zm0-2.692a16.15,16.15,0,1,1,16.15-16.15A16.146,16.146,0,0,1,25.533,33.3Zm0-5.383A10.767,10.767,0,1,0,14.767,17.15,10.764,10.764,0,0,0,25.533,27.917Zm6.985,21.027a9.448,9.448,0,0,1,0-4.369l-2.67-1.542,2.692-4.662,2.67,1.542a9.41,9.41,0,0,1,3.782-2.186V34.646h5.383v3.082a9.4,9.4,0,0,1,3.782,2.186l2.67-1.542,2.692,4.662-2.67,1.542a9.448,9.448,0,0,1,0,4.366l2.67,1.542-2.692,4.662L48.157,53.6a9.41,9.41,0,0,1-3.782,2.186v3.082H38.992V55.789A9.41,9.41,0,0,1,35.21,53.6l-2.67,1.542-2.692-4.662,2.67-1.54ZM41.683,50.8a4.038,4.038,0,1,0-4.038-4.037A4.038,4.038,0,0,0,41.683,50.8Z">
+                                        <Path.RenderTransform>
+                                            <ScaleTransform>
+                                                <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                                <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                            </ScaleTransform>
+                                        </Path.RenderTransform>
+                                    </Path>
+                                </Grid>
+                            </Viewbox>
+                            <TextBlock Visibility="Hidden"  HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="{DynamicResource ResourceKey=SidemenuItemForecolor}" Grid.Column="1">placeholder</TextBlock>
+                            <TextBlock FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="{DynamicResource ResourceKey=SidemenuItemForecolor}" Grid.Column="2">Admin</TextBlock>
+                        </Grid>
+                    </ToggleButton>
+
+                    <ToggleButton Checked="btnSettings_Checked" x:Name="btnSettings"  Click="Button_Click_11" Grid.Row="10"
+                                  Template="{DynamicResource ResourceKey=ActionToggleButtonTemplate}">
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".8*"></ColumnDefinition>
+                                <ColumnDefinition Width=".3*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+
+                            </Grid.ColumnDefinitions>
+                            <Viewbox  >
+                                <Grid  >
+
+                                    <Path RenderTransformOrigin="0.5,0.5" Fill="{DynamicResource ResourceKey=SidemenuItemForecolor}"  StrokeThickness="3" Data="M2.662,39.191a30.664,30.664,0,0,1,0-12.7c3.422.4,6.413-.731,7.388-3.086s-.333-5.273-3.04-7.409A30.664,30.664,0,0,1,15.992,7.01c2.134,2.7,5.05,4.018,7.409,3.04s3.49-3.965,3.086-7.388a30.664,30.664,0,0,1,12.7,0c-.4,3.423.731,6.413,3.086,7.388s5.272-.333,7.409-3.04a30.664,30.664,0,0,1,8.982,8.982c-2.7,2.134-4.018,5.05-3.04,7.409s3.965,3.49,7.388,3.086a30.664,30.664,0,0,1,0,12.7c-3.422-.4-6.413.731-7.388,3.086s.333,5.272,3.04,7.409a30.664,30.664,0,0,1-8.982,8.982c-2.134-2.7-5.051-4.018-7.409-3.04s-3.49,3.965-3.086,7.388a30.664,30.664,0,0,1-12.7,0c.4-3.422-.731-6.413-3.086-7.388s-5.273.333-7.409,3.04A30.664,30.664,0,0,1,7.01,49.686c2.7-2.134,4.018-5.051,3.04-7.409s-3.965-3.49-7.388-3.086Zm5.51-5.7a11.11,11.11,0,0,1,7.576,6.432,11.1,11.1,0,0,1-.808,9.9q.444.472.916.916a11.112,11.112,0,0,1,9.9-.808,11.11,11.11,0,0,1,6.432,7.576q.648.018,1.3,0a10.882,10.882,0,0,1,16.335-6.768q.472-.444.916-.916a10.882,10.882,0,0,1,6.768-16.335q.019-.648,0-1.3a10.882,10.882,0,0,1-6.768-16.335q-.446-.47-.916-.916a11.112,11.112,0,0,1-9.9.808,11.11,11.11,0,0,1-6.432-7.576q-.647-.017-1.295,0a11.11,11.11,0,0,1-6.432,7.576,11.1,11.1,0,0,1-9.9-.808q-.472.444-.916.916a11.112,11.112,0,0,1,.808,9.9,11.11,11.11,0,0,1-7.576,6.432Q8.154,32.839,8.172,33.486Zm24.667,8.6a9.25,9.25,0,1,1,9.25-9.25A9.25,9.25,0,0,1,32.839,42.089Zm0-6.167a3.083,3.083,0,1,0-3.083-3.083A3.083,3.083,0,0,0,32.839,35.922Z">
+                                        <Path.RenderTransform>
+                                            <ScaleTransform>
+                                                <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                                <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                            </ScaleTransform>
+                                        </Path.RenderTransform>
+                                    </Path>
+                                </Grid>
+                            </Viewbox>
+                            <TextBlock Visibility="Hidden"  HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="{DynamicResource ResourceKey=SidemenuItemForecolor}" Grid.Column="1">placeholder</TextBlock>
+                            <TextBlock FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="{DynamicResource ResourceKey=SidemenuItemForecolor}" Grid.Column="2">Settings</TextBlock>
+                        </Grid>
+                    </ToggleButton>
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="2" Grid.ColumnSpan="2" BorderThickness="1" BorderBrush="{DynamicResource ResourceKey=MainWindowBorderbrush}" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock VerticalAlignment="Center" Grid.Column="2" Foreground="#808080">Branch:</TextBlock>
+                    <TextBlock x:Name="txtblock_branch" VerticalAlignment="Center" Grid.Column="3" Foreground="#404040"></TextBlock>
+
+
+                    <TextBlock VerticalAlignment="Center" Grid.Column="4" Foreground="#808080">User Name:</TextBlock>
+                    <TextBlock x:Name="txtblock_user" VerticalAlignment="Center" Grid.Column="5" Foreground="#404040"></TextBlock>
+
+
+                    <TextBlock VerticalAlignment="Center" Grid.Column="6" Foreground="#808080">Authorization:</TextBlock>
+                    <TextBlock x:Name="txtblock_authorization" VerticalAlignment="Center" Grid.Column="7" Foreground="#404040"></TextBlock>
+
+
+                    <Grid Grid.Column="13" Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="5*"></ColumnDefinition>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Slider  Grid.Column="1" Style="{DynamicResource ResourceKey=SliderStyle }"
+                    Margin="10"
+                    VerticalAlignment="Center"
+                    x:Name="zoom"
+                    Minimum="0.5" Maximum="1.5" Value="1"  IsSnapToTickEnabled="True"
+                   TickFrequency="0.25"
+                   ></Slider>
+
+                        <Button x:Name="btn_zoomOut"  Template="{DynamicResource ResourceKey=emptybutton}"   Click="Button_Click_9" >
+                            <Viewbox >
+                                <Grid>
+                                    <Path x:Name="pthzoomout"  RenderTransformOrigin="0.5,0.5" 
+                              Fill="#404040"
+Data="M31.435,28.839,39.3,36.7l-2.6,2.6-7.862-7.864a16.529,16.529,0,1,1,2.6-2.6Zm-3.683-1.362a12.848,12.848,0,1,0-.275.275l.275-.275ZM11.181,16.689H25.87v3.672H11.181Z"                                  >
+
+
+                                        <Path.RenderTransform>
+                                            <ScaleTransform>
+                                                <ScaleTransform.ScaleX>.75</ScaleTransform.ScaleX>
+                                                <ScaleTransform.ScaleY>.75</ScaleTransform.ScaleY>
+                                            </ScaleTransform>
+                                        </Path.RenderTransform>
+
+                                       
+                                    </Path>
+                                </Grid>
+                            </Viewbox>
+
+
+                            <Button.Triggers>
+                                <EventTrigger RoutedEvent="MouseEnter">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation
+                Storyboard.TargetName="pthzoomout"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
+                To="1" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                            <DoubleAnimation
+                Storyboard.TargetName="pthzoomout"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
+                To="1" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+
+                                <EventTrigger RoutedEvent="MouseLeave">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation
+                Storyboard.TargetName="pthzoomout"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
+                To="0.75" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                            <DoubleAnimation
+                Storyboard.TargetName="pthzoomout"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
+                To="0.75" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Button.Triggers>
+                        </Button>
+
+                        <Button x:Name="btn_zommIN"  Template="{DynamicResource ResourceKey=emptybutton}"  Grid.Column="2" Click="Button_Click_8" >
+                            <Viewbox >
+                                <Grid>
+                                    <Path x:Name="pthzoomin"  RenderTransformOrigin="0.5,0.5" 
+                              Fill="#404040"
+Data="M31.435,28.839,39.3,36.7l-2.6,2.6-7.862-7.864a16.529,16.529,0,1,1,2.6-2.6Zm-3.683-1.362a12.848,12.848,0,1,0-.275.275l.275-.275ZM16.689,16.689V11.181h3.672v5.508H25.87v3.672H20.361V25.87H16.689V20.361H11.181V16.689Z"                                   
+                                  >
+
+
+                                        <Path.RenderTransform>
+                                            <ScaleTransform>
+                                                <ScaleTransform.ScaleX>.75</ScaleTransform.ScaleX>
+                                                <ScaleTransform.ScaleY>.75</ScaleTransform.ScaleY>
+                                            </ScaleTransform>
+                                        </Path.RenderTransform>
+                                    </Path>
+                                </Grid>
+                            </Viewbox>
+
+
+                            <Button.Triggers>
+                                <EventTrigger RoutedEvent="MouseEnter">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation
+                Storyboard.TargetName="pthzoomin"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
+                To="1" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                            <DoubleAnimation
+                Storyboard.TargetName="pthzoomin"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
+                To="1" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+
+                                <EventTrigger RoutedEvent="MouseLeave">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation
+                Storyboard.TargetName="pthzoomin"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
+                To="0.75" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                            <DoubleAnimation
+                Storyboard.TargetName="pthzoomin"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
+                To="0.75" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Button.Triggers>
+                        </Button>
+
+                    </Grid>
+
+                </Grid>
+            </Border>
+            <Border Grid.Column="1" Grid.Row="1"  BorderThickness=".1" BorderBrush="{DynamicResource ResourceKey=MainWindowBorderbrush}">
+
+
+                <customeadorner:AdornedControl x:Name="adorner1">
+                    <customeadorner:AdornedControl.AdornerContent>
+                        <local:LoadingWait></local:LoadingWait>
+                    </customeadorner:AdornedControl.AdornerContent>
+
+                    
+                    <TabControl BorderThickness="0"  x:Name="tab_windows">
+                        <TabControl.Resources>
+                            <Style TargetType="TabItem" x:Name="MyTab">
+                                <Setter Property="Visibility"  Value="Collapsed"/>
+                            </Style>
+                        </TabControl.Resources>
+                        <TabControl.ContentTemplate>
+                            <DataTemplate>
+                                <UserControl FlowDirection="LeftToRight" Content="{Binding content}"></UserControl>
+                            </DataTemplate>
+                        </TabControl.ContentTemplate>
+                    </TabControl>
+                    
+                </customeadorner:AdornedControl>
+                
+           
+            </Border>
+        </Grid>
+    </Grid>
+   
+    
+</Window>

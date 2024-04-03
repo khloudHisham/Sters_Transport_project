@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="StersTransport.UI.IdentityTypeSelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:StersTransport.UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <ListBox x:Name="lstbxContainer"  MinWidth="300"
+                   ItemContainerStyle="{DynamicResource ResourceKey=ListboxItemStyle}"
+                   PreviewKeyDown="lstbxContainer_PreviewKeyDown"
+                   
+                  
+    
+                 >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border   VerticalAlignment="Stretch"
+                               HorizontalAlignment="Stretch" Margin="1" Padding="1" BorderThickness="0.5"
+                              BorderBrush="{DynamicResource blue1}" CornerRadius="3">
+                        <Grid Margin="1">
+
+                            <Label HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  HorizontalContentAlignment="Center"
+                                      MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
+                                       FontWeight="Bold" 
+                                   Foreground="{DynamicResource LabelTitleForeColor}" 
+                                   Background="{DynamicResource lightmodebackground}"
+                                   Content="{Binding Path=Name}"></Label>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>  
+    </Grid>
+</UserControl>

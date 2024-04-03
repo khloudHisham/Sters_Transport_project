@@ -1,0 +1,172 @@
+﻿<UserControl x:Class="StersTransport.UI.UIReports_EUReport"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:StersTransport.UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#E4E4E4">
+        <Grid.Resources>
+            <Style TargetType="TextBox">
+
+                <Setter  Property="VerticalContentAlignment" Value="Center"></Setter>
+                <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                <Setter Property="FontWeight" Value="Bold"></Setter>
+            </Style>
+
+            <Style TargetType="ComboBox">
+                <Setter Property="FontWeight" Value="Bold"></Setter>
+            </Style>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontWeight" Value="Bold"></Setter>
+            </Style>
+
+        </Grid.Resources>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="1" BorderThickness="2,0,0,0" BorderBrush="#808080"></Border>
+
+
+        <Grid Margin="40,15,40,15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"></RowDefinition>
+                <RowDefinition Height=".7*"></RowDefinition>
+                <RowDefinition ></RowDefinition>
+                <RowDefinition Height=".7*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height=".7*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height=".7*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height=".7*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height=".7*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height=".7*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <TextBlock Margin="0,25,0,0" FontSize="14" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#236BC9">EU Report Data Per Office</TextBlock>
+            <TextBlock Grid.Row="1" VerticalAlignment="Center">Office Name</TextBlock>
+            <ComboBox
+                 
+                 x:Name="cmb_officeName"
+                 IsEditable="True"
+                 Background="White" Margin="0,5,0,5" Style="{DynamicResource StandardCombobox2}" Grid.Row="2"></ComboBox>
+
+            <TextBlock Grid.Row="3" VerticalAlignment="Center">Truck NO.</TextBlock>
+            <ComboBox
+                  IsEditable="True"
+                x:Name="cmb_TruckNo"
+                Background="White" Margin="0,5,0,5" Style="{DynamicResource StandardCombobox2}" Grid.Row="4"></ComboBox>
+
+            
+            <TextBlock Grid.Row="5" VerticalAlignment="Center">EU Country</TextBlock>
+            <ComboBox 
+                x:Name="cmb_EUCountry"
+                  IsEditable="True"
+                 
+                Background="White" Margin="0,5,0,5" Style="{DynamicResource StandardCombobox2}" Grid.Row="6"></ComboBox>
+
+            <TextBlock Grid.Row="7" VerticalAlignment="Center">Agent City</TextBlock>
+            <ComboBox 
+                x:Name="cmb_AgentCity"
+                  IsEditable="True"
+                 
+                Background="White" Margin="0,5,0,5" Style="{DynamicResource StandardCombobox2}" Grid.Row="8"></ComboBox>
+
+
+            <CheckBox  FontWeight="Bold" HorizontalAlignment="Left" FlowDirection="RightToLeft" Grid.Row="9" VerticalAlignment="Center">Date</CheckBox>
+            <DatePicker 
+               
+                   Foreground="#142D4E"
+                 
+                  Margin="0,5,0,5"  Style="{DynamicResource DatePickerStyle1}" Grid.Row="10"></DatePicker>
+
+            <Grid  Grid.Row="14">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    
+                </Grid.ColumnDefinitions>
+
+                <Button FontWeight="Bold"  Margin="4,4,4,4" Template="{DynamicResource ActionButtonGreenTemplate}">Excel Export</Button>
+
+                <Button FontWeight="Bold"   Grid.Column="1" Margin="4,4,4,4" Template="{DynamicResource ActionButtonBlueTemplate}">Germany Post</Button>
+
+                 
+            </Grid>
+
+
+        </Grid>
+
+
+
+
+        <Grid Grid.Column="1" Margin="40,15,40,15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition ></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <TextBlock Margin="0,25,0,0" FontSize="14" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#236BC9">EU Report Data Per Truck</TextBlock>
+            <RadioButton FontWeight="Bold" Grid.Row="1" VerticalAlignment="Center">Get Only Countries Accounts</RadioButton>
+            <RadioButton Grid.Row="2" FontWeight="Bold" VerticalAlignment="Center">Get All Agents Accounts</RadioButton>
+            <CheckBox  VerticalAlignment="Center" FontWeight="Bold" Grid.Row="3">Make Complete Shipment</CheckBox>
+            <CheckBox  VerticalAlignment="Center" FontWeight="Bold" Grid.Row="4">Print Preview</CheckBox>
+            
+
+
+            <TextBlock VerticalAlignment="Bottom" Grid.Row="5" >EU Truck No.</TextBlock>
+            <TextBox Margin="0,4,4,4" Grid.Row="6" Template="{DynamicResource standardTextbox2}" > </TextBox>
+
+            <TextBlock Grid.Row="7" VerticalAlignment="Bottom">Dep. Date KU</TextBlock>
+            <ComboBox 
+               
+                  IsEditable="True"
+                 
+                Background="White" Margin="0,5,0,5" Style="{DynamicResource StandardCombobox2}" Grid.Row="8"></ComboBox>
+
+
+            <TextBlock Grid.Row="9" VerticalAlignment="Bottom">Arrival Date NL</TextBlock>
+            <ComboBox 
+               
+                  IsEditable="True"
+                 
+                Background="White" Margin="0,5,0,5" Style="{DynamicResource StandardCombobox2}" Grid.Row="10"></ComboBox>
+
+            <Grid  Grid.Row="12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+
+                </Grid.ColumnDefinitions>
+
+                <Button FontWeight="Bold"  Margin="4,4,4,4" Template="{DynamicResource ActionButtonGreenTemplate}">Excel Export</Button>
+
+                <Button FontWeight="Bold"   Grid.Column="1" Margin="4,4,4,4" Template="{DynamicResource ActionButtonBlueTemplate}">PDF Report</Button>
+
+
+            </Grid>
+
+
+        </Grid>
+    </Grid>
+</UserControl>

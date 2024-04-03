@@ -1,0 +1,43 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:StersTransport.ResourceDictionaries.Datagrid">
+
+
+    <Style x:Key="DataGridStyle2" TargetType="{x:Type DataGrid}">
+        <Setter Property="ColumnHeaderStyle" Value="{DynamicResource ColumnHeaderStyle2}"/>
+        <Setter Property="HorizontalGridLinesBrush" Value="#236BC9"></Setter>
+        <Setter Property="VerticalGridLinesBrush" Value="#236BC9"></Setter>
+        <Setter Property="RowHeight" Value="30"></Setter>
+        <Setter Property="BorderThickness" Value="0.3"></Setter>
+        <Setter Property="CellStyle" Value="{DynamicResource DataGridContentCellCentering}"></Setter>
+
+
+
+    </Style>
+
+    <Style x:Key="ColumnHeaderStyle2"  TargetType="DataGridColumnHeader">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Background" Value="#FEC044"/>
+        <Setter Property="Foreground" Value="#404040"/>
+        <Setter Property="SeparatorBrush" Value="#236BC9" />
+        <Setter Property="Padding" Value="4" />
+        <Setter Property="BorderBrush" Value="White"/>
+        <Setter Property="BorderThickness" Value=".1,.1,.1,.1"/>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+
+    </Style>
+    
+    <Style x:Key="DataGridContentCellCentering" TargetType="{x:Type DataGridCell}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridCell}">
+                    <Grid Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

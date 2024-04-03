@@ -1,0 +1,494 @@
+﻿<Window x:Class="StersTransport.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StersTransport"
+           xmlns:CustomeControls="clr-namespace:StersTransport.CustomeControls"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="700" Width="1000"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded"
+        x:Name="window_login"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        SizeChanged="Window_SizeChanged"
+        StateChanged="window_login_StateChanged"
+         PreviewKeyDown="window_login_PreviewKeyDown"
+        MinWidth="800" MinHeight="600"
+        >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4.6*"></ColumnDefinition>
+            <ColumnDefinition Width="6.5*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2.5*"></RowDefinition>
+            <RowDefinition x:Name="row2" Height="20*"></RowDefinition>
+            <RowDefinition Height="1.5*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Background="#E4E4E4" Grid.Row="1" Panel.ZIndex="-1">
+            <Path   
+              Stroke="Black" StrokeThickness=".1"  >
+                <Path.Fill>
+                    <RadialGradientBrush
+                        GradientOrigin="0.6,0.5"
+                        Center="0.6,0.4" 
+                        RadiusX=".5"
+                        RadiusY=".5"
+                        >
+                        <RadialGradientBrush.GradientStops>
+                            <GradientStop Color="#236BC9" Offset="1" />
+                            <GradientStop Color="#E4E4E4"  Offset=".01" />
+             
+                        </RadialGradientBrush.GradientStops>
+
+                    </RadialGradientBrush>
+
+                     
+                </Path.Fill>
+                <Path.Data>
+                    <EllipseGeometry  x:Name="elips" 
+            Center="100,300"
+            RadiusX="250" 
+            RadiusY="350"
+                        />
+                </Path.Data>
+            </Path>
+        </Grid>
+
+
+
+
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Image  Source="pack://application:,,,/Resources/sters.png"></Image>
+            <Border 
+                Margin="10,20,10,20" Grid.Column="1" CornerRadius="5"
+                Background="#236BC9">
+
+            </Border>
+            <TextBlock VerticalAlignment="Center" 
+                       HorizontalAlignment="Center"
+                       Foreground="White"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Grid.Column="1">EUKnet</TextBlock>
+            <TextBlock VerticalAlignment="Center" 
+                       HorizontalAlignment="Center"
+                       Foreground="Black"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Grid.Column="2">TRANSPORT COMPANY</TextBlock>
+        </Grid>
+
+
+
+        <Grid  Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="1" Source="pack://application:,,,/Resources/sters.png"></Image>
+            <TextBlock VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Grid.Row="2"> Welcome To Our Wonderful World </TextBlock>
+        </Grid >
+
+        <Grid  Background="#E4E4E4" Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".5*"> </ColumnDefinition>
+                <ColumnDefinition Width=".5*"></ColumnDefinition>
+                <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition  Height="1*"></RowDefinition>
+                <RowDefinition  Height="1*"></RowDefinition>
+                <RowDefinition  Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+
+
+            <Border 
+                Grid.Row="2"
+                Margin="5,10,5,10" Grid.Column="1" CornerRadius="5"
+                Background="#236BC9">
+
+            </Border>
+            <TextBlock    Grid.Row="2" VerticalAlignment="Center" 
+                       HorizontalAlignment="Center"
+                       Foreground="White"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Grid.Column="1">EUKnet</TextBlock>
+            <TextBlock    Grid.Row="2" VerticalAlignment="Center" 
+                       HorizontalAlignment="Center"
+                       Foreground="Black"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Grid.Column="2">TRANSPORT COMPANY</TextBlock>
+
+
+
+
+            <Viewbox Grid.Row="4" Grid.Column="1">
+                <Grid>
+                    <Path RenderTransformOrigin=".5,.5" Fill="#000000" Data="M38.68,3a2.974,2.974,0,0,1,2.973,2.973V17.867A2.974,2.974,0,0,1,38.68,20.84H32.733v5.947H44.627A2.974,2.974,0,0,1,47.6,29.76v8.92h5.947a2.974,2.974,0,0,1,2.973,2.973V53.547a2.974,2.974,0,0,1-2.973,2.973H35.707a2.974,2.974,0,0,1-2.973-2.973V41.653a2.974,2.974,0,0,1,2.973-2.973h5.947V32.733H17.867V38.68h5.947a2.974,2.974,0,0,1,2.973,2.973V53.547a2.974,2.974,0,0,1-2.973,2.973H5.973A2.974,2.974,0,0,1,3,53.547V41.653A2.974,2.974,0,0,1,5.973,38.68H11.92V29.76a2.974,2.974,0,0,1,2.973-2.973H26.787V20.84H20.84a2.974,2.974,0,0,1-2.973-2.973V5.973A2.974,2.974,0,0,1,20.84,3ZM20.84,44.627H8.947v5.947H20.84Zm29.733,0H38.68v5.947H50.573ZM35.707,8.947H23.813v5.947H35.707Z">
+
+                        <Path.RenderTransform>
+                            <ScaleTransform>
+                                <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                            </ScaleTransform>
+                        </Path.RenderTransform>
+                    </Path>
+                </Grid>
+                
+            </Viewbox>
+
+            <CustomeControls:ComboboxEX FontWeight="Bold"  Grid.Row="4" Grid.Column="2" x:Name="cmb_officeName"
+                ItemsSource="{Binding agents}" 
+                                          SelectedValuePath="Id"
+                                          SelectedItem="{Binding selectedAgent}"
+                                          TextSearch.TextPath="AgentName"
+                                        SelectionChanged="cmb_officeName_SelectionChanged"
+                 Margin="5,10,5,10"
+                 IsEditable="True"
+                 CBPlaceHolder="Office Name"
+                  Background="#E4E4E4"
+                 Foreground="#142D4E"
+                 Style="{DynamicResource ResourceKey=StandardCombobox2}" 
+                >
+
+                <CustomeControls:ComboboxEX.ItemTemplate>
+                    <DataTemplate>
+                        <Border VerticalAlignment="Stretch"
+                                     
+                                     
+                                HorizontalAlignment="Stretch" Margin="2" Padding="2" BorderThickness="1"
+                                     Background="#FFFFFF"
+                                     BorderBrush="#404040"
+                                CornerRadius="4">
+                            <Grid Margin="3">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.Resources>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="0,0,0,4" />
+                                        <Setter Property="Background" Value="#FFFFFF"></Setter>
+                                        
+                                    </Style>
+                                </Grid.Resources>
+                                <TextBlock Foreground="#404040" FontWeight="Bold" Padding="2" Text="{Binding Path=AgentName}"></TextBlock>
+                                <TextBlock Foreground="#808080" Grid.Column="1"   Padding="2" Text="{Binding Path=Country.CountryName}"></TextBlock>
+                            </Grid>
+
+                        </Border>
+                    </DataTemplate>
+                </CustomeControls:ComboboxEX.ItemTemplate>
+
+            </CustomeControls:ComboboxEX>
+
+
+
+            <Viewbox Grid.Row="5" Grid.Column="1">
+                <Grid>
+                    <Path RenderTransformOrigin=".5,.5" Fill="#000000"
+                          Data="M51.36,63.76H4V57.783A14.872,14.872,0,0,1,18.8,42.84H36.56a14.872,14.872,0,0,1,14.8,14.943Zm-23.68-26.9A17.932,17.932,0,1,1,45.44,18.931,17.846,17.846,0,0,1,27.68,36.863Z">
+
+                        <Path.RenderTransform>
+                            <ScaleTransform>
+                                <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                            </ScaleTransform>
+                        </Path.RenderTransform>
+                    </Path>
+                </Grid>
+
+            </Viewbox>
+
+            <CustomeControls:ComboboxEX  FontWeight="Bold" Grid.Row="5" Grid.Column="2" x:Name="cmb_user"
+                ItemsSource="{Binding users}" 
+                                          SelectedValuePath="Id"
+                                          TextSearch.TextPath="UserName"
+                                         SelectedItem="{Binding selecteduser}"
+                                        
+                 Margin="5,10,5,10"
+                 IsEditable="True"
+                 CBPlaceHolder="User Name"
+                  Background="#E4E4E4"
+                 Foreground="#142D4E"
+                 Style="{DynamicResource ResourceKey=StandardCombobox2}" 
+                >
+
+                <CustomeControls:ComboboxEX.ItemTemplate>
+                    <DataTemplate>
+                        <Border VerticalAlignment="Stretch"
+                                     
+                                     
+                                HorizontalAlignment="Stretch" Margin="5" Padding="5" BorderThickness="1"
+                                     Background="#FFFFFF"
+                                     BorderBrush="#404040"
+                                CornerRadius="4">
+                            <Grid Margin="3">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.Resources>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="0,0,0,4" />
+                                        <Setter Property="Background" Value="#FFFFFF"></Setter>
+                                        <Setter Property="Foreground" Value="#404040"></Setter>
+                                    </Style>
+                                </Grid.Resources>
+                                <TextBlock  FontWeight="Bold" Padding="2" Text="{Binding Path=UserName}"></TextBlock>
+                                
+                                <!--
+                                <Viewbox Grid.Column="1">
+                                    <Grid>
+                                        <Path RenderTransformOrigin="0.5,0.5" x:Name="pthisloginenabled"
+                                              Data="M9.875,0.625C4.697,0.625,0.5,4.822,0.5,10s4.197,9.375,9.375,9.375S19.25,15.178,19.25,10S15.053,0.625,9.875,0.625"
+                                              >
+                                            <Path.RenderTransform>
+                                                <ScaleTransform>
+                                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                                </ScaleTransform>
+                                            </Path.RenderTransform>
+                                            <Path.Style>
+                                                <Style TargetType="Path">
+                                                    <Setter Property="Fill" Value="#00BB7E">
+
+                                                    </Setter>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding UserStateLoging}" Value="{x:Null}">
+                                                            <Setter Property="Fill" Value="#E4E4E4"></Setter>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding UserStateLoging}" Value="False">
+                                                            <Setter Property="Fill" Value="#E4E4E4"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Path.Style>
+                                        </Path>
+                                    </Grid>
+                                </Viewbox>
+                               
+                                -->
+
+
+                            </Grid>
+
+                        </Border>
+                 
+                    </DataTemplate>
+                </CustomeControls:ComboboxEX.ItemTemplate>
+
+            </CustomeControls:ComboboxEX>
+
+
+
+
+
+            <Viewbox Grid.Row="6" Grid.Column="1">
+                <Grid>
+                    <Path RenderTransformOrigin=".5,.5" Fill="#000000"
+Data="M47.6,21.92h5.947a2.981,2.981,0,0,1,2.973,2.989V60.771a2.981,2.981,0,0,1-2.973,2.989H5.973A2.981,2.981,0,0,1,3,60.771V24.909A2.981,2.981,0,0,1,5.973,21.92H11.92V18.931a17.84,17.84,0,1,1,35.68,0Zm-5.947,0V18.931a11.894,11.894,0,1,0-23.787,0V21.92ZM26.787,39.851v5.977h5.947V39.851Zm-11.893,0v5.977H20.84V39.851Zm23.787,0v5.977h5.947V39.851Z"                          
+                          >
+
+                        <Path.RenderTransform>
+                            <ScaleTransform>
+                                <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                            </ScaleTransform>
+                        </Path.RenderTransform>
+                    </Path>
+                </Grid>
+
+            </Viewbox>
+            <Grid Grid.Row="6" Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                   
+                </Grid.ColumnDefinitions>
+                <TextBox 
+                    TextChanged="txtbx1_TextChanged"
+                      Background="#E4E4E4"
+                 Foreground="#142D4E"
+                    VerticalContentAlignment="Center" Margin="5,10,5,10"  x:Name="txtbx1" Template="{DynamicResource standardTextbox2}"></TextBox>
+                <PasswordBox
+                      Background="#E4E4E4"
+                 Foreground="#142D4E"
+                    VerticalContentAlignment="Center" Margin="5,10,5,10" x:Name="passbox1" Template="{DynamicResource standardPasswordBox1}"></PasswordBox>
+
+                <ToggleButton HorizontalAlignment="Right" VerticalAlignment="Center"
+                  
+                    Checked="tgl_showhide_checked"  Unchecked="tgl_showhide_Unchecked" x:Name="tgl_showhide" 
+                              Template="{DynamicResource NormalToggleButtonTemplate}"
+                              Grid.Column="0" >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+
+                        </Grid.ColumnDefinitions>
+                        <Viewbox Grid.Column="1">
+                            <Grid>
+                                <Path x:Name="path" RenderTransformOrigin="0.5,0.5"  >
+                                    <Path.RenderTransform>
+                                        <ScaleTransform ScaleX="0.5" ScaleY="0.5"></ScaleTransform>
+                                    </Path.RenderTransform>
+                                    <Path.Style>
+                                        <Style TargetType="{x:Type Path}">
+                                            <Setter Property="Data" Value=""/>
+                                            <Style.Triggers>
+                                                <DataTrigger
+                                                    Binding="{Binding ElementName=tgl_showhide ,Path=IsChecked}"
+                                                    Value="True"
+                                                    >
+                                                    <Setter Property="Data" Value="M32.158,23.948c4.425,0 8.018,3.593 8.018,8.017c0,4.425 -3.593,8.017 -8.018,8.017c-4.424,0 -8.017,-3.592 -8.017,-8.017c0,-4.424 3.593,-8.017 8.017,-8.017Zm0,4.009c2.213,0 4.009,1.796 4.009,4.008c0,2.213 -1.796,4.009 -4.009,4.009c-2.212,0 -4.008,-1.796 -4.008,-4.009c0,-2.212 1.796,-4.008 4.008,-4.008Z"></Setter>
+                                                    <Setter Property="Fill" Value="#236BC9"></Setter>
+                                                </DataTrigger>
+
+
+                                                <DataTrigger
+                                                    Binding="{Binding ElementName=tgl_showhide ,Path=IsChecked}"
+                                                    Value="False"
+                                                    >
+                                                    <Setter Property="Data" Value="M25.054,27.92l2.399,2.398c-0.157,0.477 -0.243,0.987 -0.243,1.516c0,2.672 2.169,4.841 4.841,4.841c0.529,0 1.039,-0.085 1.516,-0.243l2.399,2.399c-1.158,0.65 -2.494,1.02 -3.915,1.02c-4.425,0 -8.017,-3.592 -8.017,-8.017c0,-1.421 0.371,-2.756 1.02,-3.914Zm6.849,-4.101c0.049,-0.001 0.099,-0.002 0.148,-0.002c4.425,0 8.017,3.593 8.017,8.017c0,0.05 0,0.099 -0.001,0.148l-8.164,-8.163Z"></Setter>
+                                                    <Setter Property="Fill" Value="#404040"></Setter>
+                                                </DataTrigger>
+
+
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Path.Style>
+                                </Path>
+
+                                <Path x:Name="path2" RenderTransformOrigin="0.5,0.5"  >
+                                    <Path.RenderTransform>
+                                        <ScaleTransform ScaleX="0.5" ScaleY="0.5"></ScaleTransform>
+                                    </Path.RenderTransform>
+                                    <Path.Style>
+                                        <Style TargetType="{x:Type Path}">
+                                            <Setter Property="Data" Value=""/>
+                                            <Style.Triggers>
+                                                <DataTrigger
+                                                    Binding="{Binding ElementName=tgl_showhide ,Path=IsChecked}"
+                                                    Value="True"
+                                                    >
+                                                    <Setter Property="Data" Value="M32.513,13.926c10.574,0.15 19.249,9.657 23.594,17.837c0,0 -1.529,3.129 -2.963,5.132c-0.694,0.969 -1.424,1.913 -2.191,2.826c-0.547,0.65 -1.112,1.283 -1.698,1.898c-5.237,5.5 -12.758,9.603 -20.7,8.01c-8.823,-1.77 -16.02,-9.33 -20.346,-17.461c0,0 1.536,-3.132 2.978,-5.132c0.646,-0.897 1.324,-1.77 2.034,-2.617c0.544,-0.649 1.108,-1.282 1.691,-1.897c4.627,-4.876 10.564,-8.63 17.601,-8.596Zm-0.037,4c-5.89,-0.022 -10.788,3.267 -14.663,7.35c-0.527,0.555 -1.035,1.127 -1.527,1.713c-0.647,0.772 -1.265,1.569 -1.854,2.386c-0.589,0.816 -1.193,1.846 -1.672,2.721c3.814,6.409 9.539,12.198 16.582,13.611c6.563,1.317 12.688,-2.301 17.016,-6.846c0.529,-0.555 1.04,-1.128 1.534,-1.715c0.7,-0.833 1.366,-1.694 1.999,-2.579c0.586,-0.819 1.189,-1.851 1.667,-2.727c-3.958,-6.625 -10.73,-13.784 -19.082,-13.914Z"></Setter>
+                                                    <Setter Property="Fill" Value="#236BC9"></Setter>
+                                                </DataTrigger>
+
+
+                                                <DataTrigger
+                                                    Binding="{Binding ElementName=tgl_showhide ,Path=IsChecked}"
+                                                    Value="False"
+                                                    >
+                                                    <Setter Property="Data" Value="M17.119,19.984l2.915,2.915c-3.191,2.717 -5.732,6.099 -7.374,9.058l-0.005,0.01c4.573,7.646 11.829,14.872 20.987,13.776c2.472,-0.296 4.778,-1.141 6.885,-2.35l2.951,2.95c-4.107,2.636 -8.815,4.032 -13.916,3.342c-9.198,-1.244 -16.719,-8.788 -21.46,-17.648c2.226,-4.479 5.271,-8.764 9.017,-12.053Zm6.63,-4.32c2.572,-1.146 5.355,-1.82 8.327,-1.868c0.165,-0.001 2.124,0.092 3.012,0.238c0.557,0.092 1.112,0.207 1.659,0.35c8.725,2.273 15.189,9.649 19.253,17.248c-1.705,3.443 -3.938,6.803 -6.601,9.682l-2.827,-2.827c1.967,-2.12 3.607,-4.48 4.87,-6.769c0,0 -1.27,-2.042 -2.233,-3.324c-0.619,-0.824 -1.27,-1.624 -1.954,-2.395c-0.54,-0.608 -2.637,-2.673 -3.136,-3.103c-3.348,-2.879 -7.279,-5.138 -11.994,-5.1c-1.826,0.029 -3.582,0.389 -5.249,0.995l-3.127,-3.127Z"></Setter>
+                                                    <Setter Property="Fill" Value="#404040"></Setter>
+                                                </DataTrigger>
+
+
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Path.Style>
+                                </Path>
+                            </Grid>
+                        </Viewbox>
+
+                    </Grid>
+
+
+
+                </ToggleButton>
+            </Grid>
+
+
+            <Grid Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button FontWeight="Bold" Click="Button_Click" Margin="10" Template="{DynamicResource ActionButtonBlueTemplate}">Login</Button>
+                <Button FontWeight="Bold" Click="Button_Click_1" Margin="10" Grid.Column="1" Template="{DynamicResource ActionButtonPinkTemplate}">Exit</Button>
+                
+                
+            </Grid>
+            <Grid Grid.Row="8" Grid.Column="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Margin="10"><Hyperlink Click="Hyperlink_Click">Change Password</Hyperlink></TextBlock>
+                <TextBlock Visibility="Collapsed" Margin="10" Grid.Column="1"><Hyperlink Click="Hyperlink_Click_1">Forgot Password?</Hyperlink></TextBlock>
+            </Grid>
+            <StackPanel Orientation="Horizontal" Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="2">
+
+                <Button
+                  ToolTip="Change Database Connection Settings"
+                Template="{DynamicResource emptybutton}"
+                Click="Button_Click_2" Margin="10"  >
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Viewbox Grid.Column="0">
+                            <Grid>
+                                <Path RenderTransformOrigin=".5,.5" Fill="#000000"
+                            
+                              Data="M5,12.5c0,.313.461.858,1.53,1.393A12.665,12.665,0,0,0,12,15a12.665,12.665,0,0,0,5.47-1.107C18.539,13.358,19,12.813,19,12.5V10.329A13.762,13.762,0,0,1,12,12a13.773,13.773,0,0,1-7-1.671Zm14,2.829A13.762,13.762,0,0,1,12,17a13.773,13.773,0,0,1-7-1.671V17.5c0,.313.461.858,1.53,1.393A12.665,12.665,0,0,0,12,20a12.665,12.665,0,0,0,5.47-1.107C18.539,18.358,19,17.813,19,17.5ZM3,17.5V7.5C3,5.015,7.03,3,12,3s9,2.015,9,4.5v10c0,2.485-4.03,4.5-9,4.5S3,19.985,3,17.5ZM12,10a12.665,12.665,0,0,0,5.47-1.107C18.539,8.358,19,7.813,19,7.5s-.461-.858-1.53-1.393A12.665,12.665,0,0,0,12,5,12.665,12.665,0,0,0,6.53,6.107C5.461,6.642,5,7.187,5,7.5s.461.858,1.53,1.393A12.665,12.665,0,0,0,12,10Z"
+                          >
+
+                                    <Path.RenderTransform>
+                                        <ScaleTransform>
+                                            <ScaleTransform.ScaleX>.9</ScaleTransform.ScaleX>
+                                            <ScaleTransform.ScaleY>.9</ScaleTransform.ScaleY>
+                                        </ScaleTransform>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Grid>
+
+                        </Viewbox>
+                        <TextBlock Margin="10,0,0,0" Grid.Column="1" HorizontalAlignment="Right"  VerticalAlignment="Center" >Change Database Connection Settings</TextBlock>
+                    </Grid>
+                   
+                </Button>
+               
+            </StackPanel>
+           
+
+        </Grid>
+
+    </Grid>
+</Window>

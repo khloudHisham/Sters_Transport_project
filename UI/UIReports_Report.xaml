@@ -1,0 +1,688 @@
+﻿    <UserControl x:Class="StersTransport.UI.UIReports_Report"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:StersTransport.UI"
+                   xmlns:CustomeControls="clr-namespace:StersTransport.CustomeControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800"
+                   DataContext="{Binding RelativeSource={RelativeSource Self}}"
+                 Loaded="UserControl_Loaded"
+                 >
+    <Grid Background="#E4E4E4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1.5*"></RowDefinition>
+                <RowDefinition Height="0.2*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+    
+
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="FontWeight" Value="Bold"></Setter>
+                </Style>
+            </Grid.Resources>
+            <Grid
+                Margin="5,15,5,15">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border  Background="#F7F7F7" Grid.RowSpan="2" BorderBrush="#EA2AFF" BorderThickness="1" CornerRadius="4">
+                </Border>
+                <Border CornerRadius="4,4,0,0" Background="#EA2AFF" ></Border>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Viewbox>
+                        <Grid>
+                            <Path RenderTransformOrigin=".5,.5" Fill="#404040" Data="M23,12l-7.071,7.071-1.414-1.414L20.172,12,14.515,6.343l1.414-1.414ZM3.828,12l5.657,5.657L8.071,19.071,1,12,8.071,4.929,9.485,6.343Z">
+                                <Path.RenderTransform>
+                                    <ScaleTransform>
+                                        <ScaleTransform.ScaleX>.75</ScaleTransform.ScaleX>
+                                        <ScaleTransform.ScaleY>.75</ScaleTransform.ScaleY>
+                                    </ScaleTransform>
+                                </Path.RenderTransform>
+                            </Path>
+
+                        </Grid>
+                        
+                    </Viewbox>
+                    <TextBlock Foreground="#404040" Grid.Row="1" HorizontalAlignment="Center">Total Codes</TextBlock>
+                </Grid>
+                <Viewbox Grid.Row="1">
+                    <ProgressBar 
+                                    
+                                    Style="{DynamicResource ResourceKey=progressbar1}"
+                                    Value="{Binding totalcodes}">
+                        <ProgressBar.Triggers>
+                            <EventTrigger RoutedEvent="ProgressBar.ValueChanged">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Value" To="{Binding}" Duration="0:0:0.08" RepeatBehavior="Forever"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ProgressBar.Triggers>
+
+                    </ProgressBar>
+                </Viewbox>
+            </Grid>
+
+            <Grid Grid.Column="1"
+                Margin="5,15,5,15">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border  Background="#F7F7F7" Grid.RowSpan="2" BorderBrush="#00D1FA" BorderThickness="1" CornerRadius="4">
+                </Border>
+                <Border CornerRadius="4,4,0,0" Background="#00D1FA" ></Border>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Viewbox>
+                        <Grid>
+                            <Path RenderTransformOrigin=".5,.5" Fill="#404040" 
+                                  Data="M481.82,113.212L248.656,25.904c-2.302-0.857-4.854-0.857-7.157,0L6.707,113.822c-4.122,1.199-9.106,7.707-5.419,14.367
+	v246.524c0,4.356,2.761,8.224,6.878,9.65l231.043,79.744c1.371,0.788,2.428,1.48,4.85,1.801c3.394,0.45,5.542-0.502,5.558-0.507
+	l234.792-81.038c4.117-1.426,6.879-5.294,6.879-9.65V123.382C491.374,118.49,485.637,114.565,481.82,113.212z M450.76,123.382
+	l-205.07,76.793l-61.542-23.04l195.319-80.45L450.76,123.382z M351.383,86.168l-205.248,84.537l-5.054,49.097l-38.212-15.392
+	v-45.568l212.879-86.019L351.383,86.168z M245.078,46.361l42.396,15.875L90.17,141.947l-50.172-18.791L245.078,46.361z
+	 M21.706,138.559l60.747,22.749v56.879l76.163,30.686l5.852-56.86l71.613,26.818v222.595l-214.375-73.99V138.559z M470.872,367.435
+	l-214.375,73.99V218.377l214.375-80.271V367.435z">
+                                <Path.RenderTransform>
+                                    <ScaleTransform>
+                                        <ScaleTransform.ScaleX>.7</ScaleTransform.ScaleX>
+                                        <ScaleTransform.ScaleY>.7</ScaleTransform.ScaleY>
+                                    </ScaleTransform>
+                                </Path.RenderTransform>
+                            </Path>
+
+                        </Grid>
+
+                    </Viewbox>
+                    <TextBlock  Foreground="#404040" Grid.Row="1" HorizontalAlignment="Center">Total Boxes</TextBlock>
+                </Grid>
+                <Viewbox Grid.Row="1">
+                    <ProgressBar 
+                                    
+                                    Style="{DynamicResource ResourceKey=progressbar1}"
+                                    Value="{Binding totalboxes}">
+                        <ProgressBar.Triggers>
+                            <EventTrigger RoutedEvent="ProgressBar.ValueChanged">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Value" To="{Binding}" Duration="0:0:0.08" RepeatBehavior="Forever"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ProgressBar.Triggers>
+
+                    </ProgressBar>
+                </Viewbox>
+            </Grid>
+
+            <Grid Grid.Column="2"
+                Margin="5,15,5,15">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border  Background="#F7F7F7" Grid.RowSpan="2" BorderBrush="#FEC044" BorderThickness="1" CornerRadius="4">
+                </Border>
+                <Border CornerRadius="4,4,0,0" Background="#FEC044" ></Border>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Viewbox>
+                        <Grid>
+                            <Path RenderTransformOrigin=".5,.5" Fill="#404040" 
+                                  Data="M509.472,291.046a9.915,9.915,0,0,0-.081-1.227c0-.027-.01-.054-.014-.081a10.082,10.082,0,0,0-.219-1.091c-.026-.1-.055-.2-.083-.3-.084-.292-.184-.581-.3-.868-.039-.1-.074-.2-.116-.3a10.151,10.151,0,0,0-.522-1.057l-.018-.031a10.06,10.06,0,0,0-.652-.977c-.063-.085-.133-.166-.2-.248q-.288-.361-.6-.691c-.072-.075-.144-.15-.218-.222a9.879,9.879,0,0,0-.838-.737c-.021-.016-.04-.035-.061-.051a10.03,10.03,0,0,0-1.021-.683c-.026-.015-.049-.035-.075-.05l-116.7-67.369V80.316c0-.029-.005-.056-.006-.085A10.013,10.013,0,0,0,387.671,79c0-.021-.008-.041-.011-.061a9.8,9.8,0,0,0-.224-1.114c-.024-.1-.052-.19-.079-.285-.086-.3-.188-.6-.3-.89-.036-.092-.069-.186-.108-.276a9.222,9.222,0,0,0-1.2-2.077c-.06-.081-.127-.158-.19-.237q-.293-.368-.613-.7c-.07-.073-.141-.147-.213-.218a10.1,10.1,0,0,0-.84-.74l-.059-.05a10.092,10.092,0,0,0-1.024-.685c-.025-.015-.047-.034-.072-.048L261.023,1.346a10.048,10.048,0,0,0-10.047,0L129.265,71.615c-.024.014-.044.031-.068.045a10.009,10.009,0,0,0-1.031.69c-.016.012-.03.026-.046.039a10.058,10.058,0,0,0-.853.75c-.071.07-.141.142-.21.214q-.321.334-.613.7c-.063.079-.13.157-.191.239a9.268,9.268,0,0,0-1.2,2.072c-.04.094-.074.192-.112.287q-.171.435-.3.877c-.028.1-.056.195-.082.293a10.024,10.024,0,0,0-.221,1.1c0,.025-.01.048-.013.073a9.946,9.946,0,0,0-.081,1.229c0,.029-.006.058-.006.087V215.062L7.545,282.433c-.025.014-.046.033-.07.047a9.848,9.848,0,0,0-1.028.688c-.016.012-.031.027-.047.039a9.714,9.714,0,0,0-.852.751c-.072.07-.141.143-.211.215q-.319.333-.612.7c-.064.08-.132.159-.193.241a10.1,10.1,0,0,0-.657.985c0,.005-.007.01-.01.016a9.971,9.971,0,0,0-.527,1.068c-.041.1-.076.2-.115.294-.112.287-.212.578-.3.87-.029.1-.057.2-.083.3a9.9,9.9,0,0,0-.22,1.094c0,.026-.01.052-.014.079a9.933,9.933,0,0,0-.081,1.229c0,.029-.006.057-.006.086V431.682h0a10.047,10.047,0,0,0,5.023,8.7l121.721,70.268c.024.014.051.023.075.037a10.076,10.076,0,0,0,1.108.546l.069.025a10.057,10.057,0,0,0,1.063.359c.1.028.2.052.3.076.3.073.6.132.9.178.1.016.206.035.31.047a9.3,9.3,0,0,0,2.388,0c.1-.012.207-.032.31-.047.306-.046.607-.1.9-.178.1-.025.2-.049.3-.077a9.723,9.723,0,0,0,1.057-.357c.025-.01.05-.017.075-.028a9.832,9.832,0,0,0,1.1-.544c.025-.014.052-.024.078-.038L256,443.281,372.683,510.65c.026.015.053.024.079.039a9.979,9.979,0,0,0,1.1.543c.026.011.053.018.079.029a9.882,9.882,0,0,0,1.054.356c.1.028.2.052.3.077.3.073.6.132.9.178.1.016.207.035.311.047a9.3,9.3,0,0,0,2.388,0c.1-.012.207-.032.311-.047.3-.046.607-.1.9-.178.1-.025.2-.049.3-.077a9.746,9.746,0,0,0,1.054-.356c.026-.01.053-.018.079-.029a10.161,10.161,0,0,0,1.1-.543c.026-.015.053-.024.079-.039L504.45,440.382a10.045,10.045,0,0,0,5.024-8.7V291.135A.663.663,0,0,0,509.472,291.046Zm-90.884-34.981L316.97,314.734l-40.877-23.6,101.616-58.667Zm-50.925-41L266.047,273.732V156.4L367.663,97.72ZM256,21.648l40.877,23.6-101.619,58.67-40.875-23.6ZM134.288,232.467l40.872,23.6L73.54,314.732l-40.876-23.6ZM124.242,484.551,22.615,425.883V308.536L65.9,333.525a10.009,10.009,0,0,0,4.845,2.8l53.5,30.884V484.551ZM134.289,349.8,93.636,326.334l101.617-58.669,40.652,23.47Zm111.663,76.08L144.336,484.55V367.2l101.616-58.669Zm0-152.15L144.336,215.066V97.719L187.6,122.7a10.01,10.01,0,0,0,4.881,2.818L245.953,156.4V273.733Zm-30.6-158.211L316.97,56.849l40.646,23.467L256,138.993Zm152.31,369.027L266.047,425.883V308.536l43.285,24.99a10.015,10.015,0,0,0,4.836,2.792L367.663,367.2V484.549ZM377.71,349.8l-40.646-23.467,101.618-58.67,40.652,23.469Zm111.673,76.08L387.757,484.551V367.2l101.626-58.669Z">
+                                <Path.RenderTransform>
+                                    <ScaleTransform>
+                                        <ScaleTransform.ScaleX>.7</ScaleTransform.ScaleX>
+                                        <ScaleTransform.ScaleY>.7</ScaleTransform.ScaleY>
+                                    </ScaleTransform>
+                                </Path.RenderTransform>
+                            </Path>
+
+                        </Grid>
+
+                    </Viewbox>
+                    <TextBlock Foreground="#404040" Grid.Row="1" HorizontalAlignment="Center">Total pallets</TextBlock>
+                </Grid>
+                <Viewbox Grid.Row="1">
+                    <ProgressBar 
+                                    
+                                    Style="{DynamicResource ResourceKey=progressbar1}"
+                                    Value="{Binding totalpallets}">
+                        <ProgressBar.Triggers>
+                            <EventTrigger RoutedEvent="ProgressBar.ValueChanged">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Value" To="{Binding}" Duration="0:0:0.08" RepeatBehavior="Forever"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ProgressBar.Triggers>
+
+                    </ProgressBar>
+                </Viewbox>
+            </Grid>
+
+            <Grid
+                 Margin="5,15,5,15"
+                Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border Background="#F7F7F7" Grid.RowSpan="2" BorderBrush="#07E49C" BorderThickness="1" CornerRadius="4">
+                </Border>
+                <Border CornerRadius="4,4,0,0" Background="#07E49C" ></Border>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Viewbox>
+                        <Grid>
+                            <Path RenderTransformOrigin=".5,.5" Fill="#404040"
+                                  Data="M5.671,4.257A10,10,0,1,1,2.25,9.767l.077-.313,1.934.51a8,8,0,1,0,3.053-4.45l-.221.166L8.11,6.7l-4.6,1.06,1.06-4.6,1.1,1.1ZM13,6V8h2.5v2H10a.5.5,0,0,0-.09.992L10,11h4a2.5,2.5,0,0,1,0,5H13v2H11V16H8.5V14H14a.5.5,0,0,0,.09-.992L14,13H10a2.5,2.5,0,1,1,0-5h1V6Z">
+                                <Path.RenderTransform>
+                                    <ScaleTransform>
+                                        <ScaleTransform.ScaleX>.75</ScaleTransform.ScaleX>
+                                        <ScaleTransform.ScaleY>.75</ScaleTransform.ScaleY>
+                                    </ScaleTransform>
+                                </Path.RenderTransform>
+                            </Path>
+
+                        </Grid>
+
+                    </Viewbox>
+                    <TextBlock Foreground="#404040" Grid.Row="1" HorizontalAlignment="Center">Total Cash In</TextBlock>
+                </Grid>
+                <Viewbox Grid.Row="1">
+                    <ProgressBar 
+                                    
+                                    Style="{DynamicResource ResourceKey=progressbar1}"
+                                    Value="{Binding totalcashIN}">
+                        <ProgressBar.Triggers>
+                            <EventTrigger RoutedEvent="ProgressBar.ValueChanged">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Value" To="{Binding}" Duration="0:0:0.08" RepeatBehavior="Forever"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ProgressBar.Triggers>
+
+                    </ProgressBar>
+                </Viewbox>
+            </Grid>
+            
+            <Grid 
+                 Margin="5,15,5,15"
+                Grid.Row="0" Grid.Column="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border Background="#F7F7F7" Grid.RowSpan="2" BorderBrush="#2A9CFF" BorderThickness="1" CornerRadius="4">
+                </Border>
+                <Border CornerRadius="4,4,0,0" Background="#2A9CFF" ></Border>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Viewbox>
+                        <Grid>
+                            <Path RenderTransformOrigin=".5,.5" Fill="#404040"
+                                  Data="M33.734,33.3H2.467a2.275,2.275,0,0,1-2.24-2.671L4.241,7.879A2.271,2.271,0,0,1,6.482,6H29.72a2.271,2.271,0,0,1,2.24,1.879l4.015,22.75a2.275,2.275,0,0,1-2.24,2.671ZM6.482,7.517a.76.76,0,0,0-.748.626L1.719,30.893a.76.76,0,0,0,.748.89H33.734a.76.76,0,0,0,.748-.89L30.468,8.143a.76.76,0,0,0-.748-.626Z">
+                                <Path.RenderTransform>
+                                    <ScaleTransform>
+                                        <ScaleTransform.ScaleX>.75</ScaleTransform.ScaleX>
+                                        <ScaleTransform.ScaleY>.75</ScaleTransform.ScaleY>
+                                    </ScaleTransform>
+                                </Path.RenderTransform>
+                            </Path>
+
+                            <Path RenderTransformOrigin=".8,.5" Fill="#404040"
+                                  Data="M13.808,10.617a5.308,5.308,0,1,1,5.308-5.308A5.314,5.314,0,0,1,13.808,10.617Zm0-9.1A3.792,3.792,0,1,0,17.6,5.308,3.8,3.8,0,0,0,13.808,1.517Z">
+                                <Path.RenderTransform>
+                                    <ScaleTransform>
+                                        <ScaleTransform.ScaleX>.75</ScaleTransform.ScaleX>
+                                        <ScaleTransform.ScaleY>.75</ScaleTransform.ScaleY>
+                                    </ScaleTransform>
+                                </Path.RenderTransform>
+                            </Path>
+
+                            <Path RenderTransformOrigin=".8,.5" Fill="#404040"
+                                  Data="M6.758,23.133A.759.759,0,0,1,6,22.375V11.758a.758.758,0,1,1,1.517,0V22.375A.759.759,0,0,1,6.758,23.133Z">
+                                <Path.RenderTransform>
+                                    <ScaleTransform>
+                                        <ScaleTransform.ScaleX>.75</ScaleTransform.ScaleX>
+                                        <ScaleTransform.ScaleY>.75</ScaleTransform.ScaleY>
+                                    </ScaleTransform>
+                                </Path.RenderTransform>
+                            </Path>
+
+                            <Path RenderTransformOrigin=".8,.5" Fill="#404040"
+                                  Data="M16.792,23.133A3.8,3.8,0,0,1,13,19.342v-4.55a3.792,3.792,0,0,1,7.583,0,.758.758,0,0,1-1.517,0,2.275,2.275,0,1,0-4.55,0v4.55a2.275,2.275,0,1,0,4.55,0v-.758H16.792a.758.758,0,0,1,0-1.517h3.033a.759.759,0,0,1,.758.758v1.517A3.8,3.8,0,0,1,16.792,23.133Z">
+                                <Path.RenderTransform>
+                                    <ScaleTransform>
+                                        <ScaleTransform.ScaleX>.75</ScaleTransform.ScaleX>
+                                        <ScaleTransform.ScaleY>.75</ScaleTransform.ScaleY>
+                                    </ScaleTransform>
+                                </Path.RenderTransform>
+                            </Path>
+
+
+                            <Path RenderTransformOrigin=".8,.5" Fill="#404040"
+                                  Data="M12.825,23.227a.758.758,0,0,1-.505-.193l-6.067-5.4A.763.763,0,0,1,6,17.064a.752.752,0,0,1,.259-.567l6.067-5.308a.759.759,0,0,1,1,1.142L7.9,17.071,13.33,21.9a.756.756,0,0,1-.505,1.323Z">
+                                <Path.RenderTransform>
+                                    <ScaleTransform>
+                                        <ScaleTransform.ScaleX>.75</ScaleTransform.ScaleX>
+                                        <ScaleTransform.ScaleY>.75</ScaleTransform.ScaleY>
+                                    </ScaleTransform>
+                                </Path.RenderTransform>
+                            </Path>
+                            
+                        </Grid>
+
+                    </Viewbox>
+                    <TextBlock Foreground="#404040" Grid.Row="1" HorizontalAlignment="Center">Total KG</TextBlock>
+                </Grid>
+                <Viewbox Grid.Row="1">
+                    <ProgressBar 
+                                    
+                                    Style="{DynamicResource ResourceKey=progressbar1}"
+                                    Value="{Binding totalKG}">
+                        <ProgressBar.Triggers>
+                            <EventTrigger RoutedEvent="ProgressBar.ValueChanged">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Value" To="{Binding}" Duration="0:0:0.08" RepeatBehavior="Forever"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ProgressBar.Triggers>
+
+                    </ProgressBar>
+                </Viewbox>
+            </Grid>
+
+            <Grid
+                 Margin="5,15,5,15"
+                Grid.Row="1" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border Background="#F7F7F7" Grid.RowSpan="2" BorderBrush="#FF268B" BorderThickness="1" CornerRadius="4">
+                </Border>
+                <Border CornerRadius="4,4,0,0" Background="#FF268B" ></Border>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Viewbox>
+                        <Grid>
+                            <Path RenderTransformOrigin=".5,.5" Fill="#404040"
+                                  Data="M26.333,25.333h3.333v-20H13V8.667H26.333Zm0,3.333v5a1.672,1.672,0,0,1-1.678,1.667H4.678A1.668,1.668,0,0,1,3,33.667L3,10.333A1.672,1.672,0,0,1,4.683,8.667H9.667v-5A1.667,1.667,0,0,1,11.333,2h20A1.667,1.667,0,0,1,33,3.667V27a1.667,1.667,0,0,1-1.667,1.667ZM6.338,12l0,20H23V12ZM9.667,25.333h7.5a.833.833,0,0,0,0-1.667h-5a4.167,4.167,0,1,1,0-8.333H13V13.667h3.333v1.667h3.333v3.333h-7.5a.833.833,0,0,0,0,1.667h5a4.167,4.167,0,1,1,0,8.333h-.833v1.667H13V28.667H9.667Z">
+                                <Path.RenderTransform>
+                                    <ScaleTransform>
+                                        <ScaleTransform.ScaleX>.75</ScaleTransform.ScaleX>
+                                        <ScaleTransform.ScaleY>.75</ScaleTransform.ScaleY>
+                                    </ScaleTransform>
+                                </Path.RenderTransform>
+                            </Path>
+
+                        </Grid>
+
+                    </Viewbox>
+                    <TextBlock Foreground="#404040" Grid.Row="1" HorizontalAlignment="Center">Total commission</TextBlock>
+                </Grid>
+                <Viewbox Grid.Row="1">
+                    <ProgressBar 
+                                    
+                                    Style="{DynamicResource ResourceKey=progressbar1}"
+                                    Value="{Binding totalcomissions}">
+                        <ProgressBar.Triggers>
+                            <EventTrigger RoutedEvent="ProgressBar.ValueChanged">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Value" To="{Binding}" Duration="0:0:0.08" RepeatBehavior="Forever"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ProgressBar.Triggers>
+
+                    </ProgressBar>
+                </Viewbox>
+            </Grid>
+
+            <Grid
+                 Margin="5,15,5,15"
+                Grid.Row="1" Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border Background="#F7F7F7" Grid.RowSpan="2" BorderBrush="#07E49C" BorderThickness="1" CornerRadius="4">
+                </Border>
+                <Border CornerRadius="4,4,0,0" Background="#07E49C" ></Border>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Viewbox>
+                        <Grid>
+                            <Path RenderTransformOrigin=".5,.5" Fill="#404040"
+                                  
+Data="M172.55,391.9a10.437,10.437,0,0,0-.57-1.88,10.146,10.146,0,0,0-.92-1.72,9.718,9.718,0,0,0-2.76-2.76,9.87,9.87,0,0,0-1.73-.92,9.391,9.391,0,0,0-1.87-.57,9.847,9.847,0,0,0-3.9,0,9.689,9.689,0,0,0-1.88.57,10.145,10.145,0,0,0-1.72.92,10,10,0,0,0-3.68,4.48,9.689,9.689,0,0,0-.57,1.88,9.607,9.607,0,0,0,0,3.9,9.391,9.391,0,0,0,.57,1.87,9.246,9.246,0,0,0,.92,1.73,9.718,9.718,0,0,0,2.76,2.76,10.08,10.08,0,0,0,1.72.921,9.689,9.689,0,0,0,1.88.57,9.606,9.606,0,0,0,3.9,0,9.391,9.391,0,0,0,1.87-.57,9.875,9.875,0,0,0,1.73-.921,9.718,9.718,0,0,0,2.76-2.76,9.869,9.869,0,0,0,.92-1.73,10.1,10.1,0,0,0,.57-1.87,9.607,9.607,0,0,0,0-3.9Z"                                  
+                                  >
+                                <Path.RenderTransform>
+                                    <ScaleTransform>
+                                        <ScaleTransform.ScaleX>.75</ScaleTransform.ScaleX>
+                                        <ScaleTransform.ScaleY>.75</ScaleTransform.ScaleY>
+                                    </ScaleTransform>
+                                </Path.RenderTransform>
+                            </Path>
+
+
+                            <Path RenderTransformOrigin=".5,.5" Fill="#404040"
+Data="M459.993,394.982c-.039-.1-.079-.2-.121-.3-9.2-21.537-30.79-29.5-56.336-20.772l-69.668,19.266c-4.028-12.2-14.075-22.578-28.281-27.85-.088-.032-.176-.064-.265-.094l-76.581-25.992c-6.374-8.239-26.34-29.321-63.723-29.321-26.125,0-49.236,17.922-62.458,37.457H10a10,10,0,0,0-10,10V483.456a10,10,0,0,0,10,10H69.457a10,10,0,0,0,10-10v-8.634H107.34a10,10,0,0,0,10-10v-2.878c16.254,1.418,21.6,4.5,36.528,13.109a605.167,605.167,0,0,0,60.077,30.674c.145.065.292.127.439.185a89.762,89.762,0,0,0,32.173,6.065,79.708,79.708,0,0,0,33.131-7.094l153.991-55.136c.274-.1.544-.208.808-.33C449.2,442.646,471.135,423.563,459.993,394.982ZM59.457,473.455H20V367.378H59.457ZM97.34,454.821H79.457V367.378H97.34ZM426.5,431.074,272.574,486.185c-.135.048-.318.12-.451.174s-.27.113-.4.174c-21.437,9.852-41.814,3.954-49.8.849a579.276,579.276,0,0,1-58.061-29.657c-16.364-9.436-24.249-13.984-46.519-15.823V361.36c9.479-15.536,27.861-31.439,47.679-31.439,33.986,0,48.387,22.105,48.953,23a10,10,0,0,0,5.3,4.232l79.475,26.974c12.693,4.764,19.4,15.634,16.318,26.474a19.485,19.485,0,0,1-23.94,13.449l-89.593-28.392a10,10,0,1,0-6.042,19.066l89.749,28.441c.1.03.19.059.286.086a39.251,39.251,0,0,0,30.018-3.488,39.219,39.219,0,0,0,18.759-23.692q.345-1.215.611-2.43L410,392.838c10.844-3.7,25.079-5.039,31.417,9.558C447.978,419.533,430.928,428.96,426.5,431.074Z"                                  
+                                  >
+                                <Path.RenderTransform>
+                                    <ScaleTransform>
+                                        <ScaleTransform.ScaleX>.75</ScaleTransform.ScaleX>
+                                        <ScaleTransform.ScaleY>.75</ScaleTransform.ScaleY>
+                                    </ScaleTransform>
+                                </Path.RenderTransform>
+                            </Path>
+
+                            <Path RenderTransformOrigin=".5,.5" Fill="#404040"
+Data="M359.06,131.543a9.723,9.723,0,0,0-.58-1.88,9.857,9.857,0,0,0-3.68-4.48,10.146,10.146,0,0,0-1.72-.92,9.96,9.96,0,0,0-5.78-.57,9.392,9.392,0,0,0-1.87.57,9.87,9.87,0,0,0-1.73.92,9.718,9.718,0,0,0-2.76,2.76,10.146,10.146,0,0,0-.92,1.72,9.689,9.689,0,0,0-.57,1.88,9.606,9.606,0,0,0,0,3.9,9.391,9.391,0,0,0,.57,1.87,9.868,9.868,0,0,0,.92,1.73,9.718,9.718,0,0,0,2.76,2.76,9.869,9.869,0,0,0,1.73.92,10.1,10.1,0,0,0,1.87.57,9.851,9.851,0,0,0,1.95.2,10.029,10.029,0,0,0,1.96-.2,10.584,10.584,0,0,0,1.87-.57,10.146,10.146,0,0,0,1.72-.92,9.718,9.718,0,0,0,2.76-2.76,9.245,9.245,0,0,0,.92-1.73,9.418,9.418,0,0,0,.58-1.87,10.1,10.1,0,0,0,0-3.9Z"
+                                  >
+                                <Path.RenderTransform>
+                                    <ScaleTransform>
+                                        <ScaleTransform.ScaleX>.75</ScaleTransform.ScaleX>
+                                        <ScaleTransform.ScaleY>.75</ScaleTransform.ScaleY>
+                                    </ScaleTransform>
+                                </Path.RenderTransform>
+                            </Path>
+
+                            <Path RenderTransformOrigin=".5,.5" Fill="#404040"
+Data="M502,33.891H442.543a10,10,0,0,0-10,10v8.634H404.66a10,10,0,0,0-10,10V65.4c-16.254-1.419-21.6-4.5-36.527-13.109A605.1,605.1,0,0,0,298.055,21.62c-.145-.066-.291-.127-.44-.185-10.171-4-36.828-11.876-65.3,1.027L192.076,36.87,158.157,2.952a10,10,0,0,0-14.142,0L32.657,114.309a9.918,9.918,0,0,0,0,14.143L222.944,318.739c3.045,3.046,10.175,3.967,14.143,0L338.752,217.075c2.643.228,5.386.351,8.229.351,26.126,0,49.236-17.922,62.457-37.456H502a10,10,0,0,0,10-10V43.891A10,10,0,0,0,502,33.891ZM151.085,24.165l22.792,22.792a43.6,43.6,0,0,1-45.584,0ZM76.663,144.173,53.871,121.38,76.663,98.588a43.6,43.6,0,0,1,0,45.585ZM230.016,297.525l-22.788-22.788a43.539,43.539,0,0,1,45.575,0Zm37.195-37.194a63.548,63.548,0,0,0-74.39,0L91.07,158.579a63.55,63.55,0,0,0,0-74.4l22.817-22.816a63.55,63.55,0,0,0,74.4,0l21.629,21.629a39.636,39.636,0,0,0-29.756,21.8,57,57,0,1,0,65.533,70.556l33.764,11.459a63.844,63.844,0,0,0,10.593,50.682Zm-60.8-98.313c.088.032.176.064.265.094l20,6.787a37,37,0,1,1-50.225-42.266C178.295,141.995,189.356,155.688,206.413,162.018Zm98.044,61.066a43.739,43.739,0,0,1-6.389-20.8,77.755,77.755,0,0,0,17.636,9.549Zm90.2-57.1c-9.478,15.538-27.86,31.441-47.678,31.441a72.785,72.785,0,0,1-10.432-.734l-.039-.006c-21.6-3.137-33.213-15.411-37.042-20.271-.2-.3-1.073-1.437-1.2-1.626a9.964,9.964,0,0,0-5.511-4.583l-79.508-26.985c-12.688-4.762-19.4-15.627-16.321-26.463l.006-.021a.232.232,0,0,0,.007-.025,19.483,19.483,0,0,1,23.93-13.413l89.593,28.391a10,10,0,0,0,6.042-19.066l-71.255-22.58-.622-.622c-.006-.006-.012-.013-.019-.019l-36.89-36.89,31.708-11.354c.107-.039.239-.088.345-.131l.1-.042c.136-.055.27-.113.4-.174,21.436-9.852,41.812-3.955,49.8-.849a579.261,579.261,0,0,1,58.063,29.657c16.364,9.437,24.249,13.984,46.518,15.823Zm37.884-6.015H414.66V72.525h17.883Zm59.457,0H452.543V53.891H492Z"
+                                  >
+                                <Path.RenderTransform>
+                                    <ScaleTransform>
+                                        <ScaleTransform.ScaleX>.75</ScaleTransform.ScaleX>
+                                        <ScaleTransform.ScaleY>.75</ScaleTransform.ScaleY>
+                                    </ScaleTransform>
+                                </Path.RenderTransform>
+                            </Path>
+
+
+
+                        </Grid>
+
+                    </Viewbox>
+                    <TextBlock Foreground="#404040" Grid.Row="1" HorizontalAlignment="Center">Total Paid To Company</TextBlock>
+                </Grid>
+                <Viewbox Grid.Row="1">
+                    <ProgressBar 
+                                    
+                                    Style="{DynamicResource ResourceKey=progressbar1}"
+                                    Value="{Binding totalpaidincompany}">
+                        <ProgressBar.Triggers>
+                            <EventTrigger RoutedEvent="ProgressBar.ValueChanged">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Value" To="{Binding}" Duration="0:0:0.08" RepeatBehavior="Forever"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ProgressBar.Triggers>
+
+                    </ProgressBar>
+                </Viewbox>
+            </Grid>
+
+
+            <Grid
+                 Margin="5,15,5,15"
+                Grid.Row="1" Grid.Column="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border Background="#F7F7F7" Grid.RowSpan="2" BorderBrush="#FF46C9" BorderThickness="1" CornerRadius="4">
+                </Border>
+                <Border CornerRadius="4,4,0,0" Background="#FF46C9" ></Border>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Viewbox>
+                        <Grid>
+                            <Path RenderTransformOrigin=".5,.5" Fill="#404040"
+                                  
+Data="M255.279,323.7a7.5,7.5,0,0,0,7.5-7.5v-6.8C281.06,306.483,292.2,293.39,294,280.48c2.056-14.707-7.421-27.355-24.144-32.223-10.979-3.2-23.158-7.082-30.256-11.666a8.062,8.062,0,0,1-3.4-8.366c.694-4.165,4.079-9.27,11.5-11.11a39.128,39.128,0,0,1,7.51-1.119c.021,0,.042,0,.063,0a7.513,7.513,0,0,0,.769-.039c10.912-.294,17.648,4.425,18.088,4.743a7.5,7.5,0,0,0,9.021-11.983c-.447-.34-8.032-5.962-20.379-7.419v-5.507a7.5,7.5,0,0,0-15,0v5.986c-1.206.214-2.432.466-3.685.777-11.922,2.958-20.825,12.065-22.682,23.2a22.916,22.916,0,0,0,10.053,23.432c7.028,4.541,16.937,8.442,34.2,13.469,9.576,2.788,14.49,8.526,13.481,15.744-1.146,8.2-9.728,16.536-23.911,16.614-11.787.071-16.438-.368-26.455-5.765a7.5,7.5,0,0,0-7.115,13.205c10.271,5.533,16.978,7.092,26.112,7.46v6.287a7.5,7.5,0,0,0,7.5,7.5Z"                                  >
+                                <Path.RenderTransform>
+                                    <ScaleTransform>
+                                        <ScaleTransform.ScaleX>.75</ScaleTransform.ScaleX>
+                                        <ScaleTransform.ScaleY>.75</ScaleTransform.ScaleY>
+                                    </ScaleTransform>
+                                </Path.RenderTransform>
+                            </Path>
+
+
+                            <Path RenderTransformOrigin=".5,.5" Fill="#404040"
+Data="M505.77,314.144a7.5,7.5,0,0,0-7.188-7.455l-58.214-2.422-44.635-5.736a183.809,183.809,0,0,0-59.1,2.064,92.217,92.217,0,0,0,4.415-9.073,7.5,7.5,0,1,0-13.837-5.789A76.889,76.889,0,0,1,314.3,306.5c-1.867.624-3.725,1.272-5.571,1.957l-5.927,2.2a31.527,31.527,0,0,0-18.024,16.928,77.134,77.134,0,0,1-87.059-122.1c1.859-.621,3.712-1.261,5.55-1.943l5.928-2.2a31.519,31.519,0,0,0,18.014-16.914A77.137,77.137,0,0,1,333.151,256c0,1.314-.03,2.57-.091,3.733a7.5,7.5,0,0,0,7.1,7.877c.132.006.263.01.393.01a7.5,7.5,0,0,0,7.484-7.113c.073-1.42.11-2.936.11-4.507a92.218,92.218,0,0,0-118.546-88.312,32.4,32.4,0,0,0-1.431-6.159,31.6,31.6,0,0,0-26.984-21.356l-29.5-2.8,11.287-8.606,69.625-.113c.161,0,.319,0,.479,0a31.8,31.8,0,0,0,29.617-20.5h.744a31.678,31.678,0,0,0,31.234-24.082,31.652,31.652,0,0,0-2.942-59.2L240.164,2.024a42.647,42.647,0,0,0-29.6,1.346L141.4,32.65a7.5,7.5,0,0,0,5.848,13.814l69.158-29.28a27.64,27.64,0,0,1,19.186-.873l71.572,22.86a16.584,16.584,0,0,1,11.58,15.855,16.384,16.384,0,0,1-.158,2.323A16.671,16.671,0,0,1,302.1,71.7l-.3,0-64.54-1.15a7.548,7.548,0,0,0-4.682,1.535l-85.22,64.98a7.5,7.5,0,0,0,3.839,13.43l48.58,4.61a16.64,16.64,0,0,1,4.211,32.171l-5.928,2.2a168.866,168.866,0,0,1-79.878,9.114l-38.44-4.943-.282-53.833-.333-64.5,40.563-17.169a7.5,7.5,0,1,0-5.848-13.813L70.226,62.789l-56.86-2.365a7.5,7.5,0,0,0-7.812,7.533l.671,129.895a7.5,7.5,0,0,0,7.188,7.455l58.225,2.423,44.622,5.738a182.156,182.156,0,0,0,23.207,1.48,184.44,184.44,0,0,0,35.869-3.53,92.209,92.209,0,0,0,107.052,132.9,32.349,32.349,0,0,0,1.429,6.141,31.682,31.682,0,0,0,26.992,21.372l29.495,2.8-11.288,8.608-69.622.113a31.726,31.726,0,0,0-30.1,20.492h-.742c-.169,0-.338,0-.507,0A31.679,31.679,0,0,0,197.323,427.9a31.657,31.657,0,0,0,2.941,59.212l71.568,22.862a42.663,42.663,0,0,0,29.6-1.352l140.343-59.418,56.854,2.365q.156.006.312.006a7.5,7.5,0,0,0,7.5-7.539ZM252.784,113.654a.991.991,0,0,0-.144,0l-49.955.081,7.157-5.457,55.527-.088a16.7,16.7,0,0,1-12.585,5.465ZM239.592,85.593l57.543,1.026a16.764,16.764,0,0,1-13.5,6.542h-.149l-53.928.085ZM21.188,190.617,20.594,75.738l43.531,1.81.372,71,.227,43.878ZM258.919,398.338c.1,0,.2,0,.293,0,.048,0,.093,0,.144,0l49.954-.081-7.156,5.457-55.538.088a16.674,16.674,0,0,1,12.3-5.468Zm-30.866,20.493.309,0c.05,0,.1,0,.149,0l53.932-.085L272.405,426.4l-57.558-1.032a16.644,16.644,0,0,1,13.206-6.541Zm67.532,75.979a27.644,27.644,0,0,1-19.184.876l-71.568-22.862A16.662,16.662,0,0,1,209.9,440.29c.1,0,.2,0,.3,0l64.542,1.157a7.628,7.628,0,0,0,4.683-1.535l85.216-64.987a7.5,7.5,0,0,0-3.84-13.43l-48.574-4.6a16.644,16.644,0,0,1-4.215-32.175l5.927-2.2a168.844,168.844,0,0,1,79.88-9.112l38.446,4.94.611,118.335Zm152.281-60.364-.593-114.879,43.535,1.811.594,114.878Z"
+                                  >
+                                <Path.RenderTransform>
+                                    <ScaleTransform>
+                                        <ScaleTransform.ScaleX>.75</ScaleTransform.ScaleX>
+                                        <ScaleTransform.ScaleY>.75</ScaleTransform.ScaleY>
+                                    </ScaleTransform>
+                                </Path.RenderTransform>
+                            </Path>
+
+ 
+ 
+
+
+
+                        </Grid>
+
+                    </Viewbox>
+                    <TextBlock Foreground="#404040" Grid.Row="1" HorizontalAlignment="Center">Total Paid In Europe</TextBlock>
+                </Grid>
+                <Viewbox Grid.Row="1">
+                    <ProgressBar 
+                                    
+                                    Style="{DynamicResource ResourceKey=progressbar1}"
+                                    Value="{Binding totalpaidinEurope}">
+                        <ProgressBar.Triggers>
+                            <EventTrigger RoutedEvent="ProgressBar.ValueChanged">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Value" To="{Binding}" Duration="0:0:0.08" RepeatBehavior="Forever"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ProgressBar.Triggers>
+
+                    </ProgressBar>
+                </Viewbox>
+            </Grid>
+
+        </Grid>
+
+        <Grid
+            
+            
+            Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height=".2*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height=".2*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height=".2*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height=".2*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height=".2*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height=".2*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height=".2*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+          
+
+            <CustomeControls:ComboboxEX FontWeight="Bold" Grid.Row="2" x:Name="cmb_officeName"
+                ItemsSource="{Binding branches}" 
+                                          SelectedValuePath="Id"
+                                          DisplayMemberPath="AgentName"
+                                          TextSearch.TextPath="AgentName"
+                                        SelectionChanged="cmb_officeName_SelectionChanged"
+                                          SelectedItem="{Binding selectedBranch}"
+                 Margin="5,0,5,0"
+                 IsEditable="True"
+                 CBPlaceHolder="Office Name"
+                   Background="#FFFFFF"
+                Foreground="#142D4E"
+                          
+                 Style="{DynamicResource ResourceKey=StandardCombobox2}" 
+                >
+                
+            </CustomeControls:ComboboxEX>
+
+            <CustomeControls:ComboboxEX FontWeight="Bold" Grid.Row="4" x:Name="cmb_EUCountry"
+                                        
+                                         ItemsSource="{Binding countries}" 
+                                          SelectedValuePath="Id"
+                                          DisplayMemberPath="CountryName"
+                                          TextSearch.TextPath="CountryName"
+                                        SelectionChanged="cmb_EUCountry_SelectionChanged"
+                Margin="5,0,5,0"
+                IsEditable="True"
+                CBPlaceHolder="EU Country"
+                  Background="#FFFFFF"
+                Foreground="#142D4E"
+                 Style="{DynamicResource ResourceKey=StandardCombobox2}" 
+                >
+
+            </CustomeControls:ComboboxEX>
+
+            <CustomeControls:ComboboxEX FontWeight="Bold" Grid.Row="6" x:Name="cmb_AgentCity"
+                                ItemsSource="{Binding agents}" 
+                                          SelectedValuePath="Id"
+                                          DisplayMemberPath="AgentName"
+                                          TextSearch.TextPath="AgentName"  
+                                        SelectionChanged="cmb_AgentCity_SelectionChanged"
+                                         
+                Margin="5,0,5,0"
+                IsEditable="True"
+                CBPlaceHolder="Agent City"
+                 Background="#FFFFFF"
+                Foreground="#142D4E"
+                 Style="{DynamicResource ResourceKey=StandardCombobox2}" 
+                >
+
+            </CustomeControls:ComboboxEX>
+
+            <CustomeControls:ComboboxEX FontWeight="Bold" Grid.Row="8" x:Name="cmb_TruckNo"
+                                       ItemsSource="{Binding shipmentnumbers}"
+                                        
+                                          DisplayMemberPath="Title"
+                 SelectedValuePath="Value"
+              TextSearch.TextPath="Title"
+                Margin="5,0,5,0"
+                IsEditable="True"
+                CBPlaceHolder="Truck No"
+                 Background="#FFFFFF"
+                Foreground="#142D4E"
+                 SelectionChanged="cmb_TruckNo_SelectionChanged"
+                 Style="{DynamicResource ResourceKey=StandardCombobox2}" 
+                >
+
+            </CustomeControls:ComboboxEX>
+
+            <DatePicker FontWeight="Bold" x:Name="dt_postdateStart" 
+              Margin="5,0,5,0"
+                    Grid.Row="10"
+                     Foreground="#142D4E"
+                     
+                Style="{DynamicResource DatePickerStyle1}"
+                   SelectedDate="{Binding PostDate}"
+                    Grid.Column="0" >
+            </DatePicker>
+
+            <DatePicker FontWeight="Bold" x:Name="dt_postdateEnd" 
+              Margin="5,0,5,0"
+                    Grid.Row="12"
+                     Foreground="#142D4E"
+                   
+                Style="{DynamicResource DatePickerStyle1}"
+                   SelectedDate="{Binding PostDate}"
+                    Grid.Column="0" >
+            </DatePicker>
+            <CheckBox  x:Name="chk_datepost"  Grid.Row="10" Grid.Column="1" VerticalAlignment="Center"></CheckBox>
+
+            <Button  FontWeight="Bold" Margin="0,0,0,2" Template="{DynamicResource ResourceKey=ActionButtonBlueTemplate}" Click="Button_Click" Grid.Row="14" Width="100">Apply</Button>
+        </Grid>
+
+        <DataGrid Margin="5" FontWeight="Bold"
+            Style="{DynamicResource DataGridStyle2}"
+             CanUserAddRows="False"
+            IsReadOnly="True"
+            ItemsSource="{Binding countrySummaries}" Grid.Row="1" Grid.ColumnSpan="2"
+            AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"
+             
+            ></DataGrid>
+
+        <StackPanel HorizontalAlignment="Center"   Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Button Padding="4" FontWeight="Bold" Margin="5" Click="Button_Click_1" Template="{DynamicResource ActionButtonBlueTemplate}">Export To Excel</Button>
+            <Button Padding="4" FontWeight="Bold" Margin="5" Click="Button_Click_2"  Template="{DynamicResource ActionButtonGreenTemplate}">Export To PDF</Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

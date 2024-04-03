@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="StersTransport.UI.UILabel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:StersTransport.UI"
+             Loaded="UserControl_Loaded"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+
+        <Border Background="#E4E4E4" BorderThickness="1" BorderBrush="#236BC9">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock  Text="Label" Foreground="#0645F7" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"></TextBlock>
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        
+                        
+                    </Grid.ColumnDefinitions>
+                    <TextBlock RenderTransformOrigin=".5,.5" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Code NO.">
+                        
+                    </TextBlock>
+                    
+                    <!--
+                    <TextBox Template="{DynamicResource standardTextbox2}" 
+                             x:Name="txtcode" PreviewKeyDown="txtcode_PreviewKeyDown" 
+                             Margin="5" Grid.Column="1"></TextBox>
+                    -->
+
+                    <ComboBox  x:Name="cmb1"
+                               IsEditable="True"
+                               TextSearch.TextPath="Code"
+                               PreviewKeyDown="cmb1_PreviewKeyDown"
+                        Background="White" Margin="5"
+                        Style="{DynamicResource StandardCombobox2}" Grid.Column="1"></ComboBox>
+
+
+                    <Button FontWeight="Bold" Margin="5" Template="{DynamicResource ActionButtonBlueTemplate}" Grid.Column="2" Click="Button_Click">Print</Button>
+                </Grid>
+            </Grid>
+        </Border>
+        
+        <Border Grid.Row="1"  Background="#E4E4E4" BorderThickness="1" BorderBrush="#236BC9">
+            <FlowDocumentScrollViewer IsToolBarVisible="True" 
+                                    FontFamily="Arial"
+                                 FontStretch="Condensed"
+                                 FontWeight="Bold"
+                                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                  ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                <FlowDocument 
+                     FontFamily="Arial"
+                     FontStretch="Condensed"
+                     FontWeight="Bold"
+                    Background="White" x:Name="flowdocument">
+
+                </FlowDocument>
+            </FlowDocumentScrollViewer>
+        </Border>
+    </Grid>
+    
+    
+</UserControl>

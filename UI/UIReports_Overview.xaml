@@ -1,0 +1,343 @@
+﻿<UserControl x:Class="StersTransport.UI.UIReports_Overview"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:StersTransport.UI"
+              xmlns:customeadorner="clr-namespace:StersTransport.CustomeControls.CustomeAdorner"
+              xmlns:mlocal="clr-namespace:StersTransport"
+               mc:Ignorable="d" 
+               d:DesignHeight="600" d:DesignWidth="800"
+               Loaded="UserControl_Loaded"
+               DataContext="{Binding RelativeSource={RelativeSource Self}}"
+             >
+    <Grid  Background="#E4E4E4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.Resources>
+            <Style TargetType="TextBox">
+                
+                <Setter  Property="VerticalContentAlignment" Value="Center"></Setter>
+                <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                <Setter Property="FontWeight" Value="Bold"></Setter>
+            </Style>
+
+            <Style TargetType="ComboBox">
+                <Setter Property="FontWeight" Value="Bold"></Setter>
+            </Style>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontWeight" Value="Bold"></Setter>
+            </Style>
+
+        </Grid.Resources>
+
+
+        <Border Grid.Column="1" BorderThickness="2,0,0,0" BorderBrush="#808080"></Border>
+        <Border Grid.Column="2" BorderThickness="2,0,0,0" BorderBrush="#808080"></Border>
+
+
+        <customeadorner:AdornedControl x:Name="adorner1">
+            <customeadorner:AdornedControl.AdornerContent>
+                <mlocal:LoadingWait></mlocal:LoadingWait>
+            </customeadorner:AdornedControl.AdornerContent>
+            <Grid Margin="40,15,40,15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.5*"></RowDefinition>
+                    <RowDefinition Height=".7*"></RowDefinition>
+                    <RowDefinition ></RowDefinition>
+                    <RowDefinition Height=".7*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height=".7*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height=".7*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height=".7*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height=".7*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <TextBlock Margin="0,25,0,0" FontSize="14" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#236BC9">Make Report</TextBlock>
+                <TextBlock Grid.Row="1" VerticalAlignment="Center">Office Name</TextBlock>
+                <ComboBox
+                 
+                x:Name="cmb_officeName"
+                 IsEditable="True"
+                  ItemsSource="{Binding branches}" 
+                 SelectedValuePath="Id"
+                                          DisplayMemberPath="AgentName"
+                                          TextSearch.TextPath="AgentName"
+                                        SelectionChanged="cmb_officeName_SelectionChanged"
+                                          SelectedItem="{Binding selectedBranch}"
+                Background="White" Margin="0,5,0,5" Style="{DynamicResource StandardCombobox2}" Grid.Row="2"></ComboBox>
+
+                <TextBlock Grid.Row="3" VerticalAlignment="Center">From Truck NO.</TextBlock>
+                <ComboBox
+                  IsEditable="True"
+                x:Name="cmb_TruckNo"
+                 ItemsSource="{Binding shipmentnumbers}"
+                 DisplayMemberPath="Title"
+                 SelectedValuePath="Value"
+              TextSearch.TextPath="Title"
+                Background="White" Margin="0,5,0,5" Style="{DynamicResource StandardCombobox2}" Grid.Row="4"></ComboBox>
+
+                <TextBlock Grid.Row="5" VerticalAlignment="Center">To Truck NO.</TextBlock>
+                <ComboBox
+                x:Name="cmb_TruckNoto"
+   IsEditable="True"
+                 ItemsSource="{Binding shipmentnumbersto}"
+                  DisplayMemberPath="Title"
+                 SelectedValuePath="Value"
+              TextSearch.TextPath="Title"
+                Background="White" Margin="0,5,0,5" Style="{DynamicResource StandardCombobox2}" Grid.Row="6"></ComboBox>
+
+                <TextBlock Grid.Row="7" VerticalAlignment="Center">EU Country</TextBlock>
+                <ComboBox 
+                x:Name="cmb_EUCountry"
+                  IsEditable="True"
+                  ItemsSource="{Binding countries}" 
+                                          SelectedValuePath="Id"
+                                          DisplayMemberPath="CountryName"
+                                          TextSearch.TextPath="CountryName"
+                                        SelectionChanged="cmb_EUCountry_SelectionChanged"
+                Background="White" Margin="0,5,0,5" Style="{DynamicResource StandardCombobox2}" Grid.Row="8"></ComboBox>
+
+                <TextBlock Grid.Row="9" VerticalAlignment="Center">Agent City</TextBlock>
+                <ComboBox 
+                x:Name="cmb_AgentCity"
+                  IsEditable="True"
+                  ItemsSource="{Binding agents}" 
+                                          SelectedValuePath="Id"
+                                          DisplayMemberPath="AgentName"
+                                          TextSearch.TextPath="AgentName" 
+                Background="White" Margin="0,5,0,5" Style="{DynamicResource StandardCombobox2}" Grid.Row="10"></ComboBox>
+
+
+                <Grid  Grid.Row="12">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button FontWeight="Bold" Click="Button_Click" Margin="4,10,4,10" Template="{DynamicResource ActionButtonGreenTemplate}">Excel Export</Button>
+
+                    <Button FontWeight="Bold" Click="Button_Click_1" Grid.Column="1" Margin="4,10,4,10" Template="{DynamicResource ActionButtonBlueTemplate}">PDF Export</Button>
+
+                    <Button FontWeight="Bold" Click="Button_Click_6" Grid.Column="2" Margin="4,10,4,10"  Template="{DynamicResource ActionButtonPurpleTemplate}">Import Excel</Button>
+                </Grid>
+
+
+            </Grid>
+        </customeadorner:AdornedControl>
+     
+
+        <Grid Grid.Column="1" Margin="40,15,40,15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2.5*"></RowDefinition>
+                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition ></RowDefinition>
+                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+             
+                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                
+            </Grid.RowDefinitions>
+            <TextBlock FontSize="14" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#236BC9">Quick Report</TextBlock>
+            <TextBlock Grid.Row="1" VerticalAlignment="Center">Office Name</TextBlock>
+            <ComboBox
+                x:Name="cmb_officeNameQuick"
+                  IsEditable="True"
+                 ItemsSource="{Binding branchesQuick}" 
+                 SelectedValuePath="Id"
+                                          DisplayMemberPath="AgentName"
+                                          TextSearch.TextPath="AgentName"
+                                        SelectionChanged="cmb_officeName_SelectionChangedquick"
+                                          SelectedItem="{Binding selectedBranchQuick}"
+                Background="White" Margin="0,5,0,5" Style="{DynamicResource StandardCombobox2}" Grid.Row="2"></ComboBox>
+
+            <TextBlock Grid.Row="3" VerticalAlignment="Center">Truck NO.</TextBlock>
+            <ComboBox
+                x:Name="cmb_TruckNo2"
+          IsEditable="True"
+                 ItemsSource="{Binding shipmentnumbersquick}"
+                  DisplayMemberPath="Title"
+                 SelectedValuePath="Value"
+              TextSearch.TextPath="Title"
+                 SelectionChanged="cmb_TruckNo2_SelectionChanged"
+                
+                Background="White" Margin="0,5,0,5" Style="{DynamicResource StandardCombobox2}" Grid.Row="4"></ComboBox>
+
+            <TextBlock  Grid.Row="5" VerticalAlignment="Center">Total Codes</TextBlock>
+            <TextBox
+                
+                Text="{Binding totalcodes,StringFormat='{}{0:#,0.##}'}"
+                IsReadOnly="True" Background="White" Margin="0,5,0,5" Template="{DynamicResource standardTextbox2}" Grid.Row="6"></TextBox>
+
+            <TextBlock Grid.Row="7" VerticalAlignment="Center">Total Pallet</TextBlock>
+            <TextBox
+                 Text="{Binding totalpallets,StringFormat='{}{0:#,0.##}'}"
+                IsReadOnly="True" Background="White" Margin="0,5,0,5" Template="{DynamicResource standardTextbox2}" Grid.Row="8"></TextBox>
+
+            <TextBlock Grid.Row="9" VerticalAlignment="Center">Total Box</TextBlock>
+            <TextBox  
+                 Text="{Binding totalboxes,StringFormat='{}{0:#,0.##}'}"
+                IsReadOnly="True" Background="White" Margin="0,5,0,5" Template="{DynamicResource standardTextbox2}" Grid.Row="10"></TextBox>
+
+            
+
+            <TextBlock Grid.Row="11" VerticalAlignment="Center">Total KG</TextBlock>
+            <TextBox 
+                 Text="{Binding totalKG,StringFormat='{}{0:#,0.##}'}"
+                IsReadOnly="True" Background="White" Margin="0,5,0,5" Template="{DynamicResource standardTextbox2}" Grid.Row="12"></TextBox>
+
+            <TextBlock Grid.Row="13" VerticalAlignment="Center">Total Cash in</TextBlock>
+            <TextBox 
+                 Text="{Binding totalcashIN,StringFormat='{}{0:#,0.##}'}"
+                IsReadOnly="True" Background="White" Margin="0,5,0,5" Template="{DynamicResource standardTextbox2}" Grid.Row="14"></TextBox>
+
+            <TextBlock Grid.Row="15" VerticalAlignment="Center">Total Comission</TextBlock>
+            <TextBox
+                 Text="{Binding totalcomissions,StringFormat='{}{0:#,0.##}'}"
+                IsReadOnly="True" Background="White" Margin="0,5,0,5" Template="{DynamicResource standardTextbox2}" Grid.Row="16"></TextBox>
+
+
+            <Grid Grid.Row="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                     
+                </Grid.ColumnDefinitions>
+
+                <Button FontWeight="Bold" Margin="15,4,15,8" 
+                        Template="{DynamicResource ActionButtonBlueTemplate}"
+                        Click="Button_Click_2"
+                        >Excel Export</Button>
+
+                <Button FontWeight="Bold"
+                    Click="Button_Click_3"
+                    Grid.Column="2" Margin="15,4,15,8" Template="{DynamicResource ActionButtonPurpleTemplate}">Pdf Report</Button>
+            </Grid>
+
+
+        </Grid>
+
+
+        <Grid Grid.Column="2" Margin="40,15,40,15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2.5*"></RowDefinition>
+                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition ></RowDefinition>
+                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height=".4*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <TextBlock  FontSize="14" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#236BC9">Daily Report</TextBlock>
+            <TextBlock Grid.Row="1" VerticalAlignment="Center">Office Name</TextBlock>
+            <ComboBox
+                x:Name="cmb_officeNameDaily"
+                  IsEditable="True"
+                 ItemsSource="{Binding branchesDaily}" 
+                 SelectedValuePath="Id"
+                                          DisplayMemberPath="AgentName"
+                                          TextSearch.TextPath="AgentName"
+                                        SelectionChanged="cmb_officeName_SelectionChangedDaily"
+                                          SelectedItem="{Binding selectedBranchDaily}"
+                
+                
+                Background="White" Margin="0,5,0,5" Style="{DynamicResource StandardCombobox2}" Grid.Row="2"></ComboBox>
+
+            
+
+            <TextBlock  Grid.Row="3" VerticalAlignment="Center">Daily Codes</TextBlock>
+            <TextBox
+                 Text="{Binding dailycodes,StringFormat=N2}"
+                IsReadOnly="True" Background="White" Margin="0,5,0,5" Template="{DynamicResource standardTextbox2}" Grid.Row="4"></TextBox>
+
+            <TextBlock Grid.Row="5" VerticalAlignment="Center">Daily Pallet</TextBlock>
+            <TextBox
+                  Text="{Binding dailypallets,StringFormat='{}{0:#,0.##}'}"
+                IsReadOnly="True" Background="White" Margin="0,5,0,5" Template="{DynamicResource standardTextbox2}" Grid.Row="6"></TextBox>
+
+            <TextBlock Grid.Row="7" VerticalAlignment="Center">Daily Box</TextBlock>
+            <TextBox  
+                  Text="{Binding dailyboxes,StringFormat='{}{0:#,0.##}'}"
+                IsReadOnly="True" Background="White" Margin="0,5,0,5" Template="{DynamicResource standardTextbox2}" Grid.Row="8"></TextBox>
+
+            <TextBlock
+             
+                Grid.Row="9" VerticalAlignment="Center">Daily KG</TextBlock>
+            <TextBox
+                     Text="{Binding dailyKG,StringFormat='{}{0:#,0.##}'}"
+                IsReadOnly="True" Background="White" Margin="0,5,0,5" Template="{DynamicResource standardTextbox2}" Grid.Row="10"></TextBox>
+
+            <TextBlock
+                  
+                Grid.Row="11" VerticalAlignment="Center">Daily Cash in</TextBlock>
+            <TextBox
+                   Text="{Binding dailycashIN,StringFormat='{}{0:#,0.##}'}"
+                IsReadOnly="True" Background="White" Margin="0,5,0,5" Template="{DynamicResource standardTextbox2}" Grid.Row="12"></TextBox>
+
+            <TextBlock Grid.Row="13" VerticalAlignment="Center">Daily Comission</TextBlock>
+            <TextBox 
+                     Text="{Binding dailycomissions,StringFormat='{}{0:#,0.##}'}"
+                IsReadOnly="True" Background="White" Margin="0,5,0,5" Template="{DynamicResource standardTextbox2}" Grid.Row="14"></TextBox>
+
+            <CheckBox VerticalAlignment="Center" FontWeight="Bold"
+                      Checked="chk_date_Checked"
+                      Unchecked="chk_date_Unchecked"
+                      x:Name="chk_date" Grid.Row="15">Date</CheckBox>
+            <DatePicker
+                FontWeight="Bold"
+                x:Name="dtpick"
+                SelectedDateChanged="dtpick_SelectedDateChanged"
+                Style="{DynamicResource DatePickerStyle1}"
+                Margin="0,0,0,15"
+                Grid.Row="16"></DatePicker>
+            <Grid Grid.Row="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    
+                </Grid.ColumnDefinitions>
+
+                <Button FontWeight="Bold"
+                    Click="Button_Click_4"
+                    Margin="15,4,15,8" Template="{DynamicResource ActionButtonBlueTemplate}">Excel Export</Button>
+
+                <Button FontWeight="Bold" Click="Button_Click_5" Grid.Column="2" Margin="15,4,15,8" Template="{DynamicResource ActionButtonPurpleTemplate}">Pdf Report</Button>
+            </Grid>
+
+
+        </Grid>
+    </Grid>
+</UserControl>

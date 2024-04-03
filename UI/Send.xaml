@@ -1,0 +1,2079 @@
+﻿<UserControl x:Class="StersTransport.UI.Send"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:CustomeControls="clr-namespace:StersTransport.CustomeControls"
+               xmlns:customeadorner="clr-namespace:StersTransport.CustomeControls.CustomeAdorner"
+             xmlns:Converters="clr-namespace:StersTransport.Converters"
+             xmlns:local="clr-namespace:StersTransport.UI"
+              xmlns:StersTransportLocal="clr-namespace:StersTransport"
+                xmlns:Enumerations="clr-namespace:StersTransport.Enumerations"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             x:Name="UiSend"
+             DataContext="{Binding RelativeSource={RelativeSource Self}}"
+             Loaded="UiSend_Loaded"
+             PreviewKeyDown="UiSend_PreviewKeyDown"
+             
+             
+             >
+
+    <UserControl.Resources>
+        <Converters:BooleanOrConverter x:Key="booleanOrConverter">
+
+        </Converters:BooleanOrConverter>
+
+        <Converters:InverseBooleanConverter x:Key="Inversebooleanconverter"></Converters:InverseBooleanConverter>
+        <Converters:ZeroToStringConverter x:Key="ALLINConverter"></Converters:ZeroToStringConverter>
+        <ControlTemplate x:Key="errorTemplateSilverlightStyle">
+            <StackPanel Orientation="Horizontal">
+                <Border BorderThickness="1" BorderBrush="#FFdc000c" CornerRadius="0.7"
+                VerticalAlignment="Top">
+                    <Grid>
+                        <Polygon x:Name="toolTipCorner"
+                         Grid.ZIndex="2"
+                         Margin="-1"
+                         Points="6,6 6,0 0,0" 
+                         Fill="#FFdc000c" 
+                         HorizontalAlignment="Right" 
+                         VerticalAlignment="Top"
+                         IsHitTestVisible="True"/>
+                        <Polyline Grid.ZIndex="3"
+                          Points="7,7 0,0" Margin="-1" HorizontalAlignment="Right" 
+                          StrokeThickness="1.5"
+                          StrokeEndLineCap="Round"
+                          StrokeStartLineCap="Round"
+                          Stroke="White"
+                          VerticalAlignment="Top"
+                          IsHitTestVisible="True"/>
+                        <AdornedElementPlaceholder x:Name="adorner"/>
+                    </Grid>
+                </Border>
+                <Border x:Name="errorBorder" Background="#FFdc000c" Margin="1,0,0,0"
+                Opacity="0" CornerRadius="1.5"
+                IsHitTestVisible="False"
+                MinHeight="24" MaxWidth="267">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="2.25" 
+                                  Color="Black" 
+                                  Opacity="0.4"
+                                  Direction="315"
+                                  BlurRadius="4"/>
+                    </Border.Effect>
+                    <TextBlock Text="{Binding ElementName=adorner,
+                                      Path=AdornedElement.(Validation.Errors)[0].ErrorContent}"
+                       Foreground="White" Margin="8,3,8,3" TextWrapping="Wrap"/>
+                </Border>
+            </StackPanel>
+            <ControlTemplate.Triggers>
+                <DataTrigger Value="True">
+                    <DataTrigger.Binding>
+                        <MultiBinding Converter="{StaticResource  ResourceKey=booleanOrConverter}">
+                            <Binding ElementName="adorner" Path="AdornedElement.IsKeyboardFocused" />
+                            <Binding ElementName="toolTipCorner" Path="IsMouseOver"/>
+                        </MultiBinding>
+                    </DataTrigger.Binding>
+                    <DataTrigger.EnterActions>
+                        <BeginStoryboard x:Name="fadeInStoryboard">
+                            <Storyboard>
+                                <DoubleAnimation Duration="00:00:00.55"
+                                         Storyboard.TargetName="errorBorder"
+                                         Storyboard.TargetProperty="Opacity"
+                                         To="1"/>
+                                <ThicknessAnimation Duration="00:00:00.55"
+                                            Storyboard.TargetName="errorBorder"
+                                            Storyboard.TargetProperty="Margin"
+                                            FillBehavior="HoldEnd"
+                                            From="1,0,0,0"
+                                            To="5,0,0,0">
+                                    <ThicknessAnimation.EasingFunction>
+                                        <BackEase EasingMode="EaseOut" Amplitude="2"/>
+                                    </ThicknessAnimation.EasingFunction>
+                                </ThicknessAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </DataTrigger.EnterActions>
+                    <DataTrigger.ExitActions>
+                        <StopStoryboard BeginStoryboardName="fadeInStoryboard"/>
+                        <BeginStoryboard x:Name="fadeOutStoryBoard">
+                            <Storyboard>
+                                <DoubleAnimation Duration="00:00:00"
+                                         Storyboard.TargetName="errorBorder"
+                                         Storyboard.TargetProperty="Opacity"
+                                         To="0"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </DataTrigger.ExitActions>
+                </DataTrigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </UserControl.Resources>
+    
+    <Grid 
+        
+        DataContext="{Binding ClientCode}"
+        Background="{DynamicResource ResourceKey=DashboardBackground }"
+        >
+
+      
+        <Grid.LayoutTransform>
+            <ScaleTransform ScaleX="{Binding Path=ZoomFactor,ElementName=UiSend}"
+                                ScaleY="{Binding Path=ZoomFactor,ElementName=UiSend}"
+                         ></ScaleTransform>
+        </Grid.LayoutTransform>
+      
+        
+        <Grid.Resources>
+            <Style TargetType="Border">
+                <Setter Property="Background" Value="{DynamicResource ResourceKey=lightmodebackground}"></Setter>
+                <Setter Property="CornerRadius" Value="5"></Setter>
+                <Setter Property="BorderThickness" Value="1"></Setter>
+                <Setter Property="BorderBrush" Value="{DynamicResource ResourceKey=MainWindowBorderbrush}"></Setter>
+            </Style>
+           
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2.4*"></RowDefinition>
+            <RowDefinition Height="3.5*"></RowDefinition>
+            <RowDefinition Height="3.8*"></RowDefinition>
+            <RowDefinition Height="1.8*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <Popup x:Name="popup_senderIDtypes" AllowsTransparency="True" PopupAnimation="Slide">
+            <local:IdentityTypeSelector x:Name="identityTypeSelectorUC"
+                             Enter_Pressed="identityTypeSelectorUC_Enter_Pressed"
+                                        ESC_Pressed="identityTypeSelectorUC_ESC_Pressed"
+                                        MouseClicked="identityTypeSelectorUC_MouseClicked_1"
+                                        ></local:IdentityTypeSelector>
+        </Popup>
+        
+        <Border
+             Background="{DynamicResource lightmodebackgroundUpperPart}"
+            Margin="7,3,7,2">
+            <Grid>
+                <Grid.Resources>
+                    <Style TargetType="CustomeControls:TextBoxEx">
+                        <Setter Property="Foreground" Value="{DynamicResource ResourceKey=Darkmodebackground}"></Setter>
+                        <Setter Property="Template" Value="{DynamicResource ResourceKey=TextBoxBaseControlTemplateStyle}"></Setter>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="Background" Value="{DynamicResource ResourceKey=lightmodebackground}"></Setter>
+                    </Style>
+
+                  
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+
+                <Viewbox>
+                    <Grid>
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColorUpper}"
+                              Data="M32,5h8a2,2,0,0,1,2,2V39a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V7A2,2,0,0,1,4,5h8V1h4V5H28V1h4ZM28,9H16v4H12V9H6v8H38V9H32v4H28ZM38,21H6V37H38Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </Viewbox>
+
+                <!--<DatePicker.Resources>
+                        <Style TargetType="{x:Type DatePickerTextBox}">
+                            <Setter Property="Control.Template">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <TextBox x:Name="PART_TextBox" 
+                                    Text="{Binding Path=SelectedDate, RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}}" />
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DatePicker.Resources>-->
+                <DatePicker
+                    Margin="0,0,-2,0"
+                     FontSize="{Binding ElementName=UiSend,Path=HeaderFontSize2}"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource ResourceKey=lightmodeforegroundUpperPart}"
+                    Background="{DynamicResource ResourceKey=lightmodebackgroundUpperPart}"
+                  Style="{DynamicResource DatePickerStyle2UpperPart}"
+                   SelectedDate="{Binding PostDate}"
+                    Grid.Column="1" >
+
+
+                   
+                </DatePicker>
+
+                <Viewbox Grid.Row="1">
+                    <Grid>
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColorUpper}"
+                              Data="M17.594,32.083a7.292,7.292,0,0,1-14.437,0H1v-25A2.083,2.083,0,0,1,3.083,5H32.25a2.083,2.083,0,0,1,2.083,2.083V11.25h6.25l6.25,8.45V32.083h-4.24a7.292,7.292,0,0,1-14.438,0ZM30.167,9.167h-25V25.938a7.292,7.292,0,0,1,11.8,1.979H28.785a7.347,7.347,0,0,1,1.381-1.979Zm4.167,12.5h8.333v-.594l-4.183-5.656h-4.15Zm1.042,12.5a3.126,3.126,0,1,0-3.126-3.126,3.126,3.126,0,0,0,3.126,3.126ZM13.5,31.042a3.125,3.125,0,1,0-3.125,3.125A3.125,3.125,0,0,0,13.5,31.042Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </Viewbox>
+                <CustomeControls:TextBoxEx 
+                    Template="{DynamicResource TextBoxBaseControlTemplateStyleUpperPart}"
+                    Foreground="{DynamicResource ResourceKey=lightmodeforegroundUpperPart}"
+                    Background="{DynamicResource ResourceKey=lightmodebackgroundUpperPart}"
+                    FontWeight="Bold"
+                     FontSize="{Binding ElementName=UiSend,Path=HeaderFontSize2}"
+                    IsOnlyNumeric="True"
+                    Text="{Binding Shipment_No,TargetNullValue='',Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True}"
+                    
+                        Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}"
+                    
+                    
+                    
+                    PlaceHolder="Truck Number"  Margin="0,2,0,2" Grid.Row="1" Grid.Column="1"
+                    SourceUpdated="TextBoxEx_SourceUpdated_3"
+                    LostKeyboardFocus="TextBoxEx_LostKeyboardFocus_3"
+                    ></CustomeControls:TextBoxEx>
+
+                <Viewbox Grid.Row="2">
+                    <Grid>
+                         
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColorUpper}"
+                              Data="M49.767,20.6,34.093,36.277l-3.134-3.134L43.5,20.6,30.958,8.063l3.134-3.134Zm-42.5,0,12.54,12.54-3.134,3.134L1,20.6,16.674,4.929l3.134,3.134Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </Viewbox>
+                <CustomeControls:TextBoxEx
+                     Template="{DynamicResource TextBoxBaseControlTemplateStyleUpperPart}"
+                     Foreground="{DynamicResource ResourceKey=lightmodeforegroundUpperPart}"
+                    Background="{DynamicResource ResourceKey=lightmodebackgroundUpperPart}"
+                     FontSize="{Binding ElementName=UiSend,Path=HeaderFontSize2}"
+                    FontWeight="Bold"
+                    IsReadOnly="True"
+                    Text="{Binding Code}"
+                    PlaceHolder="Code Number" Margin="0,2,0,2" Grid.Row="2" Grid.Column="1"></CustomeControls:TextBoxEx>
+                <Button
+                    x:Name="btn_delete"
+                    Grid.Column="2" Grid.Row="2" Template="{DynamicResource ResourceKey=emptybutton}" 
+                             Click="Button_Click_8"
+                            >
+                    <Viewbox >
+                        <Grid>
+                            <Path x:Name="deletepath" RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColorUpper}"
+                              Data="M31.75,9.933h9.917V13.9H37.7V39.683a1.983,1.983,0,0,1-1.983,1.983H7.95a1.983,1.983,0,0,1-1.983-1.983V13.9H2V9.933h9.917V3.983A1.983,1.983,0,0,1,13.9,2H29.767A1.983,1.983,0,0,1,31.75,3.983ZM33.733,13.9H9.933V37.7h23.8Zm-9.1,11.9,3.507,3.507-2.8,2.8L21.833,28.6l-3.507,3.507-2.8-2.8L19.029,25.8l-3.507-3.507,2.8-2.8L21.833,23l3.507-3.507,2.8,2.8ZM15.883,5.967V9.933h11.9V5.967Z">
+                                <Path.RenderTransform>
+                                    <ScaleTransform>
+                                        <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                        <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                    </ScaleTransform>
+                                </Path.RenderTransform>
+
+                                
+                                <!--
+                                <Path.Style>
+                                    <Style TargetType="Path">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=UiSend,Path=windowsstate}" Value="{x:Static Enumerations:windowStatesenum.update}">
+                                                <Setter Property="Fill" Value="Red"></Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Path.Style>
+                                -->
+                            </Path>
+
+
+                             
+
+                        </Grid>
+                    </Viewbox>
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                Storyboard.TargetName="deletepath"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
+                To="0.55" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                    <DoubleAnimation
+                Storyboard.TargetName="deletepath"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
+                To="0.55" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                Storyboard.TargetName="deletepath"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
+                To="0.5" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                    <DoubleAnimation
+                Storyboard.TargetName="deletepath"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
+                To="0.5" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+
+                       
+
+                    </Button.Triggers>
+
+                </Button>
+            </Grid>
+        </Border>
+        <Border 
+              Background="{DynamicResource lightmodebackgroundUpperPart}"
+            Grid.Column="1" Margin="0,3,7,2">
+            <Grid>
+                <Grid.Resources>
+                    <Style TargetType="CustomeControls:TextBoxEx">
+                        <Setter Property="Foreground" Value="{DynamicResource ResourceKey=Darkmodebackground}"></Setter>
+                        <Setter Property="Template" Value="{DynamicResource ResourceKey=TextBoxBaseControlTemplateStyle}"></Setter>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="Background" Value="{DynamicResource ResourceKey=lightmodebackground}"></Setter>
+                    </Style>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Viewbox>
+                    <Grid>
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColorUpper}"
+                              Data="M39.467,47.55H35.033V43.117a6.65,6.65,0,0,0-6.65-6.65h-13.3a6.65,6.65,0,0,0-6.65,6.65V47.55H4V43.117A11.083,11.083,0,0,1,15.083,32.033h13.3A11.083,11.083,0,0,1,39.467,43.117ZM21.733,27.6a13.3,13.3,0,1,1,13.3-13.3A13.3,13.3,0,0,1,21.733,27.6Zm0-4.433A8.867,8.867,0,1,0,12.867,14.3,8.867,8.867,0,0,0,21.733,23.167Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+
+                    </Grid>
+                </Viewbox>
+                <CustomeControls:TextBoxEx
+                     Template="{DynamicResource TextBoxBaseControlTemplateStyleUpperPart}"
+                    Foreground="{DynamicResource ResourceKey=lightmodeforegroundUpperPart}"
+                    Background="{DynamicResource ResourceKey=lightmodebackgroundUpperPart}"
+                    
+                    IsTabStop="False"
+                    FontSize="{Binding ElementName=UiSend,Path=HeaderFontSize2}"
+                    FontWeight="Bold"
+                    IsReadOnly="True"
+                    Text="{Binding User.UserName}"
+                    PlaceHolder="Agent Name"  Margin="2,2,2,2" Grid.Column="1"></CustomeControls:TextBoxEx>
+
+                <Viewbox Grid.Row="1">
+                    <Grid>
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColorUpper}"
+                              Data="M32.425,3a2.453,2.453,0,0,1,2.452,2.452V15.26a2.453,2.453,0,0,1-2.452,2.452h-4.9v4.9h9.808a2.453,2.453,0,0,1,2.452,2.452v7.356h4.9a2.453,2.453,0,0,1,2.452,2.452v9.808a2.453,2.453,0,0,1-2.452,2.452H29.973a2.453,2.453,0,0,1-2.452-2.452V34.877a2.453,2.453,0,0,1,2.452-2.452h4.9v-4.9H15.26v4.9h4.9a2.453,2.453,0,0,1,2.452,2.452v9.808a2.453,2.453,0,0,1-2.452,2.452H5.452A2.453,2.453,0,0,1,3,44.685V34.877a2.453,2.453,0,0,1,2.452-2.452h4.9V25.069a2.453,2.453,0,0,1,2.452-2.452h9.808v-4.9h-4.9A2.453,2.453,0,0,1,15.26,15.26V5.452A2.453,2.453,0,0,1,17.712,3ZM17.712,37.329H7.9v4.9h9.808Zm24.521,0H32.425v4.9h9.808ZM29.973,7.9H20.165v4.9h9.808Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+
+                    </Grid>
+                </Viewbox>
+                <CustomeControls:TextBoxEx
+                    
+                     Template="{DynamicResource TextBoxBaseControlTemplateStyleUpperPart}"
+                    Foreground="{DynamicResource ResourceKey=lightmodeforegroundUpperPart}"
+                    Background="{DynamicResource ResourceKey=lightmodebackgroundUpperPart}"
+                    
+                    
+                    IsTabStop="False"
+                    FontSize="{Binding ElementName=UiSend,Path=HeaderFontSize2}"
+                    FontWeight="Bold"
+                    IsReadOnly="True"
+                    Text="{Binding virtual_Branch.AgentName}"  
+                    PlaceHolder="Branch" Margin="2,2,2,2" 
+                    Grid.Row="1" Grid.Column="1"></CustomeControls:TextBoxEx>
+
+
+                <Viewbox Grid.Row="2">
+                    <Grid>
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColorUpper}"
+                              Data="M49.767,20.6,34.093,36.277l-3.134-3.134L43.5,20.6,30.958,8.063l3.134-3.134Zm-42.5,0,12.54,12.54-3.134,3.134L1,20.6,16.674,4.929l3.134,3.134Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+
+                    </Grid>
+                </Viewbox>
+
+                <!-- SelectedValue="{Binding Code}"-->
+
+                <customeadorner:AdornedControl
+                    
+                    x:Name="adorner1"  Grid.Row="2" Grid.Column="1" >
+                    <customeadorner:AdornedControl.AdornerContent>
+                        <StersTransportLocal:LoadingWait
+                            animationviewboxheight="30" animationviewboxwidth="30"
+                            ></StersTransportLocal:LoadingWait>
+                    </customeadorner:AdornedControl.AdornerContent>
+                    <CustomeControls:ComboboxEX 
+                        
+                    FontSize="{Binding ElementName=UiSend,Path=HeaderFontSize2}"
+                    FontWeight="Bold"
+                    x:Name="cmb_clientcode"
+                    ItemsSource="{Binding ElementName=UiSend, Path=Clientcodes}"
+                    TextSearch.TextPath="Code"
+                    Margin="0,2,0,2"
+                    CBPlaceHolder="Code List/Ctrl+F To Search"
+				    Style="{DynamicResource ResourceKey=StandardComboboxUpperPart}"   IsEditable="True"
+                      Background="{DynamicResource ResourceKey=lightmodebackgroundUpperPart}"
+                      Foreground="{DynamicResource ResourceKey=lightmodeforegroundUpperPart}"
+                    Grid.Row="2" Grid.Column="1"
+                    PreviewKeyDown="cmb_clientcode_PreviewKeyDown"
+                    >
+
+
+
+                        <CustomeControls:ComboboxEX.ItemTemplate>
+                            <DataTemplate>
+                                <!-- Background="{DynamicResource ResourceKey=lightmodebackground}"-->
+                                <Border  VerticalAlignment="Stretch"
+                                HorizontalAlignment="Stretch" Margin="1" Padding="1" BorderThickness="1"
+                                     Background="Transparent"
+                                     BorderBrush="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                                CornerRadius="4">
+
+                                    <Grid Margin="3">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                                            <ColumnDefinition Width=".7*"></ColumnDefinition>
+                                            <ColumnDefinition Width=".7*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.Resources>
+                                            <Style TargetType="{x:Type TextBlock}">
+                                                <Setter Property="Margin" Value="0,0,0,1" />
+                                                <Setter Property="Background" Value="{DynamicResource ResourceKey=lightmodebackground}"></Setter>
+                                                <Setter Property="Foreground" Value="{DynamicResource ResourceKey=LabelTitleForeColor}"></Setter>
+
+                                            </Style>
+
+                                        </Grid.Resources>
+
+                                        <TextBlock  FontWeight="Bold" Padding="2" Text="{Binding Path=Code}"></TextBlock>
+                                        <TextBlock  Grid.Column="1"  Text="{Binding Path=Shipment_No}"></TextBlock>
+                                        <TextBlock  Grid.Column="2"  Text="{Binding Path=PostYear}" Foreground="{DynamicResource orange1}"></TextBlock>
+
+                                    </Grid>
+
+                                </Border>
+                            </DataTemplate>
+                        </CustomeControls:ComboboxEX.ItemTemplate>
+
+                        <CustomeControls:ComboboxEX.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel></VirtualizingStackPanel>
+                            </ItemsPanelTemplate>
+                        </CustomeControls:ComboboxEX.ItemsPanel>
+
+                    </CustomeControls:ComboboxEX>
+                </customeadorner:AdornedControl>
+               
+
+                <Button 
+                    Click="Button_Click_9"
+                    Grid.Column="2" Grid.Row="2" Template="{DynamicResource ResourceKey=emptybutton}" 
+                             
+                            >
+
+                    <Viewbox >
+                        <Grid>
+                            <Path x:Name="searchpath" RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColorUpper}"
+                              Data="M32.5,29.813l8.15,8.148-2.692,2.692L29.813,32.5A17.129,17.129,0,1,1,32.5,29.813ZM28.686,28.4a13.314,13.314,0,1,0-.285.285l.285-.285Z">
+                                <Path.RenderTransform>
+                                    <ScaleTransform>
+                                        <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                        <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                    </ScaleTransform>
+                                </Path.RenderTransform>
+                            </Path>
+                        </Grid>
+                    </Viewbox>
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                Storyboard.TargetName="searchpath"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
+                To="0.55" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                    <DoubleAnimation
+                Storyboard.TargetName="searchpath"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
+                To="0.55" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                Storyboard.TargetName="searchpath"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
+                To="0.5" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                    <DoubleAnimation
+                Storyboard.TargetName="searchpath"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
+                To="0.5" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Button.Triggers>
+
+                </Button>
+
+            </Grid>
+
+
+
+        </Border>
+
+        <Border  Grid.Row="1" Margin="7,3,7,2">
+            <Grid >
+                <Grid.Resources>
+                    <Style TargetType="CustomeControls:TextBoxEx">
+                        <Setter Property="Foreground" Value="{DynamicResource ResourceKey=Darkmodebackground}"></Setter>
+                        <Setter Property="Template" Value="{DynamicResource ResourceKey=TextBoxBaseControlTemplateStyle}"></Setter>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="FontWeight" Value="Bold"></Setter>
+                        <Setter Property="Background" Value="{DynamicResource ResourceKey=lightmodebackground}"></Setter>
+                    </Style>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+
+                <Label
+                    FontSize="{Binding ElementName=UiSend,Path=HeaderFontSize}"
+                    FontWeight="Bold"  Grid.Column="1" HorizontalAlignment="Center" Foreground="{DynamicResource ResourceKey=SidemenuBackground}">Sender</Label>
+                <Viewbox Grid.Row="1">
+                    <Grid>
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                              Data="M22.333,25.3v3.832A11,11,0,0,0,7.667,39.5L4,39.5a14.667,14.667,0,0,1,18.333-14.2ZM18.667,23a11,11,0,1,1,11-11A11,11,0,0,1,18.667,23Zm0-3.667A7.333,7.333,0,1,0,11.333,12,7.331,7.331,0,0,0,18.667,19.333Zm12.074,11-3.353-3.351,2.594-2.594,7.777,7.779-7.777,7.779-2.594-2.594L30.741,34H24.167V30.333Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </Viewbox>
+                <CustomeControls:TextBoxEx 
+                      CharacterCasing="Upper"
+                    x:Name="txt_sender"
+                    
+                    Text="{Binding SenderName}"
+                    Margin="0,2,0,2" PlaceHolder="Sender Name" Grid.Row="1" Grid.Column="1"
+                   Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}"
+                    ></CustomeControls:TextBoxEx>
+
+                <Viewbox Grid.Row="2">
+                    <Grid>
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                              Data="M14.671,17.084a19.353,19.353,0,0,0,7.245,7.245l1.621-2.27a1.833,1.833,0,0,1,2.372-.543,20.94,20.94,0,0,0,8.4,2.5A1.833,1.833,0,0,1,36,25.845v8.18a1.833,1.833,0,0,1-1.647,1.824,28.434,28.434,0,0,1-31.2-31.2A1.833,1.833,0,0,1,4.974,3h8.18a1.833,1.833,0,0,1,1.828,1.689,20.94,20.94,0,0,0,2.5,8.4,1.833,1.833,0,0,1-.543,2.372l-2.27,1.621Zm-4.624-1.2,3.483-2.488a24.585,24.585,0,0,1-2.011-6.725H6.685c-.011.3-.016.611-.016.917a24.747,24.747,0,0,0,24.748,24.75c.306,0,.612-.006.917-.018V27.48a24.585,24.585,0,0,1-6.725-2.011l-2.488,3.483a22.81,22.81,0,0,1-2.911-1.375l-.106-.061a23.019,23.019,0,0,1-8.62-8.62l-.061-.106a22.81,22.81,0,0,1-1.375-2.911Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </Viewbox>
+                <CustomeControls:TextBoxEx 
+                      CharacterCasing="Upper"
+                     TextWrapping="Wrap"
+                    AcceptsReturn="True"
+                    IsOnlyNumeric="True"
+                    Text="{Binding Sender_Tel}"
+                     Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}"
+                    Margin="0,2,0,2" PlaceHolder="Sender Phone" Grid.Row="2" Grid.Column="1">
+                    
+                </CustomeControls:TextBoxEx>
+
+
+                <Button 
+                    Click="Button_Click_11"
+                    Grid.Column="2" Grid.Row="2" Template="{DynamicResource ResourceKey=emptybutton}" 
+                             
+                            >
+
+                    <Viewbox >
+                        <Grid>
+                            <Path x:Name="Sendersearchpath" RenderTransformOrigin="0.5,0.5" 
+                             Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                              Data="M32.5,29.813l8.15,8.148-2.692,2.692L29.813,32.5A17.129,17.129,0,1,1,32.5,29.813ZM28.686,28.4a13.314,13.314,0,1,0-.285.285l.285-.285Z">
+                                <Path.RenderTransform>
+                                    <ScaleTransform>
+                                        <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                        <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                    </ScaleTransform>
+                                </Path.RenderTransform>
+                            </Path>
+                        </Grid>
+                    </Viewbox>
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                Storyboard.TargetName="Sendersearchpath"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
+                To="0.55" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                    <DoubleAnimation
+                Storyboard.TargetName="Sendersearchpath"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
+                To="0.55" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                Storyboard.TargetName="Sendersearchpath"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
+                To="0.5" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                    <DoubleAnimation
+                Storyboard.TargetName="Sendersearchpath"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
+                To="0.5" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Button.Triggers>
+
+                </Button>
+
+                <Button Click="Button_Click_12" Template="{DynamicResource ResourceKey=emptybutton}"  Grid.Row="3">
+                    <Viewbox Grid.Row="3">
+                        <Grid>
+                            <Path RenderTransformOrigin="0.5,0.5" 
+                               
+                              Data="M2,4.821A1.833,1.833,0,0,1,3.819,3H36.848a1.82,1.82,0,0,1,1.819,1.821V34.18A1.833,1.833,0,0,1,36.848,36H3.819A1.821,1.821,0,0,1,2,34.179ZM5.667,6.667V32.333H35V6.667Zm3.667,3.667h11v11h-11ZM13,14v3.667h3.667V14ZM9.333,25h22v3.667h-22ZM24,10.333h7.333V14H24Zm0,7.333h7.333v3.667H24Z">
+
+
+                                <Path.Style>
+                                    <Style TargetType="Path">
+                                        <Setter Property="Fill" Value="{DynamicResource ResourceKey=LabelTitleForeColor}">
+                                            
+                                        </Setter>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Sender_ID_Type}" Value="{x:Null}">
+                                                <Setter Property="Fill" Value="{DynamicResource blue1}"></Setter>
+                                                <DataTrigger.EnterActions>
+                                                    <BeginStoryboard>
+                                                        <Storyboard 
+                                                      x:Name="Blink" 
+                                                     AutoReverse="True" 
+                                                     RepeatBehavior="1x">
+                                                            <ColorAnimationUsingKeyFrames 
+                                                                BeginTime="00:00:00"
+                                                                 Storyboard.TargetProperty="(Fill).(SolidColorBrush.Color)">
+                                                                <EasingColorKeyFrame 
+                                                                  KeyTime="00:00:01" 
+                                                                  Value="White" />
+                                                            </ColorAnimationUsingKeyFrames>
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </DataTrigger.EnterActions>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        
+                                    </Style>
+                                </Path.Style>
+                                <Path.RenderTransform>
+                                    <ScaleTransform>
+                                        <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                        <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                    </ScaleTransform>
+                                </Path.RenderTransform>
+                            </Path>
+                        </Grid>
+                    </Viewbox>
+                </Button>
+              
+                <CustomeControls:TextBoxEx
+                    x:Name="txt_senderID"
+                    CharacterCasing="Upper" Text="{Binding Sender_ID}"
+                    PlaceHolder="Sender ID" IsOptional="True" Margin="0,2,0,2" Grid.Row="3"
+                    GotFocus="txt_senderID_GotFocus"
+                    Grid.Column="1"></CustomeControls:TextBoxEx>
+                <Label FontWeight="Bold" Content="{Binding Sender_ID_Type_Shortcut}" Foreground="{DynamicResource LabelTitleForeColor}" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="2"></Label>
+                
+                <Viewbox Grid.Row="4">
+                    <Grid>
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                              Data="M8,8H40a2,2,0,1,0,0-4H8A2,2,0,0,0,8,8Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                              Data="M40,11H8a2,2,0,0,0,0,4H40a2,2,0,1,0,0-4Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                              Data="M40,18H8a2,2,0,1,0,0,4H40a2,2,0,1,0,0-4Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+
+                        <Ellipse RenderTransformOrigin="0.2,0.28" 
+                            Width="50"
+    Height="50"
+    Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+     
+                            >
+                            <Ellipse.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.08</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.08</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Ellipse.RenderTransform>
+                        </Ellipse>
+
+                        <Ellipse RenderTransformOrigin="0.2,0.37" 
+                            Width="50"
+    Height="50"
+    Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+    StrokeThickness="4"
+                            >
+                            <Ellipse.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.08</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.08</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Ellipse.RenderTransform>
+                        </Ellipse>
+
+                        <Ellipse RenderTransformOrigin="0.2,0.47" 
+                            Width="50"
+    Height="50"
+    Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+    StrokeThickness="4"
+                            >
+                            <Ellipse.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.08</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.08</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Ellipse.RenderTransform>
+                        </Ellipse>
+                    </Grid>
+                </Viewbox>
+                <CustomeControls:TextBoxEx
+                    
+                    
+                    
+                     CharacterCasing="Upper"
+                    TextWrapping="Wrap"
+                    AcceptsReturn="True"
+                    Text="{Binding Goods_Description}"
+                     Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}"
+                    Margin="0,2,0,2"  PlaceHolder="Goods Description" Grid.Row="4" Grid.Column="1"></CustomeControls:TextBoxEx>
+            </Grid>
+        </Border>
+
+        <Border Grid.Column="1" Grid.Row="1" Margin="0,3,7,2">
+            <Grid>
+                <Grid.Resources>
+                    <Style TargetType="CustomeControls:TextBoxEx">
+                        <Setter Property="Foreground" Value="{DynamicResource ResourceKey=Darkmodebackground}"></Setter>
+                        <Setter Property="Template" Value="{DynamicResource ResourceKey=TextBoxBaseControlTemplateStyle}"></Setter>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="FontWeight" Value="Bold"></Setter>
+                        <Setter Property="Background" Value="{DynamicResource ResourceKey=lightmodebackground}"></Setter>
+                    </Style>
+
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Label
+                     FontSize="{Binding ElementName=UiSend,Path=HeaderFontSize}"
+                    FontWeight="Bold" Grid.Column="1" HorizontalAlignment="Center" Foreground="{DynamicResource ResourceKey=SidemenuBackground}">Receiver
+                </Label>
+                <Viewbox Grid.Row="1">
+                    <Grid>
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                              Data="M22.75,25.847v3.919a11.25,11.25,0,0,0-15,10.609l-3.75,0A15,15,0,0,1,22.75,25.846ZM19,23.5A11.25,11.25,0,1,1,30.25,12.25,11.247,11.247,0,0,1,19,23.5Zm0-3.75a7.5,7.5,0,1,0-7.5-7.5A7.5,7.5,0,0,0,19,19.75ZM34,31h5.625v3.75H34v6.563l-9.375-8.437L34,24.438Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+
+                        </Path>
+                    </Grid>
+                </Viewbox>
+                <CustomeControls:TextBoxEx
+                      CharacterCasing="Upper"
+                      
+                      Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}"
+                    Text="{Binding ReceiverName}"  Margin="2,2,2,2" PlaceHolder="Receiver Name" Grid.Column="1" Grid.Row="1">
+
+                </CustomeControls:TextBoxEx>
+
+                <Viewbox Grid.Row="2">
+                    <Grid>
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                              Data="M14.671,17.084a19.353,19.353,0,0,0,7.245,7.245l1.621-2.27a1.833,1.833,0,0,1,2.372-.543,20.94,20.94,0,0,0,8.4,2.5A1.833,1.833,0,0,1,36,25.845v8.18a1.833,1.833,0,0,1-1.647,1.824,28.434,28.434,0,0,1-31.2-31.2A1.833,1.833,0,0,1,4.974,3h8.18a1.833,1.833,0,0,1,1.828,1.689,20.94,20.94,0,0,0,2.5,8.4,1.833,1.833,0,0,1-.543,2.372l-2.27,1.621Zm-4.624-1.2,3.483-2.488a24.585,24.585,0,0,1-2.011-6.725H6.685c-.011.3-.016.611-.016.917a24.747,24.747,0,0,0,24.748,24.75c.306,0,.612-.006.917-.018V27.48a24.585,24.585,0,0,1-6.725-2.011l-2.488,3.483a22.81,22.81,0,0,1-2.911-1.375l-.106-.061a23.019,23.019,0,0,1-8.62-8.62l-.061-.106a22.81,22.81,0,0,1-1.375-2.911Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+
+                        </Path>
+                    </Grid>
+                </Viewbox>
+                <CustomeControls:TextBoxEx
+                     CharacterCasing="Upper"
+                     TextWrapping="Wrap"
+                    AcceptsReturn="True"
+                    IsOnlyNumeric="True"
+                    
+                    Text="{Binding Receiver_Tel}"
+                      Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}"
+                    Margin="2,2,2,2" PlaceHolder="Receiver Phone" Grid.Column="1" Grid.Row="2"></CustomeControls:TextBoxEx>
+
+                <Viewbox Grid.Row="3">
+                    <Grid>
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                              Data="M9.941,10.349a15,15,0,0,0,16.532,24.27,6.48,6.48,0,0,0-.45-3.229c-.431-1.05-1.853-2.844-4.224-5.332-.634-.666-.593-1.178-.366-2.694l.024-.171c.154-1.039.413-1.654,3.909-2.209,1.778-.281,2.244.427,2.891,1.412l.217.323a3.433,3.433,0,0,0,1.759,1.417c.309.141.694.319,1.209.609,1.223.7,1.223,1.489,1.223,3.217v.2a9.841,9.841,0,0,1-.184,1.939A15,15,0,0,0,26.66,6.959,14.769,14.769,0,0,0,23.7,9.331c-.253.347-.613,2.122-1.781,2.269a6.876,6.876,0,0,1-1.149-.017c-1.166-.075-2.76-.178-3.27,1.208a5.491,5.491,0,0,0,.668,4.5,1.094,1.094,0,0,1,.086.973,1.9,1.9,0,0,1-.548.934,5.406,5.406,0,0,1-.786-.806,5.143,5.143,0,0,0-2.271-1.8c-.345-.1-.724-.174-1.093-.253-1.029-.216-2.194-.461-2.466-1.039a4.056,4.056,0,0,1-.2-1.622,5.971,5.971,0,0,0-.382-2.522,2.393,2.393,0,0,0-.574-.806ZM20.75,39.5A18.75,18.75,0,1,1,39.5,20.75,18.75,18.75,0,0,1,20.75,39.5Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+
+                        </Path>
+                    </Grid>
+                </Viewbox>
+
+                <!-- SelectionChanged="ComboboxEX_SelectionChanged"-->
+                <CustomeControls:ComboboxEX 
+                    ItemsSource="{Binding ElementName=UiSend, Path=Agentcountries}"
+                    SelectedValuePath="Id"
+                    FontWeight="Bold"
+                    SelectedValue="{Binding CountryAgentId,Mode=TwoWay,
+                    UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True }"
+                    TextSearch.TextPath="CountryName"
+                    SourceUpdated="ComboboxEX_SourceUpdated_3"
+                    SelectionChanged="ComboboxEX_SelectionChanged"
+                    LostKeyboardFocus="ComboboxEX_LostKeyboardFocus_3"
+                    Margin="0,2,0,2"
+                                             CBPlaceHolder="Country"
+                                               Background="{DynamicResource ResourceKey=lightmodebackground}"
+                                             Foreground="{DynamicResource ResourceKey=Darkmodebackground}"
+                   
+                      Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}"
+                   
+				   Style="{DynamicResource ResourceKey=StandardCombobox}" 
+                    IsEditable="True" Grid.Column="1" Grid.Row="3">
+                    <CustomeControls:ComboboxEX.ItemTemplate>
+                        <DataTemplate>
+                            <Border VerticalAlignment="Stretch"
+                                     
+                                     
+                                HorizontalAlignment="Stretch" Margin="1" Padding="1" BorderThickness="1"
+                                     Background="{DynamicResource ResourceKey=lightmodebackground}"
+                                     BorderBrush="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                                CornerRadius="4">
+                                <Grid Margin="3">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.Resources>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="Margin" Value="0,0,0,4" />
+                                            <Setter Property="Background" Value="{DynamicResource ResourceKey=lightmodebackground}"></Setter>
+                                            <Setter Property="Foreground" Value="{DynamicResource ResourceKey=LabelTitleForeColor}"></Setter>
+                                        </Style>
+                                    </Grid.Resources>
+                                    <TextBlock  FontWeight="Bold" Padding="2" Text="{Binding Path=CountryName}"></TextBlock>
+                                </Grid>
+
+                            </Border>
+                        </DataTemplate>
+                    </CustomeControls:ComboboxEX.ItemTemplate>
+                </CustomeControls:ComboboxEX>
+
+
+                <Viewbox Grid.Row="4">
+                    <Grid>
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                              Data="M19.875,37.437l9.281-9.281a13.125,13.125,0,1,0-18.562,0Zm0,5.3L7.942,30.807a16.875,16.875,0,1,1,23.865,0Zm0-20.115a3.75,3.75,0,1,0-3.75-3.75A3.75,3.75,0,0,0,19.875,22.625Zm0,3.75a7.5,7.5,0,1,1,7.5-7.5A7.5,7.5,0,0,1,19.875,26.375Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+
+                        </Path>
+                    </Grid>
+                </Viewbox>
+
+
+                <CustomeControls:ComboboxEX
+                    x:Name="cmb_agent"
+                    Margin="0,2,0,2"
+                    FontWeight="Bold"
+                                             CBPlaceHolder="City"
+                                               Background="{DynamicResource ResourceKey=lightmodebackground}"
+                                             Foreground="{DynamicResource ResourceKey=Darkmodebackground}"
+				   Style="{DynamicResource ResourceKey=StandardCombobox}"   IsEditable="True" Grid.Column="1" Grid.Row="4"
+                                             ItemsSource="{Binding ElementName=UiSend, Path=cityAgentsoffices}"
+                                             SelectedValuePath="Id"
+                                             SelectedValue="{Binding AgentId,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True}"
+                                               TextSearch.TextPath="AgentName"
+                                             SourceUpdated="ComboboxEX_SourceUpdated_1"
+                                             LostKeyboardFocus="ComboboxEX_LostKeyboardFocus_1"
+                      Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}"
+                                             >
+                    <CustomeControls:ComboboxEX.ItemTemplate>
+                        <DataTemplate>
+                            <Border VerticalAlignment="Stretch"
+                                     
+                                     
+                                HorizontalAlignment="Stretch" Margin="1" Padding="1" BorderThickness="1"
+                                     Background="{DynamicResource ResourceKey=lightmodebackground}"
+                                     BorderBrush="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                                CornerRadius="4">
+                                <Grid Margin="3">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.Resources>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="Margin" Value="0,0,0,4" />
+                                            <Setter Property="Background" Value="{DynamicResource ResourceKey=lightmodebackground}"></Setter>
+                                            <Setter Property="Foreground" Value="{DynamicResource ResourceKey=LabelTitleForeColor}"></Setter>
+                                        </Style>
+                                    </Grid.Resources>
+                                    <TextBlock  FontWeight="Bold" Padding="2" Text="{Binding Path=AgentName}"></TextBlock>
+                                    <!--<TextBlock  FontWeight="Bold" Padding="2"  Text="{Binding Path=HavePostService}" Grid.Column="1">
+
+                                    </TextBlock>-->
+
+                                    <TextBlock Grid.Column="1" FontWeight="Bold" Padding="2">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Text" Value="Post"></Setter>
+                                                <Setter Property="Foreground" Value="#236BC9"></Setter>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding HavePostService}" Value="{x:Null}">
+                                                        <Setter Property="Text" Value=""></Setter>
+                                                        <Setter Property="Foreground" Value="Transparent"></Setter>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding HavePostService}" Value="False">
+                                                        <Setter Property="Text" Value=""></Setter>
+                                                        <Setter Property="Foreground" Value="Transparent"></Setter>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Grid>
+
+                            </Border>
+                        </DataTemplate>
+                    </CustomeControls:ComboboxEX.ItemTemplate>
+
+                </CustomeControls:ComboboxEX>
+
+
+
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="2" Grid.RowSpan="3" Margin="7,3,7,7">
+
+
+            <Grid x:Name="grd_items">
+                <Grid.Resources>
+                    <Style TargetType="CustomeControls:TextBoxEx">
+                        <Setter Property="Foreground" Value="{DynamicResource ResourceKey=Darkmodebackground}"></Setter>
+                        <Setter Property="Template" Value="{DynamicResource ResourceKey=TextBoxBaseControlTemplateStyle}"></Setter>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="FontWeight" Value="Bold"></Setter>
+                        <Setter Property="Background" Value="{DynamicResource ResourceKey=lightmodebackground}"></Setter>
+                    </Style>
+                </Grid.Resources>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition x:Name="row_notes_items"></RowDefinition>
+                </Grid.RowDefinitions>
+
+
+                <Label 
+                     FontSize="{Binding ElementName=UiSend,Path=HeaderFontSize}"
+                    FontWeight="Bold"  Grid.Column="2" HorizontalAlignment="Center" Grid.ColumnSpan="2" Foreground="{DynamicResource ResourceKey=SidemenuBackground}">Items</Label>
+                <Viewbox Grid.Row="1">
+                    <Grid>
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                              Data="M14.083,5.217H42.9V9.65H14.083ZM7.433,3V9.65H9.65v2.217H3V9.65H5.217V5.217H3V3ZM3,27.383V21.842H7.433V20.733H3V18.517H9.65v5.542H5.217v1.108H9.65v2.217ZM7.433,39.575H3V37.358H7.433V36.25H3V34.033H9.65V42.9H3V40.683H7.433Zm6.65-18.842H42.9v4.433H14.083Zm0,15.517H42.9v4.433H14.083Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </Viewbox>
+
+                <!--StringFormat=N2-->
+                <!--StringFormat={}{0:#,#.00}}-->
+                <!--StringFormat={}{##.##}-->
+                <CustomeControls:TextBoxEx 
+                    
+                    IsOnlyNumeric="True"
+                    Text="{Binding Box_No,TargetNullValue='',Mode=TwoWay,
+                    UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True}"
+                    SourceUpdated="TextBoxEx_SourceUpdated_9"
+                    LostKeyboardFocus="TextBoxEx_LostKeyboardFocus_9"
+                    	    Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}"
+                    PlaceHolder="Box No." Margin="2,2,2,2" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="1"></CustomeControls:TextBoxEx>
+                <CustomeControls:TextBoxEx Text="{Binding Pallet_No}" PlaceHolder="Pallet No." Margin="2,2,2,2" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="3"></CustomeControls:TextBoxEx>
+
+                <Viewbox Grid.Row="2">
+                    <Grid>
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                              Data="M23.667,2A21.667,21.667,0,1,1,2,23.667,21.666,21.666,0,0,1,23.667,2Zm0,4.333A17.333,17.333,0,1,0,41,23.667,17.334,17.334,0,0,0,23.667,6.333Zm8.3,7.23a1.285,1.285,0,0,1,1.79,1.792q-7.085,9.9-7.8,10.61a3.251,3.251,0,0,1-4.6-4.6q1.215-1.212,10.6-7.8ZM35.583,21.5a2.167,2.167,0,1,1-2.167,2.167A2.167,2.167,0,0,1,35.583,21.5Zm-23.833,0a2.167,2.167,0,1,1-2.167,2.167A2.167,2.167,0,0,1,11.75,21.5Zm5.022-7.791a2.166,2.166,0,1,1-3.064,0A2.168,2.168,0,0,1,16.772,13.709Zm6.894-4.125A2.167,2.167,0,1,1,21.5,11.75,2.167,2.167,0,0,1,23.667,9.583Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </Viewbox>
+                <CustomeControls:TextBoxEx 
+                  
+                    IsOnlyDouble="True"
+                   x:Name="txt_weight"
+                    Text="{Binding Weight_Kg,TargetNullValue='',Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True}"
+                  
+                        Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}"
+                    SourceUpdated="txt_weight_SourceUpdated"
+                    LostKeyboardFocus="txt_weight_LostKeyboardFocus"
+                    PlaceHolder="Real Weight KG" 
+                    Margin="0,2,0,2"
+                    Grid.Row="2" Grid.ColumnSpan="4" Grid.Column="1"></CustomeControls:TextBoxEx>
+
+                <Grid Grid.Row="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="8*"></RowDefinition>
+                        <RowDefinition Height="8.8"></RowDefinition>
+                        <RowDefinition Height="9*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Foreground="{DynamicResource ResourceKey=LabelTitleForeColor}" VerticalAlignment="Center" HorizontalAlignment="Center">Wight</TextBlock>
+                    <TextBlock Foreground="{DynamicResource ResourceKey=LabelTitleForeColor}" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1">Volumne</TextBlock>
+                    <TextBlock Foreground="{DynamicResource ResourceKey=LabelTitleForeColor}" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2">KG</TextBlock>
+                </Grid>
+                <TextBlock Foreground="{DynamicResource ResourceKey=LabelTitleForeColor}" Grid.Row="3" Grid.Column="1">(L*W*H)</TextBlock>
+                <CustomeControls:TextBoxEx
+                    IsOnlyDouble="True"
+                    Text="{Binding Weight_L_cm,TargetNullValue='',Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True}"
+                     Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}"
+                    Margin="2,2,2,2" Grid.Row="3"   Grid.Column="2"
+                    SourceUpdated="TextBoxEx_SourceUpdated"
+                    LostKeyboardFocus="TextBoxEx_LostKeyboardFocus"
+                    IsReadOnly="{Binding Weight_By_Size_Is_Checked,Converter={StaticResource Inversebooleanconverter}}"
+                    ></CustomeControls:TextBoxEx>
+                <CustomeControls:TextBoxEx
+                    IsOnlyDouble="True"
+                    Text="{Binding Weight_W_cm,TargetNullValue='',Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True}"
+                     Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}"
+                    SourceUpdated="TextBoxEx_SourceUpdated_1"
+                    LostKeyboardFocus="TextBoxEx_LostKeyboardFocus_1"
+                     IsReadOnly="{Binding Weight_By_Size_Is_Checked,Converter={StaticResource Inversebooleanconverter}}"
+                    Margin="2,2,2,2" Grid.Row="3"   Grid.Column="3"></CustomeControls:TextBoxEx>
+                <CustomeControls:TextBoxEx
+                      IsOnlyDouble="True"
+                    Text="{Binding Weight_H_cm,TargetNullValue='',Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True}" 
+                     Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}"
+                    SourceUpdated="TextBoxEx_SourceUpdated_2"
+                    LostKeyboardFocus="TextBoxEx_LostKeyboardFocus_2"
+                     IsReadOnly="{Binding Weight_By_Size_Is_Checked,Converter={StaticResource Inversebooleanconverter}}"
+                    Margin="2,2,2,2" Grid.Row="3"   Grid.Column="4"></CustomeControls:TextBoxEx>
+
+
+                <Viewbox Grid.Row="3" Grid.Column="5" >
+                    <StackPanel  Orientation="Vertical" >
+                        <CheckBox
+                            VerticalAlignment="Bottom"
+                            IsChecked="{Binding Weight_By_Size_Is_Checked,Mode=TwoWay}"
+                            Checked="CheckBox_Checked"
+                            Unchecked="CheckBox_Unchecked"
+                            HorizontalAlignment="Center"></CheckBox>
+                        <TextBlock VerticalAlignment="Center" Foreground="{DynamicResource ResourceKey=LabelTitleForeColor}">optional</TextBlock>
+                    </StackPanel>
+                </Viewbox>
+
+
+                <Viewbox Grid.Row="4">
+                    <Label  Foreground="{DynamicResource ResourceKey=LabelTitleForeColor}" Content="/"></Label>
+                </Viewbox>
+                <!--
+                <ComboBox 
+                    IsEditable="True"
+                    
+                    Style="{DynamicResource ResourceKey=StandardCombobox}"
+                    Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4">
+                    <ComboBoxItem>5000</ComboBoxItem>
+                    <ComboBoxItem>6000</ComboBoxItem>
+                </ComboBox>
+                -->
+
+                <!-- Style="{DynamicResource ResourceKey=StandardCombobox}"-->
+                <CustomeControls:ComboboxEX Grid.Column="1"
+                                            Margin="0,2,0,2"
+                                            Grid.Row="4"
+                                             FontWeight="Bold"
+                                             ItemsSource="{Binding ElementName=UiSend, Path=vol_factors}"
+                                            SelectedValue="{Binding   Weight_Vol_Factor,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True}"
+                                            SourceUpdated="ComboboxEX_SourceUpdated"
+                                            LostKeyboardFocus="ComboboxEX_LostKeyboardFocus"
+                                            Grid.ColumnSpan="4"
+                                           Style="{DynamicResource ResourceKey=StandardCombobox}"
+                                             Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}"
+                                            HorizontalContentAlignment="Center"
+                                            IsEditable="True"
+                                            IsEnabled="{Binding Weight_By_Size_Is_Checked}"
+                                            Background="{DynamicResource ResourceKey=lightmodebackground}"
+                                            Foreground="{DynamicResource ResourceKey=Darkmodebackground}"
+                                            >
+
+                </CustomeControls:ComboboxEX>
+                <Viewbox Grid.Row="5">
+                    <Grid>
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                              Data="M23.667,2A21.667,21.667,0,1,1,2,23.667,21.666,21.666,0,0,1,23.667,2Zm0,4.333A17.333,17.333,0,1,0,41,23.667,17.334,17.334,0,0,0,23.667,6.333Zm8.3,7.23a1.285,1.285,0,0,1,1.79,1.792q-7.085,9.9-7.8,10.61a3.251,3.251,0,0,1-4.6-4.6q1.215-1.212,10.6-7.8ZM35.583,21.5a2.167,2.167,0,1,1-2.167,2.167A2.167,2.167,0,0,1,35.583,21.5Zm-23.833,0a2.167,2.167,0,1,1-2.167,2.167A2.167,2.167,0,0,1,11.75,21.5Zm5.022-7.791a2.166,2.166,0,1,1-3.064,0A2.168,2.168,0,0,1,16.772,13.709Zm6.894-4.125A2.167,2.167,0,1,1,21.5,11.75,2.167,2.167,0,0,1,23.667,9.583Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </Viewbox>
+                <CustomeControls:TextBoxEx 
+                  
+                    IsReadOnly="True"
+                    Text="{Binding Weight_BySizeValue}"
+                     Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}"
+                    PlaceHolder="Result" Margin="0,2,0,2" Grid.Row="5" Grid.ColumnSpan="4" Grid.Column="1"></CustomeControls:TextBoxEx>
+
+                <Viewbox Grid.Row="6">
+                    <Grid>
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                              Data="M5.167,3H39.833A2.167,2.167,0,0,1,42,5.167V39.833A2.167,2.167,0,0,1,39.833,42H5.167A2.167,2.167,0,0,1,3,39.833V5.167A2.167,2.167,0,0,1,5.167,3ZM7.333,7.333V37.667H37.667V7.333Zm13,13V11.667h4.333v8.667h8.667v4.333H24.667v8.667H20.333V24.667H11.667V20.333Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </Viewbox>
+                <CustomeControls:TextBoxEx 
+                     x:Name="txt_additionalWeight"
+                      IsOnlyDouble="True"
+                     IsReadOnly="{Binding Weight_By_Size_Is_Checked,Converter={StaticResource Inversebooleanconverter}}"
+                     Text="{Binding AdditionalWeight,TargetNullValue='',Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True}"
+                     Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}"
+                    SourceUpdated="txt_additionalWeight_SourceUpdated"
+                    LostKeyboardFocus="txt_additionalWeight_LostKeyboardFocus"
+                    PlaceHolder="Additional KG" Margin="0,2,0,2" Grid.Row="6" Grid.ColumnSpan="4" Grid.Column="1"></CustomeControls:TextBoxEx>
+
+                <Viewbox Grid.Row="7">
+                    <Grid>
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                              Data="M30.188,23.937l0,5.438h5.439V33H30.186l0,5.438H26.563l0-5.437H21.125V29.375h5.436l0-5.437ZM17.5,29.375V33H3V29.375ZM35.625,16.688v3.625H3V16.688ZM35.625,4V7.625H3V4Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </Viewbox>
+                <CustomeControls:TextBoxEx 
+                    
+                    Text="{Binding Weight_Total}" 
+                    IsReadOnly="True"
+                     Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}"
+                    PlaceHolder="Total Weight KG" Margin="0,2,0,2" Grid.Row="7" Grid.ColumnSpan="4" Grid.Column="1"></CustomeControls:TextBoxEx>
+                <Grid x:Name="grd_notes" Grid.Row="8">
+                    <Viewbox >
+                        <Grid>
+                            <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                              Data="M42,29,29,41.991,5.171,42A2.162,2.162,0,0,1,3,39.849V5.152A2.153,2.153,0,0,1,5.152,3h34.7A2.172,2.172,0,0,1,42,5.171ZM37.667,7.333H7.333V37.667H24.667V26.833a2.167,2.167,0,0,1,1.913-2.151l.254-.015,10.833,0ZM35.87,29,29,29v6.866L35.87,29Z">
+                                <Path.RenderTransform>
+                                    <ScaleTransform>
+                                        <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                        <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                    </ScaleTransform>
+                                </Path.RenderTransform>
+                            </Path>
+                        </Grid>
+                    </Viewbox>
+                </Grid>
+
+                <CustomeControls:TextBoxEx
+                    PlaceHolder="Notes"
+                     Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}"
+                    x:Name="txtNotes" Text="{Binding Note_Send}" Margin="0,2,0,2" Grid.Row="8" Grid.ColumnSpan="4" Grid.Column="1"></CustomeControls:TextBoxEx>
+            </Grid>
+        </Border>
+
+        <Border x:Name="brd_post" Grid.Column="1" Grid.Row="2" Margin="0,3,7,2">
+            <Grid>
+                <Grid.Resources>
+                    <Style TargetType="CustomeControls:TextBoxEx">
+                        <Setter Property="Foreground" Value="{DynamicResource ResourceKey=Darkmodebackground}"></Setter>
+                        <Setter Property="Template" Value="{DynamicResource ResourceKey=TextBoxBaseControlTemplateStyle}"></Setter>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="FontWeight" Value="Bold"></Setter>
+                        <Setter Property="Background" Value="{DynamicResource ResourceKey=lightmodebackground}"></Setter>
+                    </Style>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Label 
+                     FontSize="{Binding ElementName=UiSend,Path=HeaderFontSize}"
+                    FontWeight="Bold"  Grid.Column="1" HorizontalAlignment="Center" Foreground="{DynamicResource ResourceKey=SidemenuBackground}">Send Via Post</Label>
+                <Viewbox Grid.Row="1">
+                    <Grid>
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                              Data="M34.75,38.192H8.5a1.875,1.875,0,0,1-1.875-1.875V19.442H1L20.363,1.84a1.875,1.875,0,0,1,2.524,0l19.363,17.6H36.625V36.317A1.875,1.875,0,0,1,34.75,38.192ZM23.5,34.442h9.375V15.987L21.625,5.76,10.375,15.987V34.442H19.75V23.192H23.5Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </Viewbox>
+                <CustomeControls:TextBoxEx  
+                    
+                    Text="{Binding Street_Name_No}"  
+                      Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}"
+                       IsReadOnly="{Binding Have_Local_Post,Converter={StaticResource Inversebooleanconverter}}"
+                    Margin="2,2,2,2" PlaceHolder="Street Name &amp; No." Grid.Row="1" Grid.Column="1"></CustomeControls:TextBoxEx>
+
+                <Viewbox Grid.Row="2">
+                    <Grid>
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                              Data="M28.821,27.322a12.833,12.833,0,1,0-18.641,0,11,11,0,0,1,18.641,0Zm-15.948,2.7L19.5,36.648l6.628-6.626a7.333,7.333,0,0,0-13.255,0ZM19.5,41.835,7.833,30.167a16.5,16.5,0,1,1,23.335,0Zm0-25.168a1.833,1.833,0,1,0-1.833-1.833A1.833,1.833,0,0,0,19.5,16.667Zm0,3.667a5.5,5.5,0,1,1,5.5-5.5A5.5,5.5,0,0,1,19.5,20.333Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </Viewbox>
+                <CustomeControls:TextBoxEx
+                    IsOptional="True"
+                      IsReadOnly="{Binding Have_Local_Post,Converter={StaticResource Inversebooleanconverter}}"
+                    Text="{Binding Dep_Appar}" 
+                      Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}"
+                    Margin="2,2,2,2" PlaceHolder="Apartment No." Grid.Row="2" Grid.Column="1"></CustomeControls:TextBoxEx>
+
+                <Viewbox Grid.Row="3">
+                    <Grid>
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                              Data="M5.75,10.642V34.688l9.5-4.069L26.5,36.244l9.253-3.969V8.231l2.443-1.046a.938.938,0,0,1,1.307.862v26.7L26.375,40.374l-11.25-5.625L3.307,39.814A.937.937,0,0,1,2,38.951v-26.7ZM28.706,20.2,20.75,28.159,12.794,20.2a11.25,11.25,0,1,1,15.911,0ZM20.75,22.856l5.3-5.3a7.5,7.5,0,1,0-10.6,0Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </Viewbox>
+                <CustomeControls:TextBoxEx 
+                    CharacterCasing="Upper"
+                      IsReadOnly="{Binding Have_Local_Post,Converter={StaticResource Inversebooleanconverter}}"
+                    
+                    Text="{Binding ZipCode,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True}"
+                      Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}"
+                    SourceUpdated="TextBoxEx_SourceUpdated_4"
+                    LostKeyboardFocus="TextBoxEx_LostKeyboardFocus_4"
+                    Margin="2,2,2,2" PlaceHolder="Zip Code" Grid.Row="3" Grid.Column="1"></CustomeControls:TextBoxEx>
+
+                <Button
+                    ToolTip="Check Zip Code"
+                    Grid.Column="2" Grid.Row="3"
+                        Template="{DynamicResource ResourceKey=emptybutton}" 
+                        Click="Button_Click_10"
+                        >
+
+                    <Viewbox >
+                        <Grid>
+                            <Path x:Name="searchpath2" RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                              Data="M32.5,29.813l8.15,8.148-2.692,2.692L29.813,32.5A17.129,17.129,0,1,1,32.5,29.813ZM28.686,28.4a13.314,13.314,0,1,0-.285.285l.285-.285Z">
+                                <Path.RenderTransform>
+                                    <ScaleTransform>
+                                        <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                        <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                    </ScaleTransform>
+                                </Path.RenderTransform>
+                            </Path>
+                        </Grid>
+                    </Viewbox>
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                Storyboard.TargetName="searchpath2"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
+                To="0.55" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                    <DoubleAnimation
+                Storyboard.TargetName="searchpath2"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
+                To="0.55" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                Storyboard.TargetName="searchpath2"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
+                To="0.5" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                    <DoubleAnimation
+                Storyboard.TargetName="searchpath2"
+                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
+                To="0.5" Duration="0:0:0.2" 
+                RepeatBehavior="1x" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Button.Triggers>
+
+                </Button>
+                
+
+
+                <Viewbox Grid.Row="4">
+                    <Grid>
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                              Data="M19.875,37.437l9.281-9.281a13.125,13.125,0,1,0-18.562,0Zm0,5.3L7.942,30.807a16.875,16.875,0,1,1,23.865,0Zm0-20.115a3.75,3.75,0,1,0-3.75-3.75A3.75,3.75,0,0,0,19.875,22.625Zm0,3.75a7.5,7.5,0,1,1,7.5-7.5A7.5,7.5,0,0,1,19.875,26.375Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </Viewbox>
+                
+                <!--
+                <CustomeControls:TextBoxEx
+                      IsReadOnly="{Binding Have_Local_Post,Converter={StaticResource Inversebooleanconverter}}"
+                    Text="{Binding CityPost}"  Margin="2,2,2,2"
+                    PlaceHolder="City" 
+                    Grid.Row="4" Grid.Column="1"></CustomeControls:TextBoxEx>
+                
+                -->
+                <CustomeControls:ComboboxEX
+                    x:Name="cmb_citypost"
+                    FontWeight="Bold"
+                     ItemsSource="{Binding ElementName=UiSend, Path=cities}"
+                     Grid.Row="4" Grid.Column="1"
+                      CBPlaceHolder="City" 
+                      IsEnabled="{Binding Have_Local_Post}"
+                     Text="{Binding CityPost,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True}"
+                    SourceUpdated="ComboboxEX_SourceUpdated_2"
+                    LostKeyboardFocus="ComboboxEX_LostKeyboardFocus_2"
+                       Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}"
+                     Background="{DynamicResource ResourceKey=lightmodebackground}"
+                                             Foreground="{DynamicResource ResourceKey=Darkmodebackground}"
+                     Style="{DynamicResource ResourceKey=StandardCombobox}"   IsEditable="True" 
+                     Margin="0,2,0,2"
+                    
+                    >
+                    <CustomeControls:ComboboxEX.ItemTemplate>
+                        <DataTemplate>
+                            <Border VerticalAlignment="Stretch"
+                                     
+                                     
+                                HorizontalAlignment="Stretch" Margin="1" Padding="1" BorderThickness="1"
+                                     Background="{DynamicResource ResourceKey=lightmodebackground}"
+                                     BorderBrush="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                                CornerRadius="4">
+                                <Grid Margin="3">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.Resources>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="Margin" Value="0,0,0,4" />
+                                            <Setter Property="Background" Value="{DynamicResource ResourceKey=lightmodebackground}"></Setter>
+                                            <Setter Property="Foreground" Value="{DynamicResource ResourceKey=LabelTitleForeColor}"></Setter>
+                                        </Style>
+                                    </Grid.Resources>
+                                    <TextBlock  FontWeight="Bold" Padding="2" Text="{Binding}"></TextBlock>
+                                </Grid>
+
+                            </Border>
+                        </DataTemplate>
+                    </CustomeControls:ComboboxEX.ItemTemplate>
+
+                </CustomeControls:ComboboxEX>
+
+                <Viewbox Grid.Row="5">
+                    <Grid>
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                              Data="M9.941,10.349a15,15,0,0,0,16.532,24.27,6.48,6.48,0,0,0-.45-3.229c-.431-1.05-1.853-2.844-4.224-5.332-.634-.666-.593-1.178-.366-2.694l.024-.171c.154-1.039.413-1.654,3.909-2.209,1.778-.281,2.244.427,2.891,1.412l.217.323a3.433,3.433,0,0,0,1.759,1.417c.309.141.694.319,1.209.609,1.223.7,1.223,1.489,1.223,3.217v.2a9.841,9.841,0,0,1-.184,1.939A15,15,0,0,0,26.66,6.959,14.769,14.769,0,0,0,23.7,9.331c-.253.347-.613,2.122-1.781,2.269a6.876,6.876,0,0,1-1.149-.017c-1.166-.075-2.76-.178-3.27,1.208a5.491,5.491,0,0,0,.668,4.5,1.094,1.094,0,0,1,.086.973,1.9,1.9,0,0,1-.548.934,5.406,5.406,0,0,1-.786-.806,5.143,5.143,0,0,0-2.271-1.8c-.345-.1-.724-.174-1.093-.253-1.029-.216-2.194-.461-2.466-1.039a4.056,4.056,0,0,1-.2-1.622,5.971,5.971,0,0,0-.382-2.522,2.393,2.393,0,0,0-.574-.806ZM20.75,39.5A18.75,18.75,0,1,1,39.5,20.75,18.75,18.75,0,0,1,20.75,39.5Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </Viewbox>
+                <CustomeControls:ComboboxEX 
+                    x:Name="cmb_countrypost"
+                    FontWeight="Bold"
+                      IsEnabled="{Binding Have_Local_Post}"
+                     ItemsSource="{Binding ElementName=UiSend, Path=countries}"
+                     SelectedValuePath="Id"
+                     SelectedValue="{Binding CountryPostId }"
+                     TextSearch.TextPath="CountryName"
+                      Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}"
+                    Margin="0,2,0,2"
+				    Style="{DynamicResource ResourceKey=StandardCombobox}"   IsEditable="True"
+                                             CBPlaceHolder="Country"
+                                               Background="{DynamicResource ResourceKey=lightmodebackground}"
+                      Foreground="{DynamicResource ResourceKey=Darkmodebackground}"
+                                             Grid.Row="5" Grid.Column="1">
+
+                    <CustomeControls:ComboboxEX.ItemTemplate>
+                        <DataTemplate>
+                            <Border VerticalAlignment="Stretch"
+                                     
+                                     
+                                HorizontalAlignment="Stretch" Margin="1" Padding="1" BorderThickness="1"
+                                     Background="{DynamicResource ResourceKey=lightmodebackground}"
+                                     BorderBrush="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                                CornerRadius="4">
+                                <Grid Margin="3">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.Resources>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="Margin" Value="0,0,0,4" />
+                                            <Setter Property="Background" Value="{DynamicResource ResourceKey=lightmodebackground}"></Setter>
+                                            <Setter Property="Foreground" Value="{DynamicResource ResourceKey=LabelTitleForeColor}"></Setter>
+                                        </Style>
+                                    </Grid.Resources>
+                                    <TextBlock  FontWeight="Bold" Padding="2" Text="{Binding Path=CountryName}"></TextBlock>
+                                </Grid>
+
+                            </Border>
+                        </DataTemplate>
+                    </CustomeControls:ComboboxEX.ItemTemplate>
+
+                </CustomeControls:ComboboxEX>
+
+
+
+                <Popup PopupAnimation="Slide" AllowsTransparency="True" x:Name="popup_streetpost">
+                    <local:ValuePicker x:Name="streetNOPicker"
+                                       Enter_Pressed="streetNOPicker_Enter_Pressed"
+                                       ESC_Pressed="streetNOPicker_ESC_Pressed"
+                                       TextKeyPressed="streetNOPicker_TextKeyPressed"
+                                       ></local:ValuePicker>
+                </Popup>
+            
+            </Grid>
+
+             
+        </Border>
+
+        <Border x:Name="brd_insurance" Grid.Column="1" Grid.Row="3" Grid.RowSpan="2" Margin="0,3,7,7">
+            
+            <Grid x:Name="grd_insurance">
+                <Grid.Resources>
+                    <Style TargetType="CustomeControls:TextBoxEx">
+                        <Setter Property="Foreground" Value="{DynamicResource ResourceKey=Darkmodebackground}"></Setter>
+                        <Setter Property="Template" Value="{DynamicResource ResourceKey=TextBoxBaseControlTemplateStyle}"></Setter>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="FontWeight" Value="Bold"></Setter>
+                        <Setter Property="Background" Value="{DynamicResource ResourceKey=lightmodebackground}"></Setter>
+                    </Style>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition x:Name="row_notes_insurance" Height=".01*"></RowDefinition>
+                    <RowDefinition Height="1.5*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Label
+                     FontSize="{Binding ElementName=UiSend,Path=HeaderFontSize}"
+                    FontWeight="Bold"  Grid.Column="1" HorizontalAlignment="Center" Foreground="{DynamicResource ResourceKey=SidemenuBackground}">Insurance Percent % Of Value</Label>
+                <Viewbox Grid.Row="1">
+                    <Grid>
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                              Data="M6.75,7.758V24.979a7.5,7.5,0,0,0,3.339,6.24l9.786,6.525,9.786-6.525A7.5,7.5,0,0,0,33,24.981V7.758L19.875,4.844ZM4.468,4.424,19.875,1,35.282,4.424a1.875,1.875,0,0,1,1.468,1.83V24.979a11.25,11.25,0,0,1-5.009,9.36L19.875,42.25,8.01,34.339A11.25,11.25,0,0,1,3,24.981V6.254a1.875,1.875,0,0,1,1.468-1.83ZM19.875,24.438l-5.511,2.9L15.416,21.2l-4.457-4.346,6.161-.9,2.754-5.582,2.756,5.582,6.159.9L24.334,21.2l1.05,6.135Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </Viewbox>
+                <CustomeControls:TextBoxEx 
+                    IsOnlyDouble="True"
+                    
+                    Text="{Binding Insurance_Percentage,TargetNullValue='',Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True}"
+                    SourceUpdated="TextBoxEx_SourceUpdated_10"
+                    LostKeyboardFocus="TextBoxEx_LostKeyboardFocus_10"
+                    Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}"
+                      IsReadOnly="{Binding Have_Insurance,Converter={StaticResource Inversebooleanconverter}}"
+                    Margin="2"   Grid.Row="1" Grid.Column="1"></CustomeControls:TextBoxEx>
+
+                <Viewbox  Grid.Row="1" Grid.Column="3">
+                    <StackPanel Orientation="Vertical" >
+                        <CheckBox  IsChecked="{Binding Have_Insurance,Mode=TwoWay}"
+                                   Checked="CheckBox_Checked_1"
+                                   Unchecked="CheckBox_Unchecked_1"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"></CheckBox>
+                        <TextBlock Foreground="{DynamicResource ResourceKey=LabelTitleForeColor}">optional</TextBlock>
+                    </StackPanel>
+                </Viewbox>
+               
+               
+                <Viewbox Grid.Row="2">
+                    <Grid>
+                        <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                              Data="M8.733,6.138a18.325,18.325,0,1,1-6.272,10.1l.141-.574,3.546.935a14.667,14.667,0,1,0,5.6-8.158l-.405.3L13.2,10.611,4.778,12.555,6.721,4.129,8.731,6.138Zm13.436,3.2V13h4.583v3.667H16.669a.917.917,0,0,0-.165,1.819l.165.015H24a4.583,4.583,0,1,1,0,9.167H22.169v3.667H18.5V27.667H13.919V24H24a.917.917,0,0,0,.165-1.819L24,22.167H16.669a4.583,4.583,0,1,1,0-9.167H18.5V9.333Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </Viewbox>
+
+                <!--  IsReadOnly="{Binding Have_Insurance,Converter={StaticResource Inversebooleanconverter}}"-->
+                <CustomeControls:TextBoxEx 
+                     
+                    IsOnlyDouble="True"
+                    Text="{Binding Goods_Value,TargetNullValue='',Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True,StringFormat='{}{0:#,0.##}'}"
+                    Margin="2" PlaceHolder="Goods Value"
+                                           IsOptional="True"
+                    
+                    SourceUpdated="TextBoxEx_SourceUpdated_11"
+                    LostKeyboardFocus="TextBoxEx_LostKeyboardFocus_11"
+                    
+                                           Grid.Row="2" Grid.Column="1"></CustomeControls:TextBoxEx>
+                
+
+                <!--
+                <Label Grid.Column="1" Grid.Row="3"  
+                       Foreground="{DynamicResource ResourceKey=SidemenuBackground}">Agent Comission</Label>
+                -->
+
+
+                <Button
+                  Template="{DynamicResource ResourceKey=ActionButtonDarkPinkTemplate}"
+                 FontWeight="Bold"
+                  Click="Button_Click_2"
+                Grid.Row="4" Grid.Column="1" Margin="60,2,60,2"
+                >Clear</Button>
+
+            </Grid>
+                
+            
+        </Border>
+
+        <Border 
+              Background="{DynamicResource lightmodebackgroundUpperPart}"
+            Grid.Column="2" Margin="0,3,7,2">
+            <Grid>
+                
+                <Grid.Resources>
+                    <Style TargetType="Label">
+                        <Setter Property="Foreground" Value="{DynamicResource ResourceKey=LabelTitleForeColorUpper}"></Setter>
+                        <Setter Property="HorizontalAlignment" Value="Center">
+                        </Setter>
+                        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                    </Style>
+                    <Style TargetType="CustomeControls:TextBoxEx">
+                        <Setter Property="Foreground" Value="{DynamicResource ResourceKey=Darkmodebackground}"></Setter>
+                        <Setter Property="Template" Value="{DynamicResource ResourceKey=TextBoxBaseControlTemplateStyle}"></Setter>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="Background" Value="{DynamicResource ResourceKey=lightmodebackground}"></Setter>
+                    </Style>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width=".2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label   >Door to Door Price</Label>
+                <CustomeControls:TextBoxEx
+                    
+                     Template="{DynamicResource TextBoxBaseControlTemplateStyleUpperPart}"
+                    Foreground="{DynamicResource ResourceKey=lightmodeforegroundUpperPart}"
+                    Background="{DynamicResource ResourceKey=lightmodebackgroundUpperPart}"
+                    
+                    IsTabStop="False"
+                    IsReadOnly="True"
+                    Text="{Binding PriceDoorToDoorEach10KG,Converter={StaticResource ALLINConverter}}"
+                    Margin="2"  Grid.Column="1"></CustomeControls:TextBoxEx>
+                
+                <Label Grid.Row="1"  >Price For Each 1 KG</Label>
+                <CustomeControls:TextBoxEx 
+                    
+                     Template="{DynamicResource TextBoxBaseControlTemplateStyleUpperPart}"
+                    Foreground="{DynamicResource ResourceKey=lightmodeforegroundUpperPart}"
+                    Background="{DynamicResource ResourceKey=lightmodebackgroundUpperPart}"
+                     IsTabStop="False"
+                    IsReadOnly="True" Text="{Binding Price_KG_IQD}" Margin="2"  Grid.Row="1" Grid.Column="1"></CustomeControls:TextBoxEx>
+                
+                <Label Grid.Row="2"  >Minimun Price</Label>
+                <CustomeControls:TextBoxEx 
+                     Template="{DynamicResource TextBoxBaseControlTemplateStyleUpperPart}"
+                    Foreground="{DynamicResource ResourceKey=lightmodeforegroundUpperPart}"
+                    Background="{DynamicResource ResourceKey=lightmodebackgroundUpperPart}"
+                    IsReadOnly="True"
+                                           
+                                            IsTabStop="False"
+                                           Text="{Binding StartPrice_1_to_7KG}" Margin="2"  Grid.Row="2" Grid.Column="1"></CustomeControls:TextBoxEx>
+
+                <Label Grid.Row="3"   >Exchange Currency</Label>
+                <Label Grid.Row="3" Grid.Column="1"
+                       Foreground="{DynamicResource ResourceKey=LabelTitleForeColorUpper}"
+                       Content="{Binding ExchangeTitle}"
+                       ></Label>
+            </Grid>
+        </Border>
+        <Border Grid.Column="2" Grid.Row="1" Grid.RowSpan="3" Margin="0,3,7,2">
+            <Grid Margin="0,10,0,15">
+                <Grid.Resources>
+                    <Style TargetType="Label">
+                        <Setter Property="FontWeight" Value="Bold"></Setter>
+                        <Setter Property="Foreground" Value="{DynamicResource ResourceKey=LabelTitleForeColor}"></Setter>
+                        <Setter Property="HorizontalAlignment" Value="Center">
+                        </Setter>
+                        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                    </Style>
+                    <Style TargetType="CustomeControls:TextBoxEx">
+                        <Setter Property="Foreground" Value="{DynamicResource ResourceKey=Darkmodebackground}"></Setter>
+                        <Setter Property="Template" Value="{DynamicResource ResourceKey=TextBoxBaseControlTemplateStyle}"></Setter>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="FontWeight" Value="Bold"></Setter>
+                        <Setter Property="Background" Value="{DynamicResource ResourceKey=lightmodebackground}"></Setter>
+                    </Style>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width=".2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                   
+                </Grid.RowDefinitions>
+
+                <Label  >Insurance Amount</Label>
+                <CustomeControls:TextBoxEx
+                    IsReadOnly="True"
+                    Text="{Binding Insurance_Amount,StringFormat='{}{0:#,0.##}'}"
+                    Margin="2"  Grid.Column="1"></CustomeControls:TextBoxEx>
+
+                <Label Grid.Row="1"  >Customs Cost/Qomrk</Label>
+                <CustomeControls:TextBoxEx 
+                    IsOnlyNumeric="True"
+                    Text="{Binding Custome_Cost_Qomrk,TargetNullValue='',Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True,StringFormat='{}{0:#,0.##}'}"
+                    SourceUpdated="TextBoxEx_SourceUpdated_5"
+                    LostKeyboardFocus="TextBoxEx_LostKeyboardFocus_5"
+                    Margin="2" Grid.Row="1" IsOptional="True"  Grid.Column="1"></CustomeControls:TextBoxEx>
+
+                
+                <!--
+                <Label Grid.Row="2"  >Export Doc Cost</Label>
+                <CustomeControls:TextBoxEx
+                    IsOnlyNumeric="True"
+                    Text="{Binding Admin_ExportDoc_Cost,TargetNullValue='',Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True}"
+                    SourceUpdated="TextBoxEx_SourceUpdated_6"
+                    LostKeyboardFocus="TextBoxEx_LostKeyboardFocus_6"
+                    IsOptional="True" Margin="2" Grid.Row="2"  Grid.Column="1"></CustomeControls:TextBoxEx>
+                -->
+                
+
+                <Label Grid.Row="2"  >Box Packing Cost</Label>
+                <CustomeControls:TextBoxEx
+                      IsOnlyNumeric="True"
+                    Text="{Binding Packiging_cost_IQD,TargetNullValue='',Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True,StringFormat='{}{0:#,0.##}'}"
+                    SourceUpdated="TextBoxEx_SourceUpdated_12"
+                    LostKeyboardFocus="TextBoxEx_LostKeyboardFocus_12"
+                    Margin="2" Grid.Row="2"  Grid.Column="1"></CustomeControls:TextBoxEx>
+
+                <Label Grid.Row="3"  >Door To Door Cost</Label>
+                <CustomeControls:TextBoxEx  IsReadOnly="True" 
+                                            Text="{Binding POST_DoorToDoor_IQD,StringFormat='{}{0:#,0.##}'}" 
+                                            Margin="2" Grid.Row="3"  Grid.Column="1"></CustomeControls:TextBoxEx>
+
+                <Label Grid.Row="4"  >Post Sub Cost</Label>
+                <CustomeControls:TextBoxEx IsReadOnly="True"  Text="{Binding Sub_Post_Cost_IQD,StringFormat='{}{0:#,0.##}'}" Margin="2" Grid.Row="4"  Grid.Column="1"></CustomeControls:TextBoxEx>
+
+                <Label Grid.Row="5"  >Discount Amount</Label>
+                <CustomeControls:TextBoxEx
+                    TextChanged="txt_Discount_TextChanged"
+                    x:Name="txt_Discount"
+                    IsOnlyNumeric="True"
+                    Text="{Binding Discount_Post_Cost_Send,TargetNullValue='',Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True}" 
+                     Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}"
+                    SourceUpdated="TextBoxEx_SourceUpdated_7"
+                    LostKeyboardFocus="TextBoxEx_LostKeyboardFocus_7"
+                    
+                    IsOptional="True" Margin="2" Grid.Row="5"  Grid.Column="1"></CustomeControls:TextBoxEx>
+
+                <Label Grid.Row="6"  >Total Post Cost</Label>
+                <CustomeControls:TextBoxEx  IsReadOnly="True" Text="{Binding Total_Post_Cost_IQD,StringFormat='{}{0:#,0.##}'}" Margin="2" Grid.Row="6"  Grid.Column="1"></CustomeControls:TextBoxEx>
+
+                <Label Grid.Row="7"  >Total Post Cost Paid</Label>
+                <CustomeControls:TextBoxEx 
+              
+                     x:Name="txt_TotalPaid_IQD"
+                    IsOnlyNumeric="True"
+                    Text="{Binding TotalPaid_IQD,TargetNullValue='',Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True,StringFormat='{}{0:#,0.##}'}"
+                     Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}"
+                    SourceUpdated="TextBoxEx_SourceUpdated_8"
+                    LostKeyboardFocus="TextBoxEx_LostKeyboardFocus_8"
+                    Margin="2" Grid.Row="7"  Grid.Column="1">
+
+                     
+                </CustomeControls:TextBoxEx>
+                <CheckBox
+                    x:Name="chk_isallpaid"
+                    IsChecked="{Binding IsAllPaid}"
+                    Checked="CheckBox_Checked_2"
+                    Unchecked="CheckBox_Unchecked_2"
+                    Grid.Row="7" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></CheckBox>
+
+                <Label Grid.Row="8"  >Unpaid Amount</Label>
+                <CustomeControls:TextBoxEx 
+                    x:Name="txt_Remaining_IQD"
+                    TextChanged="txt_Remaining_IQD_TextChanged"
+                    IsReadOnly="True" Text="{Binding Remaining_IQD,StringFormat='{}{0:#,0.##}'}"  Margin="2" Grid.Row="8"  Grid.Column="1"></CustomeControls:TextBoxEx>
+
+                <Label x:Name="lbl_totalcost_by_Outer_Currency" Grid.Row="9"  >Total Cost By Europe Currency</Label>
+                <CustomeControls:TextBoxEx 
+                    IsReadOnly="True"
+                    Text="{Binding Total_Post_Cost_EUR}" 
+                    Margin="2" Grid.Row="9"  Grid.Column="1"></CustomeControls:TextBoxEx>
+
+                <Label x:Name="lbl_unpaid_AndWillPay_inOuterCountry" Grid.Row="10"  >Unpaid And Will PayIn Europe</Label>
+                <CustomeControls:TextBoxEx
+                    x:Name="txt_EuropaToPay"
+                    TextChanged="txt_EuropaToPay_TextChanged"
+                    IsReadOnly="True" Margin="2" Text="{Binding EuropaToPay}"  Grid.Row="10"  Grid.Column="1"></CustomeControls:TextBoxEx>
+
+            </Grid>
+        </Border>
+
+        <Grid Grid.Column="2" Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+               
+               
+            </Grid.ColumnDefinitions>
+
+            <!--
+            <Button
+                  Template="{DynamicResource ResourceKey=ActionButtonBlueTemplate}"
+                 FontWeight="Bold"
+                 Margin="3"
+                Click="Button_Click_2"
+                >clear</Button>
+            -->
+            
+            <Button
+                x:Name="btn_add"
+                  Template="{DynamicResource ResourceKey=ActionButtonBlueTemplate}"
+                 Margin="3"
+                 FontWeight="Bold"
+                Click="Button_Click_4"
+                Grid.Column="0">Add Code</Button>
+            <Button
+                x:Name="btn_update"
+                 FontWeight="Bold"
+                Margin="3"
+                Template="{DynamicResource ResourceKey=ActionButtonPinkTemplate}"
+                Click="Button_Click_5"
+                Grid.Column="1">Update Code</Button>
+            <Button 
+                x:Name="btn_makelabel"
+                 FontWeight="Bold"
+                Margin="3"
+                Template="{DynamicResource ResourceKey=ActionButtonGreenTemplate}"
+                Click="Button_Click_6"
+                Grid.Column="2">Make Label</Button>
+            <Button
+                x:Name="btn_invoice"
+                FontWeight="Bold"
+                   Margin="3"
+                 Template="{DynamicResource ResourceKey=ActionButtonPurpleTemplate}"
+                Click="Button_Click_7"
+                Grid.Column="3">Make Invoice</Button>
+
+            <!--
+            <StackPanel Visibility="Collapsed" Grid.Column="5" >
+                <Button
+                FontWeight="Bold"
+                   Margin="3"
+                
+                  Click="Button_Click">val</Button>
+                <Button   FontWeight="Bold"
+                   Margin="3" Click="Button_Click_3">calc</Button>
+            </StackPanel>
+            -->
+        </Grid>
+
+    </Grid>
+</UserControl>

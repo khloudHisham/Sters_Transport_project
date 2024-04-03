@@ -1,0 +1,149 @@
+﻿<UserControl x:Class="StersTransport.UI.CompanySettings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:StersTransport.UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Loaded="UserControl_Loaded"
+             >
+    <Grid Background="#E4E4E4">
+
+
+        <Grid.Resources>
+            <Style TargetType="TextBox">
+                <Setter Property="Template" Value="{DynamicResource ResourceKey=standardTextbox2}">
+
+                </Setter>
+              
+                <Setter  Property="VerticalContentAlignment" Value="Center"></Setter>
+                <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                <Setter Property="Margin" Value="7,7,7,7"></Setter>
+            </Style>
+            <Style TargetType="TextBlock">
+                <Setter Property="Foreground" Value="#404040"></Setter>
+                <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            </Style>
+
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+          
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+
+        <TextBlock Grid.Row="0" Grid.Column="0">Arabic Name</TextBlock>
+        <TextBox x:Name="txt_ArabicName" Grid.Row="0" Grid.Column="1"></TextBox>
+
+        <TextBlock Grid.Row="1" Grid.Column="0">Arabic Description</TextBlock>
+        <TextBox x:Name="txt_ArabicDiscription" Grid.Row="1" Grid.Column="1"></TextBox>
+
+        <TextBlock Grid.Row="2" Grid.Column="0">English Name</TextBlock>
+        <TextBox x:Name="txt_EnglishName" Grid.Row="2" Grid.Column="1"></TextBox>
+
+        <TextBlock Grid.Row="3" Grid.Column="0">English Description</TextBlock>
+        <TextBox x:Name="txt_EnglishDiscription" Grid.Row="3" Grid.Column="1"></TextBox>
+
+        <TextBlock Grid.Row="4" Grid.Column="0">Telelphone 1</TextBlock>
+        <TextBox x:Name="txt_Tel1" Grid.Row="4" Grid.Column="1"></TextBox>
+
+        <TextBlock Grid.Row="5" Grid.Column="0">Telelphone 2</TextBlock>
+        <TextBox x:Name="txt_Tel2" Grid.Row="5" Grid.Column="1"></TextBox>
+
+        <TextBlock Grid.Row="6" Grid.Column="0">Website</TextBlock>
+        <TextBox x:Name="txt_Website" Grid.Row="6" Grid.Column="1"></TextBox>
+
+        <TextBlock Grid.Row="7" Grid.Column="0">E-mail</TextBlock>
+        <TextBox x:Name="txt_Email" Grid.Row="7" Grid.Column="1"></TextBox>
+
+
+        <TextBlock Grid.Row="0" Grid.Column="2">English Name2</TextBlock>
+        <TextBox x:Name="txt_EnglishName2" Grid.Row="0" Grid.Column="3"></TextBox>
+
+        <TextBlock Grid.Row="1" Grid.Column="2">English Description2</TextBlock>
+        <TextBox x:Name="txt_EnglishDiscription2" Grid.Row="1" Grid.Column="3"></TextBox>
+
+
+        <TextBlock Grid.Row="2" Grid.Column="2">Mail Address For Password Verification</TextBlock>
+        <TextBox x:Name="txt_Mail_Verification_from" Grid.Row="2" Grid.Column="3"></TextBox>
+
+        <TextBlock Grid.Row="3" Grid.Column="2">Mail Server For Password Verification</TextBlock>
+        <TextBox x:Name="txt_Mail_Verification_server" Grid.Row="3" Grid.Column="3"></TextBox>
+
+        <TextBlock Grid.Row="4" Grid.Column="2">Mail Port For Password Verification</TextBlock>
+        <TextBox x:Name="txt_Mail_Verification_port" Grid.Row="4" Grid.Column="3"></TextBox>
+
+        <TextBlock Grid.Row="5" Grid.Column="2">Mail Password For Password Verification</TextBlock>
+        <PasswordBox Margin="7" Template="{DynamicResource standardPasswordBox1}"  x:Name="txt_Mail_Verification_password" Grid.Row="5" Grid.Column="3"></PasswordBox>
+
+
+
+
+        <Label VerticalAlignment="Center" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" HorizontalAlignment="Center">Company Logo</Label>
+        <Border Margin="5" Background="White"  Grid.Row="1" Grid.Column="4" Grid.RowSpan="3" Grid.ColumnSpan="2">
+            <Image x:Name="imgLogo"></Image>
+        </Border>
+
+
+
+        <TextBlock Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="2">
+ 
+                 <Hyperlink Click="Hyperlink_Click">select Logo From File </Hyperlink>
+                  
+                 <Hyperlink  Click="Hyperlink_Click_2">clear</Hyperlink>
+                 <Hyperlink  Click="Hyperlink_Click_3">Save Changes</Hyperlink>
+        </TextBlock>
+
+
+        <Border Margin="5,0,5,0" VerticalAlignment="Center" BorderBrush="#808080" BorderThickness="0,0,0,2" Grid.ColumnSpan="2" Grid.Column="4" Grid.Row="5"></Border>
+
+
+        <Label VerticalAlignment="Center" Grid.Row="6" Grid.Column="4" Grid.ColumnSpan="2" HorizontalAlignment="Center">miscellaneous</Label>
+
+
+        <TextBlock TextWrapping="Wrap" Grid.Row="7" Grid.Column="4">Difference Between Volume Weight And Total Weight</TextBlock>
+        <TextBox x:Name="txt_Weight_difference" Grid.Row="7" Grid.Column="5"></TextBox>
+
+
+
+        <Button
+            Margin="5"
+            Width="100"
+            Template="{DynamicResource ActionButtonBlueTemplate}" 
+            Grid.Row="10" Grid.Column="2" Grid.ColumnSpan="2" Click="Button_Click">Save</Button>
+
+
+
+
+
+        <TextBlock Foreground="MediumOrchid" Grid.Column="0"
+                   Grid.Row="11"
+                   Grid.ColumnSpan="3"
+                   >Changes Will Apply After You Log Off And Log In Again to The Application</TextBlock>
+
+
+    </Grid>
+</UserControl>

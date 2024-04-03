@@ -1,0 +1,293 @@
+﻿<UserControl x:Class="StersTransport.UI.UIDash"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:StersTransport.UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             x:Name="UIdash"
+             Loaded="UIDash_Loaded"
+             >
+    <Grid
+        Background="{DynamicResource ResourceKey=DashboardBackground }"
+        >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height=".5*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Image  Margin="20" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2" Source="pack://application:,,,/Resources/sters.png"></Image>
+
+        <Grid Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Border 
+                  Margin="10,10,0,10"
+                 Grid.Column="2" Grid.ColumnSpan="2" CornerRadius="5"
+                Background="#236BC9">
+                <TextBlock      VerticalAlignment="Center" 
+                       HorizontalAlignment="Center"
+                       Foreground="White"
+                       FontSize="18"
+                       FontWeight="Bold"
+                            Margin="0,0,5,0"
+                       Grid.Column="1" Grid.ColumnSpan="2">EUKnet</TextBlock>
+
+            </Border>
+            
+            <TextBlock    Grid.Row="1" VerticalAlignment="Center" 
+                       HorizontalAlignment="Left"
+                       Foreground="Black"
+                       FontSize="18"
+                       FontWeight="Bold"
+                          Margin="5,0,0,0"
+                       Grid.Column="4" Grid.ColumnSpan="6">Transport Company</TextBlock>
+        </Grid>
+
+        <Button    FontWeight="Bold" Margin="8" Template="{DynamicResource ResourceKey=DashBoardButtonBlueTemplate}" Grid.Column="2" Grid.Row="3" Click="Button_Click">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Viewbox Grid.Row="1">
+                    <Grid  >
+
+
+
+                        <Path RenderTransformOrigin="0.5,0.5" Fill="{DynamicResource ResourceKey=SidemenuItemForecolor}" Stroke="{DynamicResource ResourceKey=SidemenuItemForecolor}"  StrokeThickness="3" 
+                              Data="M367.851,6.944c-0.056-0.424-0.12-0.832-0.248-1.248c-0.136-0.456-0.32-0.872-0.528-1.296
+				c-0.112-0.232-0.152-0.48-0.288-0.704c-0.088-0.144-0.232-0.24-0.336-0.376c-0.264-0.368-0.576-0.688-0.904-1.016
+				c-0.328-0.328-0.656-0.632-1.032-0.896c-0.136-0.096-0.224-0.232-0.36-0.312c-0.224-0.136-0.472-0.168-0.704-0.28
+				c-0.44-0.216-0.872-0.4-1.336-0.536c-0.392-0.104-0.776-0.16-1.176-0.208c-0.472-0.056-0.928-0.088-1.4-0.064
+				c-0.44,0.024-0.864,0.112-1.296,0.216c-0.272,0.064-0.552,0.04-0.824,0.136l-352,120c-3.184,1.072-5.352,4.04-5.416,7.408
+				c-0.064,3.368,1.984,6.416,5.136,7.624l164.456,63.192l71.064,164.512c1.272,2.936,4.168,4.824,7.344,4.824
+				c0.136,0,0.264,0,0.4-0.008c3.336-0.168,6.208-2.384,7.224-5.56l112-352c0.08-0.248,0.056-0.504,0.104-0.76
+				c0.096-0.448,0.168-0.88,0.184-1.336C367.931,7.808,367.907,7.384,367.851,6.944z M31.475,128.368L330.011,26.592
+				L173.619,182.984L31.475,128.368z M246.859,337.112l-61.76-142.976L342.403,36.824L246.859,337.112z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>1</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>1</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+
+                        <Path RenderTransformOrigin="0.5,0.5" Fill="{DynamicResource ResourceKey=SidemenuItemForecolor}"  Stroke="{DynamicResource ResourceKey=SidemenuItemForecolor}"  StrokeThickness="3" 
+                              Data="M125.659,242.264c-3.128-3.128-8.184-3.128-11.312,0l-112,112c-3.128,3.128-3.128,8.184,0,11.312
+				c1.56,1.56,3.608,2.344,5.656,2.344s4.096-0.784,5.656-2.344l112-112C128.787,250.448,128.787,245.392,125.659,242.264z">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform>
+                                        <ScaleTransform.ScaleX>1</ScaleTransform.ScaleX>
+                                        <ScaleTransform.ScaleY>1</ScaleTransform.ScaleY>
+                                    </ScaleTransform>
+                                    <TranslateTransform X="0" Y="-0"></TranslateTransform>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+
+                        </Path>
+
+                        <Path RenderTransformOrigin="0.5,0.5" Fill="{DynamicResource ResourceKey=SidemenuItemForecolor}" Stroke="{DynamicResource ResourceKey=SidemenuItemForecolor}"  StrokeThickness="3" 
+                              Data="M146.347,298.264l-56,56c-3.128,3.128-3.128,8.184,0,11.312c1.56,1.56,3.608,2.344,5.656,2.344
+				c2.048,0,4.096-0.784,5.656-2.344l56-56c3.128-3.128,3.128-8.184,0-11.312C154.531,295.136,149.475,295.136,146.347,298.264z">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform>
+                                        <ScaleTransform.ScaleX>1</ScaleTransform.ScaleX>
+                                        <ScaleTransform.ScaleY>1</ScaleTransform.ScaleY>
+                                    </ScaleTransform>
+                                    <TranslateTransform X="-0" Y="-0"></TranslateTransform>
+                                </TransformGroup>
+
+                            </Path.RenderTransform>
+                        </Path>
+
+                        <Path RenderTransformOrigin="1,1" Fill="{DynamicResource ResourceKey=SidemenuItemForecolor}" Stroke="{DynamicResource ResourceKey=SidemenuItemForecolor}"  StrokeThickness="3" 
+                              Data="M8.003,279.92c2.048,0,4.096-0.784,5.656-2.344l56-56c3.128-3.128,3.128-8.184,0-11.312
+				c-3.128-3.128-8.184-3.128-11.312,0l-56,56c-3.128,3.128-3.128,8.184,0,11.312C3.907,279.136,5.955,279.92,8.003,279.92z">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform>
+                                        <ScaleTransform.ScaleX>1</ScaleTransform.ScaleX>
+                                        <ScaleTransform.ScaleY>1</ScaleTransform.ScaleY>
+                                    </ScaleTransform>
+                                    <TranslateTransform X="-0" Y="-0"></TranslateTransform>
+                                </TransformGroup>
+
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </Viewbox>
+
+                <Viewbox Grid.Row="3">
+                    <TextBlock Foreground="{DynamicResource ResourceKey=SidemenuItemForecolor}" Grid.Row="1" HorizontalAlignment="Center">
+                    Send
+                    </TextBlock>
+                </Viewbox>
+               
+            </Grid>
+        </Button>
+        <Button     FontWeight="Bold" Margin="8" Template="{DynamicResource ResourceKey=DashBoardButtonPinkTemplate}" Grid.Column="3" Grid.Row="3" Click="Button_Click_1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Viewbox Grid.Row="1">
+                    <Grid  >
+
+
+
+                        <Path RenderTransformOrigin="0.5,0.5" Fill="{DynamicResource ResourceKey=SidemenuItemForecolor}" Stroke="{DynamicResource ResourceKey=SidemenuItemForecolor}"  StrokeThickness="0" 
+                              Data="M19.9,47.067H5.817V24.533H19.9Zm-5.633-5.633V30.167H11.45V41.433Zm16.9,0V18.9H28.35V41.433ZM36.8,47.067H22.717v-33.8H36.8Zm11.267-5.633V7.633H45.25v33.8ZM53.7,47.067H39.617V2H53.7Zm2.817,11.267H3V52.7H56.517Z">
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>1</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>1</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+
+                        
+
+                       
+                        
+                    </Grid>
+                </Viewbox>
+
+                <Viewbox Grid.Row="3">
+                    <TextBlock Foreground="{DynamicResource ResourceKey=SidemenuItemForecolor}" Grid.Row="1" HorizontalAlignment="Center">
+                    Reports
+                    </TextBlock>
+                </Viewbox>
+
+            </Grid>
+        </Button>
+        <Button    FontWeight="Bold" Margin="8" Template="{DynamicResource ResourceKey=DashBoardButtonGreenTemplate}" Grid.Column="4" Grid.Row="3" Click="Button_Click_2">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Viewbox Grid.Row="1">
+                    <Grid  >
+
+
+
+                        <Path RenderTransformOrigin="0.5,0.5" Fill="{DynamicResource ResourceKey=SidemenuItemForecolor}" Stroke="{DynamicResource ResourceKey=SidemenuItemForecolor}"  StrokeThickness="0" 
+Data="M25.533,35.992v5.383a16.15,16.15,0,0,0-16.15,16.15H4A21.533,21.533,0,0,1,25.533,35.992Zm0-2.692a16.15,16.15,0,1,1,16.15-16.15A16.146,16.146,0,0,1,25.533,33.3Zm0-5.383A10.767,10.767,0,1,0,14.767,17.15,10.764,10.764,0,0,0,25.533,27.917Zm6.985,21.027a9.448,9.448,0,0,1,0-4.369l-2.67-1.542,2.692-4.662,2.67,1.542a9.41,9.41,0,0,1,3.782-2.186V34.646h5.383v3.082a9.4,9.4,0,0,1,3.782,2.186l2.67-1.542,2.692,4.662-2.67,1.542a9.448,9.448,0,0,1,0,4.366l2.67,1.542-2.692,4.662L48.157,53.6a9.41,9.41,0,0,1-3.782,2.186v3.082H38.992V55.789A9.41,9.41,0,0,1,35.21,53.6l-2.67,1.542-2.692-4.662,2.67-1.54ZM41.683,50.8a4.038,4.038,0,1,0-4.038-4.037A4.038,4.038,0,0,0,41.683,50.8Z"                              
+                              
+                              >
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>1</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>1</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+
+
+
+
+
+                    </Grid>
+                </Viewbox>
+
+                <Viewbox Grid.Row="3">
+                    <TextBlock Foreground="{DynamicResource ResourceKey=SidemenuItemForecolor}" Grid.Row="1" HorizontalAlignment="Center">
+                    Admin
+                    </TextBlock>
+                </Viewbox>
+
+            </Grid>
+
+        </Button>
+        <Button    FontWeight="Bold" Click="Button_Click_3" Margin="8" Template="{DynamicResource ResourceKey=DashBoardButtonPurpleTemplate}" Grid.Column="5" Grid.Row="3">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Viewbox Grid.Row="1">
+                    <Grid  >
+
+
+
+                        <Path RenderTransformOrigin="0.5,0.5" Fill="{DynamicResource ResourceKey=SidemenuItemForecolor}" Stroke="{DynamicResource ResourceKey=SidemenuItemForecolor}"  StrokeThickness="0" 
+
+                              Data="M2.662,39.191a30.664,30.664,0,0,1,0-12.7c3.422.4,6.413-.731,7.388-3.086s-.333-5.273-3.04-7.409A30.664,30.664,0,0,1,15.992,7.01c2.134,2.7,5.05,4.018,7.409,3.04s3.49-3.965,3.086-7.388a30.664,30.664,0,0,1,12.7,0c-.4,3.423.731,6.413,3.086,7.388s5.272-.333,7.409-3.04a30.664,30.664,0,0,1,8.982,8.982c-2.7,2.134-4.018,5.05-3.04,7.409s3.965,3.49,7.388,3.086a30.664,30.664,0,0,1,0,12.7c-3.422-.4-6.413.731-7.388,3.086s.333,5.272,3.04,7.409a30.664,30.664,0,0,1-8.982,8.982c-2.134-2.7-5.051-4.018-7.409-3.04s-3.49,3.965-3.086,7.388a30.664,30.664,0,0,1-12.7,0c.4-3.422-.731-6.413-3.086-7.388s-5.273.333-7.409,3.04A30.664,30.664,0,0,1,7.01,49.686c2.7-2.134,4.018-5.051,3.04-7.409s-3.965-3.49-7.388-3.086Zm5.51-5.7a11.11,11.11,0,0,1,7.576,6.432,11.1,11.1,0,0,1-.808,9.9q.444.472.916.916a11.112,11.112,0,0,1,9.9-.808,11.11,11.11,0,0,1,6.432,7.576q.648.018,1.3,0a10.882,10.882,0,0,1,16.335-6.768q.472-.444.916-.916a10.882,10.882,0,0,1,6.768-16.335q.019-.648,0-1.3a10.882,10.882,0,0,1-6.768-16.335q-.446-.47-.916-.916a11.112,11.112,0,0,1-9.9.808,11.11,11.11,0,0,1-6.432-7.576q-.647-.017-1.295,0a11.11,11.11,0,0,1-6.432,7.576,11.1,11.1,0,0,1-9.9-.808q-.472.444-.916.916a11.112,11.112,0,0,1,.808,9.9,11.11,11.11,0,0,1-7.576,6.432Q8.154,32.839,8.172,33.486Zm24.667,8.6a9.25,9.25,0,1,1,9.25-9.25A9.25,9.25,0,0,1,32.839,42.089Zm0-6.167a3.083,3.083,0,1,0-3.083-3.083A3.083,3.083,0,0,0,32.839,35.922Z"
+                              >
+                            <Path.RenderTransform>
+                                <ScaleTransform>
+                                    <ScaleTransform.ScaleX>1</ScaleTransform.ScaleX>
+                                    <ScaleTransform.ScaleY>1</ScaleTransform.ScaleY>
+                                </ScaleTransform>
+                            </Path.RenderTransform>
+                        </Path>
+
+
+
+
+
+                    </Grid>
+                </Viewbox>
+
+                <Viewbox Grid.Row="3">
+                    <TextBlock Foreground="{DynamicResource ResourceKey=SidemenuItemForecolor}" Grid.Row="1" HorizontalAlignment="Center">
+                    Settings
+                    </TextBlock>
+                </Viewbox>
+
+            </Grid>
+
+        </Button>
+
+
+        <TextBlock FontSize="19" FontWeight="Bold" Foreground="#404040" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="lbl_officeName" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2">Office</TextBlock>
+    </Grid>
+</UserControl>

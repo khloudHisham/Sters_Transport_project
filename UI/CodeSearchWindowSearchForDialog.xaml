@@ -1,0 +1,77 @@
+﻿<Window x:Class="StersTransport.UI.CodeSearchWindowSearchForDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+          xmlns:Enumerations="clr-namespace:StersTransport.Enumerations"
+          xmlns:Converters="clr-namespace:StersTransport.Converters"
+        xmlns:local="clr-namespace:StersTransport.UI"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded"
+         DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        
+        PreviewKeyDown="Window_PreviewKeyDown"
+        
+        Title="Search For" Height="120" Width="500">
+    <Grid>
+        <Grid.Resources>
+            <Converters:EnumBooleanConverter x:Key="enumtobooleanconverter">
+
+            </Converters:EnumBooleanConverter>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+       
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock  FontWeight="Bold"  Grid.Column="2"  VerticalAlignment="Center"  HorizontalAlignment="Left" Margin="10"> Search For  :</TextBlock>
+            <StackPanel Visibility="Collapsed" Grid.ColumnSpan="2" Orientation="Horizontal">
+                <RadioButton Margin="5" GroupName="Group1"
+                         x:Name="rd_insert"
+                        IsChecked="{Binding WindowStatesenum,Converter={StaticResource enumtobooleanconverter},ConverterParameter={x:Static Enumerations:windowStatesenum.insert}}">Insert</RadioButton>
+
+                <RadioButton Margin="5" GroupName="Group1"
+                           x:Name="rd_uodate"
+                        IsChecked="{Binding WindowStatesenum,Converter={StaticResource enumtobooleanconverter},ConverterParameter={x:Static Enumerations:windowStatesenum.update}}">Update</RadioButton>
+
+                <RadioButton Margin="5"  GroupName="Group1"
+                           x:Name="rd_view"
+                        IsChecked="{Binding WindowStatesenum,Converter={StaticResource enumtobooleanconverter},ConverterParameter={x:Static Enumerations:windowStatesenum.view}}">View</RadioButton>
+            </StackPanel>
+        </Grid>
+
+
+        <Grid Grid.Row="1"
+              >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button FontWeight="Bold" Click="Button_Click" Grid.Row="1" Width="100" Margin="5"
+                Template="{DynamicResource ActionButtonBlueTemplate}"
+                >Insert</Button>
+
+            <Button FontWeight="Bold"  Click="Button_Click2" Grid.Row="1" Grid.Column="1" Width="100" Margin="5"
+                Template="{DynamicResource ActionButtonGreenTemplate}"
+                >Update</Button>
+
+            <Button FontWeight="Bold"  Click="Button_Click3" Grid.Row="1" Grid.Column="2" Width="100" Margin="5"
+                Template="{DynamicResource ActionButtonDarkPinkTemplate}"
+                >View</Button>
+        </Grid>
+        
+
+         
+    </Grid>
+</Window>

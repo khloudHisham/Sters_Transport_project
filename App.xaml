@@ -1,0 +1,97 @@
+﻿<Application x:Class="StersTransport.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:StersTransport"
+             StartupUri="LoginWindow.xaml"
+             >
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ResourceDictionaries\Buttons\ActionButton.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="ResourceDictionaries\Buttons\ActionButtonGreen.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="ResourceDictionaries\Buttons\ActionButtonPink.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="ResourceDictionaries\Buttons\ActionButtonDarkPink.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="ResourceDictionaries\Buttons\ActionButtonOrange.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="ResourceDictionaries\Buttons\ActionButtonPurple.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="ResourceDictionaries\Buttons\ActionButtonBlue.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="ResourceDictionaries\Buttons\CancelButton.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="ResourceDictionaries\Buttons\DashBoardButtonBlue.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="ResourceDictionaries\Buttons\DashBoardButtonpink.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="ResourceDictionaries\Buttons\DashBoardButtonpurple.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="ResourceDictionaries\Buttons\DashBoardButtongreen.xaml"></ResourceDictionary>
+
+
+                <ResourceDictionary Source="ResourceDictionaries\Buttons\ActionToggleButton.xaml"></ResourceDictionary>
+
+
+
+                <ResourceDictionary Source="ResourceDictionaries\Buttons\EmptyButton.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="ResourceDictionaries\Buttons\toggle1.xaml"></ResourceDictionary>
+
+                <ResourceDictionary Source="ResourceDictionaries\TextBoxes\StandardTextBox2.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="ResourceDictionaries\TextBoxes\StandardTextBoxxaml.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="ResourceDictionaries\TextBoxes\StandardTextboxUpper.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="ResourceDictionaries\TextBoxes\PasswordBox1.xaml"></ResourceDictionary>
+
+                <ResourceDictionary Source="ResourceDictionaries\Comboboxes\StandardCombobox.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="ResourceDictionaries\Comboboxes\StandardCombobox2.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="ResourceDictionaries\Comboboxes\StandardComboboxUpperPart.xaml"></ResourceDictionary>
+
+
+                <ResourceDictionary Source="ResourceDictionaries\DatePickers\DatePicker1.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="ResourceDictionaries\DatePickers\DatePicker1UpperPart.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="ResourceDictionaries\DatePickers\DatePicker2.xaml"></ResourceDictionary>
+
+
+                <ResourceDictionary Source="ResourceDictionaries\ListBox\ListBoxItemStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="ResourceDictionaries\Datagrid\DatagridStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="ResourceDictionaries\Datagrid\DatagridStyle2.xaml"></ResourceDictionary>
+
+                <ResourceDictionary Source="ResourceDictionaries\ProgressBar\ProgressBar1.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="ResourceDictionaries\Slider\Slider1.xaml"></ResourceDictionary>
+
+
+                <ResourceDictionary Source="pack://application:,,,/ToastNotifications.Messages;component/Themes/Default.xaml" />
+
+
+
+            </ResourceDictionary.MergedDictionaries>
+            <SolidColorBrush x:Key="MainWindowBorderbrush" Color="#3979CD"></SolidColorBrush>
+            <SolidColorBrush x:Key="SidemenuBackground" Color="#236BC9"></SolidColorBrush>
+            <SolidColorBrush x:Key="SidemenuBackgroundDark" Color="#004298"></SolidColorBrush>
+            <SolidColorBrush x:Key="SidemenuItemForecolor" Color="#E4E4E4"></SolidColorBrush>
+            <SolidColorBrush x:Key="DashboardBackground" Color="#E4E4E4"></SolidColorBrush>
+            <SolidColorBrush x:Key="DashBoardItem1Background" Color="#236BC9"></SolidColorBrush>
+            <SolidColorBrush x:Key="DashBoardItem2Background" Color="#FF4893"></SolidColorBrush>
+            
+            <SolidColorBrush x:Key="DashBoardItem3Background" Color="#00BB7E"></SolidColorBrush>
+            <SolidColorBrush x:Key="DashBoardItem4Background" Color="#A516AF"></SolidColorBrush>
+            <SolidColorBrush x:Key="LabelTitleForeColor" Color="#404040"></SolidColorBrush>
+            <SolidColorBrush x:Key="LabelTitleForeColorDarkmode" Color="#E4E4E4"></SolidColorBrush>
+            <!--808080-->
+            <SolidColorBrush x:Key="LabelTitleForeColorLight" Color="#CACACA"></SolidColorBrush>
+    
+
+            <SolidColorBrush x:Key="lightmodebackground" Color="#FFFFFF"></SolidColorBrush>
+            <SolidColorBrush x:Key="Darkmodebackground" Color="#142D4E"></SolidColorBrush>
+            
+            <SolidColorBrush x:Key="lightmodebackgroundUpperPart" Color="#236BC9"></SolidColorBrush>
+            <SolidColorBrush x:Key="lightmodeforegroundUpperPart" Color="#FFFFFF"></SolidColorBrush>
+            <SolidColorBrush x:Key="LabelTitleForeColorUpper" Color="#FFFFFF"></SolidColorBrush>
+            <SolidColorBrush x:Key="LabelTitleForeColorUpperHover" Color="#FFFFFF"></SolidColorBrush>
+            <SolidColorBrush x:Key="LabelTitleForeColorUpperHoverDarkMode" Color="#236BC9"></SolidColorBrush>
+
+
+            <SolidColorBrush x:Key="purple1" Color="#A516AF"></SolidColorBrush>
+            <SolidColorBrush x:Key="green1" Color="#00BB7E"></SolidColorBrush>
+            <SolidColorBrush x:Key="pink1" Color="#FF4893"></SolidColorBrush>
+            <SolidColorBrush x:Key="Darkpink1" Color="#D24E84"></SolidColorBrush>
+            <SolidColorBrush x:Key="blue1" Color="#236BC9"></SolidColorBrush>
+            <SolidColorBrush x:Key="orange1" Color="#E89933"></SolidColorBrush>
+
+            
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,44 @@
+﻿<Window x:Class="StersTransport.UI.DBGreateWindow_Advanced"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StersTransport.UI"
+        mc:Ignorable="d"
+        Title="DBGreateWindow_Advanced" Height="200" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Setter  Property="Margin" Value="5"></Setter>
+                <Setter Property="Template" Value="{DynamicResource ResourceKey=ActionButtonBlueTemplate}"></Setter>
+
+            </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="Margin" Value="5"></Setter>
+                <Setter Property="Template" Value="{DynamicResource standardTextbox2}"></Setter>
+            </Style>
+        </Grid.Resources>
+
+        <TextBlock>Replace Original Pathes In Generated Script Files With The Folowing Pathes</TextBlock>
+        <DockPanel    Grid.Row="1">
+            <TextBlock VerticalAlignment="Center">Mdf Path</TextBlock>
+            <TextBox    x:Name="txt"></TextBox>
+        </DockPanel>
+
+        <DockPanel
+            Grid.Row="2"
+            >
+            <TextBlock VerticalAlignment="Center">ldf  Path</TextBlock>
+            <TextBox    x:Name="txt2"></TextBox>
+        </DockPanel>
+     
+        <Button Grid.Row="3" Margin="150,10,150,10" Click="Button_Click">OK</Button>
+    </Grid>
+</Window>

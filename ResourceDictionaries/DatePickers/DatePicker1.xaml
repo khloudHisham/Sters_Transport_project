@@ -1,0 +1,85 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:StersTransport.ResourceDictionaries.DatePickers">
+
+
+
+
+    <Style x:Key="DatePickerStyle2" TargetType="{x:Type DatePicker}">
+        <Setter Property="Foreground" Value="#FF333333"/>
+        <Setter Property="IsTodayHighlighted" Value="True"/>
+        <Setter Property="SelectedDateFormat" Value="Short"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Padding" Value="1"/>
+
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DatePicker}">
+                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="PART_DisabledVisual"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid x:Name="PART_Root" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.Resources>
+                                <SolidColorBrush x:Key="DisabledBrush" Color="#A5FFFFFF"/>
+                            </Grid.Resources>
+                            <DatePickerTextBox
+                                 Margin="0,0,2,0"
+                                  Template="{DynamicResource ResourceKey=TextBoxBaseControlTemplateStyle }" 
+                                x:Name="PART_TextBox" Grid.Column="0" 
+                                 Foreground="{DynamicResource ResourceKey=Darkmodebackground}"
+                                 Background="{DynamicResource ResourceKey=lightmodebackground}"
+                                Focusable="{TemplateBinding Focusable}" HorizontalContentAlignment="Center" Grid.Row="0" VerticalContentAlignment="Center"/>
+                            <Viewbox HorizontalAlignment="Right" Grid.Column="0"  Margin="3,0,3,0" Grid.Row="0" VerticalAlignment="Top">
+                                <Button HorizontalAlignment="Right" x:Name="PART_Button"  Template="{DynamicResource ResourceKey=emptybutton}"   Focusable="False" Foreground="{TemplateBinding Foreground}"   >
+                                    <Button.Content>
+                                        <Viewbox>
+                                            <Grid>
+                                                <Path RenderTransformOrigin="0.5,0.5" 
+                              Fill="{DynamicResource ResourceKey=LabelTitleForeColor}"
+                              Data="M32,5h8a2,2,0,0,1,2,2V39a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V7A2,2,0,0,1,4,5h8V1h4V5H28V1h4ZM28,9H16v4H12V9H6v8H38V9H32v4H28ZM38,21H6V37H38Z">
+                                                    <Path.RenderTransform>
+                                                        <ScaleTransform>
+                                                            <ScaleTransform.ScaleX>.5</ScaleTransform.ScaleX>
+                                                            <ScaleTransform.ScaleY>.5</ScaleTransform.ScaleY>
+                                                        </ScaleTransform>
+                                                    </Path.RenderTransform>
+                                                </Path>
+                                            </Grid>
+                                        </Viewbox>
+
+                                    </Button.Content>
+                                </Button>
+                            </Viewbox>
+
+
+
+                            <Grid x:Name="PART_DisabledVisual" Grid.ColumnSpan="2" Grid.Column="0" IsHitTestVisible="False" Opacity="0" Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Rectangle Grid.Column="0" Fill="#A5FFFFFF" RadiusY="1" Grid.Row="0" RadiusX="1"/>
+                                <Rectangle Grid.Column="1" Fill="#A5FFFFFF" Height="18" Margin="3,0,3,0" RadiusY="1" Grid.Row="0" RadiusX="1" Width="19"/>
+                                <Popup x:Name="PART_Popup" AllowsTransparency="True" Placement="Bottom" PlacementTarget="{Binding ElementName=PART_TextBox}" StaysOpen="False"/>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,110 @@
+﻿<Window x:Class="StersTransport.WpfMessageBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StersTransport"
+        mc:Ignorable="d"
+        Title="WpfMessageBox"
+        
+       Height="225" Width="425"
+         Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Topmost="True"
+          x:Name="w1"
+        Loaded="w1_Loaded_1"
+        Closing="w1_Closing_1"
+        PreviewKeyDown="w1_PreviewKeyDown"
+        >
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <EventTrigger.Actions>
+                <BeginStoryboard>
+                    <Storyboard Duration="00:00:1" Storyboard.TargetProperty="Opacity">
+                        <DoubleAnimation From="0" To="1"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger.Actions>
+        </EventTrigger>
+    </Window.Triggers>
+    <Border x:Name="mainborder" Background="White"  BorderBrush="#2362ae"
+        BorderThickness="1" CornerRadius="7">
+        <Grid  >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border x:Name="titleborder" Background="#2362ae"
+                   MouseDown="titleborder_MouseDown_1"
+                    Grid.Row="0" Grid.ColumnSpan="2" Margin="2" Padding="3"
+                    BorderThickness="1" CornerRadius="5,5,2,2">
+                <TextBlock ClipToBounds="False"  Name="MessageTitle"  
+                 Background="Transparent" Foreground="White"
+                 TextAlignment="Center"
+                FontWeight="Bold" TextTrimming="CharacterEllipsis" 
+                LineHeight="22" FontSize="16" 
+                VerticalAlignment="Stretch" />
+            </Border>
+
+
+
+            <TextBlock 
+              
+                x:Name="txtblockicon" Width="40" Grid.Column="0" Grid.Row="1" 
+                ></TextBlock>
+            <TextBox Margin="10,5,10,5"  
+                     BorderThickness="0"
+                     IsReadOnly="True"
+                     Background="Transparent"
+            VerticalAlignment="Center" 
+            TextWrapping="Wrap" Name="txtMsg" 
+                      
+                     ScrollViewer.CanContentScroll="True"
+                     ScrollViewer.VerticalScrollBarVisibility="Auto"
+            Grid.Row="1"  Grid.Column="1" FontSize="14" 
+             />
+            <Grid Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="0" >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+
+                    <Button Name="btnOk" Content="OK" 
+                    Margin="3,5" MinWidth="70" Height="35"  
+                    Click="Button_Click" Foreground="Black" 
+                    FontSize="14" 
+                   Template="{DynamicResource ResourceKey=ActionButtonBlueTemplate}" />
+                    <Button Name="btnYes" Content="Yes"  
+                    Margin="3,5" MinWidth="70" Height="35" 
+                    Click="Button_Click" Foreground="Black" FontSize="14" 
+                    Template="{DynamicResource ResourceKey=ActionButtonBlueTemplate}"/>
+                    <Button Name="btnNo" Content="No"  
+
+                    Margin="3,5" MinWidth="70" Height="35" 
+                    Click="Button_Click" Foreground="Black" 
+                    FontSize="14" 
+
+                         
+  Template="{DynamicResource ResourceKey=ActionButtonDarkPinkTemplate}"
+                            
+                            />
+                    <Button Name="btnCancel" Margin="3,5" 
+
+                    Content="Cancel" MinWidth="70" 
+
+                    Height="35" Click="Button_Click"
+
+                               
+
+                                Template="{DynamicResource ResourceKey=ActionButtonDarkPinkTemplate}"/>
+
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

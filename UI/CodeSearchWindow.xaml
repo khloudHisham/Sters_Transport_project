@@ -1,0 +1,184 @@
+﻿<Window x:Class="StersTransport.UI.CodeSearchWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+          xmlns:Converters="clr-namespace:StersTransport.Converters"
+        xmlns:local="clr-namespace:StersTransport.UI"
+          xmlns:StersTransportLocal="clr-namespace:StersTransport"
+        	 xmlns:CustomeControls="clr-namespace:StersTransport.CustomeControls"
+               xmlns:customeadorner="clr-namespace:StersTransport.CustomeControls.CustomeAdorner"
+          xmlns:Enumerations="clr-namespace:StersTransport.Enumerations"
+          WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="CodeSearchWindow"
+         Height="600"
+        Width="1024"
+        Loaded="Window_Loaded"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        >
+    <Grid Background="{DynamicResource ResourceKey=DashboardBackground }">
+        <Grid.Resources>
+            <Style TargetType="Border">
+                <Setter Property="Background" Value="{DynamicResource ResourceKey=lightmodebackground}"></Setter>
+                <Setter Property="CornerRadius" Value="5"></Setter>
+                <Setter Property="BorderThickness" Value="1"></Setter>
+                <Setter Property="BorderBrush" Value="{DynamicResource ResourceKey=MainWindowBorderbrush}"></Setter>
+            </Style>
+            <Converters:EnumBooleanConverter x:Key="enumtobooleanconverter">
+                
+            </Converters:EnumBooleanConverter>
+        </Grid.Resources>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+             
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="12*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="1" Grid.ColumnSpan="2" Margin="7,3,7,2">
+
+
+            <customeadorner:AdornedControl
+                    
+                    x:Name="adorner1"  Grid.Row="2" Grid.Column="1" >
+                <customeadorner:AdornedControl.AdornerContent>
+                    <StersTransportLocal:LoadingWait
+                            animationviewboxheight="30" animationviewboxwidth="30"
+                            ></StersTransportLocal:LoadingWait>
+                </customeadorner:AdornedControl.AdornerContent>
+
+                <DataGrid  
+                Style="{DynamicResource DataGridStyle1}"
+                IsReadOnly="True"
+                x:Name="grid_codes"
+                Margin="5"
+                PreviewKeyDown="grid_codes_PreviewKeyDown"
+                MouseDoubleClick="grid_codes_MouseDoubleClick"
+                AutoGeneratingColumn="grid_codes_AutoGeneratingColumn"
+                ></DataGrid>
+
+            </customeadorner:AdornedControl>
+        </Border>
+
+        <Border Grid.Column="0" Grid.ColumnSpan="2" Margin="7,3,7,2">
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width=".5*"/>
+                    <ColumnDefinition Width=".5*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" Grid.Column="3">
+
+                    <Grid.ColumnDefinitions>
+                     
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <DockPanel >
+                        <TextBlock Margin="5,0,5,0" VerticalAlignment="Center">Branch</TextBlock>
+                        <Button Visibility="Collapsed" VerticalAlignment="Center" VerticalContentAlignment="Center" Template="{DynamicResource CancelButtonTemplate}" Click="Button_Click_2">clear</Button>
+                        <ComboBox 
+                            SelectionChanged="cmb_branch_SelectionChanged" 
+                            Margin="0,5,0,5"
+                            Style="{DynamicResource StandardCombobox2}"
+                            IsEditable="True" Grid.Row="1"
+                            SelectedItem="{Binding selectedBranch}"
+                    DisplayMemberPath="AgentName"
+                    x:Name="cmb_branch">
+
+                        </ComboBox>
+                    </DockPanel>
+                 
+                   
+                </Grid>
+
+
+                <Grid Grid.Row="0" Grid.Column="2">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                      
+                    </Grid.RowDefinitions>
+
+                    <DockPanel >
+                        <TextBlock Margin="0,0,5,0" VerticalAlignment="Center">Agent</TextBlock>
+                        <Button Visibility="Collapsed"  VerticalAlignment="Center" VerticalContentAlignment="Center" Template="{DynamicResource CancelButtonTemplate}" Click="Button_Click_3">clear</Button>
+                        <ComboBox SelectionChanged="cmb_agent_SelectionChanged" Margin="0,5,0,5" Style="{DynamicResource StandardCombobox2}" IsEditable="True" Grid.Row="0"
+                    DisplayMemberPath="AgentName"
+                    x:Name="cmb_agent">
+
+                        </ComboBox>
+                    </DockPanel>
+
+                 
+                </Grid>
+               
+
+
+
+                <TextBox VerticalContentAlignment="Center"
+                         HorizontalContentAlignment="Center"
+                         TextChanged="txt_search_TextChanged"
+                         Grid.Column="0" Template="{DynamicResource standardTextbox2}"
+                         Margin="5,5,5,5" x:Name="txt_search" Grid.Row="0"></TextBox>
+
+                <!--
+                <Expander Header="Search in Feilds" Grid.Row="4" Grid.RowSpan="3">
+                    <ListBox SelectionMode="Multiple" x:Name="lstbx_searchoptions" >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <CheckBox 
+                                              IsChecked="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Path=IsSelected}"
+                                              Content="{Binding displayname}"
+                                              ></CheckBox>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Expander>
+                -->
+
+                <Grid Grid.Row="0"  Grid.Column="1" Grid.RowSpan="2"
+                      DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}"
+                      >
+                    <StackPanel Visibility="Hidden" VerticalAlignment="Center" Orientation="Horizontal">
+                        <TextBlock  >search For:</TextBlock>
+                        <RadioButton  GroupName="Group1"
+                        IsChecked="{Binding WindowStatesenum,Converter={StaticResource enumtobooleanconverter},ConverterParameter={x:Static Enumerations:windowStatesenum.insert}}">Insert</RadioButton>
+
+                        <RadioButton  GroupName="Group1"
+                        IsChecked="{Binding WindowStatesenum,Converter={StaticResource enumtobooleanconverter},ConverterParameter={x:Static Enumerations:windowStatesenum.update}}">Update</RadioButton>
+                        
+                        <RadioButton  GroupName="Group1"
+                        IsChecked="{Binding WindowStatesenum,Converter={StaticResource enumtobooleanconverter},ConverterParameter={x:Static Enumerations:windowStatesenum.view}}">View</RadioButton>
+                    </StackPanel>
+                   
+                </Grid>
+
+                <!--
+                <Grid  Grid.Row="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button  Margin="5" Template="{DynamicResource ActionButtonBlueTemplate}"   Click="Button_Click">apply Filters</Button>
+                    <Button Margin="5" Template="{DynamicResource ActionButtonBlueTemplate}"  Grid.Column="1" Click="Button_Click4">Select And Close</Button>
+                </Grid>
+                -->
+                
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

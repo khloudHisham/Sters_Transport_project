@@ -1,0 +1,44 @@
+﻿<Window x:Class="StersTransport.UI.StreetPickWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StersTransport.UI"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        PreviewKeyDown="Window_PreviewKeyDown"
+        WindowStartupLocation="CenterScreen"
+        Title="Street Picker" Height="200" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock FontWeight="Bold"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   x:Name="txtblck"></TextBlock>
+        <TextBox
+           Template="{DynamicResource standardTextbox2}"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Margin="5"
+            x:Name="txtbx" Grid.Row="1"></TextBox>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button 
+                Template="{DynamicResource ActionButtonBlueTemplate}"
+                Margin="5"
+                x:Name="btn" Grid.Column="2" Click="Button_Click">OK</Button>
+        </Grid>
+       
+    </Grid>
+</Window>

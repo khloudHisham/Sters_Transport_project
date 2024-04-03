@@ -1,0 +1,53 @@
+﻿<Window x:Class="StersTransport.UI.DBGreateWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StersTransport.UI"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Title="DBGreateWindow" Height="150" Width="600">
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Setter  Property="Margin" Value="5"></Setter>
+                <Setter Property="Template" Value="{DynamicResource ResourceKey=ActionButtonBlueTemplate}"></Setter>
+                
+            </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="Margin" Value="5"></Setter>
+                <Setter Property="Template" Value="{DynamicResource standardTextbox2}"></Setter>
+             </Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="148*"></ColumnDefinition>
+            <ColumnDefinition Width="38*"></ColumnDefinition>
+            <ColumnDefinition Width="111*"/>
+            <ColumnDefinition Width="149*"></ColumnDefinition>
+            <ColumnDefinition Width="148*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <Button Click="Button_Click"  Grid.RowSpan="1">database script file</Button>
+        <TextBox x:Name="txtsc" Grid.Column="1" Grid.ColumnSpan="3"  ></TextBox>
+        <Button Grid.Row="2"  Click="Button_Click_1" Grid.Column="2"  >execute</Button>
+        <CheckBox Visibility="Collapsed" x:Name="chk_dropdatabase" Grid.Column="4" VerticalAlignment="Center">Drop Database</CheckBox>
+        <Button Grid.Row="1" Click="Button_Click_4"  Grid.RowSpan="1"> database storage path</Button>
+        <TextBox Grid.Row="1" x:Name="txtdest" Grid.Column="1" Grid.ColumnSpan="4"  ></TextBox>
+       
+        
+         <!--
+        <Button   Click="Button_Click_2" Grid.Row="2"  >data script file</Button>
+        <TextBox  x:Name="txtdata" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"  ></TextBox>
+        <Button Click="Button_Click_3" Grid.Row="2" Grid.Column="4"  >execute</Button>
+        <Button Click="Button_Click_5"  Grid.Row="3" Grid.Column="4"  >advanced</Button>
+-->
+
+    </Grid>
+</Window>
