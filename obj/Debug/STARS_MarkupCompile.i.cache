@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Administrator\source\repos\StarsTransport\StersTransport\obj\Debug\
+D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\
 StersTransport
 none
 false
 DEBUG;TRACE
-C:\Users\Administrator\source\repos\StarsTransport\StersTransport\App.xaml
-71-1523286198
+D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\App.xaml
+71-1716418771
 
-1141356276606
-63594951397
+114-400847075
+63-1240661683
 LoadingWait.xaml;LoginWindow.xaml;MainWindow.xaml;ResourceDictionaries\Buttons\ActionButton.xaml;ResourceDictionaries\Buttons\ActionButtonBlue.xaml;ResourceDictionaries\Buttons\ActionButtonDarkPink.xaml;ResourceDictionaries\Buttons\ActionButtonGreen.xaml;ResourceDictionaries\Buttons\ActionButtonOrange.xaml;ResourceDictionaries\Buttons\ActionButtonPink.xaml;ResourceDictionaries\Buttons\ActionButtonPurple.xaml;ResourceDictionaries\Buttons\ActionToggleButton.xaml;ResourceDictionaries\Buttons\CancelButton.xaml;ResourceDictionaries\Buttons\DashBoardButtonBlue.xaml;ResourceDictionaries\Buttons\DashBoardButtongreen.xaml;ResourceDictionaries\Buttons\DashBoardButtonpink.xaml;ResourceDictionaries\Buttons\DashBoardButtonpurple.xaml;ResourceDictionaries\Buttons\EmptyButton.xaml;ResourceDictionaries\Buttons\toggle1.xaml;ResourceDictionaries\Comboboxes\StandardCombobox.xaml;ResourceDictionaries\Comboboxes\StandardCombobox2.xaml;ResourceDictionaries\Comboboxes\StandardComboboxUpperPart.xaml;ResourceDictionaries\Datagrid\DatagridStyle.xaml;ResourceDictionaries\Datagrid\DatagridStyle2.xaml;ResourceDictionaries\DatePickers\DatePicker1.xaml;ResourceDictionaries\DatePickers\DatePicker1UpperPart.xaml;ResourceDictionaries\DatePickers\DatePicker2.xaml;ResourceDictionaries\ListBox\ListBoxItemStyle.xaml;ResourceDictionaries\ProgressBar\ProgressBar1.xaml;ResourceDictionaries\Slider\Slider1.xaml;ResourceDictionaries\TextBoxes\PasswordBox1.xaml;ResourceDictionaries\TextBoxes\StandardTextBox2.xaml;ResourceDictionaries\TextBoxes\StandardTextboxUpper.xaml;ResourceDictionaries\TextBoxes\StandardTextBoxxaml.xaml;UI\AdditionalSettings.xaml;UI\AgentPricesWindow.xaml;UI\ChangePassword.xaml;UI\CodeSearchWindow.xaml;UI\CodeSearchWindowSearchForDialog.xaml;UI\CompanySettings.xaml;UI\DBConnectionSetting.xaml;UI\DBGreateWindow.xaml;UI\DBGreateWindow_Advanced.xaml;UI\ForgetPassword.xaml;UI\IdentityTypeSelector.xaml;UI\ImportExcelClientCodesData.xaml;UI\InvoicePreviewWindow.xaml;UI\LabelPreviewWindow.xaml;UI\LabelsManagement.xaml;UI\NotificationMessage.xaml;UI\previewWindow.xaml;UI\Send.xaml;UI\SenderSummaryWindow.xaml;UI\StreetPickWindow.xaml;UI\UIAdmin.xaml;UI\UIAgent.xaml;UI\UIBranches.xaml;UI\UICity.xaml;UI\UICountry.xaml;UI\UICurrency.xaml;UI\UIDash.xaml;UI\UIInvoice.xaml;UI\UILabel.xaml;UI\UIReports.xaml;UI\UIReports_DashBoard.xaml;UI\UIReports_EUReport.xaml;UI\UIReports_Overview.xaml;UI\UIReports_Report.xaml;UI\UISettings.xaml;UI\UIUser.xaml;UI\ValuePicker.xaml;WpfMessageBox.xaml;
 
-True
+False
 
