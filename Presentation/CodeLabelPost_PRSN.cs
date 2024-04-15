@@ -383,7 +383,7 @@ namespace StersTransport.Presentation
 
 
             etable.RowGroups[0].Rows.Add(new TableRow());
-            Row = etable.RowGroups[0].Rows[etable.RowGroups[0].Rows.Count - 1];// last added
+            Row = etable.RowGroups[0].Rows[etable.RowGroups[0].Rows.Count - 1];
 
             currentLabelStr = "To:";
             Row.Cells.Add(new TableCell(new Paragraph(new Run(currentLabelStr)))
@@ -402,10 +402,7 @@ namespace StersTransport.Presentation
                 currentLabelStr = "";
                 Row.Cells.Add(new TableCell(new Paragraph(new Run(currentLabelStr))) { LineHeight = lineheight });
             }
-
-
-
-
+            
             etable.RowGroups[0].Rows.Add(new TableRow());
             Row = etable.RowGroups[0].Rows[etable.RowGroups[0].Rows.Count - 1];// last added
             currentLabelStr = "Receiver Name Full:";
