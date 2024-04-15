@@ -43,11 +43,9 @@
                
                IsToolBarVisible="True"
                                   ScrollViewer.VerticalScrollBarVisibility="Auto"
-                                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                  ScrollViewer.HorizontalScrollBarVisibility="Auto">
                 
-                >
-                <FlowDocument 
-                     
+                <FlowDocument                      
                      FontFamily="Arial"
                      FontStretch="Condensed"
                      FontWeight="Bold"

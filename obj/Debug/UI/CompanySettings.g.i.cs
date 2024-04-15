@@ -180,7 +180,7 @@ namespace StersTransport.UI {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/STARS;component/ui/companysettings.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/STERS;component/ui/companysettings.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\UI\CompanySettings.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

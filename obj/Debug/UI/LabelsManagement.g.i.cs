@@ -60,7 +60,7 @@ namespace StersTransport.UI {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/STARS;component/ui/labelsmanagement.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/STERS;component/ui/labelsmanagement.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\UI\LabelsManagement.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

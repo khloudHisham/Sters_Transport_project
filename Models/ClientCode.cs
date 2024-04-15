@@ -98,39 +98,22 @@ namespace StersTransport.Models
         }
 
         [NotMapped]
-        public bool isvalidating
-        {
-            get;
-            set;
-        }
-        [NotMapped]
-        public bool shipmentNoIsvalidating
-        { get; set; }
+        public bool isvalidating { get; set; }
 
         [NotMapped]
-        public bool zipcodeisvalidating
-        {
-            get;set;
-        }
-        [NotMapped]
-        public string zipcodeErrorMessage
-        {
-            get;set;
-        }
-        [NotMapped]
-        public bool MustValidateNotesLength
-        {
-            get; set;
-        }
+        public bool shipmentNoIsvalidating { get; set; }
 
         [NotMapped]
-        public bool MustValidateStreetNameForDigitsAndChars
-        {
-            get; set;
-        }
+        public bool zipcodeisvalidating { get; set; }
 
+        [NotMapped]
+        public string zipcodeErrorMessage { get; set; }
 
+        [NotMapped]
+        public bool MustValidateNotesLength { get; set; }
 
+        [NotMapped]
+        public bool MustValidateStreetNameForDigitsAndChars { get; set; }
 
         private int _AutoNumber;
 
@@ -145,9 +128,6 @@ namespace StersTransport.Models
             }
         }
 
-
-
-
         private string _Code;
         [Key]
         [StringLength(255)]
@@ -161,8 +141,8 @@ namespace StersTransport.Models
             }
         }
 
-
         private string _BranchCode;
+
         [StringLength(50)]
         public string BranchCode
         {

@@ -29,7 +29,6 @@ namespace StersTransport.UI
     /// </summary>
     public partial class Send : UserControl, INotifyPropertyChanged
     {
-
         //INotifyPropertyChanged  implementation 
         #region INotifyPropertyChanged  implementation ..
         public event PropertyChangedEventHandler PropertyChanged;
@@ -39,7 +38,6 @@ namespace StersTransport.UI
                 PropertyChanged(this, e);
         }
         #endregion
-
 
         #region Properties and Memebers
         private ClientCode _clientcode;
@@ -274,9 +272,6 @@ namespace StersTransport.UI
         public string streetpickvalue;
         #endregion
 
-
-
-
         public Send()
         {
             original_LabelTitleForeColor = Application.Current.Resources["LabelTitleForeColor"];
@@ -308,8 +303,6 @@ namespace StersTransport.UI
             catch (Exception) { }
            
         }
-
-
 
         #region Methods
 
@@ -1040,25 +1033,7 @@ namespace StersTransport.UI
         {
             if (ClientCode == null) { return; }
 
-            //show label UI
-            /*
-            try
-            {
-                MainWindow mainwindow_;
-                foreach (Window window in Application.Current.Windows)
-                {
-                    if (window.GetType() == typeof(MainWindow))
-                    {
-                        mainwindow_ = window as MainWindow;
-                        mainwindow_.show_label_ui(ClientCode.Code);
-                        break;
-                    }
-                }
-
-
-            }
-            catch (Exception ex) { WpfMessageBox.Show("", ex.Message, MessageBoxButton.OK, (WpfMessageBox.MessageBoxImage)MessageBoxImage.Error); }
-            */
+           
             bool ispost = ClientCode.Have_Local_Post.HasValue ? (bool)ClientCode.Have_Local_Post : false;
             LabelPreviewWindow labelPreviewWindow = new LabelPreviewWindow(ClientCode.Code, ispost);
             labelPreviewWindow.ShowDialog();
@@ -1543,14 +1518,12 @@ namespace StersTransport.UI
             }
         }
 
-
         public void assigndeletepathcolor()
         {
             setdeletepathfill();
            // deletepath.Fill = (Brush)Application.Current.Resources["LabelTitleForeColor"];
             //LabelTitleForeColor
         }
-
 
         private void SetIdentityTypeAfterSelectorCommitt()
         {
@@ -1573,15 +1546,7 @@ namespace StersTransport.UI
             txt_senderID.Focus();
 
         }
-
-
-
         #endregion
-
-
-
-        
-
 
         #region EventHandlers
 
@@ -1589,7 +1554,6 @@ namespace StersTransport.UI
         {
             // clear content
             OnclearContent();
-        
         }
 
         private void Button_Click_12(object sender, RoutedEventArgs e)
@@ -1613,9 +1577,7 @@ namespace StersTransport.UI
         {
  
         }
-
-      
-
+  
         private void txt_weight_SourceUpdated(object sender, DataTransferEventArgs e)
         {
             if (dataisloading||DataIsSetting) { return; }
@@ -1637,8 +1599,7 @@ namespace StersTransport.UI
             }
             */
         }
-
-     
+    
         private void txt_additionalWeight_SourceUpdated(object sender, DataTransferEventArgs e)
         {
             if (dataisloading || DataIsSetting) { return; }
@@ -1685,6 +1646,7 @@ namespace StersTransport.UI
             Calculate_Weight_By_Size(); calculatewight(); CalculatePrices(false);
 
         }
+        
         private void TextBoxEx_SourceUpdated(object sender, DataTransferEventArgs e)
         {
             if (dataisloading || DataIsSetting) { return; }
@@ -1744,7 +1706,7 @@ namespace StersTransport.UI
             Calculate_Weight_By_Size();
         }
 
-       private void ComboboxEX_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        private void ComboboxEX_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
             /*
             if (factorupdated)
@@ -1799,7 +1761,6 @@ namespace StersTransport.UI
             }
         }
 
-
         private void ComboboxEX_SourceUpdated_1(object sender, DataTransferEventArgs e)
         {
             if (dataisloading || DataIsSetting) { return; }
@@ -1838,6 +1799,7 @@ namespace StersTransport.UI
 
 
         }
+        
         private void TextBoxEx_SourceUpdated_4(object sender, DataTransferEventArgs e)
         {
             // zipcode source updated
@@ -1870,7 +1832,6 @@ namespace StersTransport.UI
 
             */
         }
-
 
         private void streetNOPicker_Enter_Pressed(object sender, EventArgs e)
         {
@@ -1914,7 +1875,6 @@ namespace StersTransport.UI
             // retain location of popup
         }
 
-
         private void ComboboxEX_SourceUpdated_2(object sender, DataTransferEventArgs e)
         {
             if (dataisloading || DataIsSetting) { return; }
@@ -1956,6 +1916,7 @@ namespace StersTransport.UI
         { 
            
         }
+        
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             // test calc
@@ -1963,8 +1924,6 @@ namespace StersTransport.UI
             // calc test 
             // CalculatePrices();
         }
-
-      
 
         private void CheckBox_Checked_1(object sender, RoutedEventArgs e)
         {
@@ -1997,8 +1956,6 @@ namespace StersTransport.UI
             CalculatePrices(false);
         }
 
-
-
         private void ComboboxEX_SourceUpdated_3(object sender, DataTransferEventArgs e)
         {
             // country source updated
@@ -2022,6 +1979,7 @@ namespace StersTransport.UI
 
             }
         }
+        
         private void ComboboxEX_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             // country source selection changed
@@ -2161,6 +2119,7 @@ namespace StersTransport.UI
             CalculatePrices(false);
 
         }
+        
         private void TextBoxEx_SourceUpdated_8(object sender, DataTransferEventArgs e)
         {
             // paid amount souce updated 
@@ -2247,6 +2206,7 @@ namespace StersTransport.UI
             }
             */
         }
+        
         private void TextBoxEx_SourceUpdated_11(object sender, DataTransferEventArgs e)
         {
             // goods value source updated
@@ -2267,8 +2227,6 @@ namespace StersTransport.UI
             */
         }
 
-
-
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             // add code
@@ -2280,6 +2238,7 @@ namespace StersTransport.UI
             // update code
             OnUpdateClientCode();
         }
+       
         private void Button_Click_8(object sender, RoutedEventArgs e)
         {
             // delete code
@@ -2292,14 +2251,11 @@ namespace StersTransport.UI
             OnMakeLabel();
         }
 
-
-
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
             // make invoice
             OnMakeInvoice();
         }
-
 
         private void Button_Click_9(object sender, RoutedEventArgs e)
         {
@@ -2308,6 +2264,7 @@ namespace StersTransport.UI
             showCodeSearchWindow(true);
 
         }
+        
         private void UiSend_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if ((Keyboard.Modifiers == ModifierKeys.Control) && (e.Key == Key.Enter))
@@ -2373,34 +2330,26 @@ namespace StersTransport.UI
             assignTXTDiscountColors();
         }
 
-
         private void Button_Click_10(object sender, RoutedEventArgs e)
         {
             // check zip code
             checkZipcode();
         }
 
-
-
-
         private void identityTypeSelectorUC_Enter_Pressed(object sender, EventArgs e)
         {
             SetIdentityTypeAfterSelectorCommitt();
         }
-
-      
 
         private void identityTypeSelectorUC_ESC_Pressed(object sender, EventArgs e)
         {
 
         }
 
-
         private void identityTypeSelectorUC_MouseClicked_1(object sender, EventArgs e)
         {
             SetIdentityTypeAfterSelectorCommitt();
         }
-
 
         private void txt_senderID_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -2409,10 +2358,6 @@ namespace StersTransport.UI
                 popup_senderIDtypes.IsOpen = false;
             }
         }
-
-
         #endregion
-
-
     }
 }

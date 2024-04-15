@@ -76,7 +76,7 @@ namespace StersTransport.UI {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/STARS;component/ui/importexcelclientcodesdata.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/STERS;component/ui/importexcelclientcodesdata.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\UI\ImportExcelClientCodesData.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

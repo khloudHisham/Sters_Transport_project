@@ -62,7 +62,7 @@ namespace StersTransport.UI {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/STARS;component/ui/uireports_dashboard.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/STERS;component/ui/uireports_dashboard.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\UI\UIReports_DashBoard.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

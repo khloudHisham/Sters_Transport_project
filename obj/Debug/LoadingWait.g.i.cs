@@ -148,7 +148,7 @@ namespace StersTransport {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/STARS;component/loadingwait.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/STERS;component/loadingwait.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\LoadingWait.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
