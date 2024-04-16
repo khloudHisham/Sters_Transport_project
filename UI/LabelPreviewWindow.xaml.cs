@@ -53,8 +53,11 @@ namespace StersTransport.UI
             {
                 if (ispost)
                 {
-                    CodeLabelPost_PRSN codeLabel_PRSN = new CodeLabelPost_PRSN();
-                    codeLabel_PRSN.generateDocument(flowdocument, code);
+                    //CodeLabelPost_PRSN codeLabel_PRSN = new CodeLabelPost_PRSN();
+                    //codeLabel_PRSN.generateDocument(flowdocument, code);
+
+                    CodeLabelPost_PRSN_2 codeLabel_PRSN_2 = new CodeLabelPost_PRSN_2();
+                    codeLabel_PRSN_2.generateDocument(flowdocument, code);
                 }
                 else
                 {

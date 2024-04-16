@@ -29,7 +29,7 @@ namespace StersTransport.UI
 
         private void LoadCountryImage()
         {
-            string countryName = country_name.Text;
+            string countryName = countryName_txt.Text;
             
             try
             {
@@ -40,8 +40,8 @@ namespace StersTransport.UI
                     bitmapImage.BeginInit();
                     bitmapImage.StreamSource = new System.IO.MemoryStream(country.ImgForPostLabel);
                     bitmapImage.EndInit();
-                    
-                    countryImage.Source = bitmapImage;
+
+                    countryImage_img.Source = bitmapImage;
                 }
             }
             catch (Exception ex)

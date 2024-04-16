@@ -296,11 +296,11 @@ namespace StersTransport.Presentation
             currentLabelStr = "From:";
             Row.Cells.Add(new TableCell(new Paragraph(new Run(currentLabelStr)) )
             { FontWeight = FontWeights.Regular, LineHeight = lineheight, Padding=new Thickness (pt, 0,0,0), BorderBrush = BorderColor,BorderThickness = new Thickness(brdrt) });
-///data
+
             currentLabelStr = string.Format("{0}  {1}", GlobalData.CompanyData.EnglishName, branch.AgentName);
             Row.Cells.Add(new TableCell(new Paragraph(new Run(currentLabelStr))) { Padding = new Thickness(pt, 0, 0, 0), FontWeight =FontWeights.Bold,  ColumnSpan=2,  BorderThickness = new Thickness(brdrt), BorderBrush = BorderColor, LineHeight = lineheight });
 
-
+            // needed
             currentLabelStr = DateTime.Now.ToString();
             Row.Cells.Add(new TableCell(new Paragraph(new Run(currentLabelStr)) { TextAlignment= TextAlignment.Center} )
             {  FontWeight = FontWeights.Regular,FontSize=10, LineHeight = lineheight });
@@ -418,7 +418,7 @@ namespace StersTransport.Presentation
             {
                 Image image_ = new Image();
                 image_.Source = bitimage;
-               image_.Stretch = Stretch.Uniform;
+                image_.Stretch = Stretch.Uniform;
                 var block = new BlockUIContainer(image_);
                 Row.Cells.Add(new TableCell(block) {   RowSpan =6, LineHeight = lineheight });
             }
@@ -518,25 +518,36 @@ namespace StersTransport.Presentation
                 {
                     currentLabelStr = "PAY IN " + countryAgent.CountryName;
                 }
-                txtblockHeader.Text = currentLabelStr; txtblockHeader.FontWeight = FontWeights.Bold; txtblockHeader.FontSize = FontsizeextraLarge;
-                var tablcellHeader = new TableCell() { BorderThickness = new Thickness(brdrt), BorderBrush = BorderColor, LineHeight = lineheight, FontWeight = FontWeights.Bold, Background = NotPaidColor };
+                txtblockHeader.Text = currentLabelStr; 
+                txtblockHeader.FontWeight = FontWeights.Bold; 
+                txtblockHeader.FontSize = FontsizeextraLarge;
+                var tablcellHeader = new TableCell() { 
+                    LineHeight = lineheight, 
+                    BorderBrush = BorderColor, 
+                    Background = NotPaidColor,
+                    FontWeight = FontWeights.Bold, 
+                    BorderThickness = new Thickness(brdrt), 
+                };
                 tablcellHeader.Blocks.Add(blockUIHeader);
                 Row.Cells.Add(tablcellHeader);
-                //  Row.Cells.Add(new TableCell(new Paragraph(new Run(currentLabelStr))) { FontWeight = FontWeights.Bold, Padding = new Thickness(pt, 0, 0, 0), Background = NotPaidColor, BorderThickness = new Thickness(brdrt), BorderBrush = BorderColor, LineHeight = lineheight });
             }
             else
             {
                 currentLabelStr = "ALL PAID";
-                // Row.Cells.Add(new TableCell(new Paragraph(new Run(currentLabelStr))) { FontWeight = FontWeights.Bold, Padding = new Thickness(pt, 0, 0, 0), Background = PaidColor, BorderThickness = new Thickness(brdrt), BorderBrush = BorderColor, LineHeight = lineheight });
 
-                txtblockHeader.Text = currentLabelStr; txtblockHeader.FontWeight = FontWeights.Bold; txtblockHeader.FontSize = FontsizeextraLarge;
-                 var tablcellHeader = new TableCell() { BorderThickness = new Thickness(brdrt), BorderBrush = BorderColor, LineHeight = lineheight, FontWeight = FontWeights.Bold, Background = PaidColor };
+                txtblockHeader.Text = currentLabelStr; 
+                txtblockHeader.FontWeight = FontWeights.Bold; 
+                txtblockHeader.FontSize = FontsizeextraLarge;
+                var tablcellHeader = new TableCell() { 
+                     BorderThickness = new Thickness(brdrt), 
+                     BorderBrush = BorderColor, 
+                     LineHeight = lineheight, 
+                     FontWeight = FontWeights.Bold, 
+                     Background = PaidColor 
+                };
                 tablcellHeader.Blocks.Add(blockUIHeader);
                 Row.Cells.Add(tablcellHeader);
             }
-
-
-
 
             double shipmentno = ClientCode.Shipment_No.HasValue ? (double)ClientCode.Shipment_No : 0;
             currentLabelStr = string.Format("{0} {1}", "Truck NO.", shipmentno.ToString());

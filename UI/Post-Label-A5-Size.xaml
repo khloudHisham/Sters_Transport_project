@@ -74,6 +74,7 @@
                             BorderThickness="1">
                         <TextBlock 
                             Text="" 
+                            x:Name="from_txt"
                             FontSize="42" 
                             VerticalAlignment="Center" 
                             HorizontalAlignment="Left"/>
@@ -105,6 +106,7 @@
                             BorderThickness="1">
                         <TextBlock 
                             Text="" 
+                            x:Name="senderName_txt"
                             FontSize="42" 
                             VerticalAlignment="Center" 
                             HorizontalAlignment="Left"/>
@@ -142,7 +144,7 @@
                             </Grid.RowDefinitions>
 
                             <Border Grid.Row="0" Grid.Column="0" BorderBrush="Gray" BorderThickness="0">
-                                <TextBlock Text="" FontSize="42" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <TextBlock x:Name="myParcelQuantity_txt" Text="" FontSize="42" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Border>
 
 
@@ -152,7 +154,7 @@
 
 
                             <Border Grid.Row="0" Grid.Column="2" BorderBrush="Gray" BorderThickness="0.5">
-                                <TextBlock Text="" FontSize="42" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <TextBlock x:Name="allParcelQuantity_txt" Text="" FontSize="42" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Border>
 
 
@@ -189,6 +191,7 @@
                             BorderThickness="1">
                         <TextBlock 
                             Text="" 
+                            x:Name="weight_txt" 
                             FontSize="42" 
                             VerticalAlignment="Center" 
                             HorizontalAlignment="Left"/>
@@ -237,6 +240,7 @@
                             BorderBrush="Gray"
                             BorderThickness="1">
                         <TextBlock 
+                            x:Name="receiverName_txt" 
                             Text="" 
                             FontSize="42" 
                             VerticalAlignment="Center" 
@@ -270,6 +274,7 @@
                             BorderThickness="1">
                         <TextBlock 
                             Text="" 
+                            x:Name="address_txt"
                             FontSize="42" 
                             VerticalAlignment="Center" 
                             HorizontalAlignment="Left"/>
@@ -303,6 +308,7 @@
                         <TextBlock 
                             Text="" 
                             FontSize="42" 
+                            x:Name="postalCode_txt"
                             VerticalAlignment="Center" 
                             HorizontalAlignment="Left"/>
                     </Border>
@@ -334,6 +340,7 @@
                             BorderThickness="1">
                         <TextBlock 
                             Text="" 
+                            x:Name="cityName_txt"
                             FontSize="42" 
                             VerticalAlignment="Center" 
                             HorizontalAlignment="Left"/>
@@ -364,7 +371,7 @@
                             BorderBrush="Gray"
                             BorderThickness="1">
                         <TextBlock 
-                            x:Name="country_name"
+                            x:Name="countryName_txt"
                             Text="" 
                             FontSize="42" 
                             VerticalAlignment="Center" 
@@ -398,6 +405,7 @@
                             BorderThickness="1">
                         <TextBlock 
                             Text="" 
+                            x:Name="receiverPhoneNumber_txt"
                             FontSize="42" 
                             VerticalAlignment="Center" 
                             HorizontalAlignment="Left"/>
@@ -428,19 +436,55 @@
                             Margin="0 0 0 0"
                             BorderBrush="Gray"
                             BorderThickness="1">
-                        <TextBlock 
-                            Text="" 
-                            FontSize="42" 
-                            VerticalAlignment="Center" 
-                            HorizontalAlignment="Left"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock 
+                                Text=""
+                                x:Name="code_txt"
+                                FontWeight="Bold"
+                                FontSize="50" 
+                                VerticalAlignment="Center" 
+                                HorizontalAlignment="Left"/>
+
+                            <TextBlock 
+                                Margin="555 0 0 0"
+                                Text="ALL PAID" 
+                                Background="Green"
+                                FontWeight="Bold"
+                                x:Name="isPaid_txt"
+                                FontSize="50"                                
+                                VerticalAlignment="Center" 
+                                HorizontalAlignment="Right"/>
+
+                        </StackPanel>
                     </Border>
                 </Grid>
             </StackPanel>
 
             <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center">
-                <Image x:Name="countryImage" Source="Post-Label-A5-Images/Germany.png" Margin="0 250 0 0" Width="507" Height="507"/>
+                <TextBlock
+                    Text="time"
+                    x:Name="DateTime_txt"
+                    FontWeight="Bold"
+                    FontSize="32"
+                    Margin="80 50 0 0"
+                    VerticalAlignment="Center"
+                    
+                    HorizontalAlignment="Center"/>
+
+                <TextBlock
+                    Text="goods"
+                    x:Name="goodsDescription_txt"
+                    FontWeight="Bold"
+                    FontSize="32"
+                    Margin="80 50 0 0"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+
+                <Image x:Name="countryImage_img" Source="Post-Label-A5-Images/Germany.png" Margin="0 250 0 0" Width="507" Height="507"/>
             </StackPanel>
         </Grid>
+        <Image x:Name="barcode_img" Height="100" Width="456"/>
+
     </StackPanel>
 
 </Window>
