@@ -68,14 +68,14 @@ namespace StersTransport.DataAccess
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
                 cmd.CommandText = @"select CODE_LIST.Client_Code,CODE_LIST.Shipment_No,CODE_LIST.SenderName,CODE_LIST.Sender_Tel,CODE_LIST.ReceiverName,CODE_LIST.Receiver_Tel,
-CODE_LIST.CountryAgentId,tbl_Country.CountryName,CODE_LIST.AgentId,tbl_Agent.AgentName,CODE_LIST.Person_in_charge_Id,tbl_User.UserName,
-CODE_LIST.Goods_Description,CODE_LIST.Box_No,CODE_LIST.Pallet_No,CODE_LIST.Weight_Total,
-CODE_LIST.PostDate,CODE_LIST.Total_Post_Cost_IQD,CODE_LIST.EuropaToPay,
-CODE_LIST.BranchId,branches.AgentName as BranchName
-from code_list left join tbl_Country on CODE_LIST.CountryAgentId=tbl_Country.Id
-left join tbl_Agent on CODE_LIST.AgentId=tbl_Agent.Id
-left join tbl_User on CODE_LIST.Person_in_charge_Id=tbl_User.Id
-inner join tbl_Agent branches on CODE_LIST.BranchId=branches.Id order by AutoNumber Desc";
+                                    CODE_LIST.CountryAgentId,tbl_Country.CountryName,CODE_LIST.AgentId,tbl_Agent.AgentName,CODE_LIST.Person_in_charge_Id,tbl_User.UserName,
+                                    CODE_LIST.Goods_Description,CODE_LIST.Box_No,CODE_LIST.Pallet_No,CODE_LIST.Weight_Total,
+                                    CODE_LIST.PostDate,CODE_LIST.Total_Post_Cost_IQD,CODE_LIST.EuropaToPay,
+                                    CODE_LIST.BranchId,branches.AgentName as BranchName
+                                    from code_list left join tbl_Country on CODE_LIST.CountryAgentId=tbl_Country.Id
+                                    left join tbl_Agent on CODE_LIST.AgentId=tbl_Agent.Id
+                                    left join tbl_User on CODE_LIST.Person_in_charge_Id=tbl_User.Id
+                                    inner join tbl_Agent branches on CODE_LIST.BranchId=branches.Id order by AutoNumber Desc";
 
                 // order by PostYear Desc, Num desc .... 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);

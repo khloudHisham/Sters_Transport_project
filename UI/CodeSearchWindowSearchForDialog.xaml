@@ -60,7 +60,7 @@
             </Grid.ColumnDefinitions>
             <Button FontWeight="Bold" Click="Button_Click" Grid.Row="1" Width="100" Margin="5"
                 Template="{DynamicResource ActionButtonBlueTemplate}"
-                >Insert</Button>
+                >New Code</Button>
 
             <Button FontWeight="Bold"  Click="Button_Click2" Grid.Row="1" Grid.Column="1" Width="100" Margin="5"
                 Template="{DynamicResource ActionButtonGreenTemplate}"

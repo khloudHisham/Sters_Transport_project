@@ -21,6 +21,8 @@ using StersTransport.GlobalData;
 using System.Reflection;
 using StersTransport.Enumerations;
 using System.Windows.Media.Animation;
+using Microsoft.Win32;
+//using System.Windows.Forms;
 
 namespace StersTransport.UI
 {
@@ -948,10 +950,13 @@ namespace StersTransport.UI
             }
             catch (Exception ex) { WpfMessageBox.Show("", ex.Message, MessageBoxButton.OK, (WpfMessageBox.MessageBoxImage)MessageBoxImage.Error); }
             */
+            bool ispost = ClientCode.Have_Local_Post.HasValue ? (bool)ClientCode.Have_Local_Post : false;
 
-            InvoicePreviewWindow invoicePreviewWindow = new InvoicePreviewWindow(ClientCode.Code);
+
+            InvoicePreviewWindow invoicePreviewWindow = new InvoicePreviewWindow(ClientCode.Code,ispost);
             invoicePreviewWindow.ShowDialog();
-
+            //new_invoice invoice = new new_invoice();
+            //invoice.ShowDialog();
 
         }
         private void OnDeleteCode()
@@ -2411,8 +2416,15 @@ namespace StersTransport.UI
         }
 
 
+
         #endregion
 
-
+        private void ChooseImage(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openDialog = new OpenFileDialog();
+            openDialog.Filter = "Image files| *.pdf; *.jpeg; *.jpg; *.png; ";
+            openDialog.FilterIndex = 1;
+            openDialog.ShowDialog();
+        }
     }
 }

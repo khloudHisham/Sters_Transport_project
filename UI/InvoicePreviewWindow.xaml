@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StersTransport.UI"
+        x:Name="invoicepreview"
         mc:Ignorable="d"
         Title="InvoicePreviewWindow" Height="800" Width="1000"
         Loaded="Window_Loaded"
@@ -26,7 +27,7 @@
                 </Grid.ColumnDefinitions>
 
                 <Button FontWeight="Bold" Margin="5" Template="{DynamicResource ActionButtonBlueTemplate}" 
-                        Grid.Column="2" Click="Button_Click_1">Print</Button>
+                        Grid.Column="2" Click="print">Print</Button>
 
                 <CheckBox
                     x:Name="chk_useDefaultCopyCount"
@@ -39,7 +40,7 @@
         <Border Grid.Row="1"  Background="#E4E4E4" BorderThickness="1" BorderBrush="#236BC9">
 
 
-            <FlowDocumentScrollViewer 
+            <!--<FlowDocumentScrollViewer 
                
                IsToolBarVisible="True"
                                   ScrollViewer.VerticalScrollBarVisibility="Auto"
@@ -54,7 +55,15 @@
                     Background="White" x:Name="flowdocument">
 
                 </FlowDocument>
-            </FlowDocumentScrollViewer>
+
+                
+            </FlowDocumentScrollViewer>-->
+
+            <Viewbox Stretch="Uniform">
+                <Frame x:Name="frame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </Viewbox>
+
+
         </Border>
 
     </Grid>
