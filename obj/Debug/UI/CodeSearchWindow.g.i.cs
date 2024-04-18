@@ -97,7 +97,7 @@ namespace StersTransport.UI {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/STARS;component/ui/codesearchwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/STERS;component/ui/codesearchwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\UI\CodeSearchWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

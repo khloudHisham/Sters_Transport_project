@@ -70,7 +70,7 @@ namespace StersTransport.UI {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/STARS;component/ui/uibranches.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/STERS;component/ui/uibranches.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\UI\UIBranches.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

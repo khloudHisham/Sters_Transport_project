@@ -17,23 +17,15 @@ using System.IO;
 
 namespace StersTransport.Presentation
 {
-   
-
     public class CodeLabelPost_PRSN
     {
-       
-
-
         SolidColorBrush NotPaidColor = (SolidColorBrush)(new BrushConverter().ConvertFrom("#DD015B"));
         SolidColorBrush PaidColor = (SolidColorBrush)(new BrushConverter().ConvertFrom("#23C99C"));
         SolidColorBrush BorderColor = (SolidColorBrush)(new BrushConverter().ConvertFrom("#404040"));
 
-
-     
         double lineheight = 25.0;
         double lineheight2 = 30.0;
 
- 
         double lineheightsmall = 3.0;
 
         double marginthicness = 0;
@@ -46,24 +38,19 @@ namespace StersTransport.Presentation
         CountryDa countryDa = new CountryDa();
         BranchDa branchDa = new BranchDa();
 
-
         ClientCode ClientCode { get; set; }
         Country countryAgent { get; set; }
         Country countryPost { get; set; }
 
         Agent agent { get; set; }
 
-
         Agent branch { get; set; }
 
-       // List<Branch> Branches = new List<Branch>();
+        // List<Branch> Branches = new List<Branch>();
         List<Agent> Branches = new List<Agent>();
-
-
 
         public Table generate_Header_With_ourOffices_Table()
         {
-
             // Main (Containing Table..)
             var containingTable = new Table();
             containingTable.CellSpacing = 0;
@@ -74,8 +61,6 @@ namespace StersTransport.Presentation
             containingTable.Columns.Add(new TableColumn() { Width = new GridLength(1, GridUnitType.Star) });
             containingTable.RowGroups.Add(new TableRowGroup());
             containingTable.RowGroups[0].Rows.Add(new TableRow());
-
-
 
             TableRow ContainingRow = containingTable.RowGroups[0].Rows[0];
             // Add The EU Image
@@ -315,7 +300,7 @@ namespace StersTransport.Presentation
             currentLabelStr = string.Format("{0}  {1}", GlobalData.CompanyData.EnglishName, branch.AgentName);
             Row.Cells.Add(new TableCell(new Paragraph(new Run(currentLabelStr))) { Padding = new Thickness(pt, 0, 0, 0), FontWeight =FontWeights.Bold,  ColumnSpan=2,  BorderThickness = new Thickness(brdrt), BorderBrush = BorderColor, LineHeight = lineheight });
 
-
+            // needed
             currentLabelStr = DateTime.Now.ToString();
             Row.Cells.Add(new TableCell(new Paragraph(new Run(currentLabelStr)) { TextAlignment= TextAlignment.Center} )
             {  FontWeight = FontWeights.Regular,FontSize=10, LineHeight = lineheight });
@@ -398,7 +383,7 @@ namespace StersTransport.Presentation
 
 
             etable.RowGroups[0].Rows.Add(new TableRow());
-            Row = etable.RowGroups[0].Rows[etable.RowGroups[0].Rows.Count - 1];// last added
+            Row = etable.RowGroups[0].Rows[etable.RowGroups[0].Rows.Count - 1];
 
             currentLabelStr = "To:";
             Row.Cells.Add(new TableCell(new Paragraph(new Run(currentLabelStr)))
@@ -417,10 +402,7 @@ namespace StersTransport.Presentation
                 currentLabelStr = "";
                 Row.Cells.Add(new TableCell(new Paragraph(new Run(currentLabelStr))) { LineHeight = lineheight });
             }
-
-
-
-
+            
             etable.RowGroups[0].Rows.Add(new TableRow());
             Row = etable.RowGroups[0].Rows[etable.RowGroups[0].Rows.Count - 1];// last added
             currentLabelStr = "Receiver Name Full:";
@@ -433,17 +415,13 @@ namespace StersTransport.Presentation
 
             var bitimage = ImageHelpercs.LoadImage(countryPost.ImgForPostLabel);
             if (bitimage != null)
-
             {
                 Image image_ = new Image();
-                image_.Source = bitimage;// handle nulls
-               image_.Stretch = Stretch.Uniform;
-               // image_.Width = 70;
-               // image_.Height = 70;
-               // image.Stretch = Stretch.Fill;
+                image_.Source = bitimage;
+                image_.Stretch = Stretch.Uniform;
                 var block = new BlockUIContainer(image_);
                 Row.Cells.Add(new TableCell(block) {   RowSpan =6, LineHeight = lineheight });
-            } // no image
+            }
             else
             {
                 Row.Cells.Add(new TableCell(new Paragraph(new Run(string.Empty))) { RowSpan = 6, LineHeight = lineheight });
@@ -502,9 +480,6 @@ namespace StersTransport.Presentation
             currentLabelStr = cntrystr;
             Row.Cells.Add(new TableCell(new Paragraph(new Run(currentLabelStr))) { FontSize = FontsizeextraLarge, Padding = new Thickness(pt, 0, 0, 0), FontWeight = FontWeights.Bold, ColumnSpan = 2, BorderThickness = new Thickness(brdrt), BorderBrush = BorderColor, LineHeight = lineheight });
 
-            
-
-
             etable.RowGroups[0].Rows.Add(new TableRow());
             Row = etable.RowGroups[0].Rows[etable.RowGroups[0].Rows.Count - 1];// last added
             currentLabelStr = "Phone Number:";
@@ -543,25 +518,36 @@ namespace StersTransport.Presentation
                 {
                     currentLabelStr = "PAY IN " + countryAgent.CountryName;
                 }
-                txtblockHeader.Text = currentLabelStr; txtblockHeader.FontWeight = FontWeights.Bold; txtblockHeader.FontSize = FontsizeextraLarge;
-                var tablcellHeader = new TableCell() { BorderThickness = new Thickness(brdrt), BorderBrush = BorderColor, LineHeight = lineheight, FontWeight = FontWeights.Bold, Background = NotPaidColor };
+                txtblockHeader.Text = currentLabelStr; 
+                txtblockHeader.FontWeight = FontWeights.Bold; 
+                txtblockHeader.FontSize = FontsizeextraLarge;
+                var tablcellHeader = new TableCell() { 
+                    LineHeight = lineheight, 
+                    BorderBrush = BorderColor, 
+                    Background = NotPaidColor,
+                    FontWeight = FontWeights.Bold, 
+                    BorderThickness = new Thickness(brdrt), 
+                };
                 tablcellHeader.Blocks.Add(blockUIHeader);
                 Row.Cells.Add(tablcellHeader);
-                //  Row.Cells.Add(new TableCell(new Paragraph(new Run(currentLabelStr))) { FontWeight = FontWeights.Bold, Padding = new Thickness(pt, 0, 0, 0), Background = NotPaidColor, BorderThickness = new Thickness(brdrt), BorderBrush = BorderColor, LineHeight = lineheight });
             }
             else
             {
                 currentLabelStr = "ALL PAID";
-                // Row.Cells.Add(new TableCell(new Paragraph(new Run(currentLabelStr))) { FontWeight = FontWeights.Bold, Padding = new Thickness(pt, 0, 0, 0), Background = PaidColor, BorderThickness = new Thickness(brdrt), BorderBrush = BorderColor, LineHeight = lineheight });
 
-                txtblockHeader.Text = currentLabelStr; txtblockHeader.FontWeight = FontWeights.Bold; txtblockHeader.FontSize = FontsizeextraLarge;
-                 var tablcellHeader = new TableCell() { BorderThickness = new Thickness(brdrt), BorderBrush = BorderColor, LineHeight = lineheight, FontWeight = FontWeights.Bold, Background = PaidColor };
+                txtblockHeader.Text = currentLabelStr; 
+                txtblockHeader.FontWeight = FontWeights.Bold; 
+                txtblockHeader.FontSize = FontsizeextraLarge;
+                var tablcellHeader = new TableCell() { 
+                     BorderThickness = new Thickness(brdrt), 
+                     BorderBrush = BorderColor, 
+                     LineHeight = lineheight, 
+                     FontWeight = FontWeights.Bold, 
+                     Background = PaidColor 
+                };
                 tablcellHeader.Blocks.Add(blockUIHeader);
                 Row.Cells.Add(tablcellHeader);
             }
-
-
-
 
             double shipmentno = ClientCode.Shipment_No.HasValue ? (double)ClientCode.Shipment_No : 0;
             currentLabelStr = string.Format("{0} {1}", "Truck NO.", shipmentno.ToString());
@@ -627,6 +613,7 @@ namespace StersTransport.Presentation
             }
             return result;
         }
+       
         public void generateDocument(FlowDocument flowdocument, string code)
         {
             ClientCode = clientCodeDA.GetClientCode(code);
@@ -645,7 +632,6 @@ namespace StersTransport.Presentation
             countryPost = countryDa.GetCountry(_CountryPostId);
 
 
-
             long _agentID = ClientCode.AgentId.HasValue ? (long)ClientCode.AgentId : 0;
             agent = agentDa.GetAgent(_agentID);
 
@@ -655,7 +641,6 @@ namespace StersTransport.Presentation
 
 
             flowdocument.Blocks.Clear();
-
 
             int bxcnt = ClientCode.Box_No.HasValue ? (int)ClientCode.Box_No : 0;
             int pltcnt = ClientCode.Pallet_No.HasValue ? (int)ClientCode.Pallet_No : 0;
@@ -682,18 +667,7 @@ namespace StersTransport.Presentation
 
                  Table datatable = generate_data_table(c+1);
                  flowdocument.Blocks.Add(datatable);
-             //   Table secondtable = generate_second_data_table();
-             //   flowdocument.Blocks.Add(secondtable);
-             //   Table ourofficetable = generate_ourOffices_Table();
-            //    flowdocument.Blocks.Add(ourofficetable);
-
             }
-
-
-
-
-
         }
-
     }
 }

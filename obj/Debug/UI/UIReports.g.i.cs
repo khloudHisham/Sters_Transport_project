@@ -85,7 +85,7 @@ namespace StersTransport.UI {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/STARS;component/ui/uireports.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/STERS;component/ui/uireports.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\UI\UIReports.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -31,7 +31,6 @@ namespace StersTransport.UI
     /// </summary>
     public partial class Send : UserControl, INotifyPropertyChanged
     {
-
         //INotifyPropertyChanged  implementation 
         #region INotifyPropertyChanged  implementation ..
         public event PropertyChangedEventHandler PropertyChanged;
@@ -41,7 +40,6 @@ namespace StersTransport.UI
                 PropertyChanged(this, e);
         }
         #endregion
-
 
         #region Properties and Memebers
         private ClientCode _clientcode;
@@ -276,9 +274,6 @@ namespace StersTransport.UI
         public string streetpickvalue;
         #endregion
 
-
-
-
         public Send()
         {
             original_LabelTitleForeColor = Application.Current.Resources["LabelTitleForeColor"];
@@ -310,8 +305,6 @@ namespace StersTransport.UI
             catch (Exception) { }
            
         }
-
-
 
         #region Methods
 
@@ -1045,25 +1038,7 @@ namespace StersTransport.UI
         {
             if (ClientCode == null) { return; }
 
-            //show label UI
-            /*
-            try
-            {
-                MainWindow mainwindow_;
-                foreach (Window window in Application.Current.Windows)
-                {
-                    if (window.GetType() == typeof(MainWindow))
-                    {
-                        mainwindow_ = window as MainWindow;
-                        mainwindow_.show_label_ui(ClientCode.Code);
-                        break;
-                    }
-                }
-
-
-            }
-            catch (Exception ex) { WpfMessageBox.Show("", ex.Message, MessageBoxButton.OK, (WpfMessageBox.MessageBoxImage)MessageBoxImage.Error); }
-            */
+           
             bool ispost = ClientCode.Have_Local_Post.HasValue ? (bool)ClientCode.Have_Local_Post : false;
             LabelPreviewWindow labelPreviewWindow = new LabelPreviewWindow(ClientCode.Code, ispost);
             labelPreviewWindow.ShowDialog();
@@ -1548,14 +1523,12 @@ namespace StersTransport.UI
             }
         }
 
-
         public void assigndeletepathcolor()
         {
             setdeletepathfill();
            // deletepath.Fill = (Brush)Application.Current.Resources["LabelTitleForeColor"];
             //LabelTitleForeColor
         }
-
 
         private void SetIdentityTypeAfterSelectorCommitt()
         {
@@ -1578,15 +1551,7 @@ namespace StersTransport.UI
             txt_senderID.Focus();
 
         }
-
-
-
         #endregion
-
-
-
-        
-
 
         #region EventHandlers
 
@@ -1594,7 +1559,6 @@ namespace StersTransport.UI
         {
             // clear content
             OnclearContent();
-        
         }
 
         private void Button_Click_12(object sender, RoutedEventArgs e)
@@ -1618,9 +1582,7 @@ namespace StersTransport.UI
         {
  
         }
-
-      
-
+  
         private void txt_weight_SourceUpdated(object sender, DataTransferEventArgs e)
         {
             if (dataisloading||DataIsSetting) { return; }
@@ -1642,8 +1604,7 @@ namespace StersTransport.UI
             }
             */
         }
-
-     
+    
         private void txt_additionalWeight_SourceUpdated(object sender, DataTransferEventArgs e)
         {
             if (dataisloading || DataIsSetting) { return; }
@@ -1690,26 +1651,16 @@ namespace StersTransport.UI
             Calculate_Weight_By_Size(); calculatewight(); CalculatePrices(false);
 
         }
+        
         private void TextBoxEx_SourceUpdated(object sender, DataTransferEventArgs e)
         {
             if (dataisloading || DataIsSetting) { return; }
             lengthupdated = true;
-            // text Weight_L_cm sourceupdated
-
             Calculate_Weight_By_Size();
 
         }
 
-        private void TextBoxEx_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
-        {
-            // text Weight_L_cm lost keyboard focus
-            /*
-            if (lengthupdated)
-            { 
-                Calculate_Weight_By_Size(); lengthupdated = false;
-            }
-            */
-        }
+        private void TextBoxEx_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e) { }
 
         private void TextBoxEx_SourceUpdated_1(object sender, DataTransferEventArgs e)
         {
@@ -1718,14 +1669,7 @@ namespace StersTransport.UI
             Calculate_Weight_By_Size();
         }
 
-        private void TextBoxEx_LostKeyboardFocus_1(object sender, KeyboardFocusChangedEventArgs e)
-        {/*
-            if(widthupdated)
-            {
-                Calculate_Weight_By_Size(); widthupdated = false;
-            }
-            */
-        }
+        private void TextBoxEx_LostKeyboardFocus_1(object sender, KeyboardFocusChangedEventArgs e) { }
 
         private void TextBoxEx_SourceUpdated_2(object sender, DataTransferEventArgs e)
         {
@@ -1734,69 +1678,38 @@ namespace StersTransport.UI
             Calculate_Weight_By_Size();
         }
 
-        private void TextBoxEx_LostKeyboardFocus_2(object sender, KeyboardFocusChangedEventArgs e)
-        {
-            /*
-            if (heightupdated)
-            { Calculate_Weight_By_Size(); heightupdated = false; }
-            */
-        }
+        private void TextBoxEx_LostKeyboardFocus_2(object sender, KeyboardFocusChangedEventArgs e) { }
 
         private void ComboboxEX_SourceUpdated(object sender, DataTransferEventArgs e)
         {
-            if (dataisloading || DataIsSetting) { return; }
+            if (dataisloading || DataIsSetting) return;
             factorupdated = true;
             Calculate_Weight_By_Size();
         }
 
-       private void ComboboxEX_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
-        {
-            /*
-            if (factorupdated)
-            { Calculate_Weight_By_Size(); factorupdated = false; }
-            */
-        }
+        private void ComboboxEX_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e) { }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            // clear content
-
-        }
+        private void Button_Click_1(object sender, RoutedEventArgs e) { }
 
         private void TextBoxEx_SourceUpdated_12(object sender, DataTransferEventArgs e)
         {
-            // box packing source updated
-            if (dataisloading || DataIsSetting) { return; }
+            if (dataisloading || DataIsSetting) return;
             boxpackingsourceupdated = true;
             CalculatePrices(false); 
         }
 
-        private void TextBoxEx_LostKeyboardFocus_12(object sender, KeyboardFocusChangedEventArgs e)
-        {
-            // box packing lost focus
-            /*
-            if (boxpackingsourceupdated)
-            {
-                //calc
-                CalculatePrices();
-                boxpackingsourceupdated = false;
-            }
-            */
-        }
+        private void TextBoxEx_LostKeyboardFocus_12(object sender, KeyboardFocusChangedEventArgs e) { }
 
         private void TextBoxEx_SourceUpdated_3(object sender, DataTransferEventArgs e)
         {
-            if (dataisloading || DataIsSetting) { return; }
-            // shipment no source updated
+            if (dataisloading || DataIsSetting) return;
             shipmentnoupdated = true;
         }
 
         private void TextBoxEx_LostKeyboardFocus_3(object sender, KeyboardFocusChangedEventArgs e)
         {
-            // shipment no lost focus
             if (shipmentnoupdated)
             {
-                // validate shipment no
                 ClientCode.shipmentNoIsvalidating = true;
                 ClientCode.Shipment_No = ClientCode.Shipment_No;
                 ClientCode.shipmentNoIsvalidating = false;
@@ -1804,11 +1717,13 @@ namespace StersTransport.UI
             }
         }
 
-
         private void ComboboxEX_SourceUpdated_1(object sender, DataTransferEventArgs e)
         {
-            if (dataisloading || DataIsSetting) { return; }
-             agentupdated = true;
+            if (dataisloading || DataIsSetting) 
+                return;
+            
+            agentupdated = true;
+            
             if (agentupdated)
             {
                 OnAgentUpdated();
@@ -1816,88 +1731,31 @@ namespace StersTransport.UI
             }
         }
 
-        private void ComboboxEX_LostKeyboardFocus_1(object sender, KeyboardFocusChangedEventArgs e)
-        {
-            /*
-             if (agentupdated)
-            {
-                OnAgentUpdated();
-                agentupdated = false;
-            }
-             */
-
-
-            // check if the agent is disabled show error message... the checking is with loaded data from client code , not querying the database..
-
-            /*
-            var selectedagent = cmb_agent.SelectedItem as Agent;
-            if (selectedagent != null)
-            {
-                bool selectedAgentIsDisabled = selectedagent.AgentIsDisabled.HasValue ? (bool)selectedagent.AgentIsDisabled : false;
-                if (selectedAgentIsDisabled)
-                {
-                    WpfMessageBox.Show("", "The Selected Agent Is Disabled...", MessageBoxButton.OK, WpfMessageBox.MessageBoxImage.Warning);
-                }
-            }
-            */
-
-
-        }
+        private void ComboboxEX_LostKeyboardFocus_1(object sender, KeyboardFocusChangedEventArgs e) { }
+        
         private void TextBoxEx_SourceUpdated_4(object sender, DataTransferEventArgs e)
         {
-            // zipcode source updated
             if (dataisloading || DataIsSetting) { return; }
             zipcodeupdated = true;
         }
 
-        private void TextBoxEx_LostKeyboardFocus_4(object sender, KeyboardFocusChangedEventArgs e)
-        {
-            /*
-            // zipcode lost focus
-            if (zipcodeupdated)
-            {
-                // logic
-                clientCodeBL.clientCode = ClientCode;
-                string errormessgesoutput = string.Empty;
-                List<string> matchedcitiesoutput = new List<string>();
-                bool  isvalid = clientCodeBL.ValidateZipCode(countries.ToList(), out errormessgesoutput, out matchedcitiesoutput);
-                ClientCode.zipcodeisvalidating = true;
-                ClientCode.zipcodeErrorMessage = errormessgesoutput;
-                ClientCode.ZipCode = ClientCode.ZipCode;
-                ClientCode.zipcodeisvalidating = false;
-
-                // reset- cities 
-
-                cities = new ObservableCollection<string>(matchedcitiesoutput);
-
-                zipcodeupdated = false;
-            }
-
-            */
-        }
-
+        private void TextBoxEx_LostKeyboardFocus_4(object sender, KeyboardFocusChangedEventArgs e){ }
 
         private void streetNOPicker_Enter_Pressed(object sender, EventArgs e)
         {
-            streetNOPicker.set_value();// from textbox in street picker
+            streetNOPicker.set_value();
 
-            // further country checking if netherland may be introduced ....
             int minno = 0;
             int maxno = 0;
 
             clientCodeBL.clientCode = ClientCode;
             clientCodeBL.set_max_min_streetnumbers(out maxno, out minno);
 
-            // validate min max and integer value is correct?
-
             int enteredvalue = 0;
             Int32.TryParse(streetNOPicker.Val, out  enteredvalue);
             
-
-            // if validation passed : set the client code street name ...(based on city and zipcode and the entered value....)
             if (enteredvalue >= minno && enteredvalue <= maxno)
             {
-                // get street name 
                 string streetname= clientCodeBL.get_streetName();
                 ClientCode.Street_Name_No = string.Format("{0} {1}", streetname, enteredvalue.ToString());
             }
@@ -1919,7 +1777,6 @@ namespace StersTransport.UI
             // retain location of popup
         }
 
-
         private void ComboboxEX_SourceUpdated_2(object sender, DataTransferEventArgs e)
         {
             if (dataisloading || DataIsSetting) { return; }
@@ -1927,40 +1784,13 @@ namespace StersTransport.UI
             citypostupdated = true;
         }
 
-        private void ComboboxEX_LostKeyboardFocus_2(object sender, KeyboardFocusChangedEventArgs e)
-        {
-
-            /*
-            // city post lost keyboard focus..
-            if (citypostupdated)
-            {
-                // logic
-                // determine if this is special country that needs street picker 
-                clientCodeBL.clientCode = ClientCode;
-                bool needstreetpicker = clientCodeBL.need_street_picker(countries.ToList());
-                if (needstreetpicker)
-                {
-                    // another logic for getting max and min values for street number
-                    int minno = 0;
-                    int maxno = 0;
-                    clientCodeBL.set_max_min_streetnumbers(out maxno, out minno);
-                    popup_streetpost.PlacementTarget = sender as CustomeControls.ComboboxEX;
-                    streetNOPicker.Title = string.Format("Please Enter Value Between {0} and {1} for street number", minno.ToString(), maxno.ToString());
-                    popup_streetpost.IsOpen = true;
-                }
-                else
-                {
-                    popup_streetpost.IsOpen = false;
-                }
-                citypostupdated = false;
-            }
-            */
-        }
+        private void ComboboxEX_LostKeyboardFocus_2(object sender, KeyboardFocusChangedEventArgs e){}
 
         private void Button_Click(object sender, RoutedEventArgs e)
         { 
            
         }
+        
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             // test calc
@@ -1968,8 +1798,6 @@ namespace StersTransport.UI
             // calc test 
             // CalculatePrices();
         }
-
-      
 
         private void CheckBox_Checked_1(object sender, RoutedEventArgs e)
         {
@@ -1982,55 +1810,40 @@ namespace StersTransport.UI
                 ClientCode.Insurance_Percentage = DEFAULT_INSURANCE_PERC;
             }
             CalculatePrices(false);
-           
         }
 
         private void CheckBox_Unchecked_1(object sender, RoutedEventArgs e)
         {
-            // have insurance unchecked
-            // we set these here and not in property changed becuase we don't want to override the values (its an UI related thing )
-
-
-            // if the check box is setted by loading the bound property when the object is loading .... we dont want to do anything
-            if (dataisloading || DataIsSetting) { return; }
-
-
+            if (dataisloading || DataIsSetting) 
+                return; 
 
             ClientCode.Insurance_Percentage = 0.0;
-         //   ClientCode.Goods_Value = 0;
 
             CalculatePrices(false);
         }
 
-
-
         private void ComboboxEX_SourceUpdated_3(object sender, DataTransferEventArgs e)
         {
-            // country source updated
             if (dataisloading || DataIsSetting) { return; }
             countryupdated = true;
 
             if (countryupdated)
             {
                 cityAgentsoffices = new ObservableCollection<Agent>();
-                // get agents equivalent to selected country
                 var selectedcountry = (sender as ComboBox).SelectedItem as Country;
                 if (selectedcountry != null)
                 {
                     cityAgentsoffices = new ObservableCollection<Agent>(agentDa.GetAgents(selectedcountry.Id));
                 }
                 countryupdated = false;
-
-
                 if (agentupdated)
                 { OnAgentUpdated(); agentupdated = false; }
 
             }
         }
+        
         private void ComboboxEX_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // country source selection changed
-            // set the labels for outer country ....
             try
             {
                 var selectedCountry = (sender as CustomeControls.ComboboxEX).SelectedItem as Country;
@@ -2050,74 +1863,35 @@ namespace StersTransport.UI
                 }
                 else
                 {
-                    // reset...
                     lbl_totalcost_by_Outer_Currency.Content = "Total Cost";
                     lbl_unpaid_AndWillPay_inOuterCountry.Content = "Unpaid And Will PayIn";
                 }
             }
-            catch (Exception)
-            { }
-            
-
+            catch (Exception) { }
         }
 
-        private void ComboboxEX_LostKeyboardFocus_3(object sender, KeyboardFocusChangedEventArgs e)
-        {
-            // country lost focus
-            /*
-            if (countryupdated)
-            {
-                cityAgentsoffices = new ObservableCollection<Agent>();
-                // get agents equivalent to selected country
-                var selectedcountry = (sender as ComboBox).SelectedItem as Country;
-                if (selectedcountry != null)
-                {
-                    cityAgentsoffices = new ObservableCollection<Agent>(agentDa.GetAgents(selectedcountry.Id));
-                }
-                countryupdated = false;
-
-
-                if (agentupdated)
-                { OnAgentUpdated(); agentupdated = false; }
-
-            }
-            */
-        }
+        private void ComboboxEX_LostKeyboardFocus_3(object sender, KeyboardFocusChangedEventArgs e) { }
 
         private void TextBoxEx_SourceUpdated_5(object sender, DataTransferEventArgs e)
         {
-            //custome cost source updated
             if (dataisloading || DataIsSetting) { return; }
             customecostupdated = true;
             CalculatePrices(false);
         }
 
-        private void TextBoxEx_LostKeyboardFocus_5(object sender, KeyboardFocusChangedEventArgs e)
-        {
-            // custome cost qomrk lost keyboard focus
-            /*
-            if (customecostupdated)
-            {
-                //calc
-                CalculatePrices();
-                customecostupdated = false;
-            }
-            */
-        }
+        private void TextBoxEx_LostKeyboardFocus_5(object sender, KeyboardFocusChangedEventArgs e) { }
 
         private void TextBoxEx_SourceUpdated_6(object sender, DataTransferEventArgs e)
         {
-            // export doc cost source updated
-            if (dataisloading || DataIsSetting) { return; }
+            if (dataisloading || DataIsSetting) 
+                return;
             exportdoccostupdated = true;
         }
 
         private void TextBoxEx_LostKeyboardFocus_6(object sender, KeyboardFocusChangedEventArgs e)
         {
-            // export doc cost lost focus
             if (exportdoccostupdated)
             {
-                //calc
                 CalculatePrices(false);
                 exportdoccostupdated = false;
             }
@@ -2125,30 +1899,20 @@ namespace StersTransport.UI
 
         private void TextBoxEx_SourceUpdated_7(object sender, DataTransferEventArgs e)
         {
-            // dicount source updated
             if (dataisloading || DataIsSetting) { return; }
             discountupdated = true;
             CalculatePrices(false);
         }
 
-        private void TextBoxEx_LostKeyboardFocus_7(object sender, KeyboardFocusChangedEventArgs e)
-        {
-            // discount lost keyboard focus
-            /*
-            if (discountupdated)
-            {
-                //calc
-                CalculatePrices();
-                discountupdated = false;
-            }
-            */
-        }
+        private void TextBoxEx_LostKeyboardFocus_7(object sender, KeyboardFocusChangedEventArgs e) { }
 
         private void CheckBox_Checked_2(object sender, RoutedEventArgs e)
         {
             isCheckPaidChecked = true;
             assign_TXTPaidcolors_Paid();
-            if (dataisloading || DataIsSetting) { return; }
+            if (dataisloading || DataIsSetting) 
+                return;
+
             // is all paid checked 
             ClientCode.TotalPaid_IQD = ClientCode.Total_Post_Cost_IQD;
             CalculatePrices(false);
@@ -2156,16 +1920,13 @@ namespace StersTransport.UI
 
         private void CheckBox_Unchecked_2(object sender, RoutedEventArgs e)
         {
-            // is all paid unchecked
-
-
             isCheckPaidChecked = false;
             assignTXTPaidCOlors_Unpaid();
             if (dataisloading || DataIsSetting) { return; }
             ClientCode.TotalPaid_IQD = 0;
             CalculatePrices(false);
-
         }
+        
         private void TextBoxEx_SourceUpdated_8(object sender, DataTransferEventArgs e)
         {
             // paid amount souce updated 
@@ -2189,122 +1950,61 @@ namespace StersTransport.UI
 
         private void TextBoxEx_SourceUpdated_9(object sender, DataTransferEventArgs e)
         {
-            // box no source updated
-            if (dataisloading || DataIsSetting) { return; }
+            if (dataisloading || DataIsSetting) 
+                return;
+
             boxnoupdated = true;
 
-
-
-            // testing ...
-
-            /*
-            // reset box packing 
-            int BoxCount = 0;
-            BoxCount = ClientCode.Box_No.HasValue ? (int)ClientCode.Box_No : 0;
-            double BoxPackigingFactor = 0;
-            BoxPackigingFactor = ClientCode.BoxPackigingFactor.HasValue ? (double)ClientCode.BoxPackigingFactor : 0;
-            ClientCode.Packiging_cost_IQD = BoxCount * BoxPackigingFactor;
-            */
-
-            CalculatePrices(true); // use calculated box Packaging cost
+            CalculatePrices(true); 
         }
 
-        private void TextBoxEx_LostKeyboardFocus_9(object sender, KeyboardFocusChangedEventArgs e)
-        {
-            // box no lost focus
-            /*
-            if (boxnoupdated)
-            {
-                // reset box packing 
-                int BoxCount = 0;
-                BoxCount = ClientCode.Box_No.HasValue ? (int)ClientCode.Box_No : 0;
-
-                double BoxPackigingFactor = 0;
-                BoxPackigingFactor = ClientCode.BoxPackigingFactor.HasValue ? (double)ClientCode.BoxPackigingFactor : 0;
-
-                ClientCode.Packiging_cost_IQD = BoxCount * BoxPackigingFactor;
-
-
-                CalculatePrices();
-                boxnoupdated = false;
-            }
-            */
-        }
+        private void TextBoxEx_LostKeyboardFocus_9(object sender, KeyboardFocusChangedEventArgs e){}
 
         private void TextBoxEx_SourceUpdated_10(object sender, DataTransferEventArgs e)
         {
-            // insurance perc source updated
             if (dataisloading || DataIsSetting) { return; }
             insurancepercentageupdated = true;
             CalculatePrices(false);
-
         }
 
-        private void TextBoxEx_LostKeyboardFocus_10(object sender, KeyboardFocusChangedEventArgs e)
-        {
-
-            // insurance perc lost focus
-            /*
-            if (insurancepercentageupdated)
-            {
-                CalculatePrices();
-                insurancepercentageupdated = false;
-            }
-            */
-        }
+        private void TextBoxEx_LostKeyboardFocus_10(object sender, KeyboardFocusChangedEventArgs e){}
+        
         private void TextBoxEx_SourceUpdated_11(object sender, DataTransferEventArgs e)
         {
-            // goods value source updated
             if (dataisloading || DataIsSetting) { return; }
             goodsvalueupdated = true;
             CalculatePrices(false);
         }
 
-        private void TextBoxEx_LostKeyboardFocus_11(object sender, KeyboardFocusChangedEventArgs e)
-        {
-            // goods value lost focus
-            /*
-            if (goodsvalueupdated)
-            {
-                CalculatePrices();
-                goodsvalueupdated = false;
-            }
-            */
-        }
-
-
+        private void TextBoxEx_LostKeyboardFocus_11(object sender, KeyboardFocusChangedEventArgs e) { }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            // add code
             OnAddClientCode();
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            // update code
             OnUpdateClientCode();
         }
+       
         private void Button_Click_8(object sender, RoutedEventArgs e)
         {
-            // delete code
             OnDeleteCode();
         }
 
+        // Men3m's label ...
+
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
-            // make label
             OnMakeLabel();
         }
-
-
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
             // make invoice
             OnMakeInvoice();
         }
-
 
         private void Button_Click_9(object sender, RoutedEventArgs e)
         {
@@ -2313,6 +2013,7 @@ namespace StersTransport.UI
             showCodeSearchWindow(true);
 
         }
+        
         private void UiSend_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if ((Keyboard.Modifiers == ModifierKeys.Control) && (e.Key == Key.Enter))
@@ -2322,8 +2023,6 @@ namespace StersTransport.UI
                     var selecteditem = cmb_clientcode.SelectedItem as ClientCode;
                     if (selecteditem != null)
                     {
-                        // ClientCode = selecteditem; Old Approach
-                        //  selecteditem.Code
                         load_code(selecteditem.Code);
                     }
                     else
@@ -2341,7 +2040,7 @@ namespace StersTransport.UI
 
             if ((Keyboard.Modifiers == ModifierKeys.Control) && (e.Key == Key.F))
             {
-                showCodeSearchWindow(false); // dont show options
+                showCodeSearchWindow(false); 
                 e.Handled = true;
             }
 
@@ -2349,7 +2048,6 @@ namespace StersTransport.UI
             {
                 if (popup_senderIDtypes.IsOpen)
                 {
-                    // NUll The Sender Id Type 
                     popup_senderIDtypes.IsOpen = false;
                     if (ClientCode != null)
                     {
@@ -2357,15 +2055,13 @@ namespace StersTransport.UI
                         ClientCode.Sender_ID_Type_Shortcut = null;
                     }
                     e.Handled = true;
-                }
-               
+                }  
             }
         }
 
         private void txt_Remaining_IQD_TextChanged(object sender, TextChangedEventArgs e)
         {
             assignTXTRemainingColors();
-
         }
 
         private void txt_EuropaToPay_TextChanged(object sender, TextChangedEventArgs e)
@@ -2378,39 +2074,26 @@ namespace StersTransport.UI
             assignTXTDiscountColors();
         }
 
-
         private void Button_Click_10(object sender, RoutedEventArgs e)
         {
-            // check zip code
             checkZipcode();
         }
-
-
-
 
         private void identityTypeSelectorUC_Enter_Pressed(object sender, EventArgs e)
         {
             SetIdentityTypeAfterSelectorCommitt();
         }
 
-      
-
-        private void identityTypeSelectorUC_ESC_Pressed(object sender, EventArgs e)
-        {
-
-        }
-
+        private void identityTypeSelectorUC_ESC_Pressed(object sender, EventArgs e) { }
 
         private void identityTypeSelectorUC_MouseClicked_1(object sender, EventArgs e)
         {
             SetIdentityTypeAfterSelectorCommitt();
         }
 
-
         private void txt_senderID_GotFocus(object sender, RoutedEventArgs e)
         {
             if (popup_senderIDtypes.IsOpen)
-            {
                 popup_senderIDtypes.IsOpen = false;
             }
         }

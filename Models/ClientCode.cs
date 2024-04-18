@@ -11,8 +11,6 @@ namespace StersTransport.Models
     using System.Text.RegularExpressions;
     using StersTransport.GlobalData;
 
-
-
     // Note: This Class Is Names Under Models 
     // But Its Actually Behave Like View Model Cause It Contains Validations And Setting Some Proerties Based On other Properties 
     // This is Intended...
@@ -21,8 +19,6 @@ namespace StersTransport.Models
     [Table("CODE_LIST")]
     public partial class ClientCode : INotifyPropertyChanged, INotifyDataErrorInfo
     {
-
-
         #region INotifyPropertyChanged Implementation
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged(PropertyChangedEventArgs e)
@@ -86,8 +82,6 @@ namespace StersTransport.Models
         }
         #endregion
 
-
-
         public ClientCode()
         {
             Have_Insurance = false;
@@ -98,39 +92,22 @@ namespace StersTransport.Models
         }
 
         [NotMapped]
-        public bool isvalidating
-        {
-            get;
-            set;
-        }
-        [NotMapped]
-        public bool shipmentNoIsvalidating
-        { get; set; }
+        public bool isvalidating { get; set; }
 
         [NotMapped]
-        public bool zipcodeisvalidating
-        {
-            get;set;
-        }
-        [NotMapped]
-        public string zipcodeErrorMessage
-        {
-            get;set;
-        }
-        [NotMapped]
-        public bool MustValidateNotesLength
-        {
-            get; set;
-        }
+        public bool shipmentNoIsvalidating { get; set; }
 
         [NotMapped]
-        public bool MustValidateStreetNameForDigitsAndChars
-        {
-            get; set;
-        }
+        public bool zipcodeisvalidating { get; set; }
 
+        [NotMapped]
+        public string zipcodeErrorMessage { get; set; }
 
+        [NotMapped]
+        public bool MustValidateNotesLength { get; set; }
 
+        [NotMapped]
+        public bool MustValidateStreetNameForDigitsAndChars { get; set; }
 
         private int _AutoNumber;
 
@@ -145,10 +122,8 @@ namespace StersTransport.Models
             }
         }
 
-
-
-
         private string _Code;
+       
         [Key]
         [StringLength(255)]
         [Column("Client_Code")]
@@ -161,8 +136,8 @@ namespace StersTransport.Models
             }
         }
 
-
         private string _BranchCode;
+
         [StringLength(50)]
         public string BranchCode
         {
@@ -235,8 +210,6 @@ namespace StersTransport.Models
             }
         }
 
-
-
         [NotMapped]
         public double BranchLastShipmentNO
         { get; set; }
@@ -265,7 +238,6 @@ namespace StersTransport.Models
                 OnPropertyChanged(new PropertyChangedEventArgs("SenderName"));
             }
         }
-
 
         private string _SenderCompany;
         [StringLength(255)]
@@ -346,7 +318,6 @@ namespace StersTransport.Models
             }
         }
 
-
         private string _ReceiverName;
         [StringLength(255)]
         public string ReceiverName
@@ -372,7 +343,6 @@ namespace StersTransport.Models
             }
         }
 
-
         private string _ReceiverCompany;
         [StringLength(255)]
         public string ReceiverCompany
@@ -384,9 +354,7 @@ namespace StersTransport.Models
                 OnPropertyChanged(new PropertyChangedEventArgs("ReceiverCompany"));
             }
         }
-
-
-       
+    
         private string _Receiver_Tel;
         [StringLength(255)]
         public string Receiver_Tel
@@ -414,8 +382,6 @@ namespace StersTransport.Models
             }
         }
 
-
-
         private string _Goods_Description;
         [StringLength(255)]
         public string Goods_Description {
@@ -442,7 +408,6 @@ namespace StersTransport.Models
             }
         }
 
-
         private double? _Goods_Value;
         public double? Goods_Value
         {
@@ -454,13 +419,9 @@ namespace StersTransport.Models
             }
         }
 
-
         // not used....
         [StringLength(255)]
         public string Insurance_Yes_No { get; set; }
-
-
-
 
         private bool? _Have_Insurance;
 
@@ -473,8 +434,6 @@ namespace StersTransport.Models
                 OnPropertyChanged(new PropertyChangedEventArgs("Have_Insurance"));
             }
         }
-
-
 
         private double? _Insurance_Percentage;
         public double? Insurance_Percentage
@@ -491,8 +450,6 @@ namespace StersTransport.Models
                 OnPropertyChanged(new PropertyChangedEventArgs("Insurance_Percentage"));
             }
         }
-
-
 
         private double? _Insurance_Amount;
         public double? Insurance_Amount
@@ -515,7 +472,6 @@ namespace StersTransport.Models
                 OnPropertyChanged(new PropertyChangedEventArgs("Pallet_No"));
             }
         }
-
 
         private double? _Box_No;
 
@@ -586,12 +542,6 @@ namespace StersTransport.Models
             }
         }
 
-
-       /*
-        [StringLength(255)]
-        public string Weight_L_W_H_cm { get; set; }
-        */
-
         private double? _Weight_Vol_Factor;
         public double? Weight_Vol_Factor {
             get { return _Weight_Vol_Factor; }
@@ -619,8 +569,6 @@ namespace StersTransport.Models
                 OnPropertyChanged(new PropertyChangedEventArgs("Weight_Vol_Factor"));
             }
         }
-
-
       
         private double? _AdditionalWeight;
         [Column("Weight_Vol")]
@@ -686,7 +634,6 @@ namespace StersTransport.Models
             }
         }
 
-
         private double? _Weight_Total;
         public double? Weight_Total
         {
@@ -697,7 +644,6 @@ namespace StersTransport.Models
                 OnPropertyChanged(new PropertyChangedEventArgs("Weight_Total"));
             }
         }
-
 
         private double? _Admin_ExportDoc_Cost;
         public double? Admin_ExportDoc_Cost
@@ -710,8 +656,6 @@ namespace StersTransport.Models
             }
         }
 
-
-
         private double? _Custome_Cost_Qomrk;
         public double? Custome_Cost_Qomrk
         {
@@ -723,17 +667,8 @@ namespace StersTransport.Models
             }
         }
 
-
-
-        /*
-        [StringLength(255)]
-        public string DatePost { get; set; }
-
-        [StringLength(255)]
-        public string TimePost { get; set; }
-        */
-
         private DateTime? _PostDate;
+    
         [Column(TypeName = "smalldatetime")]
         public DateTime? PostDate
         {
@@ -745,8 +680,6 @@ namespace StersTransport.Models
             }
         }
 
-
-        // added...
         private int? _PostYear;
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
@@ -755,11 +688,6 @@ namespace StersTransport.Models
             get { return _PostYear; }
             set { _PostYear = value; }
         }
-
-
-
-
-
 
         private double? _Packiging_cost_IQD;
         public double? Packiging_cost_IQD
@@ -772,7 +700,6 @@ namespace StersTransport.Models
             }
         }
 
-
         private double? _Custom_Cost_IQD;
         public double? Custom_Cost_IQD
         {
@@ -784,8 +711,8 @@ namespace StersTransport.Models
             }
         }
 
-
         private double? _POST_DoorToDoor_IQD;
+
         public double? POST_DoorToDoor_IQD
         {
             get { return _POST_DoorToDoor_IQD; }
@@ -797,6 +724,7 @@ namespace StersTransport.Models
         }
 
         private double? _Sub_Post_Cost_IQD;
+
         public double? Sub_Post_Cost_IQD
         {
             get { return _Sub_Post_Cost_IQD; }
@@ -807,8 +735,8 @@ namespace StersTransport.Models
             }
         }
 
-
         private double? _Discount_Post_Cost_Send;
+
         public double? Discount_Post_Cost_Send
         {
             get { return _Discount_Post_Cost_Send; }
@@ -818,7 +746,6 @@ namespace StersTransport.Models
                 OnPropertyChanged(new PropertyChangedEventArgs("Discount_Post_Cost_Send"));
             }
         }
-
 
         private double? _Total_Post_Cost_IQD;
         public double? Total_Post_Cost_IQD
@@ -903,8 +830,8 @@ namespace StersTransport.Models
             Remaining_IQD = _Total_Post_Cost_IQD - _TotalPaid_IQD;
         }
 
-
         private double? _Remaining_IQD;
+
         [NotMapped]
         public double? Remaining_IQD
         {
@@ -937,16 +864,14 @@ namespace StersTransport.Models
                         }
                     }
                 } // if is validating...
-
-
                 OnPropertyChanged(new PropertyChangedEventArgs("Remaining_IQD"));
             }
 
         }
 
-
         private bool _IsAllPaid;
-         [NotMapped]
+        
+        [NotMapped]
         public bool IsAllPaid
         {
             get { return _IsAllPaid; }
@@ -957,9 +882,8 @@ namespace StersTransport.Models
             }
         }
 
-
-        
         private double? _Total_Post_Cost_EUR;
+
         [NotMapped]
         public double? Total_Post_Cost_EUR
         {
@@ -972,6 +896,7 @@ namespace StersTransport.Models
         }
 
         private double? _Total_Paid_EUR;
+
         [NotMapped]
         public double? Total_Paid_EUR
         {
@@ -983,9 +908,8 @@ namespace StersTransport.Models
             }
         }
 
-
-
         private double? _EuropaToPay;
+
         public double? EuropaToPay
         {
             get { return _EuropaToPay; }
@@ -996,8 +920,8 @@ namespace StersTransport.Models
             }
         }
 
-
         private double? _Currency_Rate_1_IQD;
+
         public double? Currency_Rate_1_IQD
         {
             get { return _Currency_Rate_1_IQD; }
@@ -1010,8 +934,8 @@ namespace StersTransport.Models
             }
         }
 
-
         private string _Currency_Type;
+
         [StringLength(255)]
         public string Currency_Type
         {
@@ -1023,17 +947,8 @@ namespace StersTransport.Models
             }
         }
 
-
-        /*
-        [StringLength(255)]
-        public string PriceDoorToDoorEach10KG_IQD
-        {
-            get;set;
-        }
-        */
-
-
         private decimal? _PriceDoorToDoorEach10KG;
+
         public decimal? PriceDoorToDoorEach10KG
         {
             get { return _PriceDoorToDoorEach10KG; }
@@ -1044,9 +959,8 @@ namespace StersTransport.Models
             }
         }
 
-
-
         private double? _Price_KG_IQD;
+
         public double? Price_KG_IQD
         {
             get { return _Price_KG_IQD; }
@@ -1057,8 +971,8 @@ namespace StersTransport.Models
             }
         }
 
-
         private double? _StartPrice_1_to_7KG;
+    
         public double? StartPrice_1_to_7KG
         {
             get { return _StartPrice_1_to_7KG; }
@@ -1071,6 +985,7 @@ namespace StersTransport.Models
 
 
         private double? _BoxPackigingFactor;
+    
         public double? BoxPackigingFactor
         {
             get { return _BoxPackigingFactor; }
@@ -1081,17 +996,8 @@ namespace StersTransport.Models
             }
         }
 
-
-
-        /*
-        [StringLength(255)]
-        public string CountryAgent
-        {
-            get;set;
-        }
-        */
-
         private string _Agent;
+
         [StringLength(255)]
         public string Agent
         {
@@ -1103,8 +1009,8 @@ namespace StersTransport.Models
             }
         }
 
-
         private string _Street_Name_No;
+        
         [StringLength(255)]
         public string Street_Name_No
         {
@@ -1165,6 +1071,7 @@ namespace StersTransport.Models
         }
 
         private string _Dep_Appar;
+       
         [StringLength(255)]
         public string Dep_Appar
         {
@@ -1178,6 +1085,7 @@ namespace StersTransport.Models
         }
 
         private string _ZipCode;
+   
         [StringLength(255)]
         public string ZipCode
         {
@@ -1235,9 +1143,9 @@ namespace StersTransport.Models
                 OnPropertyChanged(new PropertyChangedEventArgs("ZipCode"));
             }
         }
-   
 
         private string _CityPost;
+     
         [StringLength(255)]
         public string CityPost
         {
@@ -1274,16 +1182,8 @@ namespace StersTransport.Models
             }
         }
 
-        /*
-        [StringLength(255)]
-        public string CountryPost
-        {
-            get;set;
-        }
-        */
-
-
         private string _Note_Send;
+
         [StringLength(255)]
         public string Note_Send
         {
@@ -1335,6 +1235,7 @@ namespace StersTransport.Models
         }
 
         private string _Person_in_charge_Send;
+        
         [StringLength(255)]
         public string Person_in_charge_Send
         {
@@ -1346,9 +1247,8 @@ namespace StersTransport.Models
             }
         }
 
-
-
         private string _Agent_Name_KU;
+ 
         [StringLength(255)]
         public string Agent_Name_KU
         {
@@ -1360,16 +1260,8 @@ namespace StersTransport.Models
             }
         }
 
-        /*
-        [StringLength(255)]
-        public string Local_Post_YES_NO
-        {
-            get;set;
-        }
-        */
-
-
         private bool? _Have_Local_Post;
+   
         public bool? Have_Local_Post
         {
             get { return _Have_Local_Post; }
@@ -1391,6 +1283,7 @@ namespace StersTransport.Models
         }
 
         private string _Update_Send_KU;
+   
         public string Update_Send_KU
         {
             get { return _Update_Send_KU; }
@@ -1401,90 +1294,8 @@ namespace StersTransport.Models
             }
         }
 
-
-        /*
-        [StringLength(255)]
-        public string Receive_State
-        {
-           get;set;
-        }
-        */
-
-        /*
-        [StringLength(255)]
-        public string Receive_Date_Time
-        {
-            get;set;
-        }
-        */
-        /*
-        [StringLength(255)]
-        public string Note_Received
-        {
-            get;set;
-        }
-        */
-
-        /*
-        [StringLength(255)]
-        public string Agent_EU_ReceiverName
-        {
-            get;set;
-        }
-        */
-
-        /*
-       [StringLength(255)]
-       public string Person_in_charge_Receive
-       {
-           get;set;
-       }
-       */
-        /*
-        [StringLength(255)]
-        public string Received_Amount_EU
-        {
-            get;set;
-        }
-        */
-        /*
-        private string _Discount_Post_Cost_Received;
-        [StringLength(255)]
-        public string Discount_Post_Cost_Received
-        {
-            get { return _Discount_Post_Cost_Received; }
-            set
-            {
-                _Discount_Post_Cost_Received = value;
-                OnPropertyChanged(new PropertyChangedEventArgs("Discount_Post_Cost_Received"));
-            }
-        }
-        */
-        /*
-        [StringLength(255)]
-        public string PaymentWAY_Cash_PIN_Bank
-        {
-            get;set;
-        }
-        */
-
-        /*
-        [StringLength(255)]
-        public string Update_Receive_EU
-        {
-            get;set;
-        }
-        */
-
-        /*
-        [StringLength(255)]
-        public string Sender_ID_Type
-        {
-            get;set;
-        }
-        */
-
         private long? _Num;
+       
         public long? Num
         {
             get { return _Num; }
@@ -1495,9 +1306,8 @@ namespace StersTransport.Models
             }
         }
 
-
-
         private decimal? _CommissionKG;
+       
         public decimal? CommissionKG
         {
             get { return _CommissionKG; }
@@ -1509,6 +1319,7 @@ namespace StersTransport.Models
         }
 
         private decimal? _CommissionBox;
+
         public decimal? CommissionBox
         {
             get { return _CommissionBox; }
@@ -1518,7 +1329,9 @@ namespace StersTransport.Models
                 OnPropertyChanged(new PropertyChangedEventArgs("CommissionBox"));
             }
         }
+
         private long? _Weight_L_cm;
+
         public long? Weight_L_cm
         {
             get { return _Weight_L_cm; }
@@ -1552,7 +1365,9 @@ namespace StersTransport.Models
                 OnPropertyChanged(new PropertyChangedEventArgs("Weight_L_cm"));
             }
         }
+
         private long? _Weight_W_cm;
+
         public long? Weight_W_cm
         {
             get { return _Weight_W_cm; }
@@ -1587,7 +1402,9 @@ namespace StersTransport.Models
                 OnPropertyChanged(new PropertyChangedEventArgs("Weight_W_cm"));
             }
         }
+
         private long? _Weight_H_cm;
+
         public long? Weight_H_cm
         {
             get { return _Weight_H_cm; }
@@ -1623,9 +1440,8 @@ namespace StersTransport.Models
             }
         }
 
-
-      
         private double? _Weight_BySizeValue;
+     
         [NotMapped]
         public double? Weight_BySizeValue
         {
@@ -1654,10 +1470,8 @@ namespace StersTransport.Models
                 }
                 OnPropertyChanged(new PropertyChangedEventArgs("Weight_BySizeValue"));
             }
-
         }
 
-     
         private bool _Weight_By_Size_Is_Checked;
         [NotMapped]
         public bool Weight_By_Size_Is_Checked
@@ -1670,8 +1484,8 @@ namespace StersTransport.Models
                 OnPropertyChanged(new PropertyChangedEventArgs("Weight_By_Size_Is_Checked"));
             }
         }
-
         private long? _BranchId;
+
         public long? BranchId
         {
             get { return _BranchId; }
@@ -1682,8 +1496,8 @@ namespace StersTransport.Models
             }
         }
 
-
         private long? _UserId;
+
         public long? UserId
         {
             get { return _UserId; }
@@ -1694,8 +1508,8 @@ namespace StersTransport.Models
             }
         }
 
-
         private long? _CountryAgentId;
+
         public long? CountryAgentId
         {
             get { return _CountryAgentId; }
@@ -1718,8 +1532,8 @@ namespace StersTransport.Models
             }
         }
 
-
         private long? _CountryPostId;
+
         public long? CountryPostId
         {
             get { return _CountryPostId; }
@@ -1756,6 +1570,7 @@ namespace StersTransport.Models
         }
 
         private long? _AgentId;
+
         public long? AgentId
         {
             get { return _AgentId; }
@@ -1778,8 +1593,8 @@ namespace StersTransport.Models
             }
         }
 
-
         private long? _CityPostId;
+
         public long? CityPostId
         {
             get { return _CityPostId; }
@@ -1790,8 +1605,8 @@ namespace StersTransport.Models
             }
         }
 
-
         private long? _Person_in_charge_Id;
+
         public long? Person_in_charge_Id
         {
             get { return _Person_in_charge_Id; }
@@ -1802,10 +1617,8 @@ namespace StersTransport.Models
             }
         }
 
-
-
-
         private byte[] _stamp;
+
         [Column(TypeName = "timestamp")]
         [MaxLength(8)]
         [Timestamp]
@@ -1819,9 +1632,6 @@ namespace StersTransport.Models
             }
         }
 
-
-
-        //IsImported
         private bool? _IsImported;
 
         public bool? IsImported
@@ -1834,12 +1644,8 @@ namespace StersTransport.Models
             }
         }
 
-
-
-
-
-
         private Agent _virtual_Agent;
+
         public virtual Agent virtual_Agent
         {
             get { return _virtual_Agent; }
@@ -1849,7 +1655,6 @@ namespace StersTransport.Models
                 OnPropertyChanged(new PropertyChangedEventArgs("virtual_Agent"));
             }
         }
-
 
         private Agent _virtual_Branch;
         public virtual Agent virtual_Branch
@@ -1862,21 +1667,8 @@ namespace StersTransport.Models
             }
         }
 
-        /*
-        private Branch _Branch;
-
-        
-        public virtual Branch Branch {
-            get { return _Branch; }
-            set
-            {
-                _Branch = value;
-                OnPropertyChanged(new PropertyChangedEventArgs("Branch"));
-            }
-        }
-        */
-
         private Country _Country;
+
         public virtual Country Country
         {
             get { return _Country; }
@@ -1888,7 +1680,6 @@ namespace StersTransport.Models
         }
 
         private User _User;
-
        
         public virtual User User
         {
@@ -1900,8 +1691,8 @@ namespace StersTransport.Models
             }
         }
 
-
         private IdentityType _IdentityType;
+
         public virtual IdentityType IdentityType
         {
             get { return _IdentityType; }
@@ -1913,6 +1704,7 @@ namespace StersTransport.Models
         }
 
         private string _ExchangeTitle;
+        
         [NotMapped]
         public string ExchangeTitle
         {
@@ -1925,6 +1717,7 @@ namespace StersTransport.Models
         }
 
         private string _AgentComissionTitle;
+        
         [NotMapped]
         public string AgentComissionTitle
         {
@@ -1941,36 +1734,20 @@ namespace StersTransport.Models
             ExchangeTitle = string.Format("{0} {1} = {2} {3}", "1", Currency_Type, Currency_Rate_1_IQD, "IQD");
         }
 
-        public void Set_AgentComission_Title()
-        {
-           // AgentComissionTitle = string.Format("{0} {1} = {2} {3}", "1", Currency_Type, Currency_Rate_1_IQD, "IQD");
-        }
+        public void Set_AgentComission_Title() { }
 
         public void Set_IndentityTypeShortcut()
         {
             if (IdentityType != null)
-            { Sender_ID_Type_Shortcut = IdentityType.Shortcut; }
+            { 
+                Sender_ID_Type_Shortcut = IdentityType.Shortcut; 
+            }
             else
             {
                 Sender_ID_Type_Shortcut = null;
-            }
-          
+            }          
         }
 
-
-        public void set_non_BoundFeilds()
-        {
-            /*
-            // set the weight by size value and calculated weight by volume
-            BusinessLogic.ClientCodeBL ccbl = new BusinessLogic.ClientCodeBL();
-            ccbl.clientCode = this;
-            ccbl.Set_IsWeight_By_SizeChecked();
-            ccbl.Calculate_Weight_By_Size();
-            */
-        }
-
-
-
-
+        public void set_non_BoundFeilds() { }
     }
 }

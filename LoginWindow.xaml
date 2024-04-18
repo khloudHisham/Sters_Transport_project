@@ -40,12 +40,12 @@
                         <RadialGradientBrush.GradientStops>
                             <GradientStop Color="#236BC9" Offset="1" />
                             <GradientStop Color="#E4E4E4"  Offset=".01" />
-             
+
                         </RadialGradientBrush.GradientStops>
 
                     </RadialGradientBrush>
 
-                     
+
                 </Path.Fill>
                 <Path.Data>
                     <EllipseGeometry  x:Name="elips" 
@@ -97,17 +97,17 @@
                 <RowDefinition Height="2*"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Image Grid.Row="1" Source="pack://application:,,,/Resources/sters.png"></Image>
+            <Image Source="pack://application:,,,/Resources/sters.png" Margin="-42,190,42,0" Grid.RowSpan="2"/>
             <TextBlock VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
+                       HorizontalAlignment="Left"
                        FontSize="18"
                        FontWeight="Bold"
-                       Grid.Row="2"> Welcome To Our Wonderful World </TextBlock>
+                       Grid.Row="2" Margin="30,0,0,0"> Welcome To Our Wonderful World</TextBlock>
         </Grid >
 
         <Grid  Background="#E4E4E4" Grid.Row="1" Grid.Column="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width=".5*"> </ColumnDefinition>
+                <ColumnDefinition Width=".5*"></ColumnDefinition>
                 <ColumnDefinition Width=".5*"></ColumnDefinition>
                 <ColumnDefinition Width="1.5*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
@@ -161,7 +161,7 @@
                         </Path.RenderTransform>
                     </Path>
                 </Grid>
-                
+
             </Viewbox>
 
             <CustomeControls:ComboboxEX FontWeight="Bold"  Grid.Row="4" Grid.Column="2" x:Name="cmb_officeName"
@@ -199,7 +199,7 @@
                                     <Style TargetType="{x:Type TextBlock}">
                                         <Setter Property="Margin" Value="0,0,0,4" />
                                         <Setter Property="Background" Value="#FFFFFF"></Setter>
-                                        
+
                                     </Style>
                                 </Grid.Resources>
                                 <TextBlock Foreground="#404040" FontWeight="Bold" Padding="2" Text="{Binding Path=AgentName}"></TextBlock>
@@ -256,7 +256,7 @@
                             <Grid Margin="3">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="1*"></ColumnDefinition>
-                                    
+
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition></RowDefinition>
@@ -269,7 +269,7 @@
                                     </Style>
                                 </Grid.Resources>
                                 <TextBlock  FontWeight="Bold" Padding="2" Text="{Binding Path=UserName}"></TextBlock>
-                                
+
                                 <!--
                                 <Viewbox Grid.Column="1">
                                     <Grid>
@@ -307,7 +307,7 @@
                             </Grid>
 
                         </Border>
-                 
+
                     </DataTemplate>
                 </CustomeControls:ComboboxEX.ItemTemplate>
 
@@ -336,7 +336,7 @@ Data="M47.6,21.92h5.947a2.981,2.981,0,0,1,2.973,2.989V60.771a2.981,2.981,0,0,1-2
             <Grid Grid.Row="6" Grid.Column="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"></ColumnDefinition>
-                   
+
                 </Grid.ColumnDefinitions>
                 <TextBox 
                     TextChanged="txtbx1_TextChanged"
@@ -440,8 +440,8 @@ Data="M47.6,21.92h5.947a2.981,2.981,0,0,1,2.973,2.989V60.771a2.981,2.981,0,0,1-2
 
                 <Button FontWeight="Bold" Click="Button_Click" Margin="10" Template="{DynamicResource ActionButtonBlueTemplate}">Login</Button>
                 <Button FontWeight="Bold" Click="Button_Click_1" Margin="10" Grid.Column="1" Template="{DynamicResource ActionButtonPinkTemplate}">Exit</Button>
-                
-                
+
+
             </Grid>
             <Grid Grid.Row="8" Grid.Column="2" >
                 <Grid.ColumnDefinitions>
@@ -482,11 +482,11 @@ Data="M47.6,21.92h5.947a2.981,2.981,0,0,1,2.973,2.989V60.771a2.981,2.981,0,0,1-2
                         </Viewbox>
                         <TextBlock Margin="10,0,0,0" Grid.Column="1" HorizontalAlignment="Right"  VerticalAlignment="Center" >Change Database Connection Settings</TextBlock>
                     </Grid>
-                   
+
                 </Button>
-               
+
             </StackPanel>
-           
+
 
         </Grid>
 

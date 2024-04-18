@@ -116,7 +116,7 @@ namespace StersTransport.UI {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/STARS;component/ui/forgetpassword.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/STERS;component/ui/forgetpassword.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\UI\ForgetPassword.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

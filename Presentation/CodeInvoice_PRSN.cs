@@ -59,9 +59,6 @@ namespace StersTransport.Presentation
         Currency LocalCurrency { get; set; }
         Currency OuterCurrency { get; set; }
 
-
-
-
         List<Agent> Branches = new List<Agent>();
 
 
@@ -115,7 +112,6 @@ namespace StersTransport.Presentation
             // Have Local Post?
             bool havelocalpost = ClientCode.Have_Local_Post.HasValue ? (bool)ClientCode.Have_Local_Post : false;
 
-
             bool addRowForAgent = true;
 
             //Branch Language...
@@ -131,9 +127,6 @@ namespace StersTransport.Presentation
             {
                 branchLanguage = BranchLanguages.ku; labelLanguageColumnName = "Kurdish";
             }
-
-
-
 
             // Main (Containing Table..)
             var containingTable = new Table();
@@ -735,12 +728,9 @@ namespace StersTransport.Presentation
             lastaddedRowIndex++;
             trow = containingTable.RowGroups[0].Rows[lastaddedRowIndex];
             trow.Cells.Add(containingCell1);
-
-
-           
+                       
             if (addRowForAgent)
             {
-
                 #region agent
                 etable = new Table();
                 etable.FlowDirection = FlowDirection.RightToLeft;
@@ -815,14 +805,8 @@ namespace StersTransport.Presentation
                 lastaddedRowIndex++;
                 trow = containingTable.RowGroups[0].Rows[lastaddedRowIndex];
                 trow.Cells.Add(containingCell1);
-
-
-
             }
-
-
-
-     
+                 
             #region  ShipmentDetails
             etable = new Table();
             etable.FlowDirection = FlowDirection.RightToLeft;
@@ -998,8 +982,6 @@ namespace StersTransport.Presentation
             lastaddedRowIndex++;
             trow = containingTable.RowGroups[0].Rows[lastaddedRowIndex];
             trow.Cells.Add(containingCell1);
-
-
 
             #region TransportCostDetails
 
@@ -1483,8 +1465,6 @@ namespace StersTransport.Presentation
             trow = containingTable.RowGroups[0].Rows[lastaddedRowIndex];
             trow.Cells.Add(containingCell1);
 
-
-
             #region Agreement Points
             etable = new Table();
             etable.FlowDirection = FlowDirection.RightToLeft;
@@ -1555,7 +1535,6 @@ namespace StersTransport.Presentation
             lastaddedRowIndex++;
             trow = containingTable.RowGroups[0].Rows[lastaddedRowIndex];
             trow.Cells.Add(containingCell1);
-
 
             #region OurOffices
             etable = new Table();
@@ -1631,6 +1610,7 @@ namespace StersTransport.Presentation
 
 
             #endregion
+
             containingCell1 = new TableCell(); 
             containingCell1.Blocks.Add(new Section(etable) { BorderThickness = new Thickness(1), BorderBrush = BorderColor });
             lastaddedRowIndex++;
@@ -1638,7 +1618,6 @@ namespace StersTransport.Presentation
             trow.Cells.Add(containingCell1);
 
             flowdocument.Blocks.Add(new Section(containingTable));
-
         }
 
         private string form_agreemetPoints(string labelLanguageColumnName)
@@ -1711,7 +1690,6 @@ namespace StersTransport.Presentation
             {
                 pointnumber++;
                 result += string.Format("{0}{1} {2}", pointnumber, "-", currentLabelStr);
-                
             }
 
             return result;
@@ -1854,7 +1832,6 @@ namespace StersTransport.Presentation
                     result += Environment.NewLine;
                     branchcntr = 0;
                 }
-
             }
             return result;
         }

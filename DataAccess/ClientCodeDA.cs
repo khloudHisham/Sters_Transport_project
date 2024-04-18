@@ -32,6 +32,7 @@ namespace StersTransport.DataAccess
             }
             return clientCode;
         }
+
         public ClientCode GetClientCodeWithBranchAndUser(string W_code)
         {
             ClientCode clientCode = new ClientCode();
@@ -45,8 +46,6 @@ namespace StersTransport.DataAccess
             }
             return clientCode;
         }
-
-        
 
         public List<ClientCode> GetClientCodes()
         {
@@ -395,6 +394,7 @@ namespace StersTransport.DataAccess
           
 
         }
+      
         public long get_max_number(long branchID, string w_branchprefix, string w_yearprefix)
         {
             long maxnumber = 0;
@@ -664,8 +664,6 @@ where 4<21";
             }
             return dt;
         }
-
-
 
         public DataTable Generate_Country_Report_View_FewerColumns(Agent selectedBranch, Country selectedCountry, Agent selectedAgent, double selectedShipmentNumber, double selectedShipmentNumberto)
         {
