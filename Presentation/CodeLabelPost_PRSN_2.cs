@@ -45,7 +45,7 @@ namespace StersTransport.Presentation
         List<Agent> Branches = new List<Agent>();
         #endregion
 
-        public void generateDocument(FlowDocument flowdocument, string code)
+        public void generateDocument(Frame frame, string code)
         {
             ClientCode = clientCodeDA.GetClientCode(code);
 
@@ -68,7 +68,7 @@ namespace StersTransport.Presentation
 
             branch = agentDa.GetAgent(_branchID);
 
-            flowdocument.Blocks.Clear();
+          //  flowdocument.Blocks.Clear();
 
             Label_A5 = new Post_Label_A5_Size();
 
@@ -161,7 +161,10 @@ namespace StersTransport.Presentation
             //image2.Height = 50;
             //image2.Stretch = Stretch.Fill;
             //image2.Source = 
-            Label_A5.barcode_img.Source = ImageHelpercs.ConvertBitmap(barcodeBitmap); 
+            Label_A5.barcode_img.Source = ImageHelpercs.ConvertBitmap(barcodeBitmap);
+
+            frame.Content = Label_A5;
+
         }
     }
 }

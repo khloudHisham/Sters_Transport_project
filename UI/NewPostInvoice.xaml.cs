@@ -23,7 +23,6 @@ namespace StersTransport.UI
         public NewPostInvoice()
         {
             InitializeComponent();
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ku-KU");
         }
 
 

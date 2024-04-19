@@ -298,6 +298,9 @@
     <Compile Include="UI\LabelsManagement.xaml.cs">
       <DependentUpon>LabelsManagement.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\NewOfficeInvoice.xaml.cs">
+      <DependentUpon>NewOfficeInvoice.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\NewPostInvoice.xaml.cs">
       <DependentUpon>NewPostInvoice.xaml</DependentUpon>
     </Compile>
@@ -580,6 +583,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UI\NewOfficeInvoice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\NewPostInvoice.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -816,6 +823,12 @@
     <Resource Include="UI\Post-Label-A5-Images\Sters QR.png" />
     <Resource Include="UI\Post-Label-A5-Images\STERS TRANSPORT.png" />
     <Resource Include="UI\Post-Label-A5-Images\Sulemany _  0750 815.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KurdishNote.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="KurdishNote.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.SqlServer.SqlManagementObjects.150.18208.0\build\net45\Microsoft.SqlServer.SqlManagementObjects.targets" Condition="Exists('packages\Microsoft.SqlServer.SqlManagementObjects.150.18208.0\build\net45\Microsoft.SqlServer.SqlManagementObjects.targets')" />

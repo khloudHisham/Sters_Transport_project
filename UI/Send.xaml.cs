@@ -2095,13 +2095,7 @@ namespace StersTransport.UI
         {
             if (popup_senderIDtypes.IsOpen)
                 popup_senderIDtypes.IsOpen = false;
-            }
         }
-
-
-
-        #endregion
-
         private void ChooseImage(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openDialog = new OpenFileDialog();
@@ -2109,5 +2103,8 @@ namespace StersTransport.UI
             openDialog.FilterIndex = 1;
             openDialog.ShowDialog();
         }
+
     }
+
+        #endregion
 }

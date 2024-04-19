@@ -227,10 +227,7 @@ namespace StersTransport.UI
                 frame.LayoutTransform = new ScaleTransform(scale, scale);
                 dialog.PrintVisual(frame, "");
             }
-            else
-            {
-               
-            }
+            
         }
 
 

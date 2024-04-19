@@ -143,7 +143,7 @@ namespace StersTransport.Presentation
             if (agent.InvoiceLanguage == "Ku")
             {
 
-                TranslateToKurdish();
+
             }
 
             frame.Content = invoice;
@@ -166,94 +166,7 @@ namespace StersTransport.Presentation
 
 
 
-        public void TranslateToKurdish()
-        {
-            invoice.StersCompany.Text = "کۆمپانیای ستێرس\r\n";
-            invoice.TransportCost.Text = "تێچووى گەیاندن\r\n";
-            invoice.adress_header.Text = "";
-            invoice.LeadingInTransport.Text = "پێشەنگ لە پۆستی نێودەوڵەتی\r\n";
-            invoice.Branch.Text = ":لقي\r\n";
-            invoice.Phone.Text = ":ژمارەى تەلەفون\r\n";
-            invoice.cost_delivery.Text = "پسولەى گەیاندن و تێچووی گواستنەوە لە کوردستان وشارەکانى عێراق بۆ ئەوروپا\r\n";
-            invoice.Date.Text = "بەروار:";
-            invoice.Code.Text = "کۆدى وەرگرتن :\r\n";
-            invoice.TransportCost_header.Text = "تێچووى گەیاندن\r\n";
-            invoice.PackigingCost.Text = "پــارەى کـارتـۆنــى بـەتـــــــــــاڵ\r\n";
-            invoice.AdminExportCost.Text = "گــومـرک - کـارى ئـیــــــــــدارى\r\n";
-            invoice.DoorToDoorCost.Text= "تێچووى گەیاندن بۆ ناونیشانى وەرگر\r\n";
-            invoice.InsuranceCost.Text = "تـێـچـووى دڵـنـیــــــــــــــــــــایـى\r\n";
-            invoice.TotalCost.Text = "کــــــۆى گـشـتــــــــــــــــــــــــــى\r\n";
-            invoice.PaidAmount.Text = "بــــــڕى پــــــــــــــــــــارەى دراو\r\n";
-            invoice.RemainingAmount.Text= "بـڕى پــارەى داوەکـــــــــــــــــراو\r\n";
-            invoice.PaidINEurope.Text = "بـرى پـارەى داوەکراو لە ئەوروپا\r\n";
-            invoice.HaveInsurance.Text = "دڵنیایى ئەشیاکان کراوە :\r\n";
-            invoice.Yes.Text = "بەڵێ\r\n";
-            invoice.No.Text = "نەخێر\r\n";
-            invoice.NOBoxes.Text = "ژمارەى کارتۆن\r\n";
-            invoice.WeightKG.Text = "کێش - کغم\r\n";
-            invoice.GoodsDiscription.Text = "وردەکارى ئەشیاکان\r\n";
-            invoice.GoodsValue.Text= "بەهاى کاڵا\r\n";
-            invoice.SenderInfo.Text = "زانیارى نێردەر";
-            invoice.ReceiverInfo.Text = "- وەرگر";
-            invoice.SenderName.Text = "نــاوى نێردەر\r\n";
-            invoice.SenderPhone.Text = "ژمـارەى نـێــــــردەر\r\n";
-            invoice.RecieverName.Text = "ناوى وەرگــر\r\n";
-            invoice.RecieverPhone.Text = "ژمـارەى وەرگــــــــر\r\n";
-            invoice.FullAddress.Text="ناونیشانى وەرگر شەقام - ژمارە\r\n";
-            invoice.PostalCode.Text = "ژمارەى پۆستى شار\r\n";
-            invoice.City.Text = "شـــــــــــــــار\r\n";
-            invoice.Country.Text = "وڵات\r\n";
-            invoice.AgentInfo.Text = "زانیارییەکانى بریکار\r\n";
-            invoice.Agent.Text = "بریکار\r\n";
-            invoice.AgentPhone.Text = "ژ. تەلەفون\r\n";
-            invoice.office.Text = "ناوى ئۆفیس\r\n ";
-            invoice.AgentAddreess.Text = "ناونیشان بە تەواوى\r\n";
-            invoice.PleaseReadFollowingPointsBeforeSign.Text = "تکایە ئەم خاڵانەى خوارەوە بخوێنەرەوە و دواى رەزامەندیتان لە خوارەوە واژووى بکە\r\n";
-
-
-            //Bitmap bitmap = new Bitmap("Sters_Transport\\KurdishNote.png");
-            //IntPtr hBitmap = bitmap.GetHbitmap();
-            //BitmapSource bitmapSource = Imaging.CreateBitmapSourceFromHBitmap(
-            //    hBitmap, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
-            //invoice.notes.Source = bitmapSource;
-
-            //BitmapImage bitmapImage = new BitmapImage();
-            //bitmapImage.BeginInit();
-            //bitmapImage.UriSource = new Uri("pack://application:,,,/StersTransport;component/KurdishNote.png");
-            //bitmapImage.EndInit();
-            //invoice.notes.Source = bitmapImage;
-
-
-            Uri uri = new Uri("pack://application:,,,/StersTransport;component/KurdishNote.png");
-            invoice.notes.Source = new BitmapImage(uri);
-
-
-
-        }
-
-        //public void TranslateToKurdish(DependencyObject obj)
-        //{
-
-
-        //    for (int i = 0; i < VisualTreeHelper.GetChildrenCount(obj); i++)
-        //    {
-        //        DependencyObject child = VisualTreeHelper.GetChild(obj, i);
-
-        //        if (child is TextBox)
-        //        {
-        //            TextBox textBox = child as TextBox;
-
-        //            string lbl = getlabel(textBox.Name, "Kurdish");
-        //            if (lbl != string.Empty)
-        //            {
-        //                textBox.Text = lbl;
-        //            }
-
-        //        }
-
-        //        TranslateToKurdish(child);
-        //    }
-        //}
+        
 
 
         //private string getlabel(string key, string labelLanguageColumnName)
