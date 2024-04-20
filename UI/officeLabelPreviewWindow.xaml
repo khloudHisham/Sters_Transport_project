@@ -1,0 +1,141 @@
+﻿<Window x:Class="StersTransport.UI.OfficeLabelPreviewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StersTransport.UI"
+        mc:Ignorable="d"
+        Title="Office Label Preview Window" Height="1820" Width="1240">
+
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+        <Image Source="Office-Label-A6-Images/nav.png" Margin="0,10,0,10"/>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="955"/>
+                <ColumnDefinition Width="250"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1010"/>
+            </Grid.RowDefinitions>
+
+            <Border Margin="28,0,0,0" x:Name="dataFrame" Grid.Row="0" Grid.Column="0" BorderThickness="5" BorderBrush="Gray">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="0">
+                        <TextBlock Text="Sender" FontSize="50" FontWeight="Bold" Margin="23,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBlock Text=":" FontSize="50" FontWeight="Bold" Margin="170,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <TextBlock FontSize="50" FontWeight="Bold" Margin="23,0,0,0" Text="" x:Name="sender_txt" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1"/>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="1">
+                        <TextBlock Text="Receiver" FontSize="50" FontWeight="Bold" Margin="23,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBlock Text=":" FontSize="50" FontWeight="Bold" Margin="135,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <TextBlock FontSize="50" FontWeight="Bold" Margin="23,0,0,0" Text="" x:Name="receiver_txt" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1"/>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="2">
+                        <TextBlock Text="Phone No." FontSize="50" FontWeight="Bold" Margin="23,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBlock Text=":" FontSize="50" FontWeight="Bold" Margin="87,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <TextBlock FontSize="50" FontWeight="Bold" Margin="23,0,0,0" Text="" x:Name="phone_txt" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1"/>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="3">
+                        <TextBlock Text="Item Details" FontSize="50" FontWeight="Bold" Margin="23,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBlock Text=":" FontSize="50" FontWeight="Bold" Margin="50,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <TextBlock FontSize="50" FontWeight="Bold" Margin="23,0,0,0" Text="" x:Name="itemDetails_txt" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1"/>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="4">
+                        <TextBlock Text="Item Number" FontSize="50" FontWeight="Bold" Margin="23,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBlock Text=":" FontSize="50" FontWeight="Bold" Margin="17,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1" Margin="50,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock Width="155" FontSize="50" FontWeight="Bold" x:Name="firstNumber_txt"/>
+                        <TextBlock Width="155" Text="Of" FontSize="50" FontWeight="Bold"/>
+                        <TextBlock Width="155" FontSize="50" FontWeight="Bold" x:Name="secondNumber_txt"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="5">
+                        <TextBlock Text="Weight Kg" FontSize="50" FontWeight="Bold" Margin="23,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBlock Text=":" FontSize="50" FontWeight="Bold" Margin="85,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <TextBlock FontSize="50" FontWeight="Bold" Margin="23,0,0,0" Text="" x:Name="weight_txt" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="5" Grid.Column="1"/>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="6">
+                        <TextBlock Text="City" FontSize="50" FontWeight="Bold" Margin="23,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBlock Text=":" FontSize="50" FontWeight="Bold" Margin="240,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <TextBlock FontSize="50" FontWeight="Bold" Margin="23,0,0,0" Text="" x:Name="city_txt" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="6" Grid.Column="1"/>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="7">
+                        <TextBlock Text="Country" FontSize="50" FontWeight="Bold" Margin="23,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBlock Text=":" FontSize="50" FontWeight="Bold" Margin="142,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <TextBlock FontSize="50" FontWeight="Bold" Margin="23,0,0,0" Text="" x:Name="country_txt" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="7" Grid.Column="1"/>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="8">
+                        <TextBlock Text="Code" FontSize="50" FontWeight="Bold" Margin="23,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBlock Text=":" FontSize="50" FontWeight="Bold" Margin="213,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <TextBlock FontSize="50" FontWeight="Bold" Margin="23,0,0,0" Text="" x:Name="code_txt" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="8" Grid.Column="1"/>
+                </Grid>
+            </Border>
+
+
+            <Border Width="195" Height="1010" x:Name="cityFrame" Grid.Column="1" Margin="28 0 0 0" BorderThickness="5" BorderBrush="Gray">
+                <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="1">
+                    <TextBlock Text="From" FontSize="50" FontWeight="Bold" Margin="0,20,0,100" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="office_txt" Text="BAGHDAD" FontSize="60" FontWeight="Bold"
+                        VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 80">
+                        <TextBlock.LayoutTransform>
+                            <RotateTransform Angle="270" />
+                        </TextBlock.LayoutTransform>
+                    </TextBlock>
+                    <TextBlock x:Name="insurance_txt" Text="INSURANCE=YES" FontSize="50" FontWeight="Bold"
+                                VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock.LayoutTransform>
+                            <RotateTransform Angle="270" />
+                        </TextBlock.LayoutTransform>
+                    </TextBlock>
+
+                </StackPanel>
+            </Border>
+
+        </Grid>
+
+        <StackPanel Margin="0 20 0 0" Orientation="Horizontal">
+            <StackPanel Orientation="Vertical" Margin="50 0 0 0">
+                <TextBlock Text="date is here" x:Name="date_txt" MinWidth="300" FontSize="40" FontWeight="Bold" Margin="0 75 0 0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock Text="time is here" x:Name="time_txt" MinWidth="300" FontSize="40" FontWeight="Bold" Margin="0 75 0 0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical">
+                <Image Source="Office-Label-A6-Images/Germany.png" Width="581" Height="251" Margin="0,10,0,10"/>
+                <TextBlock Text="barcode is here" x:Name="barcode_txt" Width="500" FontSize="50" FontWeight="Bold" Margin="50 20 0 0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </StackPanel>
+
+            
+            
+        </StackPanel>
+
+
+
+    </StackPanel>
+</Window>
