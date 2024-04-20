@@ -1,4 +1,4 @@
-﻿<Window x:Class="StersTransport.UI.Post_Label_A5_Size"
+﻿<Page x:Class="StersTransport.UI.Post_Label_A5_Size"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -8,9 +8,9 @@
         FontFamily="Arial"
         Title="Post_Label_A5_Size" Height="1760" Width="2485">
 
-    <Window.Background>
+    <Page.Background>
         <ImageBrush ImageSource="Post-Label-A5-Images/Background.png" Stretch="UniformToFill"/>
-    </Window.Background>
+    </Page.Background>
 
     <StackPanel Orientation="Vertical">
         <StackPanel Orientation="Horizontal">
@@ -480,11 +480,11 @@
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"/>
 
-                <Image x:Name="countryImage_img" Source="Post-Label-A5-Images/Germany.png" Margin="0 250 0 0" Width="507" Height="507"/>
+                <Image x:Name="countryImage_img" Margin="0 250 0 0" Width="507" Height="507"/>
             </StackPanel>
         </Grid>
         <Image x:Name="barcode_img" Height="100" Width="456"/>
 
     </StackPanel>
 
-</Window>
+</Page>

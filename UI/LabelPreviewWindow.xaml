@@ -34,7 +34,7 @@
         <Border Grid.Row="1"  Background="#E4E4E4" BorderThickness="1" BorderBrush="#236BC9">
 
 
-            <FlowDocumentScrollViewer 
+            <!--<FlowDocumentScrollViewer 
                
                IsToolBarVisible="True"
                                   ScrollViewer.VerticalScrollBarVisibility="Auto"
@@ -46,7 +46,11 @@
                     Background="White" x:Name="flowdocument">
 
                 </FlowDocument>
-            </FlowDocumentScrollViewer>
+            </FlowDocumentScrollViewer>-->
+
+            <Viewbox Stretch="Uniform">
+                <Frame x:Name="label" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </Viewbox>
         </Border>
 
     </Grid>

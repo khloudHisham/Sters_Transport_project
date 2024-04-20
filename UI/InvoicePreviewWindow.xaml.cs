@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Drawing;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Printing;
@@ -10,7 +12,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
@@ -19,8 +23,12 @@ using System.Windows.Xps;
 using System.Windows.Xps.Packaging;
 using StersTransport.DataAccess;
 using StersTransport.GlobalData;
+using StersTransport.Helpers;
 using StersTransport.Models;
 using StersTransport.Presentation;
+using PrintDialog = System.Windows.Controls.PrintDialog;
+
+
 
 namespace StersTransport.UI
 {
@@ -29,7 +37,9 @@ namespace StersTransport.UI
     /// </summary>
     public partial class InvoicePreviewWindow : Window
     {
+
         public string Code { get; set; }
+        public bool IsPost {  get; set;}
         public InvoicePreviewWindow()
         {
             InitializeComponent();
@@ -38,11 +48,20 @@ namespace StersTransport.UI
         {
             InitializeComponent();
             Code = _code;
+
+        }
+
+        public InvoicePreviewWindow(string _code,bool ispost)
+        {
+            InitializeComponent();
+            Code = _code;
+
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             GenerateDocument(Code);
+            
         }
 
 
@@ -66,14 +85,22 @@ namespace StersTransport.UI
 
             try
             {
-                CodeInvoice3PRSN codeInvoice_PRSN = new CodeInvoice3PRSN();
-               // CodeInvoice2PRSN codeInvoice_PRSN = new CodeInvoice2PRSN();
+                 //CodeInvoice3PRSN codeInvoice_PRSN = new CodeInvoice3PRSN();
+                 CodeInvoice4PRSN codeInvoice_PRSN = new CodeInvoice4PRSN();
+
+                // CodeInvoice2PRSN codeInvoice_PRSN = new CodeInvoice2PRSN();
+                //CodeInvoice_PRSN codeInvoice_PRSN = new CodeInvoice_PRSN();
+
+                //CodeLabel_PRSN codeInvoice_PRSN = new CodeLabel_PRSN();
                 double lh = 15;
                 double fs = 10;
-                codeInvoice_PRSN.generateDocument(flowdocument, code, lh, fs); // we can pass as reference too .. }
+
+                // codeInvoice_PRSN.generateDocument(flowdocument, code, lh, fs); // we can pass as reference too .. }
+
+                codeInvoice_PRSN.GenerateDocument(frame, code);
 
             }
-            catch (Exception ex) { MessageBox.Show(ex.ToString()); }
+            catch (Exception ex) { System.Windows.MessageBox.Show(ex.ToString()); }
 
         }
 
@@ -99,8 +126,8 @@ namespace StersTransport.UI
 
 
 
-           //     flowdocument.PageHeight = printDialog.PrintableAreaHeight;
-             //   flowdocument.PageWidth = printDialog.PrintableAreaWidth;
+                //    flowdocument.PageHeight = printDialog.PrintableAreaHeight;
+                //   flowdocument.PageWidth = printDialog.PrintableAreaWidth;
 
 
 
@@ -148,24 +175,62 @@ namespace StersTransport.UI
 
                 //  flowdocument.ColumnWidth = (flowdocument.PageWidth - flowdocument.ColumnGap - flowdocument.PagePadding.Left-2 -flowdocument.PagePadding.Right-2);
 
+
+                //new comment
+
                 if (chk_useDefaultCopyCount.IsChecked ?? true)
                 {
                     printDialog.PrintTicket.CopyCount = 2; // to be tested on real printer cause virtual printer dont support more than one copy 
                 }
-               
+
+                ///////////////////
+
 
 
                 Helpers.PrintHelper printHelper = new Helpers.PrintHelper();
-                printHelper.showpreview(w, h, flowdocument);
+                //new comment 
+                //printHelper.showpreview(w, h, flowdocument);
+
+                ////////
+
                 //showpreview(w, h);
-                //    printDialog.PrintDocument(
-                //        ((IDocumentPaginatorSource)flowdocument).DocumentPaginator,
-                //     "A Flow Document");
+                //printDialog.PrintDocument(
+                //    ((IDocumentPaginatorSource)frame).DocumentPaginator,
+                // "A Flow Document");
             }
             catch (Exception ex)
             { WpfMessageBox.Show("", ex.Message, MessageBoxButton.OK, WpfMessageBox.MessageBoxImage.Error); }
             
         }
-     
+
+      
+
+        private void print(object sender, RoutedEventArgs e)
+        {
+
+            PrintDialog dialog = new PrintDialog();
+            dialog.PrintTicket.PageMediaSize = new PageMediaSize(PageMediaSizeName.ISOA4);
+
+            // Set printer page orientation to portrait
+            dialog.PrintTicket.PageOrientation = PageOrientation.Portrait;
+            if (dialog.ShowDialog() == true)
+            {
+                double a4Width = dialog.PrintableAreaWidth;
+                double a4Height = dialog.PrintableAreaHeight;
+
+                //Calculate the scale factor to fit the content within the A4 dimensions
+                double scaleX = a4Width / frame.ActualWidth;
+                double scaleY = a4Height / frame.ActualHeight;
+                double scale = Math.Min(scaleX, scaleY); // Choose the smaller scale factor to fit within both dimensions
+
+                // Apply the scale transform to the visual content
+                frame.LayoutTransform = new ScaleTransform(scale, scale);
+                dialog.PrintVisual(frame, "");
+            }
+            
+        }
+
+
+
     }
 }

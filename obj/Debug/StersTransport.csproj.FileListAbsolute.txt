@@ -433,199 +433,396 @@ C:\Users\Administrator\source\repos\StersTransport2\StersTransport\obj\Debug\UI\
 C:\Users\Administrator\source\repos\StersTransport2\StersTransport\obj\Debug\UI\CompanySettings.baml
 C:\Users\Administrator\source\repos\StersTransport2\StersTransport\obj\Debug\UI\LabelsManagement.g.cs
 C:\Users\Administrator\source\repos\StersTransport2\StersTransport\obj\Debug\UI\LabelsManagement.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\EntityFramework.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\EntityFramework.SqlServer.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Assessment.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.ConnectionInfoExtended.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Diagnostics.Strace.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Dmf.Common.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Dmf.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Management.Assessment.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Management.Collector.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Management.CollectorEnum.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Management.RegisteredServers.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Management.SqlParser.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Management.Utility.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Management.UtilityEnum.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Management.XEvent.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Management.XEventDbScoped.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Management.XEventDbScopedEnum.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Management.XEventEnum.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.PolicyEnum.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.RegSvrEnum.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.ServiceBrokerEnum.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Smo.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.SmoExtended.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.SqlClrProvider.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.SqlTDiagm.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.SqlWmiManagement.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.SString.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Types.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.WmiEnum.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Newtonsoft.Json.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\ToastNotifications.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\ToastNotifications.Messages.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\zxing.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\zxing.presentation.dll
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\EntityFramework.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\EntityFramework.SqlServer.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.ConnectionInfo.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.ConnectionInfoExtended.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Dmf.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Dmf.Common.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Management.Collector.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Management.CollectorEnum.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Management.RegisteredServers.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Management.Utility.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Management.UtilityEnum.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Management.XEvent.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Management.XEventDbScoped.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Management.XEventDbScopedEnum.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Management.XEventEnum.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.PolicyEnum.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.RegSvrEnum.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.ServiceBrokerEnum.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Smo.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.SmoExtended.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.SqlEnum.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.SqlWmiManagement.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.Types.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Microsoft.SqlServer.WmiEnum.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\Newtonsoft.Json.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\zxing.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\zxing.presentation.xml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\StersTransport.csproj.AssemblyReference.cache
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\StersTransport.csproj.ResolveComReference.cache
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\Buttons\ActionButton.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\Buttons\ActionToggleButton.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\LoadingWait.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\LoginWindow.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\MainWindow.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\AdditionalSettings.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\AgentPricesWindow.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\ChangePassword.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\CodeSearchWindow.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\CodeSearchWindowSearchForDialog.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\CompanySettings.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\DBConnectionSetting.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\DBGreateWindow.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\DBGreateWindow_Advanced.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\ForgetPassword.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\IdentityTypeSelector.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\ImportExcelClientCodesData.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\InvoicePreviewWindow.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\LabelPreviewWindow.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\LabelsManagement.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\NotificationMessage.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\previewWindow.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\Send.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\SenderSummaryWindow.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\StreetPickWindow.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UIAdmin.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UIAgent.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UIBranches.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UICity.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UICountry.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UICurrency.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UIDash.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UIInvoice.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UILabel.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UIReports.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UIReports_DashBoard.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UIReports_EUReport.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UIReports_Overview.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UIReports_Report.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UISettings.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UIUser.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\ValuePicker.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\WpfMessageBox.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\App.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\GeneratedInternalTypeHelper.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\App.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\LoadingWait.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\LoginWindow.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\MainWindow.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\Buttons\ActionButtonBlue.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\Buttons\ActionButtonDarkPink.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\Buttons\ActionButtonGreen.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\Buttons\ActionButtonOrange.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\Buttons\ActionButtonPink.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\Buttons\ActionButtonPurple.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\Buttons\CancelButton.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\Buttons\DashBoardButtonBlue.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\Buttons\DashBoardButtongreen.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\Buttons\DashBoardButtonpink.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\Buttons\DashBoardButtonpurple.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\Buttons\EmptyButton.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\Buttons\toggle1.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\Comboboxes\StandardCombobox.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\Comboboxes\StandardCombobox2.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\Comboboxes\StandardComboboxUpperPart.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\Datagrid\DatagridStyle.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\Datagrid\DatagridStyle2.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\DatePickers\DatePicker1.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\DatePickers\DatePicker1UpperPart.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\DatePickers\DatePicker2.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\ListBox\ListBoxItemStyle.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\ProgressBar\ProgressBar1.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\Slider\Slider1.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\TextBoxes\PasswordBox1.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\TextBoxes\StandardTextBox2.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\TextBoxes\StandardTextboxUpper.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\ResourceDictionaries\TextBoxes\StandardTextBoxxaml.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\AdditionalSettings.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\AgentPricesWindow.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\ChangePassword.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\CodeSearchWindow.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\CodeSearchWindowSearchForDialog.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\CompanySettings.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\DBConnectionSetting.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\DBGreateWindow.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\DBGreateWindow_Advanced.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\ForgetPassword.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\IdentityTypeSelector.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\ImportExcelClientCodesData.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\InvoicePreviewWindow.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\LabelPreviewWindow.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\LabelsManagement.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\NotificationMessage.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\previewWindow.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\Send.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\SenderSummaryWindow.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\StreetPickWindow.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UIAdmin.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UIAgent.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UIBranches.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UICity.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UICountry.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UICurrency.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UIDash.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UIInvoice.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UILabel.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UIReports.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UIReports_DashBoard.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UIReports_EUReport.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UIReports_Overview.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UIReports_Report.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UISettings.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\UIUser.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\ValuePicker.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\WpfMessageBox.baml
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\StersTransport.Properties.Resources.resources
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\StersTransport.csproj.GenerateResource.cache
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\StersTransport.csproj.CoreCompileInputs.cache
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\StersTra.F38ACEF2.Up2Date
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\STERS.exe.config
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\STERS.exe
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\bin\Debug\STERS.pdb
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\STERS_MarkupCompile.cache
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\STERS_MarkupCompile.lref
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\STERS.g.resources
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\STERS.exe
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\STERS.pdb
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\Post-Label-A5-Size.g.cs
-D:\ITI\Projects\Freelance\Sters\StarsTransport0403\StarsTransport\StersTransport\obj\Debug\UI\Post-Label-A5-Size.baml
+E:\ITI 9m\FreeLance\bin\Debug\STARS.exe.config
+E:\ITI 9m\FreeLance\bin\Debug\STARS.exe
+E:\ITI 9m\FreeLance\bin\Debug\STARS.pdb
+E:\ITI 9m\FreeLance\bin\Debug\EntityFramework.dll
+E:\ITI 9m\FreeLance\bin\Debug\EntityFramework.SqlServer.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Assessment.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.ConnectionInfoExtended.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Diagnostics.Strace.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Dmf.Common.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Dmf.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Management.Assessment.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Management.Collector.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Management.CollectorEnum.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Management.RegisteredServers.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Management.SqlParser.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Management.Utility.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Management.UtilityEnum.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Management.XEvent.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Management.XEventDbScoped.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Management.XEventDbScopedEnum.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Management.XEventEnum.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.PolicyEnum.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.RegSvrEnum.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.ServiceBrokerEnum.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Smo.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.SmoExtended.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.SqlClrProvider.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.SqlTDiagm.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.SqlWmiManagement.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.SString.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Types.dll
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.WmiEnum.dll
+E:\ITI 9m\FreeLance\bin\Debug\Newtonsoft.Json.dll
+E:\ITI 9m\FreeLance\bin\Debug\ToastNotifications.dll
+E:\ITI 9m\FreeLance\bin\Debug\ToastNotifications.Messages.dll
+E:\ITI 9m\FreeLance\bin\Debug\zxing.dll
+E:\ITI 9m\FreeLance\bin\Debug\zxing.presentation.dll
+E:\ITI 9m\FreeLance\bin\Debug\EntityFramework.xml
+E:\ITI 9m\FreeLance\bin\Debug\EntityFramework.SqlServer.xml
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.ConnectionInfo.xml
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.ConnectionInfoExtended.xml
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Dmf.xml
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Dmf.Common.xml
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Management.Collector.xml
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Management.CollectorEnum.xml
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Management.RegisteredServers.xml
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.xml
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Management.Utility.xml
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Management.UtilityEnum.xml
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Management.XEvent.xml
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Management.XEventDbScoped.xml
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Management.XEventDbScopedEnum.xml
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Management.XEventEnum.xml
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.PolicyEnum.xml
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.RegSvrEnum.xml
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.ServiceBrokerEnum.xml
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Smo.xml
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.SmoExtended.xml
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.SqlEnum.xml
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.SqlWmiManagement.xml
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.Types.xml
+E:\ITI 9m\FreeLance\bin\Debug\Microsoft.SqlServer.WmiEnum.xml
+E:\ITI 9m\FreeLance\bin\Debug\Newtonsoft.Json.xml
+E:\ITI 9m\FreeLance\bin\Debug\zxing.xml
+E:\ITI 9m\FreeLance\bin\Debug\zxing.presentation.xml
+E:\ITI 9m\FreeLance\obj\Debug\StersTransport.csproj.AssemblyReference.cache
+E:\ITI 9m\FreeLance\obj\Debug\StersTransport.csproj.ResolveComReference.cache
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\Buttons\ActionButton.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\Buttons\ActionToggleButton.baml
+E:\ITI 9m\FreeLance\obj\Debug\LoadingWait.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\LoginWindow.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\MainWindow.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\AdditionalSettings.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\AgentPricesWindow.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\ChangePassword.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\CodeSearchWindow.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\CodeSearchWindowSearchForDialog.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\CompanySettings.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\DBConnectionSetting.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\DBGreateWindow.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\DBGreateWindow_Advanced.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\ForgetPassword.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\IdentityTypeSelector.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\ImportExcelClientCodesData.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\InvoicePreviewWindow.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\LabelPreviewWindow.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\LabelsManagement.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\NotificationMessage.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\previewWindow.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\Send.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\SenderSummaryWindow.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\StreetPickWindow.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\UIAdmin.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\UIAgent.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\UIBranches.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\UICity.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\UICountry.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\UICurrency.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\UIDash.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\UIInvoice.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\UILabel.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\UIReports.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\UIReports_DashBoard.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\UIReports_EUReport.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\UIReports_Overview.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\UIReports_Report.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\UISettings.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\UIUser.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\UI\ValuePicker.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\WpfMessageBox.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\App.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\ITI 9m\FreeLance\obj\Debug\STARS_MarkupCompile.cache
+E:\ITI 9m\FreeLance\obj\Debug\STARS_MarkupCompile.lref
+E:\ITI 9m\FreeLance\obj\Debug\App.baml
+E:\ITI 9m\FreeLance\obj\Debug\LoadingWait.baml
+E:\ITI 9m\FreeLance\obj\Debug\LoginWindow.baml
+E:\ITI 9m\FreeLance\obj\Debug\MainWindow.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\Buttons\ActionButtonBlue.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\Buttons\ActionButtonDarkPink.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\Buttons\ActionButtonGreen.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\Buttons\ActionButtonOrange.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\Buttons\ActionButtonPink.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\Buttons\ActionButtonPurple.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\Buttons\CancelButton.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\Buttons\DashBoardButtonBlue.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\Buttons\DashBoardButtongreen.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\Buttons\DashBoardButtonpink.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\Buttons\DashBoardButtonpurple.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\Buttons\EmptyButton.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\Buttons\toggle1.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\Comboboxes\StandardCombobox.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\Comboboxes\StandardCombobox2.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\Comboboxes\StandardComboboxUpperPart.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\Datagrid\DatagridStyle.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\Datagrid\DatagridStyle2.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\DatePickers\DatePicker1.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\DatePickers\DatePicker1UpperPart.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\DatePickers\DatePicker2.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\ListBox\ListBoxItemStyle.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\ProgressBar\ProgressBar1.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\Slider\Slider1.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\TextBoxes\PasswordBox1.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\TextBoxes\StandardTextBox2.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\TextBoxes\StandardTextboxUpper.baml
+E:\ITI 9m\FreeLance\obj\Debug\ResourceDictionaries\TextBoxes\StandardTextBoxxaml.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\AdditionalSettings.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\AgentPricesWindow.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\ChangePassword.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\CodeSearchWindow.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\CodeSearchWindowSearchForDialog.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\CompanySettings.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\DBConnectionSetting.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\DBGreateWindow.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\DBGreateWindow_Advanced.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\ForgetPassword.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\IdentityTypeSelector.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\ImportExcelClientCodesData.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\InvoicePreviewWindow.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\LabelPreviewWindow.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\LabelsManagement.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\NotificationMessage.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\previewWindow.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\Send.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\SenderSummaryWindow.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\StreetPickWindow.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\UIAdmin.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\UIAgent.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\UIBranches.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\UICity.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\UICountry.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\UICurrency.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\UIDash.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\UIInvoice.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\UILabel.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\UIReports.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\UIReports_DashBoard.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\UIReports_EUReport.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\UIReports_Overview.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\UIReports_Report.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\UISettings.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\UIUser.baml
+E:\ITI 9m\FreeLance\obj\Debug\UI\ValuePicker.baml
+E:\ITI 9m\FreeLance\obj\Debug\WpfMessageBox.baml
+E:\ITI 9m\FreeLance\obj\Debug\STARS.g.resources
+E:\ITI 9m\FreeLance\obj\Debug\StersTransport.Properties.Resources.resources
+E:\ITI 9m\FreeLance\obj\Debug\StersTransport.csproj.GenerateResource.cache
+E:\ITI 9m\FreeLance\obj\Debug\StersTransport.csproj.CoreCompileInputs.cache
+E:\ITI 9m\FreeLance\obj\Debug\StersTransport.csproj.CopyComplete
+E:\ITI 9m\FreeLance\obj\Debug\STARS.exe
+E:\ITI 9m\FreeLance\obj\Debug\STARS.pdb
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\StersTransport.csproj.AssemblyReference.cache
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\StersTransport.csproj.ResolveComReference.cache
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\Buttons\ActionButton.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\Buttons\ActionToggleButton.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\LoadingWait.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\LoginWindow.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\MainWindow.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\AdditionalSettings.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\AgentPricesWindow.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\ChangePassword.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\CodeSearchWindow.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\CodeSearchWindowSearchForDialog.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\CompanySettings.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\DBConnectionSetting.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\DBGreateWindow.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\DBGreateWindow_Advanced.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\ForgetPassword.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\IdentityTypeSelector.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\ImportExcelClientCodesData.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\InvoicePreviewWindow.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\LabelPreviewWindow.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\LabelsManagement.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\NotificationMessage.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\previewWindow.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\Send.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\SenderSummaryWindow.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\StreetPickWindow.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UIAdmin.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UIAgent.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UIBranches.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UICity.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UICountry.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UICurrency.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UIDash.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UIInvoice.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UILabel.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UIReports.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UIReports_DashBoard.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UIReports_EUReport.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UIReports_Overview.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UIReports_Report.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UISettings.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UIUser.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\ValuePicker.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\WpfMessageBox.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\App.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\EntityFramework.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\EntityFramework.SqlServer.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Assessment.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.ConnectionInfoExtended.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Diagnostics.Strace.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Dmf.Common.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Dmf.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Management.Assessment.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Management.Collector.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Management.CollectorEnum.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Management.RegisteredServers.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Management.SqlParser.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Management.Utility.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Management.UtilityEnum.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Management.XEvent.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Management.XEventDbScoped.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Management.XEventDbScopedEnum.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Management.XEventEnum.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.PolicyEnum.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.RegSvrEnum.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.ServiceBrokerEnum.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Smo.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.SmoExtended.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.SqlClrProvider.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.SqlTDiagm.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.SqlWmiManagement.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.SString.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Types.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.WmiEnum.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Newtonsoft.Json.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\ToastNotifications.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\ToastNotifications.Messages.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\zxing.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\zxing.presentation.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\EntityFramework.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\EntityFramework.SqlServer.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.ConnectionInfo.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.ConnectionInfoExtended.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Dmf.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Dmf.Common.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Management.Collector.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Management.CollectorEnum.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Management.RegisteredServers.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Management.Utility.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Management.UtilityEnum.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Management.XEvent.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Management.XEventDbScoped.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Management.XEventDbScopedEnum.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Management.XEventEnum.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.PolicyEnum.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.RegSvrEnum.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.ServiceBrokerEnum.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Smo.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.SmoExtended.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.SqlEnum.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.SqlWmiManagement.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.Types.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Microsoft.SqlServer.WmiEnum.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\Newtonsoft.Json.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\zxing.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\zxing.presentation.xml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\App.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\LoadingWait.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\LoginWindow.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\MainWindow.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\Buttons\ActionButtonBlue.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\Buttons\ActionButtonDarkPink.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\Buttons\ActionButtonGreen.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\Buttons\ActionButtonOrange.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\Buttons\ActionButtonPink.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\Buttons\ActionButtonPurple.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\Buttons\CancelButton.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\Buttons\DashBoardButtonBlue.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\Buttons\DashBoardButtongreen.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\Buttons\DashBoardButtonpink.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\Buttons\DashBoardButtonpurple.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\Buttons\EmptyButton.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\Buttons\toggle1.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\Comboboxes\StandardCombobox.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\Comboboxes\StandardCombobox2.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\Comboboxes\StandardComboboxUpperPart.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\Datagrid\DatagridStyle.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\Datagrid\DatagridStyle2.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\DatePickers\DatePicker1.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\DatePickers\DatePicker1UpperPart.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\DatePickers\DatePicker2.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\ListBox\ListBoxItemStyle.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\ProgressBar\ProgressBar1.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\Slider\Slider1.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\TextBoxes\PasswordBox1.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\TextBoxes\StandardTextBox2.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\TextBoxes\StandardTextboxUpper.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ResourceDictionaries\TextBoxes\StandardTextBoxxaml.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\AdditionalSettings.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\AgentPricesWindow.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\ChangePassword.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\CodeSearchWindow.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\CodeSearchWindowSearchForDialog.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\CompanySettings.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\DBConnectionSetting.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\DBGreateWindow.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\DBGreateWindow_Advanced.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\ForgetPassword.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\IdentityTypeSelector.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\ImportExcelClientCodesData.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\InvoicePreviewWindow.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\LabelPreviewWindow.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\LabelsManagement.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\NotificationMessage.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\previewWindow.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\Send.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\SenderSummaryWindow.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\StreetPickWindow.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UIAdmin.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UIAgent.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UIBranches.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UICity.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UICountry.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UICurrency.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UIDash.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UIInvoice.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UILabel.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UIReports.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UIReports_DashBoard.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UIReports_EUReport.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UIReports_Overview.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UIReports_Report.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UISettings.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\UIUser.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\ValuePicker.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\WpfMessageBox.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\StersTransport.Properties.Resources.resources
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\StersTransport.csproj.GenerateResource.cache
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\StersTransport.csproj.CoreCompileInputs.cache
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\StersTransport.csproj.CopyComplete
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\NewPostInvoice.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\NewPostInvoice.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\StersTransport.Properties.Resources.ku-KU.resources
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\Post-Label-A5-Size.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\STERS_MarkupCompile.cache
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\STERS_MarkupCompile.lref
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\STERS.exe.config
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\STERS.exe
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\STERS.pdb
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\Post-Label-A5-Size.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\STERS.g.resources
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\STERS.exe
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\STERS.pdb

@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace StersTransport.UI
 {
 
-    public partial class Post_Label_A5_Size : Window
+    public partial class Post_Label_A5_Size :Page
     {
         private StersDB db;
 

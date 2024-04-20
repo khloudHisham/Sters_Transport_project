@@ -57,12 +57,12 @@ namespace StersTransport.UI
                     //codeLabel_PRSN.generateDocument(flowdocument, code);
 
                     CodeLabelPost_PRSN_2 codeLabel_PRSN_2 = new CodeLabelPost_PRSN_2();
-                    codeLabel_PRSN_2.generateDocument(flowdocument, code);
+                    codeLabel_PRSN_2.generateDocument(label, code);
                 }
                 else
                 {
-                    CodeLabelOffice_PRSN codeLabelOffice_PRSN = new CodeLabelOffice_PRSN();
-                    codeLabelOffice_PRSN.generateDocument(flowdocument, code);
+                    //CodeLabelOffice_PRSN codeLabelOffice_PRSN = new CodeLabelOffice_PRSN();
+                    //codeLabelOffice_PRSN.generateDocument(flowdocument, code);
                 }
             }
             catch (Exception ex) 
@@ -73,22 +73,46 @@ namespace StersTransport.UI
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                PrintDialog printDialog = new PrintDialog();
-                if (printDialog.ShowDialog() == false) 
-                    return; 
+            //try
+            //{
+            //    PrintDialog printDialog = new PrintDialog();
+            //    if (printDialog.ShowDialog() == false) 
+            //        return; 
 
-                double w = printDialog.PrintableAreaWidth;
-                double h = printDialog.PrintableAreaHeight;
+            //    double w = printDialog.PrintableAreaWidth;
+            //    double h = printDialog.PrintableAreaHeight;
 
-                Helpers.PrintHelper printHelper = new Helpers.PrintHelper();
-                printHelper.showpreview(w, h, flowdocument);
-            }
-            catch (Exception ex)
-            { 
-                WpfMessageBox.Show("", ex.Message, MessageBoxButton.OK, WpfMessageBox.MessageBoxImage.Error); 
-            } 
+            //    Helpers.PrintHelper printHelper = new Helpers.PrintHelper();
+            //    printHelper.showpreview(w, h, flowdocument);
+            //}
+            //catch (Exception ex)
+            //{ 
+            //    WpfMessageBox.Show("", ex.Message, MessageBoxButton.OK, WpfMessageBox.MessageBoxImage.Error); 
+
+            //} 
+            
+                PrintDialog dialog = new PrintDialog();
+                dialog.PrintTicket.PageMediaSize = new PageMediaSize(PageMediaSizeName.ISOA5);
+
+                // Set printer page orientation to portrait
+                dialog.PrintTicket.PageOrientation = PageOrientation.Portrait;
+
+                if (dialog.ShowDialog() == true)
+                {
+                    double a5Width = dialog.PrintableAreaWidth;
+                    double a5Height = dialog.PrintableAreaHeight;
+
+                    // Calculate the scale factor to fit the content within the A5 dimensions
+                    double scaleX = a5Width / label.ActualWidth;
+                    double scaleY = a5Height / label.ActualHeight;
+                    double scale = Math.Min(scaleX, scaleY); // Choose the smaller scale factor to fit within both dimensions
+
+                    // Apply the scale transform to the visual content
+                    label.LayoutTransform = new ScaleTransform(scale, scale);
+                    dialog.PrintVisual(label, "");
+                }
+            
+
         }
     }
 }

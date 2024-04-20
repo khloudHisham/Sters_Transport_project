@@ -905,7 +905,7 @@ namespace StersTransport.Presentation
             tablcell = new TableCell() { LineHeight = lineheight, BorderBrush = BorderColor,BorderThickness=new Thickness (1),Background=Orangecolor2,ColumnSpan=2 };
             tablcell.Blocks.Add(blockUI);
             Row.Cells.Add(tablcell);
-
+             
             //agent office value
             currentLabelStr = string.Format("{0} - {1}", agent.AgentName, countryAgent.CountryName);
             grid = new Grid(); blockUI = new BlockUIContainer(grid);
