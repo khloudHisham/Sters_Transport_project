@@ -238,6 +238,7 @@
     <Compile Include="Presentation\CodeInvoice4PRSN.cs" />
     <Compile Include="Presentation\CodeInvoice_PRSN.cs" />
     <Compile Include="Presentation\CodeLabelOffice_PRSN.cs" />
+    <Compile Include="Presentation\CodeLabelOffice_PRSN_2.cs" />
     <Compile Include="Presentation\CodeLabelPost_PRSN.cs" />
     <Compile Include="Presentation\CodeLabelPost_PRSN_2.cs" />
     <Compile Include="Presentation\CodeLabel_PRSN.cs" />
@@ -307,8 +308,8 @@
     <Compile Include="UI\NotificationMessage.xaml.cs">
       <DependentUpon>NotificationMessage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\officeLabelPreviewWindow.xaml.cs">
-      <DependentUpon>officeLabelPreviewWindow.xaml</DependentUpon>
+    <Compile Include="UI\Office-Label-A6-Size.xaml.cs">
+      <DependentUpon>Office-Label-A6-Size.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Post-Label-A5-Size.xaml.cs">
       <DependentUpon>Post-Label-A5-Size.xaml</DependentUpon>
@@ -598,7 +599,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\officeLabelPreviewWindow.xaml">
+    <Page Include="UI\Office-Label-A6-Size.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -836,6 +837,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="KurdishNote.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Office-Label-A6-Images\nav.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Office-Label-A6-Images\Germany.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Office-Label-A6-Images\big-nav.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.SqlServer.SqlManagementObjects.150.18208.0\build\net45\Microsoft.SqlServer.SqlManagementObjects.targets" Condition="Exists('packages\Microsoft.SqlServer.SqlManagementObjects.150.18208.0\build\net45\Microsoft.SqlServer.SqlManagementObjects.targets')" />

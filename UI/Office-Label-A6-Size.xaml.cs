@@ -10,16 +10,14 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace StersTransport.UI
 {
-    /// <summary>
-    /// Interaction logic for officeLabelPreviewWindow.xaml
-    /// </summary>
-    public partial class officeLabelPreviewWindow : Window
+    public partial class Office_Label_A6_Size : Window
     {
-        public officeLabelPreviewWindow()
+        public Office_Label_A6_Size()
         {
             InitializeComponent();
         }

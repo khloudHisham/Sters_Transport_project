@@ -28,6 +28,7 @@ namespace StersTransport.UI
     {
         public string Code { get; set; }
         public bool IsPOST { get; set; }
+
         public LabelPreviewWindow()
         {
             InitializeComponent();
@@ -43,7 +44,6 @@ namespace StersTransport.UI
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
             GenerateDocument(Code,IsPOST);
         }
 
@@ -61,8 +61,9 @@ namespace StersTransport.UI
                 }
                 else
                 {
-                    //CodeLabelOffice_PRSN codeLabelOffice_PRSN = new CodeLabelOffice_PRSN();
+                    CodeLabelOffice_PRSN codeLabelOffice_PRSN = new CodeLabelOffice_PRSN();
                     //codeLabelOffice_PRSN.generateDocument(flowdocument, code);
+
                 }
             }
             catch (Exception ex) 

@@ -55,16 +55,16 @@ namespace StersTransport.Presentation
             List<Agent> allbranches = agentDa.GetAgents();
             Branches = allbranches.Where(x => x.IsLocalCompanyBranch == true).ToList();
 
-            long _CountryAgentId = ClientCode.CountryAgentId.HasValue ? (long)ClientCode.CountryAgentId : 0;
+            long _CountryAgentId = ClientCode.CountryAgentId ?? 0;
             countryAgent = countryDa.GetCountry(_CountryAgentId);
 
-            long _CountryPostId = ClientCode.CountryPostId.HasValue ? (long)ClientCode.CountryPostId : 0;
+            long _CountryPostId = ClientCode.CountryPostId ?? 0;
             countryPost = countryDa.GetCountry(_CountryPostId);
 
-            long _agentID = ClientCode.AgentId.HasValue ? (long)ClientCode.AgentId : 0;
+            long _agentID = ClientCode.AgentId ?? 0;
             agent = agentDa.GetAgent(_agentID);
 
-            long _branchID = ClientCode.BranchId.HasValue ? (long)ClientCode.BranchId : 0;
+            long _branchID = ClientCode.BranchId ?? 0;
 
             branch = agentDa.GetAgent(_branchID);
 
@@ -126,7 +126,7 @@ namespace StersTransport.Presentation
             string GoodsDesc = ClientCode.Goods_Description ?? "";
             Label_A5.goodsDescription_txt.Text = GoodsDesc;
 
-            string countryName = Label_A5.countryName_txt.Text;
+            //string countryName = Label_A5.countryName_txt.Text;
 
             try
             {
@@ -134,7 +134,6 @@ namespace StersTransport.Presentation
                 bitmapImage.BeginInit();
                 bitmapImage.StreamSource = new System.IO.MemoryStream(countryPost.ImgForPostLabel);
                 bitmapImage.EndInit();
-                // freeze
                 Label_A5.countryImage_img.Source = bitmapImage;
             }
             catch (Exception ex)
