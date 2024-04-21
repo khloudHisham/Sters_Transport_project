@@ -21,6 +21,7 @@ using System.Reflection;
 using StersTransport.Helpers;
 using StersTransport.GlobalData;
 using StersTransport.Enumerations;
+//using Microsoft.Office.Interop.Excel;
 
 namespace StersTransport.UI
 {
@@ -99,6 +100,29 @@ namespace StersTransport.UI
             }
         }
 
+        private ObservableCollection<string> _languages;
+        public ObservableCollection<string> languages
+        {
+            get { return _languages; }
+            set
+            {
+                _languages = value;
+                OnPropertyChanged(new PropertyChangedEventArgs("languages"));
+            }
+        }
+
+        //private ObservableCollection<Object> _languages;
+        //public ObservableCollection<Object> languages
+        //{
+        //    get { return _languages; }
+        //    set
+        //    {
+        //        _languages = value;
+        //        OnPropertyChanged(new PropertyChangedEventArgs("languages"));
+        //    }
+        //}
+
+
         CountryDa countryDa = new CountryDa();
         CityDa cityDa = new CityDa();
         AgentDa AgentDa = new AgentDa();
@@ -110,6 +134,7 @@ namespace StersTransport.UI
         bool countryupdated = false;
         bool cityupdated = false;
         bool currencyupdated = false;
+        bool languageupdated = false;
 
         DatabaseOperationHelper dbOperationhelper = new DatabaseOperationHelper();
         Helpers.NotificationHelper notificationHelper = new Helpers.NotificationHelper();
@@ -135,6 +160,16 @@ namespace StersTransport.UI
             cities = new ObservableCollection<City>(cityDa.GetCities());
 
             currencies = new ObservableCollection<Currency>(currencyDa.GetCurrencies());
+
+            languages = new ObservableCollection<string>() { "Ar", "Ku", "En" };
+
+            //languages = new ObservableCollection<object>()
+            //{
+            //        new { Id = "Ar", Name = "Arabic" },
+            //        new { Id = "Ku", Name = "Kurdish" },
+            //        new { Id = "En", Name = "English" }
+            //};
+
             refreshagents();
         }
 
@@ -449,6 +484,54 @@ namespace StersTransport.UI
                 long ID = (long)drv["Id"];
                 LoadAgent(ID);
             }
+        }
+
+        private void invoicelang_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            //if (languageupdated)
+            //{
+            // cities = new ObservableCollection<City>();
+            //if (selectedcountry != null)
+            //{
+            //cities = new ObservableCollection<City>(cityDa.GetCities(selectedcountry.Id));
+
+            //// set the currency .. (to be tested...)
+            //agent.CurrencyId = selectedcountry.CurrencyId;
+
+
+            //}
+
+            //languageupdated = false;
+            // }
+            //var selected_currency = (sender as ComboBox).SelectedItem as String;
+            //if (selected_currency != null)
+            //    agent.setlanguageflags();
+
+        }
+
+        private void invoicelang_SourceUpdated(object sender, DataTransferEventArgs e)
+        {
+            if (!dataisloading)
+            {
+                languageupdated = true;
+            }
+
+        }
+
+        private void invoicelang_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void invoicelang_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            //if (dataisloading)
+            //{
+                var selected_currency = (sender as ComboBox).SelectedItem as String;
+                if (selected_currency != null)
+                    agent.setlanguageflags();
+            //}
+
         }
     }
 }

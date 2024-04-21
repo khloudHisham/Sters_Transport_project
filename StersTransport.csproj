@@ -149,6 +149,7 @@
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Printing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -175,6 +176,12 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WPFLocalizeExtension, Version=3.10.0.0, Culture=neutral, PublicKeyToken=c726e0262981a1eb, processorArchitecture=MSIL">
+      <HintPath>packages\WPFLocalizeExtension.3.10.0\lib\net452\WPFLocalizeExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="XAMLMarkupExtensions, Version=2.1.3.0, Culture=neutral, PublicKeyToken=c726e0262981a1eb, processorArchitecture=MSIL">
+      <HintPath>packages\XAMLMarkupExtensions.2.1.3\lib\net48\XAMLMarkupExtensions.dll</HintPath>
+    </Reference>
     <Reference Include="zxing, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
       <HintPath>packages\ZXing.Net.0.16.6\lib\net45\zxing.dll</HintPath>
     </Reference>
@@ -235,12 +242,20 @@
     <Compile Include="PresentationModels\CountrySummary.cs" />
     <Compile Include="Presentation\CodeInvoice2PRSN.cs" />
     <Compile Include="Presentation\CodeInvoice3PRSN.cs" />
-    <Compile Include="Presentation\CodeInvoice4PRSN.cs" />
+    <Compile Include="Presentation\CodeInvoiceOffice_4PRSN.cs" />
+    <Compile Include="Presentation\CodeInvoicePost_4PRSN.cs" />
+    <Compile Include="Presentation\CodeInvoiceOffice_4PRSNEnglish.cs" />
+    <Compile Include="Presentation\CodeInvoicePost_4PRSNEnglish.cs" />
     <Compile Include="Presentation\CodeInvoice_PRSN.cs" />
     <Compile Include="Presentation\CodeLabelOffice_PRSN.cs" />
     <Compile Include="Presentation\CodeLabelPost_PRSN.cs" />
     <Compile Include="Presentation\CodeLabelPost_PRSN_2.cs" />
     <Compile Include="Presentation\CodeLabel_PRSN.cs" />
+    <Compile Include="Properties\Resources.ku.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ku.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.ku-KU.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -279,6 +294,12 @@
     </Compile>
     <Compile Include="UI\DBGreateWindow_Advanced.xaml.cs">
       <DependentUpon>DBGreateWindow_Advanced.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EnglishOfficeInvoice.xaml.cs">
+      <DependentUpon>EnglishOfficeInvoice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EnglishPostInvoice.xaml.cs">
+      <DependentUpon>EnglishPostInvoice.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\ForgetPassword.xaml.cs">
       <DependentUpon>ForgetPassword.xaml</DependentUpon>
@@ -559,6 +580,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UI\EnglishOfficeInvoice.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\EnglishPostInvoice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\ForgetPassword.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -710,6 +739,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Properties\Resources.ku.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ku.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.ku-KU.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.ku-KU.Designer.cs</LastGenOutput>
@@ -730,6 +763,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AttachedProperties\" />
+    <Folder Include="Dictionary\" />
     <Folder Include="ProgramSettings\" />
   </ItemGroup>
   <ItemGroup>
@@ -829,6 +863,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="KurdishNote.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\EnglishNote.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.SqlServer.SqlManagementObjects.150.18208.0\build\net45\Microsoft.SqlServer.SqlManagementObjects.targets" Condition="Exists('packages\Microsoft.SqlServer.SqlManagementObjects.150.18208.0\build\net45\Microsoft.SqlServer.SqlManagementObjects.targets')" />

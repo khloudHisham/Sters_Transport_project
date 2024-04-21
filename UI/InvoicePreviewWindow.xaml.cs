@@ -40,6 +40,7 @@ namespace StersTransport.UI
 
         public string Code { get; set; }
         public bool IsPost {  get; set;}
+        public string Lang { get; set; }
         public InvoicePreviewWindow()
         {
             InitializeComponent();
@@ -51,11 +52,12 @@ namespace StersTransport.UI
 
         }
 
-        public InvoicePreviewWindow(string _code,bool ispost)
+        public InvoicePreviewWindow(string _code,bool _ispost,string lang )
         {
             InitializeComponent();
             Code = _code;
-
+            IsPost = _ispost;
+            Lang = lang;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -86,7 +88,8 @@ namespace StersTransport.UI
             try
             {
                  //CodeInvoice3PRSN codeInvoice_PRSN = new CodeInvoice3PRSN();
-                 CodeInvoice4PRSN codeInvoice_PRSN = new CodeInvoice4PRSN();
+                 //CodeInvoice4PRSN codeInvoice_PRSN = new CodeInvoice4PRSN();
+
 
                 // CodeInvoice2PRSN codeInvoice_PRSN = new CodeInvoice2PRSN();
                 //CodeInvoice_PRSN codeInvoice_PRSN = new CodeInvoice_PRSN();
@@ -97,7 +100,36 @@ namespace StersTransport.UI
 
                 // codeInvoice_PRSN.generateDocument(flowdocument, code, lh, fs); // we can pass as reference too .. }
 
-                codeInvoice_PRSN.GenerateDocument(frame, code);
+                if (IsPost)
+                {
+                    if(Lang != "En" || Lang == null)
+                    {
+                        CodeInvoicePost_4PRSN codeInvoice_PRSN = new CodeInvoicePost_4PRSN();
+                        codeInvoice_PRSN.GenerateDocument(frame, code);
+                    }
+                    else
+                    {
+                        CodeInvoicePost_4PRSNEnglish codeInvoice_PRSN = new CodeInvoicePost_4PRSNEnglish();
+                        codeInvoice_PRSN.GenerateDocument(frame, code);
+                    }
+                    
+
+                }
+                else
+                {
+                    if (Lang != "En" || Lang == null)
+                    {
+                        CodeInvoiceOffice_4PRSN codeInvoice_PRSN = new CodeInvoiceOffice_4PRSN();
+                        codeInvoice_PRSN.GenerateDocument(frame, code);
+                    }
+                    else
+                    {
+                        CodeInvoiceOffice_4PRSNEnglish codeInvoice_PRSN = new CodeInvoiceOffice_4PRSNEnglish();
+                        codeInvoice_PRSN.GenerateDocument(frame, code);
+                    }
+                }
+
+
 
             }
             catch (Exception ex) { System.Windows.MessageBox.Show(ex.ToString()); }

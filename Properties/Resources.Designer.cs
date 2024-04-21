@@ -95,5 +95,14 @@ namespace StersTransport.Properties {
                 return ResourceManager.GetStream("Notify", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to شركـة ستيــرس.
+        /// </summary>
+        internal static string StersCompany {
+            get {
+                return ResourceManager.GetString("StersCompany", resourceCulture);
+            }
+        }
     }
 }

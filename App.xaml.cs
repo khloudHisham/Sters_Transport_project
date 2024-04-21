@@ -17,6 +17,8 @@ namespace StersTransport
         {
             System.Windows.FrameworkCompatibilityPreferences
             .KeepTextBoxDisplaySynchronizedWithTextProperty = false;
+
+          // System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ku");
         }
     }
    

@@ -17,8 +17,8 @@
         <Converters:BooleanOrConverter x:Key="booleanOrConverter">
 
         </Converters:BooleanOrConverter>
-        
-        
+
+
         <ControlTemplate x:Key="errorTemplateSilverlightStyle">
             <StackPanel Orientation="Horizontal">
                 <Border BorderThickness="1" BorderBrush="#FFdc000c" CornerRadius="0.7"
@@ -131,8 +131,8 @@
            SelectionChanged="grd_SelectionChanged"
             PreviewKeyDown="grd_PreviewKeyDown"
             >
-             
-               
+
+
         </DataGrid>
 
         <Grid
@@ -170,7 +170,7 @@
             <Grid.Resources>
                 <Style TargetType="TextBox">
                     <Setter Property="Template" Value="{DynamicResource ResourceKey=standardTextbox2}">
-                      
+
                     </Setter>
                     <Setter Property="FontWeight" Value="Bold"></Setter>
                     <Setter  Property="VerticalContentAlignment" Value="Center"></Setter>
@@ -181,7 +181,7 @@
                     <Setter Property="Foreground" Value="#404040"></Setter>
                     <Setter Property="FontWeight" Value="Bold"></Setter>
                 </Style>
-                 
+
             </Grid.Resources>
 
             <Label>Agent Name</Label>
@@ -201,8 +201,8 @@
 
             <Label Grid.Column="1" Grid.Row="9">Address AR</Label>
             <TextBox  Grid.Column="1" Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}" Text="{Binding AddressAR}" Grid.Row="10"></TextBox>
-            
-            
+
+
             <Border Margin="5,0,5,0" VerticalAlignment="top" BorderBrush="#808080" BorderThickness="0,0,0,2" Grid.ColumnSpan="2" Grid.Row="11"></Border>
 
             <Label Grid.Column="1">Country</Label>
@@ -254,15 +254,15 @@
             <TextBox   Validation.ErrorTemplate="{StaticResource ResourceKey=errorTemplateSilverlightStyle}" 
                        Text="{Binding YearPrefix}"  Grid.Row="12" Grid.Column="1"></TextBox>
 
-           
+
 
             <Label Grid.Row="14" Grid.Column="1">Code Style</Label>
             <TextBox 
                  IsReadOnly="True"
                 Text="{Binding codeStyle}" Grid.Row="15" Grid.Column="1"></TextBox>
 
-            
-           
+
+
             <Border Margin="5,0,5,0" VerticalAlignment="Center" BorderBrush="#808080" BorderThickness="0,0,0,2" Grid.ColumnSpan="2" Grid.Row="16"></Border>
             <Label Grid.Row="17" Grid.Column="1">Currency</Label>
             <ComboBox 
@@ -288,21 +288,14 @@
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <StackPanel Grid.ColumnSpan="2"   VerticalAlignment="Center" Orientation="Horizontal" >
-
-                    <RadioButton FontWeight="Bold"
-                    IsChecked="{Binding isarabiclanguage}"
-                    GroupName="Group1"
-                      >Arabic Language</RadioButton>
-
-                    <RadioButton FontWeight="Bold"
-                    IsChecked="{Binding iskurdishlanguage}"
-                    GroupName="Group1"
-                       >Kurdish Language</RadioButton>
-
-
-                </StackPanel>
+                <StackPanel Grid.ColumnSpan="2"   VerticalAlignment="Center" Orientation="Horizontal" />
                 <CheckBox FontWeight="Bold" Grid.Column="2" VerticalAlignment="Center" IsChecked="{Binding IsLocalCompanyBranch}">Is Main Company Branch</CheckBox>
+                <ComboBox x:Name="invoicelang" 
+                    IsEditable="True"
+                    ItemsSource="{Binding ElementName=uiagent, Path=languages}"
+                    SelectedValue="{Binding InvoiceLanguage, Mode=TwoWay}"
+                    Style="{DynamicResource ResourceKey=StandardCombobox2}" Margin="80,0,5,1" SelectionChanged="invoicelang_SelectionChanged_1" Grid.ColumnSpan="2"/>
+                <Label Content="Language" Margin="5,3,17,1"/>
             </Grid>
 
             <Grid Grid.Row="21" Grid.ColumnSpan="2">

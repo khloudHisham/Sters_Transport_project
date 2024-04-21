@@ -944,9 +944,10 @@ namespace StersTransport.UI
             catch (Exception ex) { WpfMessageBox.Show("", ex.Message, MessageBoxButton.OK, (WpfMessageBox.MessageBoxImage)MessageBoxImage.Error); }
             */
             bool ispost = ClientCode.Have_Local_Post.HasValue ? (bool)ClientCode.Have_Local_Post : false;
-
-
-            InvoicePreviewWindow invoicePreviewWindow = new InvoicePreviewWindow(ClientCode.Code,ispost);
+            long _agentID = ClientCode.AgentId.HasValue ? (long)ClientCode.AgentId : 0;
+            var  agent = agentDa.GetAgent(_agentID);
+            var lang = agent.InvoiceLanguage;
+            InvoicePreviewWindow invoicePreviewWindow = new InvoicePreviewWindow(ClientCode.Code,ispost,lang);
             invoicePreviewWindow.ShowDialog();
             //new_invoice invoice = new new_invoice();
             //invoice.ShowDialog();

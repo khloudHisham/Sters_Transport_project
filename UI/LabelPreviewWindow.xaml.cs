@@ -53,14 +53,16 @@ namespace StersTransport.UI
             {
                 if (ispost)
                 {
-                    //CodeLabelPost_PRSN codeLabel_PRSN = new CodeLabelPost_PRSN();
-                    //codeLabel_PRSN.generateDocument(flowdocument, code);
+                    CodeLabelPost_PRSN codeLabel_PRSN = new CodeLabelPost_PRSN();
+                    codeLabel_PRSN.generateDocument(flowdocument, code);
 
-                    CodeLabelPost_PRSN_2 codeLabel_PRSN_2 = new CodeLabelPost_PRSN_2();
-                    codeLabel_PRSN_2.generateDocument(label, code);
+                    //    CodeLabelPost_PRSN_2 codeLabel_PRSN_2 = new CodeLabelPost_PRSN_2();
+                    //    codeLabel_PRSN_2.generateDocument(label, code);
                 }
                 else
                 {
+                    CodeLabelOffice_PRSN codeLabel_PRSN = new CodeLabelOffice_PRSN();
+                    codeLabel_PRSN.generateDocument(flowdocument, code);
                     //CodeLabelOffice_PRSN codeLabelOffice_PRSN = new CodeLabelOffice_PRSN();
                     //codeLabelOffice_PRSN.generateDocument(flowdocument, code);
                 }
@@ -91,26 +93,26 @@ namespace StersTransport.UI
 
             //} 
             
-                PrintDialog dialog = new PrintDialog();
-                dialog.PrintTicket.PageMediaSize = new PageMediaSize(PageMediaSizeName.ISOA5);
+                //PrintDialog dialog = new PrintDialog();
+                //dialog.PrintTicket.PageMediaSize = new PageMediaSize(PageMediaSizeName.ISOA5);
 
-                // Set printer page orientation to portrait
-                dialog.PrintTicket.PageOrientation = PageOrientation.Portrait;
+                //// Set printer page orientation to portrait
+                //dialog.PrintTicket.PageOrientation = PageOrientation.Portrait;
 
-                if (dialog.ShowDialog() == true)
-                {
-                    double a5Width = dialog.PrintableAreaWidth;
-                    double a5Height = dialog.PrintableAreaHeight;
+                //if (dialog.ShowDialog() == true)
+                //{
+                //    double a5Width = dialog.PrintableAreaWidth;
+                //    double a5Height = dialog.PrintableAreaHeight;
 
-                    // Calculate the scale factor to fit the content within the A5 dimensions
-                    double scaleX = a5Width / label.ActualWidth;
-                    double scaleY = a5Height / label.ActualHeight;
-                    double scale = Math.Min(scaleX, scaleY); // Choose the smaller scale factor to fit within both dimensions
+                //    // Calculate the scale factor to fit the content within the A5 dimensions
+                //    double scaleX = a5Width / label.ActualWidth;
+                //    double scaleY = a5Height / label.ActualHeight;
+                //    double scale = Math.Min(scaleX, scaleY); // Choose the smaller scale factor to fit within both dimensions
 
-                    // Apply the scale transform to the visual content
-                    label.LayoutTransform = new ScaleTransform(scale, scale);
-                    dialog.PrintVisual(label, "");
-                }
+                //    // Apply the scale transform to the visual content
+                //    label.LayoutTransform = new ScaleTransform(scale, scale);
+                //    dialog.PrintVisual(label, "");
+                //}
             
 
         }

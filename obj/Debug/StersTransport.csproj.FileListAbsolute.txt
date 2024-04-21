@@ -815,7 +815,6 @@ E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\StersTransport.csproj.CoreCompileI
 E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\StersTransport.csproj.CopyComplete
 E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\NewPostInvoice.g.cs
 E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\NewPostInvoice.baml
-E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\StersTransport.Properties.Resources.ku-KU.resources
 E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\Post-Label-A5-Size.g.cs
 E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\STERS_MarkupCompile.cache
 E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\STERS_MarkupCompile.lref
@@ -826,3 +825,19 @@ E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\Post-Label-A5-Size.baml
 E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\STERS.g.resources
 E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\STERS.exe
 E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\STERS.pdb
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\WPFLocalizeExtension.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\XAMLMarkupExtensions.dll
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\WPFLocalizeExtension.pdb
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\WPFLocalizeExtension.xml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\XAMLMarkupExtensions.pdb
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\XAMLMarkupExtensions.xml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\NewOfficeInvoice.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\NewOfficeInvoice.baml
+E:\ITI 9m\FreeLance\Sters_Transport\bin\Debug\ku\STERS.resources.dll
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\StersTransport.Properties.Resources.ku-KU.resources
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\StersTransport.Properties.Resources.ku.resources
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\ku\STERS.resources.dll
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\EnglishPostInvoice.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\EnglishPostInvoice.baml
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\EnglishOfficeInvoice.g.cs
+E:\ITI 9m\FreeLance\Sters_Transport\obj\Debug\UI\EnglishOfficeInvoice.baml

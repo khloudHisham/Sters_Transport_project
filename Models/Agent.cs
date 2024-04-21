@@ -684,8 +684,6 @@ namespace StersTransport.Models
             {
                 _InvoiceLanguage = value;
 
-
-
                 OnPropertyChanged(new PropertyChangedEventArgs("InvoiceLanguage"));
             }
         }
@@ -716,6 +714,18 @@ namespace StersTransport.Models
             }
         }
 
+        private bool _isenglishlanguage;
+        [NotMapped]
+        public bool isenglishlanguage
+        {
+            get { return _isenglishlanguage; }
+            set
+            {
+                _iskurdishlanguage = value;
+                OnPropertyChanged(new PropertyChangedEventArgs("isenglishlanguage"));
+            }
+        }
+
 
 
         // this is not the only way (and not the best) for doing this (we can do it in converters..later)
@@ -726,6 +736,10 @@ namespace StersTransport.Models
             { InvoiceLanguage = "Ar"; }
             else if (iskurdishlanguage)
             { InvoiceLanguage = "Ku"; }
+            else if (isenglishlanguage)
+            {
+               InvoiceLanguage = "En";
+            }
         }
 
         public void setlanguageflags() // on demand
@@ -734,14 +748,22 @@ namespace StersTransport.Models
             {
                 case "Ar":
                     isarabiclanguage = true;
+                    iskurdishlanguage = false;
+                    isenglishlanguage = false;
                     break;
                 case "Ku":
                     iskurdishlanguage = true;
+                    isarabiclanguage = false;
+                    isenglishlanguage = false;
+                    break;
+                case "En":
+                    isenglishlanguage = true;
+                    iskurdishlanguage = false;
+                    isarabiclanguage = false;
                     break;
                 default:
                     break;
             }
-
         }
 
 
