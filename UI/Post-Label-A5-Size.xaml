@@ -20,7 +20,7 @@
                 <Image Source="Post-Label-A5-Images/De Steiger 98 1351 A.png" Margin="67 35 0 0" Width="493" Height="330" HorizontalAlignment="Left"></Image>
             </StackPanel>
             <Image Source="Post-Label-A5-Images/Sters Logo N-BG.png" Margin="-39 78 0 0"  Width="338" Height="280"/>
-            <Image Source="Post-Label-A5-Images/Sters QR.png" Margin="31 178 0 0" Width="362" Height="302" HorizontalAlignment="Left"></Image>
+            <Image Source="Post-Label-A5-Images/Sters QR.png" Margin="31,78,0,0" Width="362" Height="280"/>
             <StackPanel>
                 <Image Source="Post-Label-A5-Images/STERS TRANSPORT.png" Margin="35 68 64 0" Width="530" Height="41" HorizontalAlignment="Left"></Image>
                 <Image Source="Post-Label-A5-Images/Sulemany _  0750 815.png" Margin="36 53 81 18" Width="512" Height="338" HorizontalAlignment="Left"></Image>
@@ -54,17 +54,11 @@
                             BorderThickness="1">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock 
-                                Text="From"
-                                FontSize="42"
+                                Text="From :"
+                                FontSize="48"
                                 Margin="20 0 0 0"
                                 VerticalAlignment="Center"
-                                HorizontalAlignment="Left"/>
-                            <TextBlock 
-                                Text=":"
-                                FontSize="42"
-                                Margin="295 0 0 0"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Left"/>
+                                HorizontalAlignment="Left" FontWeight="Bold"/>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="0" 
@@ -73,11 +67,8 @@
                             BorderBrush="Gray"
                             BorderThickness="1">
                         <TextBlock 
-                            Text="" 
                             x:Name="from_txt"
-                            FontSize="42" 
-                            VerticalAlignment="Center" 
-                            HorizontalAlignment="Left"/>
+                            FontSize="48" Margin="13,0,32,0" FontWeight="Bold" VerticalAlignment="Center"/>
                     </Border>
 
 
@@ -86,17 +77,11 @@
                             BorderThickness="1">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock 
-                                Text="Sender Name"
-                                FontSize="42"
+                                Text="Sender Name :"
+                                FontSize="48"
                                 Margin="20 0 0 0"
                                 VerticalAlignment="Center"
-                                HorizontalAlignment="Left"/>
-                            <TextBlock 
-                                Text=":"
-                                FontSize="42"
-                                Margin="134 0 0 0"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Left"/>
+                                HorizontalAlignment="Left" FontWeight="Bold"/>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="1" 
@@ -107,9 +92,8 @@
                         <TextBlock 
                             Text="" 
                             x:Name="senderName_txt"
-                            FontSize="42" 
-                            VerticalAlignment="Center" 
-                            HorizontalAlignment="Left"/>
+                            FontSize="48" 
+                            VerticalAlignment="Center" Margin="13,0,0,0" FontWeight="Bold"/>
                     </Border>
 
 
@@ -118,17 +102,11 @@
                             BorderThickness="1">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock 
-                                Text="Number of Parcel"
-                                FontSize="42"
+                                Text="Number of Parcel :"
+                                FontSize="48"
                                 Margin="20 0 0 0"
                                 VerticalAlignment="Center"
-                                HorizontalAlignment="Left"/>
-                            <TextBlock 
-                                Text=":"
-                                FontSize="42"
-                                Margin="66.5 0 0 0"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Left"/>
+                                HorizontalAlignment="Left" FontWeight="Bold"/>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="2" Grid.Column="1" BorderBrush="Gray" BorderThickness="1">
@@ -144,63 +122,50 @@
                             </Grid.RowDefinitions>
 
                             <Border Grid.Row="0" Grid.Column="0" BorderBrush="Gray" BorderThickness="0">
-                                <TextBlock x:Name="myParcelQuantity_txt" Text="" FontSize="42" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <TextBlock x:Name="myParcelQuantity_txt" Text="" FontSize="48" VerticalAlignment="Center" FontWeight="Bold" Margin="13,0,0,0"/>
                             </Border>
 
 
-                            <Border Grid.Row="0" Grid.Column="1" BorderBrush="Gray" BorderThickness="0.5">
+                            <Border Grid.Row="0" Grid.Column="1" BorderBrush="Gray" BorderThickness="0.5,0,0.5,0">
                                 <TextBlock Text="Of" FontWeight="Bold" FontSize="42" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Border>
 
 
-                            <Border Grid.Row="0" Grid.Column="2" BorderBrush="Gray" BorderThickness="0.5">
-                                <TextBlock x:Name="allParcelQuantity_txt" Text="" FontSize="42" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            </Border>
-
-
-                            <Border Grid.Row="0" Grid.Column="3" BorderBrush="Gray" BorderThickness="0">
-                                <TextBlock Text="Boxes" FontWeight="Bold" FontSize="42" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <Border Grid.Row="0" Grid.Column="2" BorderBrush="Gray" Margin="13,0,10,0" Grid.ColumnSpan="2">
+                                <TextBlock x:Name="allParcelQuantity_txt" Text="" FontSize="42" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
                             </Border>
 
                         </Grid>
                     </Border>
 
 
-                    <Border Grid.Row="3" Grid.Column="0" 
+                    <Border Grid.Row="2" Grid.Column="0" 
                             BorderBrush="Gray" 
-                            BorderThickness="1">
-                        <StackPanel Orientation="Horizontal">
+                            BorderThickness="1" Grid.ColumnSpan="2" Margin="0,85,1207,0" Grid.RowSpan="2">
+                        <StackPanel Orientation="Horizontal" Margin="-1,4,1,4">
                             <TextBlock 
-                                Text="Weight Kg"
-                                FontSize="42"
+                                Text="Weight Kg :"
+                                FontSize="48"
                                 Margin="20 0 0 0"
                                 VerticalAlignment="Center"
-                                HorizontalAlignment="Left"/>
-                            <TextBlock 
-                                Text=":"
-                                FontSize="42"
-                                Margin="200 0 0 0"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Left"/>
+                                HorizontalAlignment="Left" FontWeight="Bold"/>
                         </StackPanel>
                     </Border>
-                    <Border Grid.Row="3" 
+                    <Border Grid.Row="2" 
                             Grid.Column="1"
-                            Margin="0 0 0 0"
                             BorderBrush="Gray"
-                            BorderThickness="1">
+                            BorderThickness="1" Margin="0,85,0,0" Grid.RowSpan="2">
                         <TextBlock 
                             Text="" 
                             x:Name="weight_txt" 
-                            FontSize="42" 
-                            VerticalAlignment="Center" 
-                            HorizontalAlignment="Left"/>
+                            FontSize="48" 
+                            VerticalAlignment="Center" Margin="13,0,0,0" FontWeight="Bold"/>
                     </Border>
                 </Grid>
 
                 <TextBlock Margin="98 27 0 0" Text="To :" FontSize="50" FontWeight="Bold"/>
 
-                <Grid HorizontalAlignment="Left" Margin="84 35 0 0" Width="1694" Height="582">
+                <Grid HorizontalAlignment="Left" Margin="84,15,0,0" Width="1694" Height="582">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="2.5*"/>
@@ -215,23 +180,15 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <Border Grid.Row="0" Grid.Column="0" 
+                    <Border Grid.Row="0" 
                             BorderBrush="Gray" 
                             BorderThickness="1">
-                        <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Horizontal" Margin="24,11,23,11">
                             <TextBlock 
-                                Text="Reciever Name"
-                                FontSize="42"
+                                Text="Reciever Name :"
+                                FontSize="48"
                                 FontWeight="Bold"
-                                Margin="20 0 0 0"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Left"/>
-                            <TextBlock 
-                                Text=":"
-                                FontSize="42"
-                                Margin="92 0 0 0"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Left"/>
+                                />
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="0" 
@@ -242,9 +199,8 @@
                         <TextBlock 
                             x:Name="receiverName_txt" 
                             Text="" 
-                            FontSize="42" 
-                            VerticalAlignment="Center" 
-                            HorizontalAlignment="Left"/>
+                            FontSize="48" 
+                            VerticalAlignment="Center" Margin="13,0,0,0" FontWeight="Bold"/>
                     </Border>
 
 
@@ -253,18 +209,11 @@
                             BorderThickness="1">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock
-                                FontSize="42"
+                                FontSize="48"
                                 Margin="20 0 0 0"
                                 VerticalAlignment="Center"
-                                HorizontalAlignment="Left" 
-                                FontWeight="Bold"
-                                Text="Address"/>
-                            <TextBlock 
-                                Text=":"
-                                FontSize="42"
-                                Margin="225 0 0 0"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Left"/>
+                                HorizontalAlignment="Left"
+                                Text="Address :" FontWeight="Bold"/>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="1" 
@@ -275,9 +224,9 @@
                         <TextBlock 
                             Text="" 
                             x:Name="address_txt"
-                            FontSize="42" 
+                            FontSize="48" 
                             VerticalAlignment="Center" 
-                            HorizontalAlignment="Left"/>
+                            HorizontalAlignment="Left" Padding="13,0,0,0" FontWeight="Bold"/>
                     </Border>
 
 
@@ -286,18 +235,11 @@
                             BorderThickness="1">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock 
-                                Text="Postal Code"
-                                FontWeight="Bold"
-                                FontSize="42"
+                                Text="Postal Code :"
+                                FontSize="48"
                                 Margin="20 0 0 0"
                                 VerticalAlignment="Center"
-                                HorizontalAlignment="Left"/>
-                            <TextBlock 
-                                Text=":"
-                                FontSize="42"
-                                Margin="150.5 0 0 0"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Left"/>
+                                HorizontalAlignment="Left" FontWeight="Bold"/>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="2" 
@@ -307,10 +249,9 @@
                             BorderThickness="1">
                         <TextBlock 
                             Text="" 
-                            FontSize="42" 
+                            FontSize="48" 
                             x:Name="postalCode_txt"
-                            VerticalAlignment="Center" 
-                            HorizontalAlignment="Left"/>
+                            VerticalAlignment="Center" Margin="13,0,0,0" FontWeight="Bold"/>
                     </Border>
 
 
@@ -319,16 +260,10 @@
                             BorderThickness="1">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock 
-                                Text="City Name"
+                                Text="City Name :"
                                 FontWeight="Bold"
-                                FontSize="42"
+                                FontSize="48"
                                 Margin="20 0 0 0"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Left"/>
-                            <TextBlock 
-                                Text=":"
-                                FontSize="42"
-                                Margin="187.5 0 0 0"
                                 VerticalAlignment="Center"
                                 HorizontalAlignment="Left"/>
                         </StackPanel>
@@ -341,9 +276,9 @@
                         <TextBlock 
                             Text="" 
                             x:Name="cityName_txt"
-                            FontSize="42" 
+                            FontSize="48" 
                             VerticalAlignment="Center" 
-                            HorizontalAlignment="Left"/>
+                            HorizontalAlignment="Left" Margin="13,0,0,0" FontWeight="Bold"/>
                     </Border>
 
 
@@ -352,17 +287,11 @@
                             BorderThickness="1">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock
-                                FontSize="42"
+                                FontSize="48"
                                 Margin="20 0 0 0"
                                 VerticalAlignment="Center"
                                 FontWeight="Bold"
-                                HorizontalAlignment="Left" Text="Country"/>
-                            <TextBlock 
-                                Text=":"
-                                FontSize="42"
-                                Margin="232.5 0 0 0"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Left"/>
+                                HorizontalAlignment="Left" Text="Country :"/>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="4" 
@@ -373,9 +302,8 @@
                         <TextBlock 
                             x:Name="countryName_txt"
                             Text="" 
-                            FontSize="42" 
-                            VerticalAlignment="Center" 
-                            HorizontalAlignment="Left"/>
+                            FontSize="48" 
+                            VerticalAlignment="Center" FontWeight="Bold" Margin="13,0,0,0"/>
                     </Border>
 
 
@@ -384,18 +312,11 @@
                             BorderThickness="1">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock 
-                                Text="Receiver Phone No."
-                                FontSize="38"
+                                Text="Receiver Phone No. :"
+                                FontSize="42"
                                 FontWeight="Bold"
                                 Margin="20 0 0 0"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Left"/>
-                            <TextBlock 
-                                Text=":"
-                                FontSize="42"
-                                Margin="37 0 0 0"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Left"/>
+                                VerticalAlignment="Center" Width="442"/>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="5" 
@@ -406,9 +327,9 @@
                         <TextBlock 
                             Text="" 
                             x:Name="receiverPhoneNumber_txt"
-                            FontSize="42" 
+                            FontSize="48" 
                             VerticalAlignment="Center" 
-                            HorizontalAlignment="Left"/>
+                            HorizontalAlignment="Left" Margin="13,0,0,0" FontWeight="Bold"/>
                     </Border>
 
 
@@ -417,18 +338,11 @@
                             BorderThickness="1">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock 
-                                Text="Code"
-                                FontWeight="Bold"
-                                FontSize="42"
+                                Text="Code :"
+                                FontSize="48"
                                 Margin="20 0 0 0"
                                 VerticalAlignment="Center"
-                                HorizontalAlignment="Left"/>
-                            <TextBlock 
-                                Text=":"
-                                FontSize="42"
-                                Margin="287.5 0 0 0"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Left"/>
+                                HorizontalAlignment="Left" FontWeight="Bold"/>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="6" 
@@ -436,37 +350,24 @@
                             Margin="0 0 0 0"
                             BorderBrush="Gray"
                             BorderThickness="1">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock 
-                                Text=""
+                        <Grid Margin="0,0,1108,0">
+                            <TextBlock
                                 x:Name="code_txt"
-                                FontWeight="Bold"
-                                FontSize="50" 
-                                VerticalAlignment="Center" 
-                                HorizontalAlignment="Left"/>
-
-                            <TextBlock 
-                                Margin="555 0 0 0"
-                                Text="ALL PAID" 
-                                Background="Green"
-                                FontWeight="Bold"
-                                x:Name="isPaid_txt"
-                                FontSize="50"                                
-                                VerticalAlignment="Center" 
-                                HorizontalAlignment="Right"/>
-
-                        </StackPanel>
+                                FontSize="85" 
+                                VerticalAlignment="Center" Margin="13,0,-567,0" FontWeight="Bold"/>
+                            <TextBox x:Name="isPaid_txt" TextWrapping="Wrap" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" FlowDirection="RightToLeft" Margin="750,0,-1108,0" FontSize="60" FontWeight="Bold"/>
+                        </Grid>
                     </Border>
                 </Grid>
             </StackPanel>
 
-            <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center">
+            <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="1" VerticalAlignment="Top" Margin="10,15,-10,0" Height="946">
                 <TextBlock
                     Text="time"
                     x:Name="DateTime_txt"
                     FontWeight="Bold"
                     FontSize="32"
-                    Margin="80 50 0 0"
+                    Margin="0,50,130,0"
                     VerticalAlignment="Center"
                     
                     HorizontalAlignment="Center"/>
@@ -474,16 +375,16 @@
                 <TextBlock
                     Text="goods"
                     x:Name="goodsDescription_txt"
-                    FontWeight="Bold"
                     FontSize="32"
-                    Margin="80 50 0 0"
+                    Margin="0,50,130,0"
                     VerticalAlignment="Center"
-                    HorizontalAlignment="Center"/>
+                    HorizontalAlignment="Center" TextWrapping="Wrap" FontWeight="Bold"/>
+                <Image Width="506" x:Name="countryImage_img" Margin="0,217,130,0" Height="538"/>
 
-                <Image x:Name="countryImage_img" Margin="0 250 0 0" Width="507" Height="507"/>
             </StackPanel>
+            <TextBox x:Name="insuraned" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="RightToLeft" Margin="5,981,14,0" FontSize="60" FontWeight="Bold" Grid.Column="1" BorderThickness="0,0,0,0" Height="75"/>
         </Grid>
-        <Image x:Name="barcode_img" Height="100" Width="456"/>
+        <Image x:Name="barcode_img" Height="112" Width="592" Stretch="Fill" Margin="0,20,0,0"/>
 
     </StackPanel>
 

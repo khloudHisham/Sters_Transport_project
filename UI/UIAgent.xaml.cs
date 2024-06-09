@@ -509,14 +509,14 @@ namespace StersTransport.UI
 
         }
 
-        private void invoicelang_SourceUpdated(object sender, DataTransferEventArgs e)
-        {
-            if (!dataisloading)
-            {
-                languageupdated = true;
-            }
+        //private void invoicelang_SourceUpdated(object sender, DataTransferEventArgs e)
+        //{
+        //    if (!dataisloading)
+        //    {
+        //        languageupdated = true;
+        //    }
 
-        }
+        //}
 
         private void invoicelang_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -527,10 +527,10 @@ namespace StersTransport.UI
         {
             //if (dataisloading)
             //{
-                var selected_currency = (sender as ComboBox).SelectedItem as String;
-                if (selected_currency != null)
+                var selected_language = (sender as ComboBox).SelectedItem as String;
+                if (selected_language != null && agent != null)
                     agent.setlanguageflags();
-            //}
+             //}
 
         }
     }

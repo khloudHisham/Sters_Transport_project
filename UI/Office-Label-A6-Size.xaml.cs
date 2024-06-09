@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 
 namespace StersTransport.UI
 {
-    public partial class Office_Label_A6_Size : Window
+    public partial class Office_Label_A6_Size : Page
     {
         public Office_Label_A6_Size()
         {

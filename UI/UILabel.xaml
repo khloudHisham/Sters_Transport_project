@@ -67,6 +67,7 @@
                      FontStretch="Condensed"
                      FontWeight="Bold"
                     Background="White" x:Name="flowdocument">
+                    <Paragraph/>
 
                 </FlowDocument>
             </FlowDocumentScrollViewer>

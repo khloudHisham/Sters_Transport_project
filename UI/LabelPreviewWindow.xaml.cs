@@ -11,16 +11,20 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Xps;
 using System.Windows.Xps.Packaging;
+using iTextSharp.text;
 using StersTransport.DataAccess;
 using StersTransport.GlobalData;
 using StersTransport.Models;
 using StersTransport.Presentation;
+
+
 
 namespace StersTransport.UI
 {
@@ -53,25 +57,24 @@ namespace StersTransport.UI
             {
                 if (ispost)
                 {
-                    CodeLabelPost_PRSN codeLabel_PRSN = new CodeLabelPost_PRSN();
-                    codeLabel_PRSN.generateDocument(flowdocument, code);
+                    //CodeLabelPost_PRSN codeLabel_PRSN = new CodeLabelPost_PRSN();
+                    //codeLabel_PRSN.generateDocument(flowdocument, code);
 
-                    //    CodeLabelPost_PRSN_2 codeLabel_PRSN_2 = new CodeLabelPost_PRSN_2();
-                    //    codeLabel_PRSN_2.generateDocument(label, code);
+                    CodeLabelPost_PRSN_2 codeLabel_PRSN_2 = new CodeLabelPost_PRSN_2();
+                    codeLabel_PRSN_2.generateDocument(labelpanel, code);
                 }
                 else
                 {
-                    CodeLabelOffice_PRSN codeLabel_PRSN = new CodeLabelOffice_PRSN();
-                    codeLabel_PRSN.generateDocument(flowdocument, code);
-                    //CodeLabelOffice_PRSN codeLabelOffice_PRSN = new CodeLabelOffice_PRSN();
-                    CodeLabelOffice_PRSN codeLabelOffice_PRSN = new CodeLabelOffice_PRSN();
-                    //codeLabelOffice_PRSN.generateDocument(flowdocument, code);
+                    //CodeLabelOffice_PRSN codeLabel_PRSN_2 = new CodeLabelOffice_PRSN();
+                    //codeLabel_PRSN_2.generateDocument(labelpanel, code);
 
+                    CodeLabelOffice_PRSN_2 codeLabel_PRSN_2 = new CodeLabelOffice_PRSN_2();
+                    codeLabel_PRSN_2.generateDocument(labelpanel, code);
                 }
             }
             catch (Exception ex) 
-            { 
-                MessageBox.Show(ex.ToString()); 
+            {
+                System.Windows.MessageBox.Show(ex.ToString()); 
             }
         }
 
@@ -80,43 +83,61 @@ namespace StersTransport.UI
             //try
             //{
             //    PrintDialog printDialog = new PrintDialog();
-            //    if (printDialog.ShowDialog() == false) 
-            //        return; 
+            //    if (printDialog.ShowDialog() == false)
+            //        return;
 
             //    double w = printDialog.PrintableAreaWidth;
             //    double h = printDialog.PrintableAreaHeight;
 
-            //    Helpers.PrintHelper printHelper = new Helpers.PrintHelper();
-            //    printHelper.showpreview(w, h, flowdocument);
+            //Helpers.PrintHelper printHelper = new Helpers.PrintHelper();
+            //printHelper.showpreview(w, h, flowdocument);
+            //    printHelper.showpreview(w, h,labelpanel);
+
             //}
             //catch (Exception ex)
-            //{ 
-            //    WpfMessageBox.Show("", ex.Message, MessageBoxButton.OK, WpfMessageBox.MessageBoxImage.Error); 
+            //{
+            //    WpfMessageBox.Show("", ex.Message, MessageBoxButton.OK, WpfMessageBox.MessageBoxImage.Error);
 
-            //} 
-            
-                //PrintDialog dialog = new PrintDialog();
-                //dialog.PrintTicket.PageMediaSize = new PageMediaSize(PageMediaSizeName.ISOA5);
+            //}
+            PrintDialog dialog = new PrintDialog();
 
-                //// Set printer page orientation to portrait
-                //dialog.PrintTicket.PageOrientation = PageOrientation.Portrait;
+            if(IsPOST)
+            {
+                
+                dialog.PrintTicket.PageMediaSize = new PageMediaSize(PageMediaSizeName.ISOA5);
+                               
+               
+            }
 
-                //if (dialog.ShowDialog() == true)
-                //{
-                //    double a5Width = dialog.PrintableAreaWidth;
-                //    double a5Height = dialog.PrintableAreaHeight;
+            else
+            {
 
-                //    // Calculate the scale factor to fit the content within the A5 dimensions
-                //    double scaleX = a5Width / label.ActualWidth;
-                //    double scaleY = a5Height / label.ActualHeight;
-                //    double scale = Math.Min(scaleX, scaleY); // Choose the smaller scale factor to fit within both dimensions
+                dialog.PrintTicket.PageMediaSize = new PageMediaSize(PageMediaSizeName.ISOA6);
 
-                //    // Apply the scale transform to the visual content
-                //    label.LayoutTransform = new ScaleTransform(scale, scale);
-                //    dialog.PrintVisual(label, "");
-                //}
-            
+            }
 
+
+            // Set printer page orientation to portrait
+            dialog.PrintTicket.PageOrientation = PageOrientation.Portrait;
+            if (dialog.ShowDialog() == true)
+            {
+                double a4Width = dialog.PrintableAreaWidth;
+                double a4Height = dialog.PrintableAreaHeight;
+
+                //Calculate the scale factor to fit the content within the A4 dimensions
+                double scaleX = a4Width / labelpanel.ActualWidth;
+                double scaleY = a4Height / labelpanel.ActualHeight;
+                double scale = Math.Min(scaleX, scaleY); // Choose the smaller scale factor to fit within both dimensions
+
+                // Apply the scale transform to the visual content
+                labelpanel.LayoutTransform = new ScaleTransform(scale, scale);
+                dialog.PrintVisual(labelpanel, "");
+
+            }
+
+
+       
         }
-    }
+
+     }
 }

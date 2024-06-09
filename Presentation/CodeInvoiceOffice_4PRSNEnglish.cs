@@ -7,12 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Media.Media3D;
 
 namespace StersTransport.Presentation
 {
     public class CodeInvoiceOffice_4PRSNEnglish
     {
+        //SolidColorBrush Orangecolor = (SolidColorBrush)(new BrushConverter().ConvertFrom("#E89933"));
+        SolidColorBrush GreenColor = (SolidColorBrush)(new BrushConverter().ConvertFrom("#00BB7E"));
+        SolidColorBrush yellowColor = (SolidColorBrush)(new BrushConverter().ConvertFrom("#f5f205"));
+
+        SolidColorBrush Orangecolor = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFCB483"));
+        SolidColorBrush bluecolor = (SolidColorBrush)(new BrushConverter().ConvertFrom("#3fc7f9"));
+
+
+
         ClientCodeDA clientCodeDA;
         CountryDa countryDa;
         AgentDa agentDa;
@@ -74,7 +84,7 @@ namespace StersTransport.Presentation
 
             //header Details
             invoice.branch_val.Text = branch.AgentName;
-            invoice.tele.Text = branch.PhonesDisplayString;
+            invoice.tele.Text = branch.PhonesDisplayString.Replace("/", "");
 
             //Code Details 
             invoice.code_number.Text = clientcode.Code;
@@ -95,12 +105,41 @@ namespace StersTransport.Presentation
 
             //transportation costs
 
+
+            if (clientcode.TotalPaid_IQD.HasValue && clientcode.TotalPaid_IQD != 0)
+            {
+                invoice.paid_border.Background = yellowColor;
+
+            }
+
+            if (clientcode.POST_DoorToDoor_IQD.HasValue && clientcode.POST_DoorToDoor_IQD != 0)
+            {
+
+                invoice.recv_address_border.Background = bluecolor;
+            }
+
+            if (clientcode.Remaining_IQD.HasValue && clientcode.Remaining_IQD != 0)
+            {
+                invoice.remaining_border.Background = Orangecolor;
+
+            }
+
+            if (clientcode.EuropaToPay.HasValue && clientcode.EuropaToPay != 0)
+            {
+                invoice.europe_border.Background = Orangecolor;
+
+            }
+
+
             invoice.trans_cost.Text = clientcode.Sub_Post_Cost_IQD.HasValue ? string.Format("{0:#,0.##}", clientcode.Sub_Post_Cost_IQD) : "0";
             invoice.empty_cost.Text = clientcode.Packiging_cost_IQD.HasValue ? string.Format("{0:#,0.##}", clientcode.Packiging_cost_IQD) : "0";
             invoice.customs_cost.Text = clientcode.Custome_Cost_Qomrk.HasValue ? string.Format("{0:#,0.##}", clientcode.Custome_Cost_Qomrk) : "0";
             invoice.insurance_cost.Text = clientcode.Insurance_Amount.HasValue ? string.Format("{0:#,0.##}", clientcode.Insurance_Amount) : "0";
             invoice.total_cost.Text = clientcode.Total_Post_Cost_IQD.HasValue ? string.Format("{0:#,0.##}", clientcode.Total_Post_Cost_IQD) : "0";
+
+
             invoice.amount_paid.Text = clientcode.TotalPaid_IQD.HasValue ? string.Format("{0:#,0.##}", clientcode.TotalPaid_IQD) : "0";
+
             invoice.amount_not_paid.Text = clientcode.Remaining_IQD.HasValue ? string.Format("{0:#,0.##}", clientcode.Remaining_IQD) : "0";
             invoice.europe_amount.Text = clientcode.EuropaToPay.HasValue ? string.Format("{0:#,0.##}", clientcode.EuropaToPay) : "0";
             invoice.reciever_addr_cost.Text = clientcode.POST_DoorToDoor_IQD.HasValue ? string.Format("{0:#,0.##}", clientcode.POST_DoorToDoor_IQD) : "0";
@@ -111,6 +150,7 @@ namespace StersTransport.Presentation
             if (haveinsurance == true)
             {
                 invoice.insurance_yes.IsChecked = true;
+                invoice.insurance_border.Background = GreenColor;
             }
             else
             {
@@ -131,10 +171,10 @@ namespace StersTransport.Presentation
             {
                 invoice.boxes_no.Text = string.Format("{0}", boxstr);
             }
-            if(!clientcode.Weight_H_cm.HasValue) 
-            { 
-                invoice.weight.Text = clientcode.Weight_Total.HasValue ? clientcode.Weight_Total.ToString() : "0";
-            
+            if (!clientcode.Weight_H_cm.HasValue || clientcode.Weight_H_cm == 0)
+            {
+                invoice.weight.Text = clientcode.Weight_Total.HasValue ? String.Format("{0} Kg weight", clientcode.Weight_Total.ToString()) : "0";
+
             }
             else
             {
@@ -148,8 +188,10 @@ namespace StersTransport.Presentation
             // agent details 
             invoice.office_val.Text = string.Format("{0}-{1}", agent.AgentName, countryAgent.CountryName);
             invoice.agent_val.Text = string.Format("{0}", agent.CompanyName);
-            invoice.phone.Text = string.Format("{0}", agent.PhonesDisplayString);
+            invoice.phone.Text = string.Format("{0}", agent.PhonesDisplayString.Replace("/", ""));
             invoice.agent_address.Text = agent.Address;
+
+            
 
             frame.Content = invoice;
         }

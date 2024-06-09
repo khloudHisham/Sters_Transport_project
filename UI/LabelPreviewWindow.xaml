@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterScreen"
         Loaded="Window_Loaded"
         >
-    <Grid>
+    <Grid ScrollViewer.CanContentScroll="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="10*"></RowDefinition>
@@ -34,23 +34,44 @@
         <Border Grid.Row="1"  Background="#E4E4E4" BorderThickness="1" BorderBrush="#236BC9">
 
 
-            <FlowDocumentScrollViewer 
-               
-               IsToolBarVisible="True" ScrollViewer.VerticalScrollBarVisibility="Auto"
-               ScrollViewer.HorizontalScrollBarVisibility="Auto">
-                <FlowDocument 
-                     FontFamily="Arial"
-                     FontStretch="Condensed"
-                     FontWeight="Bold"
-                    Background="White" x:Name="flowdocument">
+            <!--<FlowDocumentScrollViewer 
+    
+                               IsToolBarVisible="True"
+                               ScrollViewer.VerticalScrollBarVisibility="Auto"
+                               ScrollViewer.HorizontalScrollBarVisibility="Auto">
 
-                </FlowDocument>
-            </FlowDocumentScrollViewer>
+                <FlowDocument                      
+                  FontFamily="Arial"
+                  FontStretch="Condensed"
+                  FontWeight="Bold"
+                 Background="White" x:Name="flowdocument">  
 
-            <!--<Viewbox Stretch="Uniform">
-                <Frame x:Name="label" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-            </Viewbox>-->
+                </FlowDocument> 
+
+
+            </FlowDocumentScrollViewer>-->
+
+            <ScrollViewer HorizontalScrollBarVisibility="Auto"  VerticalScrollBarVisibility="Auto" >
+
+                <Viewbox Stretch ="Uniform"   x:Name="view1" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                    <Frame x:Name="labelpanel"></Frame>
+
+                </Viewbox>
+                
+            </ScrollViewer>
+
+
+
+            <!--<StackPanel x:Name ="labelpanel" HorizontalAlignment="Center"  VerticalAlignment="Center">
+
+                <StackPanel.RenderTransform>
+                    <ScaleTransform x:Name="scaleTransform" ScaleX="1" ScaleY="1"/>
+                </StackPanel.RenderTransform>
+            </StackPanel>-->
         </Border>
 
     </Grid>
 </Window>
+    
+    

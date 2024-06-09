@@ -16,14 +16,17 @@ using ZXing;
 using StersTransport.UI;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 using System.Windows.Media.Imaging;
+using StersTransport.BusinessLogic;
 
 namespace StersTransport.Presentation
 {
     public class CodeLabelOffice_PRSN_2
     {
         SolidColorBrush NotPaidColor = (SolidColorBrush)(new BrushConverter().ConvertFrom("#DD015B"));
-        SolidColorBrush PaidColor = (SolidColorBrush)(new BrushConverter().ConvertFrom("#23C99C"));
+        SolidColorBrush PaidColor = (SolidColorBrush)(new BrushConverter().ConvertFrom("#65ff99"));
         SolidColorBrush BorderColor = (SolidColorBrush)(new BrushConverter().ConvertFrom("#404040"));
+
+        SolidColorBrush OrangeColor = (SolidColorBrush)(new BrushConverter().ConvertFrom("#ffbf00"));
 
         ClientCodeDA clientCodeDA = new ClientCodeDA();
         AgentDa agentDa = new AgentDa();
@@ -39,7 +42,7 @@ namespace StersTransport.Presentation
 
         List<Agent> Branches = new List<Agent>();
 
-        public void generateDocument(FlowDocument flowdocument, string code)
+        public void generateDocument(Frame frame , string code)
         {
             ClientCode = clientCodeDA.GetClientCode(code);
             if (ClientCode == null)
@@ -63,11 +66,11 @@ namespace StersTransport.Presentation
 
             branch = agentDa.GetAgent(_branchID);
 
-            flowdocument.Blocks.Clear();
+            agent = agentDa.GetAgent(_agentID);
 
-            
+
             /////////////////////////////////////////////////////////////////////
-                                // fill fields
+            // fill fields
 
             Office_Label_A6_Size officeLabel = new Office_Label_A6_Size();
 
@@ -77,49 +80,105 @@ namespace StersTransport.Presentation
             officeLabel.itemDetails_txt.Text = ClientCode.Goods_Description ?? "";
             
 
-            // fuck prev developer
-            officeLabel.firstNumber_txt.Text = ClientCode.Pallet_No.ToString() ?? "0";
-            officeLabel.secondNumber_txt.Text = ClientCode.Box_No.ToString() ?? "0";
+            //officeLabel.firstNumber_txt.Text = ClientCode.Pallet_No.ToString() ?? "0";
+            //officeLabel.secondNumber_txt.Text = ClientCode.Box_No.ToString() ?? "0";
+
+            double pln = ClientCode.Pallet_No ?? 0;
+
+            double bxn = ClientCode.Box_No ?? 0;
+            string boxstr = string.Format("{0} Box(s)", bxn.ToString());
+            string palletstr = string.Empty;
+
+            double totalunits = bxn + pln;
+
+            if (pln > 0)
+            {
+                palletstr = string.Format("{0} Pallet(s)", pln.ToString());
+                //officeLabel.allParcelQuantity_txt.Text = string.Format("{0}+{1}", boxstr, palletstr);
+                officeLabel.allParcelQuantity_txt.Text = string.Format("{0} Units", totalunits);
+
+            }
+            else
+            {
+                //officeLabel.allParcelQuantity_txt.Text = string.Format("{0}", boxstr);
+                officeLabel.allParcelQuantity_txt.Text = string.Format("{0} Units", totalunits);
+
+
+            }
+
+
 
             officeLabel.weight_txt.Text = ClientCode.Weight_Total.ToString() ?? "0";
-            officeLabel.city_txt.Text = ClientCode.CityPost ?? "";
-            officeLabel.country_txt.Text = countryPost.CountryName ?? "";
+
+            if (!ClientCode.AdditionalWeight.HasValue || ClientCode.AdditionalWeight == 0 )
+            {
+                officeLabel.weight_txt.Text = ClientCode.Weight_Total.HasValue ? $"{ClientCode.Weight_Total.ToString()} KG Weight" : "0";
+
+            }
+            else
+            {
+                officeLabel.weight_txt.Text = String.Format("{0}+{1} KG Weight", ClientCode.Weight_Kg, ClientCode.AdditionalWeight);
+            }
+
+
+
+            string cntrystr = string.Empty;
+            if (countryAgent != null)
+            {
+                cntrystr = countryAgent.CountryName;
+            }
+
+            officeLabel.country_txt.Text = cntrystr ?? "";
+
+            string citystr = string.Empty;
+            if (agent != null)
+            {
+                citystr = agent.AgentName;
+            }
+
+            officeLabel.city_txt.Text = citystr;
+
             officeLabel.code_txt.Text = ClientCode.Code ?? "";
 
-            // fuck prev developer
-            officeLabel.office_txt.Text = branchDa.GetBranch(branch.Id).BranchName ?? "";
+            //officeLabel.office_txt.Text = branchDa.GetBranch(branch.Id).BranchName ?? "";
+            officeLabel.office_txt.Text = agent.AgentName;
 
 
-            bool haveinsurance = ClientCode.Have_Insurance ?? false;
-            if (haveinsurance)
+            bool haveinsurance = ClientCode.Have_Insurance.HasValue ? (bool)ClientCode.Have_Insurance : false;
+        
+
+            double EuropeToPay = ClientCode.EuropaToPay.HasValue ? (double)ClientCode.EuropaToPay : 0;
+
+            if (EuropeToPay > 0)
             {
-                officeLabel.insurance_txt.Text = " INSURANCE=YES ";
-                //officeLabel.insurance_txt.Background = new SolidColorBrush(Colors.LightGreen);
-                officeLabel.insurance_txt.Background = Brushes.LightGreen;
+                if (countryAgent.continent == StaticData.Continent_Europe)
+                {
+                    officeLabel.allPaid_txt.Text = "PAY IN " + StaticData.Continent_Europe;
+                }
+                else
+                {
+                    officeLabel.allPaid_txt.Text = "PAY IN " + countryAgent.CountryName;
+                }
+
+                officeLabel.allPaid_txt.Background = NotPaidColor;
             }
             else
-            {
-                officeLabel.insurance_txt.Text = " INSURANCE=NO ";
-                officeLabel.insurance_txt.Background = Brushes.Orange;
-            }
-
-            bool allPaid = ClientCode.IsAllPaid;
-            if (allPaid == true)
             {
                 officeLabel.allPaid_txt.Text = "ALL PAID";
-                officeLabel.insurance_txt.Background = Brushes.LightGreen;
+                officeLabel.allPaid_txt.Background = OrangeColor;
             }
-            else
+
+            if (haveinsurance == true)
             {
-                officeLabel.insurance_txt.Text = "PAY in EU";
-                officeLabel.insurance_txt.Background = Brushes.Orange;
+                officeLabel.insurance_txt.Text = "INSURANCE YES";
+                officeLabel.insurance_txt.Background = PaidColor;
             }
 
             try
             {
                 BitmapImage bitmapImage = new BitmapImage();
                 bitmapImage.BeginInit();
-                bitmapImage.StreamSource = new System.IO.MemoryStream(countryPost.ImgForBoxLabel);
+                bitmapImage.StreamSource = new System.IO.MemoryStream(countryAgent.ImgForBoxLabel);
                 bitmapImage.EndInit();
                 officeLabel.country_img.Source = bitmapImage;
             }
@@ -128,16 +187,30 @@ namespace StersTransport.Presentation
                 MessageBox.Show("Error loading country image: " + ex.Message);
             }
 
+          
             BarcodeWriter writer = new BarcodeWriter();
             writer.Format = BarcodeFormat.CODE_128;
-            writer.Options = new ZXing.Common.EncodingOptions() { PureBarcode = true };
-            var barcodeBitmap = new System.Drawing.Bitmap(writer.Write(ClientCode.Code));
+
+
+            writer.Options = new ZXing.Common.EncodingOptions()
+            {
+                //Height = 50,
+                PureBarcode = true
+
+            };
+
+            var result = writer.Write(ClientCode.Code);
+            var barcodeBitmap = new System.Drawing.Bitmap(result);
             officeLabel.barcode_img.Source = ImageHelpercs.ConvertBitmap(barcodeBitmap);
+
 
             officeLabel.date_txt.Text = string.Format("{0}", DateTime.Now.Date.ToString("dd/MM/yyyy"));
             officeLabel.time_txt.Text = string.Format("{0}", DateTime.Now.ToString("t"));
 
-
+            //Frame frame = new Frame();
+            frame.Content = officeLabel;
+            //frame.Margin = new Thickness(0, 0, 0, 100);
+            //panel.Children.Add(frame);
         }
     }
 }

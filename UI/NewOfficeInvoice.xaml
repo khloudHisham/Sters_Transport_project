@@ -5,200 +5,211 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:StersTransport.UI"
       mc:Ignorable="d" 
-      Title="NewOfficeInvoice"  Height="3640" Width="2480" Background="{DynamicResource LabelTitleForeColorUpper}">
+      Title="NewOfficeInvoice"  Height="3640" Width="2480" Background="{DynamicResource LabelTitleForeColorUpper}" VerticalAlignment="Center" HorizontalAlignment="Center">
 
-    <Grid x:Name="maingrid" Width="2480" Height="3640">
-        <TextBox x:Name="agent_note" Text="يتم استلام البريد من مكتب الوكيل اداناه" Margin="38,1538,1268,2012" SelectionOpacity="3" FontSize="60" FontFamily="Arial" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
-        <TextBox x:Name="PleaseReadFollowingPointsBeforeSign" TextWrapping="Wrap" Text="يرجى قراءة النقاط ادناه ثم بعد القراءة والموافقة يرجى التوقيع اسفل الوصل" Margin="387,2248,364,1314" SelectionOpacity="8" FontSize="71" FontFamily="Arial Narrow" Foreground="#FFF81818" BorderBrush="{x:Null}" Background="{x:Null}" Width="1729" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="RightToLeft" Height="77"/>
-        <Border BorderBrush="#FF121655" BorderThickness="7,10,7,10" Height="5" Margin="0,2357,0,1278" Background="Black" Width="2489"/>
-        <Border BorderBrush="Black" BorderThickness="1" Height="398" VerticalAlignment="Top" FlowDirection="RightToLeft" Background="White">
-            <Grid Margin="0,0,-2,-3245" Height="3640">
-                <Image Height="266" Margin="79,57,2082,3314" Source="/UI/Sters Logo N-BG-header.png" Width="319"/>
-                <TextBox x:Name="StersCompany" TextWrapping="Wrap" Text="شركـة ستيــرس" Margin="691,58,732,3449" SelectionOpacity="3" FontSize="104" FontFamily="Arial" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" FlowDirection="LeftToRight" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-                <TextBox x:Name="adress_header" Text="بغداد - الدورة قرب جسر الميكانيك" Margin="501,182,1645,3349" SelectionOpacity="1" FontSize="49" FontFamily="Arial" Foreground="#FF121655" BorderBrush="{x:Null}" Width="316" Height="110" FlowDirection="RightToLeft" TextWrapping="Wrap" AllowDrop="True" HorizontalScrollBarVisibility="Disabled" Padding="5,0,5,0" HorizontalContentAlignment="Center" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" BorderThickness="0,0,0,0" Background="{x:Null}" VerticalContentAlignment="Center"/>
-                <TextBox x:Name="LeadingInTransport" TextWrapping="Wrap" Text="الرائدة في مجال النقل الدولي" Margin="281,191,288,3373" SelectionOpacity="3" FontSize="58" FontFamily="Arial" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="LeftToRight"/>
-                <TextBox x:Name="Branch" TextWrapping="Wrap" Margin="862,308,1504,3276" SelectionOpacity="1" FontSize="50" FontFamily="Arial Narrow" Foreground="#FF121655" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Text=":فرع" SelectionTextBrush="{x:Null}" SelectionBrush="{x:Null}" FlowDirection="LeftToRight" FontWeight="Bold"/>
-                <TextBox x:Name="Phone" Margin="1317,308,838,3276" SelectionOpacity="1" FontSize="50" FontFamily="Arial Narrow" Foreground="#FF121655" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Text=":الهاتف" SelectionTextBrush="{x:Null}" SelectionBrush="{x:Null}" FlowDirection="LeftToRight" RenderTransformOrigin="0.2,0.49" FontWeight="Bold"/>
-                <Image Height="222" Width="499" Margin="1913,93,68,3325" Source="/Resources/sters.jpg"/>
-                <Border
-                    Width="5" Margin="1664,3462,811,0" BorderThickness="5,1,1,1" BorderBrush="#FF121655" Height="178"/>
-                <Border
-                    Width="5" Margin="1364,3462,1111,0" BorderThickness="5,1,1,1" BorderBrush="#FF121655" Height="178"/>
-                <TextBox TextWrapping="Wrap" Text="Email :" Margin="1193,3482,1139,111" SelectionOpacity="3" FontSize="42" FontFamily="Arial" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" VerticalContentAlignment="Center" FlowDirection="LeftToRight" FontWeight="Bold"/>
-                <TextBox TextWrapping="Wrap" Text="WebSite:" Margin="1149,3551,1139,42" SelectionOpacity="3" FontSize="42" FontFamily="Arial" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" VerticalContentAlignment="Center" FlowDirection="LeftToRight" FontWeight="Bold"/>
-                <TextBox TextWrapping="Wrap" Text="info@euknet.com" Margin="761,3486,1374,89" SelectionOpacity="3" FontSize="42" FontFamily="Arial" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" VerticalContentAlignment="Center" FlowDirection="LeftToRight"/>
-                <TextBox TextWrapping="Wrap" Text="wwww.euknet.com" Margin="733,3551,1374,24" SelectionOpacity="3" FontSize="42" FontFamily="Arial" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" VerticalContentAlignment="Center" FlowDirection="LeftToRight"/>
-                <TextBox x:Name="MainOffice" TextWrapping="Wrap" Text="المكتب الرئيسي للشركة في اوروبا" Margin="72,3516,1914,66" SelectionOpacity="3" FontSize="42" FontFamily="Arial" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" VerticalContentAlignment="Center" FlowDirection="LeftToRight" HorizontalContentAlignment="Right" FontWeight="Bold"/>
-                <TextBox x:Name="branch_val" TextWrapping="Wrap" Margin="1014,308,1213,3280" SelectionOpacity="1" FontSize="50" FontFamily="Arial Narrow" Foreground="#FF121655" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" SelectionTextBrush="{x:Null}" SelectionBrush="{x:Null}" FlowDirection="LeftToRight" FontWeight="Bold"/>
-                <TextBox x:Name="tele" Margin="1664,308,143,3276" SelectionOpacity="1" FontSize="50" FontFamily="Arial Narrow" Foreground="#FF121655" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" SelectionTextBrush="{x:Null}" SelectionBrush="{x:Null}" FlowDirection="LeftToRight" FontWeight="Bold"/>
-            </Grid>
-        </Border>
-        <Border BorderBrush="#FF121655" BorderThickness="1,5,1,5" Height="137" Margin="0,399,0,3104" Background="#FFE8E8E8">
-            <Grid Margin="0,0,-2,-2">
-                <TextBox x:Name="cost_delivery" Text="وصل تسليم ودفع تكاليف النقل الى اوروبا" Margin="211,28,347,10" SelectionOpacity="3" FontSize="58" FontFamily="Arial" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
-            </Grid>
-        </Border>
-        <Border BorderBrush="#FF121655" BorderThickness="1,1,1,5" Height="191" Margin="0,536,504,2913" Background="#FFFCB483">
-            <Grid Margin="0,0,-2,-2">
-                <TextBox x:Name="Code" TextWrapping="Wrap" Text="كود الاستلام :" Margin="1182,35,34,35" SelectionOpacity="3" FontSize="98" FontFamily="Arial Narrow" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" VerticalContentAlignment="Center" FlowDirection="RightToLeft"/>
-                <TextBox x:Name="code_number" TextWrapping="Wrap" Margin="477,42,477,41" SelectionOpacity="3" FontSize="100" Foreground="#FF121655" Height="104" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" VerticalContentAlignment="Center" FontFamily="Arial" HorizontalContentAlignment="Center" FontWeight="Bold"/>
-                <TextBox x:Name="code_Copy" TextWrapping="Wrap" Margin="46,35,1608,41" SelectionOpacity="3" FontSize="100" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" VerticalContentAlignment="Stretch" FontFamily="Arial" Text="Code:" FontWeight="Bold"/>
-            </Grid>
-        </Border>
-        <Border BorderBrush="#FF121655" BorderThickness="1,1,1,5" Margin="1976,536,0,2913" Background="#FFFDFDFD">
-            <TextBox x:Name="Date" TextWrapping="Wrap" Text="التاريخ :" Margin="288,62,60,62" SelectionOpacity="3" FontSize="50" FontFamily="Arial" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" VerticalContentAlignment="Center" FlowDirection="RightToLeft" HorizontalContentAlignment="Center" FontWeight="Bold"/>
-        </Border>
-        <Border BorderThickness="2,2,2,2" Margin="1248,772,58,1432" Width="1174" Height="1436" CornerRadius="7,7,7,7" BorderBrush="Black">
-            <Grid x:Name="grid1"
->
-                <Border BorderBrush="Black" BorderThickness="1,1,1,4" Height="96" Margin="0,0,0,1338" Background="#FFE8E8E8">
-                    <TextBox x:Name="TransportCost_header" Text="تكاليــف النقـــــل" Margin="458,1,393,2" SelectionOpacity="8" FontSize="58" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Width="316" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="RightToLeft" Height="62" FontWeight="Bold"/>
-                </Border>
-                <TextBox x:Name="TransportCost" Text="كـلـفــــــــة الـنـقــــــــــــــــــــــــل" Margin="508,143,17,1231" SelectionOpacity="8" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Right" FontWeight="Bold"/>
-                <TextBox x:Name="PackigingCost" Text="قـيـمـــة الـكـارتـون الـفـــــــــارغ" Margin="508,255,17,1118" SelectionOpacity="8" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Right" Height="57" VerticalContentAlignment="Center" FontWeight="Bold"/>
-                <Border BorderBrush="Black" BorderThickness="7,10,7,10" Width="1173" Margin="0,330,0,1097" Background="Black" Height="1"/>
-                <TextBox x:Name="InsuranceCost" Text="كـلـفــــــــة الـتــأمــيــــــــــــــــــن" Margin="508,549,17,817" SelectionOpacity="8" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Right" FontWeight="Bold"/>
-                <Border BorderBrush="Black" BorderThickness="1,1,1,1" Width="1173" Height="1" Margin="0,230,0,1195" Background="Black"/>
-                <TextBox Text="دينار عراقي" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="32,357,967,1016" HorizontalContentAlignment="Right" Height="51" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Width="172"/>
-                <Border BorderBrush="Black" BorderThickness="7,10,7,10" Width="1173" Height="1" Margin="0,430,0,995" Background="Black"/>
-                <TextBox Text="دينار عراقي" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="32,458,967,915" HorizontalContentAlignment="Right" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Width="172"/>
-                <Border BorderBrush="Black" BorderThickness="7,10,7,10" Width="1173" Height="1" Margin="0,526,0,899" Background="Black"/>
-                <Border BorderBrush="Black" BorderThickness="7,10,7,10" Width="1173" Height="1" Margin="0,636,0,789" Background="Black"/>
-                <TextBox Text="دينار عراقي" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="32,556,967,817" HorizontalContentAlignment="Right" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Width="172"/>
-                <TextBox Text="دينار عراقي" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="32,674,967,696" HorizontalContentAlignment="Right" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Width="172"/>
-                <Border BorderBrush="Black" BorderThickness="0,2,0,2" Margin="0,757,2,586" Height="89" Background="#FFFCDB83" Panel.ZIndex="-1">
-                    <Grid Margin="0,1148,0,245">
-                        <TextBox x:Name="PaidAmount"
-                    Text="المبلــــــــغ المدفـــــــــــــــــــــوع" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="502,-1140,16,1073" HorizontalContentAlignment="Right" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" FontWeight="Bold"/>
-                    </Grid>
-                </Border>
-                <Border BorderBrush="Black" Width="1173" Height="1" Margin="0,946,0,476" Background="Black"/>
-                <Border BorderBrush="Black" BorderThickness="7,10,7,10" Width="1173" Height="1" Margin="0,1060,0,365" Background="Black"/>
-                <TextBox x:Name="AdminExportCost"
-Text="الـكـمـــــرك والاداريــــــــــــــــات" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="508,350,17,1019" HorizontalContentAlignment="Right" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" FontWeight="Bold"/>
-                <TextBox x:Name="DoorToDoorCost"
-Text="كلفة التوصيل الى عنوان المستلم" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="508,455,17,918" HorizontalContentAlignment="Right" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="57" FontWeight="Bold"/>
-                <TextBox x:Name="TotalCost"
-Text="الـكـلـفـــــــة الـكـلــيـــــــــــــــــــة" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="508,667,17,711" HorizontalContentAlignment="Right" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="52" FontWeight="Bold"/>
-                <TextBox x:Name="RemainingAmount"
-Text="الـمـبـلـــغ الـمـطــلــــــــــــــــــوب" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="508,866,17,504" HorizontalContentAlignment="Right" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="60" FontWeight="Bold"/>
-                <TextBox x:Name="PaidINEurope"
-Text="المبلغ المطلـوب دفعه في اوروبا" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="508,972,17,396" HorizontalContentAlignment="Right" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="61" FontWeight="Bold"/>
-                <Border
-Width="1" Margin="508,92,655,370" BorderThickness="1,1,1,1" BorderBrush="Black"/>
-                <TextBox
- Text="دينار عراقي" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="32,148,967,1222" HorizontalContentAlignment="Right" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Width="172"/>
-                <TextBox
-Width="172" Text="دينار عراقي" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="32,259,967,1111" HorizontalContentAlignment="Right" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}"/>
-                <TextBox x:Name="HaveInsurance"
-                    Text="تأميـــــن البضــاعــــــة :" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="650,1100,17,277" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="53" FlowDirection="RightToLeft" HorizontalContentAlignment="Center" FontWeight="Bold"/>
-                <TextBox Text="دينار عراقي" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="32,872,967,504" HorizontalContentAlignment="Right" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Width="169"/>
-                <TextBox x:Name="Yes" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="554,1096,520,278" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="58" FlowDirection="RightToLeft" RenderTransformOrigin="0.527,-0.026" Text="نعم " HorizontalContentAlignment="Center" FontWeight="Bold" VerticalContentAlignment="Center"/>
-                <TextBox x:Name="No" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="167,1096,886,278" HorizontalContentAlignment="Center" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="58" RenderTransformOrigin="0.518,0.551" Text="كلا" VerticalContentAlignment="Center" FlowDirection="RightToLeft" FontWeight="Bold"/>
-                <Border BorderBrush="Black" BorderThickness="7,10,7,10" Width="1173" Height="1" Margin="0,1186,0,239" Background="Black"/>
-                <Border BorderBrush="Black" BorderThickness="7,10,7,10" Width="1173" Height="1" Margin="0,1248,0,177" Background="Black"/>
-                <TextBox x:Name="NOBoxes"
-                    Text="عدد الكراتين" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="934,1193,10,187" HorizontalContentAlignment="Center" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="50" FlowDirection="RightToLeft" RenderTransformOrigin="0.844,0.5" FontWeight="Bold"/>
-                <Border BorderBrush="Black" BorderThickness="5,1,5,1" Width="1" Margin="929,1194,239,-8"/>
-                <TextBox x:Name="WeightKG"
-                    Text="الوزن / كغم" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="758,1193,230,187" HorizontalContentAlignment="Right" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="50" Width="180" FlowDirection="RightToLeft" RenderTransformOrigin="0.844,0.5" FontWeight="Bold"/>
-                <Border BorderBrush="Black" BorderThickness="5,1,5,1" Width="1" Margin="725,1186,438,0" Height="244"/>
-                <TextBox x:Name="GoodsDiscription"
-                    Text="تفاصيل البضاعــــــة" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="364,1198,525,182" HorizontalContentAlignment="Right" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="50" Width="279" FlowDirection="RightToLeft" RenderTransformOrigin="0.844,0.5" FontWeight="Bold"/>
-                <Border BorderBrush="Black" BorderThickness="5,1,5,1" Width="1" Margin="220,1189,948,-1" Height="244"/>
-                <TextBox x:Name="GoodsValue"
-                    Text="قيمة البضاعة" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="11,1198,960,182" HorizontalContentAlignment="Right" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="50" FlowDirection="RightToLeft" RenderTransformOrigin="0.844,0.5" FontWeight="Bold"/>
-                <TextBox x:Name="trans_cost" Margin="226,148,672,1222" SelectionOpacity="8" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" VerticalContentAlignment="Center" FontWeight="Bold"/>
-                <TextBox x:Name="empty_cost" Margin="220,259,671,1111" SelectionOpacity="8" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" VerticalContentAlignment="Center" FontWeight="Bold"/>
-                <TextBox x:Name="customs_cost" Margin="226,356,670,1014" SelectionOpacity="8" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" VerticalContentAlignment="Center" FontWeight="Bold"/>
-                <TextBox x:Name="reciever_addr_cost" Margin="226,450,670,920" SelectionOpacity="8" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" VerticalContentAlignment="Center" FontWeight="Bold"/>
-                <TextBox x:Name="insurance_cost" Margin="220,556,670,814" SelectionOpacity="8" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" VerticalContentAlignment="Center" FontWeight="Bold"/>
-                <TextBox x:Name="total_cost" Margin="220,674,670,696" SelectionOpacity="8" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" VerticalContentAlignment="Center" FontWeight="Bold"/>
-                <TextBox Text="دينار عراقي" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="25,778,974,585" HorizontalContentAlignment="Right" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Width="169"/>
-                <TextBox x:Name="amount_paid" Margin="220,778,670,585" SelectionOpacity="8" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" VerticalContentAlignment="Center" FontWeight="Bold"/>
-                <TextBox x:Name="amount_not_paid" Margin="220,866,676,504" SelectionOpacity="8" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" VerticalContentAlignment="Center" FontWeight="Bold"/>
-                <TextBox x:Name="europe_amount" Margin="220,974,684,396" SelectionOpacity="8" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" VerticalContentAlignment="Center" FontWeight="Bold"/>
-                <TextBox x:Name="boxes_no" Margin="941,1276,17,15" SelectionOpacity="8" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextWrapping="Wrap" FontWeight="Bold"/>
-                <TextBox x:Name="weight" Margin="734,1261,244,10" SelectionOpacity="8" FontSize="30" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" TextWrapping="Wrap"/>
-                <TextBox x:Name="good_desc" Margin="226,1258,444,0" SelectionOpacity="8" FontSize="35" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" VerticalContentAlignment="Center" TextWrapping="Wrap" FontWeight="Bold"/>
-                <TextBox x:Name="good_val" Margin="10,1266,950,12" SelectionOpacity="8" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" VerticalContentAlignment="Center" FontWeight="Bold"/>
-                <TextBox x:Name="pallets_no" Margin="959,1313,0,46" SelectionOpacity="8" FontSize="40" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextWrapping="WrapWithOverflow" FontWeight="Bold" Visibility="Hidden"/>
-                <CheckBox x:Name="insurance_no" Margin="98,1088,943,262" FontFamily="Arial" FontSize="1" BorderThickness="0.5,0.5,0.5,0.5">
-                    <CheckBox.LayoutTransform>
-                        <ScaleTransform ScaleX="5" ScaleY="5" />
-                    </CheckBox.LayoutTransform>
-                </CheckBox>
-                <CheckBox x:Name="insurance_yes" Margin="463,1090,625,262" FontFamily="Arial" FontSize="20" BorderThickness="0.5,0.5,0.5,0.5" RenderTransformOrigin="0.535,0.504">
-                    <CheckBox.LayoutTransform>
-                        <ScaleTransform ScaleX="5" ScaleY="5" />
-                    </CheckBox.LayoutTransform>
-                </CheckBox>
-                <TextBox x:Name="currency" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="32,980,967,396" HorizontalContentAlignment="Center" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Width="169" VerticalContentAlignment="Center"/>
-            </Grid>
+    <Border BorderBrush="Black" BorderThickness="1" Width="2476" Height="3636" VerticalAlignment="Center" HorizontalAlignment="Center">
 
-        </Border>
-        <Border BorderThickness="2,2,2,2" Margin="37,772,1266,1432" Width="1174" Height="1436" CornerRadius="7,7,7,7" BorderBrush="Black" FlowDirection="LeftToRight">
-            <Grid
+        <Grid x:Name="maingrid" Width="2478" Height="3640" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBox x:Name="agent_note" Text="يتم استلام البريد من مكتب الوكيل ادناه" Margin="40,1426,1266,2124" SelectionOpacity="3" FontSize="60" FontFamily="Arial" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+            <TextBox x:Name="PleaseReadFollowingPointsBeforeSign" TextWrapping="Wrap" Text="يرجى قراءة النقاط ادناه ثم بعد القراءة والموافقة يرجى التوقيع اسفل الوصل" Margin="387,2248,364,1314" SelectionOpacity="8" FontSize="71" FontFamily="Arial Narrow" Foreground="#FFF81818" BorderBrush="{x:Null}" Background="{x:Null}" Width="1729" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="RightToLeft" Height="77"/>
+            <Border BorderBrush="#FF121655" BorderThickness="7,10,7,10" Height="5" Margin="0,2357,0,1278" Background="Black" Width="2489"/>
+            <Border BorderBrush="Black" BorderThickness="1" Height="398" VerticalAlignment="Top" FlowDirection="RightToLeft" Background="White" Width="2470">
+                <Grid Margin="0,0,-2,-3245" Height="3640">
+                    <Image Height="266" Margin="79,57,2082,3314" Source="/UI/Sters Logo N-BG-header.png" Width="319"/>
+                    <TextBox x:Name="StersCompany" TextWrapping="Wrap" Text="شركـة ستيــرس" Margin="691,58,732,3449" SelectionOpacity="3" FontSize="104" FontFamily="Arial" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" FlowDirection="LeftToRight" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                    <TextBox x:Name="adress_header" Text="بغداد - الدورة قرب جسر الميكانيك" Margin="501,182,1645,3349" SelectionOpacity="1" FontSize="49" FontFamily="Arial" Foreground="#FF121655" BorderBrush="{x:Null}" Width="316" Height="110" FlowDirection="RightToLeft" TextWrapping="Wrap" AllowDrop="True" HorizontalScrollBarVisibility="Disabled" Padding="5,0,5,0" HorizontalContentAlignment="Center" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" BorderThickness="0,0,0,0" Background="{x:Null}" VerticalContentAlignment="Center"/>
+                    <TextBox x:Name="LeadingInTransport" TextWrapping="Wrap" Text="الرائدة في مجال النقل الدولي" Margin="281,191,288,3373" SelectionOpacity="3" FontSize="58" FontFamily="Arial" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="LeftToRight"/>
+                    <TextBox x:Name="Branch" TextWrapping="Wrap" Margin="862,300,1504,3268" SelectionOpacity="1" FontSize="50" FontFamily="Arial Narrow" Foreground="#FF121655" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Text=":فرع" SelectionTextBrush="{x:Null}" SelectionBrush="{x:Null}" FlowDirection="LeftToRight" FontWeight="Bold"/>
+                    <TextBox x:Name="Phone" Margin="1317,308,838,3276" SelectionOpacity="1" FontSize="50" FontFamily="Arial Narrow" Foreground="#FF121655" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Text=":الهاتف" SelectionTextBrush="{x:Null}" SelectionBrush="{x:Null}" FlowDirection="LeftToRight" RenderTransformOrigin="0.2,0.49" FontWeight="Bold"/>
+                    <Image Height="222" Width="499" Margin="1913,93,68,3325" Source="/Resources/sters.jpg"/>
+                    <Border
+                    Width="2" Margin="1664,3462,801,10" BorderThickness="5,1,1,1" BorderBrush="#FF121655"/>
+                    <TextBox TextWrapping="Wrap" Text="Email :" Margin="1193,3482,1139,111" SelectionOpacity="3" FontSize="42" FontFamily="Arial" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" VerticalContentAlignment="Center" FlowDirection="LeftToRight" FontWeight="Bold"/>
+                    <TextBox TextWrapping="Wrap" Text="WebSite:" Margin="1149,3551,1139,42" SelectionOpacity="3" FontSize="42" FontFamily="Arial" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" VerticalContentAlignment="Center" FlowDirection="LeftToRight" FontWeight="Bold"/>
+                    <TextBox TextWrapping="Wrap" Text="info@euknet.com" Margin="761,3486,1374,89" SelectionOpacity="3" FontSize="42" FontFamily="Arial" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" VerticalContentAlignment="Center" FlowDirection="LeftToRight"/>
+                    <TextBox TextWrapping="Wrap" Text="wwww.euknet.com" Margin="733,3551,1374,24" SelectionOpacity="3" FontSize="42" FontFamily="Arial" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" VerticalContentAlignment="Center" FlowDirection="LeftToRight"/>
+                    <TextBox x:Name="MainOffice" TextWrapping="Wrap" Text="المكتب الرئيسي للشركة في اوروبا" Margin="72,3516,1914,66" SelectionOpacity="3" FontSize="42" FontFamily="Arial" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" VerticalContentAlignment="Center" FlowDirection="LeftToRight" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+                    <TextBox x:Name="branch_val" TextWrapping="Wrap" Margin="1014,308,1213,3280" SelectionOpacity="1" FontSize="40" FontFamily="Arial" Foreground="#FF121655" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" SelectionTextBrush="{x:Null}" SelectionBrush="{x:Null}" FlowDirection="LeftToRight" FontWeight="Bold"/>
+                    <TextBox x:Name="tele" Margin="1584,288,526,3260" SelectionOpacity="1" FontSize="40" FontFamily="Arial" Foreground="#FF121655" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" SelectionTextBrush="{x:Null}" SelectionBrush="{x:Null}" FlowDirection="LeftToRight" FontWeight="Bold" Width="360" Height="92" TextWrapping="Wrap"/>
+                </Grid>
+            </Border>
+            <Border BorderBrush="#FF121655" BorderThickness="1,5,1,5" Height="137" Margin="0,399,5,3104" Background="#FFE8E8E8">
+                <Grid Margin="0,0,-2,-2">
+                    <TextBox x:Name="cost_delivery" Text="وصل تسليم ودفع تكاليف النقل الى اوروبا" Margin="211,28,347,10" SelectionOpacity="3" FontSize="58" FontFamily="Arial" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                </Grid>
+            </Border>
+            <Border BorderBrush="#FF121655" BorderThickness="1,1,1,5" Height="191" Margin="0,536,504,2913" Background="#FFFCB483" Width="1970">
+                <Grid Margin="0,0,-2,-2">
+                    <TextBox x:Name="Code" TextWrapping="Wrap" Text="كود الاستلام :" Margin="1182,35,34,35" SelectionOpacity="3" FontSize="98" FontFamily="Arial Narrow" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" VerticalContentAlignment="Center" FlowDirection="RightToLeft"/>
+                    <TextBox x:Name="code_number" TextWrapping="Wrap" Margin="477,42,477,41" SelectionOpacity="3" FontSize="102" Foreground="Black" Height="104" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" VerticalContentAlignment="Center" FontFamily="Arial" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+                    <TextBox x:Name="code_Copy" TextWrapping="Wrap" Margin="46,35,1608,41" SelectionOpacity="3" FontSize="100" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" VerticalContentAlignment="Stretch" FontFamily="Arial" Text="Code:" FontWeight="Bold"/>
+                </Grid>
+            </Border>
+            <Border BorderBrush="#FF121655" BorderThickness="1,1,0,5" Margin="1972,536,18,2913" Background="#FFFDFDFD" Width="488">
+                <TextBox x:Name="Date" TextWrapping="Wrap" Text="التاريخ :" Margin="273,64,36,60" SelectionOpacity="3" FontSize="50" FontFamily="Arial" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" VerticalContentAlignment="Center" FlowDirection="RightToLeft" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+            </Border>
+            <Border BorderThickness="2,2,2,2" Margin="1245,772,5,1432" Height="1436" CornerRadius="7,7,7,7" BorderBrush="Black">
+                <Grid x:Name="grid1"
 >
-                <Border BorderBrush="Black" BorderThickness="0,0,0,6" Height="96" Margin="0,0,0,1338" Background="#FFE8E8E8">
-                    <TextBox x:Name="SenderInfo" TextWrapping="Wrap" Text="معلومات المرسل" Margin="386,10,274,14" SelectionOpacity="8" FontSize="58" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Width="504" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="RightToLeft" Height="65" FontWeight="Bold"/>
-                </Border>
-                <TextBox x:Name="SenderName" Text="أسم المرســل" Margin="854,119,0,1243" SelectionOpacity="8" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" Width="275" Height="68" HorizontalAlignment="Left" FontWeight="Bold"/>
-                <TextBox x:Name="SenderPhone" Text="رقم هاتف المرسل" Margin="854,233,25,0" SelectionOpacity="8" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" Height="67" VerticalAlignment="Top" FontWeight="Bold" VerticalContentAlignment="Center"/>
-                <Border BorderBrush="Black" BorderThickness="7,10,7,10" Width="1173" Height="1" Margin="0,208,-4,1217" Background="Black"/>
-                <Border BorderBrush="Black" BorderThickness="7,10,7,10" Width="1173" Height="1" Margin="0,305,0,1122" Background="Black"/>
-                <Border BorderBrush="Black" BorderThickness="7,10,7,10" Width="1173" Height="1" Margin="0,407,0,1020" Background="Black"/>
-                <Border BorderBrush="Black" BorderThickness="7,10,7,10" Width="1173" Height="1" Margin="0,488,0,939" Background="Black"/>
-                <Border BorderBrush="Black" BorderThickness="7,10,7,10" Width="1173" Height="1" Margin="0,613,0,812" Background="Black"/>
-                <Border BorderBrush="Black" BorderThickness="7,10,7,10" Width="1173" Height="5" Margin="0,946,0,476" Background="Black"/>
-                <TextBox x:Name="RecieverName"
-                            Text="أسم المستلــم" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="854,325,25,1041" HorizontalContentAlignment="Center" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" VerticalContentAlignment="Center" FlowDirection="RightToLeft" FontWeight="Bold"/>
-                <TextBox x:Name="RecieverPhone"
-                            Text="رقم هاتف المستلم" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="854,427,25,947" HorizontalContentAlignment="Center" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="56" FontWeight="Bold" VerticalContentAlignment="Center"/>
-                <TextBox x:Name="Country"
-                            Text="الدولــــــــــــة" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="850,626,26,738" HorizontalContentAlignment="Center" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="68" VerticalContentAlignment="Center" FontWeight="Bold"/>
-                <Border
-                            Width="1" Margin="844,92,325,726" BorderThickness="5,1,1,1" BorderBrush="Black"/>
-                <TextBox
+                    <Border BorderBrush="Black" BorderThickness="1,1,1,4" Height="96" Margin="0,0,0,1338" Background="#FFE8E8E8">
+                        <TextBox x:Name="TransportCost_header" Text="تكاليــف النقـــــل" Margin="458,1,393,2" SelectionOpacity="8" FontSize="58" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Width="316" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="RightToLeft" Height="62" FontWeight="Bold"/>
+                    </Border>
+                    <TextBox x:Name="TransportCost" Text="كـلـفــــــــة الـنـقــــــــــــــــــــــــل" Margin="515,121,11,1253" SelectionOpacity="8" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+                    <TextBox x:Name="PackigingCost" Text="قـيـمـــة الـكـارتـون الـفـــــــــارغ" Margin="515,202,10,1173" SelectionOpacity="8" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Right" Height="57" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                    <Border BorderBrush="Black" BorderThickness="7,10,7,10" Width="1224" Margin="2,269,-2,1162" Background="Black" Height="1"/>
+                    <TextBox x:Name="InsuranceCost" Text="كـلـفــــــــة الـتــأمــيــــــــــــــــــن" Margin="670,473,11,893" SelectionOpacity="8" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+                    <Border BorderBrush="Black" BorderThickness="1,1,1,1" Height="1" Margin="0,188,0,1243" Background="Black"/>
+                    <TextBox Text="دينار عراقي" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="46,294,1006,1086" HorizontalContentAlignment="Right" Height="51" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Width="172" FontWeight="Bold"/>
+                    <TextBox Text="دينار عراقي" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="46,379,1006,994" HorizontalContentAlignment="Right" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Width="172" FontWeight="Bold"/>
+                    <Border BorderBrush="Black" BorderThickness="7,10,7,10" Width="1224" Height="1" Margin="-2,544,2,887" Background="Black"/>
+                    <TextBox Text="دينار عراقي" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="40,476,1012,896" HorizontalContentAlignment="Right" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Width="172" RenderTransformOrigin="0.398,0.254" FontWeight="Bold"/>
+                    <TextBox Text="دينار عراقي" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="46,564,1006,806" HorizontalContentAlignment="Right" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Width="172" FontWeight="Bold"/>
+                    <Border x:Name="paid_border" BorderBrush="Black" BorderThickness="0,2,0,2" Margin="0,631,0,712" Height="89" Panel.ZIndex="-1" Width="1222">
+                        <Grid Margin="0,1148,0,245">
+                            <TextBox x:Name="PaidAmount"
+                    Text="المبلــــــــغ المدفـــــــــــــــــــــوع" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="502,-1140,16,1073" HorizontalContentAlignment="Right" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" FontWeight="Bold"/>
+                        </Grid>
+                    </Border>
+                    <TextBox x:Name="AdminExportCost"
+Text="الـكـمـــــرك والاداريــــــــــــــــات" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="514,288,11,1080" HorizontalContentAlignment="Right" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" FontWeight="Bold"/>
+                    <TextBox x:Name="DoorToDoorCost"
+Text="كلفة التوصيل الى عنوان المستلم" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="627,374,11,994" HorizontalContentAlignment="Right" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" FontWeight="Bold"/>
+                    <TextBox x:Name="TotalCost"
+Text="الـكـلـفـــــــة الـكـلــيـــــــــــــــــــة" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="713,564,17,816" HorizontalContentAlignment="Right" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="52" FontWeight="Bold"/>
+                    <TextBox x:Name="PaidINEurope"
+Text="المبلغ المطلـوب دفعه في اوروبا" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="648,825,11,546" HorizontalContentAlignment="Right" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="61" FontWeight="Bold"/>
+                    <Border
+Width="1" Margin="610,93,613,535" BorderThickness="1,1,1,1" BorderBrush="Black"/>
+                    <TextBox
+ Text="دينار عراقي" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="46,121,1006,1249" HorizontalContentAlignment="Right" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Width="172" RenderTransformOrigin="0.491,0.048" FontWeight="Bold"/>
+                    <TextBox
+Width="172" Text="دينار عراقي" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="46,202,1006,1168" HorizontalContentAlignment="Right" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" FontWeight="Bold"/>
+                    <TextBox x:Name="HaveInsurance"
+                    Text="تأميـــــن البضــاعــــــة :" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="663,934,4,446" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="53" FlowDirection="RightToLeft" HorizontalContentAlignment="Center" FontWeight="Bold" RenderTransformOrigin="0.508,0.274"/>
+                    <TextBox x:Name="Yes" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="533,934,541,440" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="58" FlowDirection="RightToLeft" RenderTransformOrigin="0.527,-0.026" Text="نعم " HorizontalContentAlignment="Center" FontWeight="Bold" VerticalContentAlignment="Center"/>
+                    <TextBox x:Name="No" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="196,940,857,434" HorizontalContentAlignment="Center" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="58" RenderTransformOrigin="0.509,1.052" Text="كلا" VerticalContentAlignment="Center" FlowDirection="RightToLeft" FontWeight="Bold"/>
+                    <Border BorderBrush="Black" BorderThickness="7,10,7,10" Width="1224" Height="1" Margin="2,1102,-2,329" Background="Black"/>
+                    <TextBox x:Name="NOBoxes"
+                    Text="عدد الكراتين" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="962,1047,-9,335" HorizontalContentAlignment="Center" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="50" FlowDirection="RightToLeft" RenderTransformOrigin="0.844,0.5" FontWeight="Bold"/>
+                    <Border BorderBrush="Black" BorderThickness="5,1,5,1" Width="1" Margin="962,1023,261,0"/>
+                    <TextBox x:Name="WeightKG"
+                    Text="الوزن / كغم" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="774,1047,270,335" HorizontalContentAlignment="Right" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="50" Width="180" FlowDirection="RightToLeft" RenderTransformOrigin="0.844,0.5" FontWeight="Bold"/>
+                    <Border BorderBrush="Black" BorderThickness="5,1,5,1" Width="1" Margin="724,1023,499,-1"/>
+                    <TextBox x:Name="GoodsDiscription"
+                    Text="تفاصيل البضاعــــــة" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="372,1047,573,335" HorizontalContentAlignment="Right" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="50" Width="279" FlowDirection="RightToLeft" RenderTransformOrigin="0.844,0.5" FontWeight="Bold"/>
+                    <Border BorderBrush="Black" BorderThickness="5,1,5,1" Width="1" Margin="248,1023,975,0"/>
+                    <TextBox x:Name="GoodsValue"
+                    Text="قيمة البضاعة" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="10,1047,962,335" HorizontalContentAlignment="Right" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="50" FlowDirection="RightToLeft" RenderTransformOrigin="0.844,0.5" FontWeight="Bold"/>
+                    <TextBox x:Name="trans_cost" Margin="252,121,646,1249" SelectionOpacity="8" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                    <TextBox x:Name="empty_cost" Margin="252,202,638,1168" SelectionOpacity="8" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                    <TextBox x:Name="customs_cost" Margin="258,288,638,1082" SelectionOpacity="8" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                    <TextBox x:Name="reciever_addr_cost" Margin="258,374,638,996" SelectionOpacity="8" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                    <TextBox x:Name="insurance_cost" Margin="258,473,632,897" SelectionOpacity="8" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                    <TextBox x:Name="total_cost" Margin="259,564,631,806" SelectionOpacity="8" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                    <TextBox Text="دينار عراقي" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="40,641,1015,722" HorizontalContentAlignment="Right" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Width="169" FontWeight="Bold"/>
+                    <TextBox x:Name="amount_paid" Margin="266,641,624,722" SelectionOpacity="8" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                    <TextBox x:Name="europe_amount" Margin="262,824,642,546" SelectionOpacity="8" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                    <TextBox x:Name="boxes_no" Margin="967,1112,2,10" SelectionOpacity="8" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextWrapping="Wrap" FontWeight="Bold"/>
+                    <TextBox x:Name="weight" Margin="734,1112,267,15" SelectionOpacity="8" FontSize="30" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" TextWrapping="Wrap"/>
+                    <TextBox x:Name="good_desc" Margin="254,1112,506,10" SelectionOpacity="8" FontSize="35" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" VerticalContentAlignment="Center" TextWrapping="Wrap" FontWeight="Bold"/>
+                    <TextBox x:Name="good_val" Margin="10,1127,980,15" SelectionOpacity="8" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                    <TextBox x:Name="pallets_no" Margin="959,1313,0,46" SelectionOpacity="8" FontSize="40" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextWrapping="WrapWithOverflow" FontWeight="Bold" Visibility="Hidden"/>
+                    <CheckBox x:Name="insurance_no" Margin="136,934,904,416" FontFamily="Arial" FontSize="1" BorderThickness="0.5,0.5,0.5,0.5">
+                        <CheckBox.LayoutTransform>
+                            <ScaleTransform ScaleX="5" ScaleY="5" />
+                        </CheckBox.LayoutTransform>
+                    </CheckBox>
+                    <CheckBox x:Name="insurance_yes" Margin="476,929,612,423" FontFamily="Arial" FontSize="20" BorderThickness="0.5,0.5,0.5,0.5" RenderTransformOrigin="0.535,0.504">
+                        <CheckBox.LayoutTransform>
+                            <ScaleTransform ScaleX="5" ScaleY="5" />
+                        </CheckBox.LayoutTransform>
+                    </CheckBox>
+                    <TextBox x:Name="currency" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="40,824,1015,552" HorizontalContentAlignment="Center" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Width="169" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                    <Border x:Name="remaining_border" BorderBrush="Black" Margin="0,720,0,621" Panel.ZIndex="-1" BorderThickness="1,1,1,1" Width="1222">
+                        <Grid Margin="0,1148,0,245">
+                            <TextBox x:Name="RemainingAmount"
+Text="الـمـبـلـــغ الـمـطــلــــــــــــــــــوب" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="516,-1131,7,1071" HorizontalContentAlignment="Right" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="60" FontWeight="Bold"/>
+                            <TextBox Text="دينار عراقي" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="14,-1127,987,1071" HorizontalContentAlignment="Right" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Width="169" FontWeight="Bold"/>
+                            <TextBox x:Name="amount_not_paid" Margin="240,-1133,644,1071" SelectionOpacity="8" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                        </Grid>
+                    </Border>
+                    <Border x:Name="europe_border" BorderBrush="Black" Margin="0,812,0,535" Panel.ZIndex="-1" BorderThickness="1,1,1,1" Width="1222">
+                        <Grid Margin="0,1148,0,245"/>
+                    </Border>
+                    <Border x:Name="insurance_border" BorderBrush="Black" Margin="0,897,0,409" Panel.ZIndex="-1" BorderThickness="1,1,1,1" Width="1222">
+                        <Grid Margin="0,1148,0,245"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="5,1,5,1" Width="2" Margin="-145,2690,1368,-1426"/>
+                    <Border x:Name="recv_address_border" BorderBrush="Black" Margin="0,358,0,973" Panel.ZIndex="-1" BorderThickness="1,1,0,1" Width="1224">
+                        <Grid Margin="0,1148,0,245"/>
+                    </Border>
+                </Grid>
+
+            </Border>
+            <Border BorderThickness="0,2,2,2" Margin="2,772,1266,1432" Height="1436" CornerRadius="7,7,7,7" BorderBrush="Black" FlowDirection="LeftToRight">
+                <Grid Width="1202" Margin="8,-2,-2,2"
+>
+                    <Border BorderBrush="Black" BorderThickness="1,0,1,4" Height="96" Margin="0,-2,0,1326" Background="#FFE8E8E8" Width="1202">
+                        <TextBox x:Name="SenderInfo" TextWrapping="Wrap" Text="معلومات المرسل" Margin="386,10,274,14" SelectionOpacity="8" FontSize="58" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Width="504" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="RightToLeft" Height="65" FontWeight="Bold"/>
+                    </Border>
+                    <TextBox x:Name="SenderName" Text="أسم المرســل" Margin="886,120,0,1256" SelectionOpacity="8" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" Width="274" HorizontalAlignment="Left" FontWeight="Bold"/>
+                    <TextBox x:Name="SenderPhone" Text="رقم هاتف المرسل" Margin="876,206,14,0" SelectionOpacity="8" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" Height="67" VerticalAlignment="Top" FontWeight="Bold" VerticalContentAlignment="Center"/>
+                    <Border BorderBrush="Black" BorderThickness="7,10,7,10" Width="1224" Height="1" Margin="0,196,0,1235" Background="Black"/>
+                    <Border BorderBrush="Black" BorderThickness="7,10,7,10" Width="1202" Height="1" Margin="-11,285,-11,1146" Background="Black"/>
+                    <Border BorderBrush="Black" BorderThickness="7,10,7,10" Width="1206" Height="1" Margin="0,379,0,1052" Background="Black"/>
+                    <Border BorderBrush="Black" BorderThickness="7,10,7,10" Width="1224" Height="1" Margin="-22,460,0,971" Background="Black"/>
+                    <Border BorderBrush="Black" BorderThickness="7,10,7,10" Width="1202" Height="1" Margin="0,548,0,883" Background="Black"/>
+                    <TextBox x:Name="RecieverName"
+                            Text="أسم المستلــم" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="860,295,19,1071" HorizontalContentAlignment="Center" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" VerticalContentAlignment="Center" FlowDirection="RightToLeft" FontWeight="Bold"/>
+                    <TextBox x:Name="RecieverPhone"
+                            Text="رقم هاتف المستلم" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="864,399,14,977" HorizontalContentAlignment="Center" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="56" FontWeight="Bold" VerticalContentAlignment="Center"/>
+                    <TextBox x:Name="Country"
+                            Text="الدولــــــــــــة" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="860,558,16,806" HorizontalContentAlignment="Center" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="68" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                    <Border
+                            Width="1" Margin="860,92,341,801" BorderThickness="5,1,1,1" BorderBrush="Black"/>
+                    <TextBox
                             Width="169" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="32,259,968,1126" HorizontalContentAlignment="Right" Height="45" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}"/>
-                <Border BorderThickness="1,1,1,1" Margin="0,902,0,416" Background="#FFE8E8E8" BorderBrush="Black">
-                    <TextBox x:Name="AgentInfo" TextWrapping="Wrap" Text="معلومات الوكيل" Margin="122,18,122,13" SelectionOpacity="8" FontSize="63" FontFamily="Arial Narrow" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="RightToLeft"/>
-                </Border>
-                <Image Height="327" Width="394" Margin="758,1036,16,67" Source="/UI/Sters QR.jpeg"/>
-                <TextBox x:Name="office_val" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="32,1044,723,290" HorizontalContentAlignment="Center" FontSize="38" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" VerticalContentAlignment="Center" FontWeight="Bold" TextWrapping="Wrap"/>
-                <TextBox x:Name="Agent" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="459,1132,425,230" HorizontalContentAlignment="Center" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="68" Text=":الوكيل" VerticalContentAlignment="Center" TextWrapping="Wrap" FontWeight="Bold"/>
-                <TextBox x:Name="AgentPhone"
-                    Text=":الهاتف" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="459,1220,425,121" HorizontalContentAlignment="Center" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" VerticalContentAlignment="Center" TextWrapping="Wrap" FontWeight="Bold"/>
-                <TextBox x:Name="office"
-                    Text=":المكتب" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="459,1044,425,318" HorizontalContentAlignment="Center" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="68" VerticalContentAlignment="Center" TextWrapping="Wrap" FontWeight="Bold"/>
-                <TextBox x:Name="agent_val" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="32,1145,723,230" HorizontalContentAlignment="Center" FontSize="38" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" VerticalContentAlignment="Center" FontWeight="Bold"/>
-                <TextBox x:Name="AgentAddreess" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="459,1314,425,14" FontSize="42" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" VerticalContentAlignment="Center" Text="العنوان:" FlowDirection="RightToLeft" HorizontalContentAlignment="Center" Height="89" FontWeight="Bold"/>
-                <TextBox x:Name="phone" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="32,1220,723,121" HorizontalContentAlignment="Center" FontSize="38" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" VerticalContentAlignment="Center" FontWeight="Bold" TextWrapping="Wrap"/>
-                <TextBox x:Name="agent_address" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="32,1314,803,14" HorizontalContentAlignment="Center" FontSize="38" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" VerticalContentAlignment="Center" FontWeight="Bold" TextWrapping="Wrap"/>
-                <TextBox x:Name="City"
-                                    Text="المدينـــــــــــة" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="854,521,28,847" HorizontalContentAlignment="Center" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Height="64" VerticalContentAlignment="Center" FontWeight="Bold" RenderTransformOrigin="0.533,0.453"/>
-                <Border BorderBrush="Black" BorderThickness="7,10,7,10" Width="1173" Height="1" Margin="0,705,0,723" Background="Black"/>
-                <TextBox x:Name="ReceiverInfo" TextWrapping="Wrap" Text="- المستلم" Margin="144,10,520,1355" SelectionOpacity="8" FontSize="58" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Width="504" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="RightToLeft" Height="65" FontWeight="Bold"/>
-            </Grid>
+                    <Border BorderThickness="1,2,1,2" Margin="0,749,0,554" Background="#FFE8E8E8" BorderBrush="Black" Width="1202">
+                        <TextBox x:Name="AgentInfo" TextWrapping="Wrap" Text="معلومات الوكيل" Margin="122,18,122,13" SelectionOpacity="8" FontSize="63" FontFamily="Arial Narrow" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="RightToLeft"/>
+                    </Border>
+                    <Image Margin="857,969,25,51" Source="/UI/Sters QR.jpeg" Height="267"/>
+                    <TextBox x:Name="office_val" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="28,912,706,401" HorizontalContentAlignment="Center" FontSize="38" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" VerticalContentAlignment="Center" FontWeight="Bold" TextWrapping="Wrap"/>
+                    <TextBox x:Name="Agent" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="534,1042,350,299" HorizontalContentAlignment="Center" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Text=":الوكيل" VerticalContentAlignment="Center" TextWrapping="Wrap" FontWeight="Bold"/>
+                    <TextBox x:Name="AgentPhone"
+                    Text=":الهاتف" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="534,1164,350,178" HorizontalContentAlignment="Center" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" VerticalContentAlignment="Center" TextWrapping="Wrap" FontWeight="Bold"/>
+                    <TextBox x:Name="office"
+                    Text=":المكتب" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="534,923,350,433" HorizontalContentAlignment="Center" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" VerticalContentAlignment="Center" TextWrapping="Wrap" FontWeight="Bold"/>
+                    <TextBox x:Name="agent_val" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="28,1042,706,287" HorizontalContentAlignment="Center" FontSize="38" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                    <TextBox VerticalContentAlignment="Center" Text="العنوان:" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" x:Name="AgentAddreess" Margin="534,1299,350,44" HorizontalContentAlignment="Center" Height="89" FontSize="50" FontWeight="Bold" FontFamily="Arial" FlowDirection="RightToLeft" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}"/>
+                    <TextBox x:Name="phone" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="28,1164,706,177" HorizontalContentAlignment="Center" FontSize="38" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" VerticalContentAlignment="Center" FontWeight="Bold" TextWrapping="Wrap"/>
+                    <TextBox x:Name="agent_address" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="28,1284,673,44" HorizontalContentAlignment="Center" FontSize="36" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" VerticalContentAlignment="Center" FontWeight="Bold" TextWrapping="Wrap"/>
+                    <TextBox x:Name="City"
+                                    Text="المدينـــــــــــة" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionOpacity="8" Margin="857,480,25,896" HorizontalContentAlignment="Center" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" VerticalContentAlignment="Center" FontWeight="Bold" RenderTransformOrigin="0.533,0.453"/>
+                    <Border BorderBrush="Black" BorderThickness="7,10,7,10" Width="1224" Height="1" Margin="-22,631,0,800" Background="Black"/>
+                    <TextBox x:Name="ReceiverInfo" TextWrapping="Wrap" Text="- المستلم" Margin="144,10,520,1355" SelectionOpacity="8" FontSize="58" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" Width="504" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="RightToLeft" Height="65" FontWeight="Bold"/>
+                </Grid>
 
-        </Border>
-        <Border
+            </Border>
+            <Border
                     Width="5" Margin="544,2357,1931,182" BorderThickness="5,1,1,1" BorderBrush="#FF121655"/>
-        <Border BorderBrush="#FF121655" BorderThickness="7,10,7,10" Height="5" Margin="0,3458,0,177" Background="Black" Width="2489"/>
-        <Image Height="349" Width="478" Margin="51,2398,1951,893" Source="/UI/3logos_1.png"/>
-        <Image Height="372" Width="446" Margin="54,2750,1980,518" Source="/UI/3logos_2.jpeg"/>
-        <Border BorderBrush="#FF121655" BorderThickness="7,10,7,10" Height="5" Margin="3,3162,1930,473" Background="Black"/>
-        <Image Height="223" Width="268" Margin="142,3187,2070,230" Source="/UI/Sters Logo N-BG.png" Opacity="0.25"/>
-        <TextBox x:Name="sender_name" Margin="68,888,1616,2675" SelectionOpacity="8" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" VerticalContentAlignment="Center" FontWeight="Bold"/>
-        <TextBox x:Name="reciever_name" Margin="68,1096,1616,2474" SelectionOpacity="8" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" Width="796" VerticalContentAlignment="Center" FontWeight="Bold"/>
-        <TextBox x:Name="sender_phone" Margin="68,1006,1616,2574" SelectionOpacity="8" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" Width="796" Height="60" VerticalContentAlignment="Center" FontWeight="Bold"/>
-        <TextBox x:Name="reciever_phone" Margin="68,1196,1616,2384" SelectionOpacity="8" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" Width="796" Height="60" VerticalContentAlignment="Center" FontWeight="Bold"/>
-        <TextBox x:Name="city" Margin="68,1301,1616,2286" SelectionOpacity="8" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" Width="796" Height="53" VerticalContentAlignment="Center" FontWeight="Bold"/>
-        <TextBox x:Name="country" Margin="68,1412,1616,2168" SelectionOpacity="8" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" Width="796" Height="60" VerticalContentAlignment="Center" FontWeight="Bold" RenderTransformOrigin="0.497,0.45"/>
-        <TextBox x:Name="date_val" TextWrapping="Wrap" Margin="2004,596,224,2976" SelectionOpacity="3" FontSize="50" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" VerticalContentAlignment="Stretch" FontFamily="Arial" Height="61"/>
-        <Image x:Name="notes" Margin="555,2370,10,180" Source="/UI/١ - شركة ستێرس  (EUK.png"/>
-        <TextBox x:Name="Notes" TextWrapping="Wrap" Text="الملاحظات" Margin="824,3503,1375,58" SelectionOpacity="3" FontSize="63" FontFamily="Arial" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="RightToLeft"/>
-    </Grid>
+            <Border BorderBrush="#FF121655" BorderThickness="7,10,7,10" Height="5" Margin="0,3458,0,177" Background="Black" Width="2489"/>
+            <Image Height="349" Width="478" Margin="51,2398,1951,893" Source="/UI/3logos_1.png"/>
+            <Image Height="372" Width="446" Margin="54,2750,1980,518" Source="/UI/3logos_2.jpeg"/>
+            <Border BorderBrush="#FF121655" BorderThickness="7,10,7,10" Height="5" Margin="3,3162,1930,473" Background="Black"/>
+            <Image Height="223" Width="268" Margin="142,3187,2070,230" Source="/UI/Sters Logo N-BG.png" Opacity="0.25"/>
+            <TextBox x:Name="sender_name" Margin="56,890,1628,2687" SelectionOpacity="8" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" VerticalContentAlignment="Center" FontWeight="Bold"/>
+            <TextBox x:Name="reciever_name" Margin="51,1074,1631,2496" SelectionOpacity="8" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" Width="796" VerticalContentAlignment="Center" FontWeight="Bold"/>
+            <TextBox x:Name="sender_phone" Margin="54,986,1628,2594" SelectionOpacity="8" FontSize="50" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" Width="796" Height="60" VerticalContentAlignment="Center" FontWeight="Bold"/>
+            <TextBox x:Name="reciever_phone" Margin="56,1166,1626,2414" SelectionOpacity="8" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" Width="796" Height="60" VerticalContentAlignment="Center" FontWeight="Bold"/>
+            <TextBox x:Name="city" Margin="56,1253,1626,2334" SelectionOpacity="8" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" Width="796" Height="53" VerticalContentAlignment="Center" FontWeight="Bold"/>
+            <TextBox x:Name="country" Margin="56,1334,1626,2246" SelectionOpacity="8" FontSize="45" FontFamily="Arial" Foreground="#FF232323" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" Width="796" Height="60" VerticalContentAlignment="Center" FontWeight="Bold" RenderTransformOrigin="0.497,0.45"/>
+            <TextBox x:Name="date_val" TextWrapping="Wrap" Margin="2004,596,224,2976" SelectionOpacity="3" FontSize="50" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" VerticalContentAlignment="Stretch" FontFamily="Arial" Height="61"/>
+            <Image x:Name="notes" Margin="555,2370,15,180" Source="/UI/١ - شركة ستێرس  (EUK.png"/>
+            <TextBox x:Name="Notes" TextWrapping="Wrap" Text="الملاحظات" Margin="824,3503,1375,58" SelectionOpacity="3" FontSize="63" FontFamily="Arial" Foreground="#FF121655" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="RightToLeft"/>
+        </Grid>
+
+
+    </Border>
 
 
 </Page>

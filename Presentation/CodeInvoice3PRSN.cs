@@ -29,7 +29,6 @@ namespace StersTransport.Presentation
             ar, ku
         }
         BranchLanguages branchLanguage;
-
         SolidColorBrush BlueColor = (SolidColorBrush)(new BrushConverter().ConvertFrom("#236BC9"));
         SolidColorBrush RedColor = (SolidColorBrush)(new BrushConverter().ConvertFrom("#DD015B"));
         SolidColorBrush BorderColor = (SolidColorBrush)(new BrushConverter().ConvertFrom("#404040"));
